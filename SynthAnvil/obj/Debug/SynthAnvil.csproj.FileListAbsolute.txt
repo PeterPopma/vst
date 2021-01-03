@@ -1,0 +1,13 @@
+C:\Projects\SynthAnvil\SynthAnvil\bin\Debug\SynthAnvil.exe.config
+C:\Projects\SynthAnvil\SynthAnvil\bin\Debug\SynthAnvil.exe
+C:\Projects\SynthAnvil\SynthAnvil\bin\Debug\SynthAnvil.pdb
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.Properties.Resources.resources
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.csproj.GenerateResource.cache
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.csproj.CoreCompileInputs.cache
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.exe
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.pdb
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.FormMain.resources
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.csprojAssemblyReference.cache
+C:\Projects\SynthAnvil\SynthAnvil\bin\Debug\NAudio.dll
+C:\Projects\SynthAnvil\SynthAnvil\bin\Debug\NAudio.xml
+C:\Projects\SynthAnvil\SynthAnvil\obj\Debug\SynthAnvil.csproj.CopyComplete
