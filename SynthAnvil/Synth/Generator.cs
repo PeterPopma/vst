@@ -18,6 +18,7 @@ namespace SynthAnvil.Synth
         int channel;        // 2=both, 0=left, 1=right
         string waveForm;
         string waveFile;
+        double[] waveData;
         bool endFrequencyEnabled;
         bool endVolumeEnabled;
         int weight;
@@ -25,7 +26,6 @@ namespace SynthAnvil.Synth
         float harmDecayEven;
         float harmDecayOdd;
 
-        WaveDataChunk waveData = new WaveDataChunk();
 
         public int Number { get => number; set => number = value; }
         public int NumSamples { get => numSamples; set => numSamples = value; }
@@ -35,7 +35,7 @@ namespace SynthAnvil.Synth
         public int Channel { get => channel; set => channel = value; }
         public int BeginVolume { get => beginVolume; set => beginVolume = value; }
         public int EndVolume { get => endVolume; set => endVolume = value; }
-        internal WaveDataChunk WaveData { get => waveData; set => waveData = value; }
+
         public string WaveFile { get => waveFile; set => waveFile = value; }
         public bool EndFrequencyEnabled { get => endFrequencyEnabled; set => endFrequencyEnabled = value; }
         public bool EndVolumeEnabled { get => endVolumeEnabled; set => endVolumeEnabled = value; }
@@ -44,6 +44,7 @@ namespace SynthAnvil.Synth
         public int Harmonics { get => harmonics; set => harmonics = value; }
         public float HarmDecayEven { get => harmDecayEven; set => harmDecayEven = value; }
         public float HarmDecayOdd { get => harmDecayOdd; set => harmDecayOdd = value; }
+        public double[] WaveData { get => waveData; set => waveData = value; }
 
         public Generator(int number)
         {

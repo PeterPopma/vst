@@ -229,14 +229,12 @@ namespace SynthAnvil
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            CreateSound();
             synthGenerator.Play();
         }
 
         private void TimerEventProcessor(Object myObject,
                                                    EventArgs myEventArgs)
         {
-            CreateSound();
             synthGenerator.Play();
         }
 
@@ -260,24 +258,32 @@ namespace SynthAnvil
         {
             synthGenerator.GenerateSound(1);
             synthGenerator.Play(1);
+            // generate mixed sound, so we can play this without delay
+            synthGenerator.GenerateSound();
         }
 
         private void buttonPlay2_Click(object sender, EventArgs e)
         {
             synthGenerator.GenerateSound(2);
             synthGenerator.Play(2);
+            // generate mixed sound, so we can play this without delay
+            synthGenerator.GenerateSound();
         }
 
         private void buttonPlay3_Click(object sender, EventArgs e)
         {
             synthGenerator.GenerateSound(3);
             synthGenerator.Play(3);
+            // generate mixed sound, so we can play this without delay
+            synthGenerator.GenerateSound();
         }
 
         private void buttonPlay4_Click(object sender, EventArgs e)
         {
             synthGenerator.GenerateSound(4);
             synthGenerator.Play(4);
+            // generate mixed sound, so we can play this without delay
+            synthGenerator.GenerateSound();
         }
 
         private float convertValueToFrequency(decimal value)
