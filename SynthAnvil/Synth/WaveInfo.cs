@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SynthAnvil.Synth
 {
-    public class Generator
+    public class WaveInfo
     {
         int number;
         int numSamples;             // stereo samples are counted as one (so 1 second contains 44100 samples)
@@ -21,10 +21,16 @@ namespace SynthAnvil.Synth
         double[] waveData;
         bool endFrequencyEnabled;
         bool endVolumeEnabled;
+        bool beginEndBeginFrequencyEnabled;
+        bool beginEndBeginVolumeEnabled;
         int weight;
-        int harmonics;
-        float harmDecayEven;
-        float harmDecayOdd;
+        int harmonicsEven;
+        int harmonicsOdd;
+        int inHarmonics;
+        float inHarmonicSpread;
+        float inHarmonicDecay;
+        float harmonicDecayEven;
+        float harmonicDecayOdd;
 
 
         public int Number { get => number; set => number = value; }
@@ -41,14 +47,19 @@ namespace SynthAnvil.Synth
         public bool EndVolumeEnabled { get => endVolumeEnabled; set => endVolumeEnabled = value; }
         public int StartPosition { get => startPosition; set => startPosition = value; }
         public int Weight { get => weight; set => weight = value; }
-        public int Harmonics { get => harmonics; set => harmonics = value; }
-        public float HarmDecayEven { get => harmDecayEven; set => harmDecayEven = value; }
-        public float HarmDecayOdd { get => harmDecayOdd; set => harmDecayOdd = value; }
+        public int HarmonicsEven { get => harmonicsEven; set => harmonicsEven = value; }
+        public float HarmonicDecayEven { get => harmonicDecayEven; set => harmonicDecayEven = value; }
+        public float HarmonicDecayOdd { get => harmonicDecayOdd; set => harmonicDecayOdd = value; }
         public double[] WaveData { get => waveData; set => waveData = value; }
+        public int InHarmonics { get => inHarmonics; set => inHarmonics = value; }
+        public float InHarmonicDecay { get => inHarmonicDecay; set => inHarmonicDecay = value; }
+        public int HarmonicsOdd { get => harmonicsOdd; set => harmonicsOdd = value; }
+        public float InHarmonicSpread { get => inHarmonicSpread; set => inHarmonicSpread = value; }
+        public bool BeginEndBeginFrequencyEnabled { get => beginEndBeginFrequencyEnabled; set => beginEndBeginFrequencyEnabled = value; }
+        public bool BeginEndBeginVolumeEnabled { get => beginEndBeginVolumeEnabled; set => beginEndBeginVolumeEnabled = value; }
 
-        public Generator(int number)
+        public WaveInfo()
         {
-            this.number = number;
             this.startPosition = 0;
             this.numSamples = 44100;
             this.beginFrequency = 440;
@@ -61,9 +72,13 @@ namespace SynthAnvil.Synth
             this.endFrequencyEnabled = false;
             this.endVolumeEnabled = false;
             this.weight = (number < 2) ? 100 : 0;
-            this.harmonics = 0;
-            this.harmDecayEven = 0.7f;
-            this.harmDecayOdd = 0.7f;
+            this.harmonicsEven = 0;
+            this.harmonicsOdd = 0;
+            this.harmonicDecayEven = 20.0f;
+            this.harmonicDecayOdd = 20.0f;
+            this.inHarmonics = 0;
+            this.inHarmonicDecay = 20.0f;
+            this.inHarmonicSpread = 5.0f;
         }
     }
 }

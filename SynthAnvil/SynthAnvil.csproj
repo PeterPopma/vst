@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAmplitude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAmplitude.Designer.cs">
+      <DependentUpon>FormAmplitude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFFT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFFT.Designer.cs">
+      <DependentUpon>FormFFT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MathUtils\FFTTransformation.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,16 +73,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Synth\Generator.cs" />
-    <Compile Include="Synth\SynthPlayer.cs" />
+    <Compile Include="Synth\WaveInfo.cs" />
+    <Compile Include="Synth\Preset.cs" />
+    <Compile Include="Synth\SynthGenerator.cs" />
     <Compile Include="Synth\WaveDataChunk.cs" />
     <Compile Include="Synth\WaveFormatChunk.cs" />
     <Compile Include="Synth\WaveHeader.cs" />
+    <EmbeddedResource Include="FormAmplitude.resx">
+      <DependentUpon>FormAmplitude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFFT.resx">
+      <DependentUpon>FormFFT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -96,6 +117,30 @@
       <Project>{16E224DC-7FF0-4908-8318-D6A3AC2E797A}</Project>
       <Name>ColorSlider</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconMagnifyingGlass.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\random.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\magnifying_glass.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\sawtooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\sine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\wav.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

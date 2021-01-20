@@ -1089,7 +1089,6 @@ namespace ColorSlider
                 }
 
                 thumbHalfRect = thumbRect;
-                LinearGradientMode gradientOrientation;
               
                 if (_barOrientation == Orientation.Horizontal)
                 {
@@ -1100,9 +1099,6 @@ namespace ColorSlider
 
                     barHalfRect = barRect;
                     barHalfRect.Height /= 2;
-
-                    gradientOrientation = LinearGradientMode.Vertical;
-                    
 
                     thumbHalfRect.Height /= 2;
                     elapsedRect = barRect;
@@ -1120,8 +1116,6 @@ namespace ColorSlider
                     barHalfRect = barRect;
                     barHalfRect.Width /= 2;
                    
-                    gradientOrientation = LinearGradientMode.Vertical;
-
                     thumbHalfRect.Width /= 2;
                     elapsedRect = barRect;
 
