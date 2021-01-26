@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\GradientButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAmplitude.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +82,7 @@
     <Compile Include="Synth\WaveDataChunk.cs" />
     <Compile Include="Synth\WaveFormatChunk.cs" />
     <Compile Include="Synth\WaveHeader.cs" />
+    <Compile Include="WavesListItem.cs" />
     <EmbeddedResource Include="FormAmplitude.resx">
       <DependentUpon>FormAmplitude.cs</DependentUpon>
     </EmbeddedResource>

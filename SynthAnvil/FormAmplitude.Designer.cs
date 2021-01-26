@@ -274,7 +274,7 @@ namespace SynthAnvil
             this.MinimizeBox = false;
             this.Name = "FormAmplitude";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAmplitude_FormClosing);
+            this.Text = "Amplitude Analysis";
             this.Load += new System.EventHandler(this.FormAmplitude_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartAmplitude)).EndInit();
             this.groupBox1.ResumeLayout(false);

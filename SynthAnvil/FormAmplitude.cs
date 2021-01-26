@@ -22,6 +22,7 @@ namespace SynthAnvil
         int graphPosition = 0;
         int channelMode = 1;
         private const int GRAPH_POINTS_PLOTTED = 5000;
+        private const double SAMPLES_PER_SECOND = 44100.0;
 
         public FormAmplitude()
         {
@@ -45,12 +46,12 @@ namespace SynthAnvil
             for (int i = 0; i < GRAPH_POINTS_PLOTTED; i++)
             {
                 int currentPoint = (int)(graphPosition + numPoints * (i / (double)GRAPH_POINTS_PLOTTED));
-                chartAmplitude.Series["Series1"].Points.AddXY(currentPoint / 44100.0, amplitudesLeft[currentPoint]);
-                chartAmplitude.Series["Series2"].Points.AddXY(currentPoint / 44100.0, amplitudesRight[currentPoint]);
+                chartAmplitude.Series["Series1"].Points.AddXY(currentPoint / SAMPLES_PER_SECOND, amplitudesLeft[currentPoint]);
+                chartAmplitude.Series["Series2"].Points.AddXY(currentPoint / SAMPLES_PER_SECOND, amplitudesRight[currentPoint]);
             }
-            chartAmplitude.ChartAreas[0].AxisX.Minimum = graphPosition / 44100.0;
-            chartAmplitude.ChartAreas[0].AxisX.Maximum = lastPoint / 44100.0;
-            labelFrequencyRange.Text = string.Format("{0:0.000} s", (graphPosition / 44100.0)) + " - " + string.Format("{0:0.000} s", (lastPoint / 44100.0));
+            chartAmplitude.ChartAreas[0].AxisX.Minimum = graphPosition / SAMPLES_PER_SECOND;
+            chartAmplitude.ChartAreas[0].AxisX.Maximum = lastPoint / SAMPLES_PER_SECOND;
+            labelFrequencyRange.Text = string.Format("{0:0.000} s", (graphPosition / SAMPLES_PER_SECOND)) + " - " + string.Format("{0:0.000} s", (lastPoint / SAMPLES_PER_SECOND));
             
             chartAmplitude.Series["Series1"].Enabled = (channelMode == 0 || channelMode == 1);
             chartAmplitude.Series["Series2"].Enabled = (channelMode == 0 || channelMode == 2);
@@ -72,7 +73,7 @@ namespace SynthAnvil
                     amplitudesRight[i/2] = myParent.SynthGenerator.FinalData.shortArray[i];
                 }
             }
-            labelDuration.Text = "Duration: " + string.Format("{0:0.000} s", (amplitudesLeft.Length / 44100.0));
+            labelDuration.Text = "Duration: " + string.Format("{0:0.000} s", (amplitudesLeft.Length / SAMPLES_PER_SECOND));
         }
 
         private void FormAmplitude_Load(object sender, EventArgs e)
@@ -214,10 +215,5 @@ namespace SynthAnvil
             UpdateAmplitudeGraph();
         }
 
-        private void FormAmplitude_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myParent.chartResultLeft.Cursor = new Cursor(Properties.Resources.magnifying_glass.Handle);
-            myParent.chartResultRight.Cursor = new Cursor(Properties.Resources.magnifying_glass.Handle);
-        }
     }
 }

@@ -36,14 +36,6 @@ namespace SynthAnvil.Synth
                     file.WriteLine(waveInfo.EndFrequencyEnabled);
                     file.WriteLine(waveInfo.EndVolume);
                     file.WriteLine(waveInfo.EndVolumeEnabled);
-                    file.WriteLine(waveInfo.HarmonicsOdd);
-                    file.WriteLine(waveInfo.HarmonicsEven);
-                    file.WriteLine(waveInfo.HarmonicDecayOdd);
-                    file.WriteLine(waveInfo.HarmonicDecayEven);
-                    file.WriteLine(waveInfo.InHarmonicSpread);
-                    file.WriteLine(waveInfo.InHarmonicDecay);
-                    file.WriteLine(waveInfo.InHarmonics);
-                    file.WriteLine(waveInfo.Number);
                     file.WriteLine(waveInfo.NumSamples);
                     file.WriteLine(waveInfo.StartPosition);
                     file.WriteLine(waveInfo.WaveFile);
@@ -63,32 +55,29 @@ namespace SynthAnvil.Synth
                 synthGenerator.EnvelopSustain = float.Parse(srFile.ReadLine());
                 synthGenerator.EnvelopRelease = float.Parse(srFile.ReadLine());
                 int numWaves = int.Parse(srFile.ReadLine());
+                synthGenerator.Waves.Clear();
                 for (int i = 0; i < numWaves; i++)
                 {
-                    WaveInfo waveInfo = synthGenerator.Waves[i];
-                    synthGenerator.Waves[i].BeginFrequency = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].BeginVolume = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].BeginEndBeginFrequencyEnabled = bool.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].BeginEndBeginVolumeEnabled = bool.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].Channel = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].EndFrequency = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].EndFrequencyEnabled = bool.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].EndVolume = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].EndVolumeEnabled = bool.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].HarmonicsOdd = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].HarmonicsEven = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].HarmonicDecayOdd = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].HarmonicDecayEven = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].InHarmonicSpread = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].InHarmonicDecay = float.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].InHarmonics = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].Number = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].NumSamples = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].StartPosition = int.Parse(srFile.ReadLine());
-                    synthGenerator.Waves[i].WaveFile = srFile.ReadLine();
-                    synthGenerator.Waves[i].WaveForm = srFile.ReadLine();
-                    synthGenerator.Waves[i].Weight = int.Parse(srFile.ReadLine());
+                    WaveInfo newWave = new WaveInfo();
+                    newWave.Number = i;
+                    newWave.BeginFrequency = float.Parse(srFile.ReadLine());
+                    newWave.BeginVolume = int.Parse(srFile.ReadLine());
+                    newWave.BeginEndBeginFrequencyEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.BeginEndBeginVolumeEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.Channel = int.Parse(srFile.ReadLine());
+                    newWave.EndFrequency = float.Parse(srFile.ReadLine());
+                    newWave.EndFrequencyEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.EndVolume = int.Parse(srFile.ReadLine());
+                    newWave.EndVolumeEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.NumSamples = int.Parse(srFile.ReadLine());
+                    newWave.StartPosition = int.Parse(srFile.ReadLine());
+                    newWave.WaveFile = srFile.ReadLine();
+                    newWave.WaveForm = srFile.ReadLine();
+                    newWave.Weight = int.Parse(srFile.ReadLine());
+                    newWave.SetName();
+                    synthGenerator.Waves.Add(newWave);
                 }
+                synthGenerator.CurrentWave = synthGenerator.Waves.Last();
             }
         }
     }
