@@ -11,7 +11,6 @@ namespace SynthAnvil.Synth
     {
         int number;
         string name;
-        int numSamples;             // stereo samples are counted as one (so 1 second contains 44100 samples)
         int startPosition;          // delay in seconds * 44100 (start sample)
         double beginFrequency;     // in Hz
         double endFrequency;          // in Hz
@@ -21,13 +20,14 @@ namespace SynthAnvil.Synth
         string waveForm;
         string waveFile;
         double[] waveData;
+        int[] waveFileData = new int[0];          // data read from .wav file
+        int[] waveFormData = new int[SynthGenerator.NUM_CUSTOMWAVE_POINTS];          // shape of the custom waveform. this consists of 1000 items with value between -327 and 327
         bool endFrequencyEnabled;
         bool endVolumeEnabled;
         bool beginEndBeginFrequencyEnabled;
         bool beginEndBeginVolumeEnabled;
         int weight;
 
-        public int NumSamples { get => numSamples; set => numSamples = value; }
         public double BeginFrequency { get => beginFrequency; set => beginFrequency = value; }
         public double EndFrequency { get => endFrequency; set => endFrequency = value; }
         public string WaveForm { get => waveForm; set => waveForm = value; }
@@ -45,11 +45,12 @@ namespace SynthAnvil.Synth
         public string Name { get => name; set => name = value; }
         public int Number { get => number; set => number = value; }
         public double[] WaveData { get => waveData; set => waveData = value; }
+        public int[] WaveFileData { get => waveFileData; set => waveFileData = value; }
+        public int[] WaveFormData { get => waveFormData; set => waveFormData = value; }
 
         public WaveInfo()
         {
             this.startPosition = 0;
-            this.numSamples = 44100;
             this.beginFrequency = 440;
             this.endFrequency = 440;
             this.beginVolume = 255;
@@ -57,6 +58,7 @@ namespace SynthAnvil.Synth
             this.channel = 2;
             this.waveForm = "Sine";
             this.waveFile = "";
+            this.waveData = new double[44100 * 2];
             this.endFrequencyEnabled = false;
             this.endVolumeEnabled = false;
             this.weight = 255;
@@ -67,7 +69,7 @@ namespace SynthAnvil.Synth
         public WaveInfo(int number, int numSamples, int startPosition, double beginFrequency, double endFrequency, int beginVolume, int endVolume, int channel, string waveForm, string waveFile, bool endFrequencyEnabled, bool endVolumeEnabled, bool beginEndBeginFrequencyEnabled, bool beginEndBeginVolumeEnabled, int weight)
         {
             this.number = number;
-            this.numSamples = numSamples;
+            this.waveData = new double[numSamples * 2];
             this.startPosition = startPosition;
             this.beginFrequency = beginFrequency;
             this.endFrequency = endFrequency;
@@ -85,16 +87,22 @@ namespace SynthAnvil.Synth
             SetName();
         }
 
+        // stereo samples are counted as one (so 1 second contains 44100 samples)
+        public int NumSamples()
+        {
+            return waveData.Length / 2;
+        }
+
         public void SetName()
         {
-            name = startPosition + "-" + waveForm + "-" + numSamples + "-";
-            if (waveForm.Equals("File (.wav)"))
+            name = startPosition + "-" + waveForm + "-" + NumSamples() + "-";
+            if (waveForm.Equals("WavFile"))
             {
-                name += Path.GetFileName(waveFile); 
+                name += "-" + Path.GetFileName(waveFile); 
             }
-            else
+            else if (!waveForm.Equals("Noise"))
             {
-                name += beginFrequency;
+                name += "-" + beginFrequency;
                 if(endFrequencyEnabled)
                 {
                     name += "->" + endFrequency;
@@ -104,7 +112,7 @@ namespace SynthAnvil.Synth
 
         public double Duration()
         {
-            return numSamples / SynthGenerator.SAMPLES_PER_SECOND;
+            return NumSamples() / SynthGenerator.SAMPLES_PER_SECOND;
         }
 
         public double StartTime()

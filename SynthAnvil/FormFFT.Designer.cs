@@ -29,8 +29,8 @@ namespace SynthAnvil
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartFFT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonNextFFTPeriod = new System.Windows.Forms.Button();
             this.buttonPreviousFFTPeriod = new System.Windows.Forms.Button();
@@ -46,7 +46,6 @@ namespace SynthAnvil
             this.buttonIncreaseFrequencyMajor = new System.Windows.Forms.Button();
             this.buttonDecreaseMiddle = new System.Windows.Forms.Button();
             this.buttonIncreaseMiddle = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartFFT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,33 +53,33 @@ namespace SynthAnvil
             // 
             this.chartFFT.BackColor = System.Drawing.Color.Transparent;
             this.chartFFT.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.Maroon;
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.Maximum = 100D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.BackColor = System.Drawing.Color.Silver;
-            chartArea2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.chartFFT.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Maroon;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.BackColor = System.Drawing.Color.Silver;
+            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chartFFT.ChartAreas.Add(chartArea1);
             this.chartFFT.Cursor = System.Windows.Forms.Cursors.Default;
             this.chartFFT.Location = new System.Drawing.Point(31, 40);
             this.chartFFT.Name = "chartFFT";
-            series2.BackSecondaryColor = System.Drawing.Color.Black;
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Blue;
-            series2.Name = "Series1";
-            this.chartFFT.Series.Add(series2);
+            series1.BackSecondaryColor = System.Drawing.Color.Black;
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Name = "Series1";
+            this.chartFFT.Series.Add(series1);
             this.chartFFT.Size = new System.Drawing.Size(1272, 748);
             this.chartFFT.TabIndex = 0;
             this.chartFFT.Text = "chartFFT";
@@ -251,20 +250,9 @@ namespace SynthAnvil
             this.buttonIncreaseMiddle.UseVisualStyleBackColor = true;
             this.buttonIncreaseMiddle.Click += new System.EventHandler(this.buttonIncreaseMiddle_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(129, 748);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 37);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormFFT
             // 
             this.ClientSize = new System.Drawing.Size(1335, 812);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonIncreaseMiddle);
             this.Controls.Add(this.buttonDecreaseMiddle);
             this.Controls.Add(this.buttonIncreaseFrequencyMajor);
@@ -309,6 +297,5 @@ namespace SynthAnvil
         private System.Windows.Forms.Button buttonIncreaseFrequencyMajor;
         private System.Windows.Forms.Button buttonDecreaseMiddle;
         private System.Windows.Forms.Button buttonIncreaseMiddle;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using SynthAnvil.Synth;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -78,8 +77,11 @@ namespace SynthAnvil
                 case "Noise":
                     pictureBoxWaveForm.Image = Properties.Resources.random;
                     break;
-                case "File (.wav)":
+                case "WavFile":
                     pictureBoxWaveForm.Image = Properties.Resources.wav;
+                    break;
+                case "Custom":
+                    pictureBoxWaveForm.Image = Properties.Resources.custom;
                     break;
             }
         }
@@ -91,13 +93,14 @@ namespace SynthAnvil
             colorSliderEndFrequency1.Value = convertFrequencyToValue(synthGenerator.CurrentWave.EndFrequency);
             colorSliderBeginVolume1.Value = synthGenerator.CurrentWave.BeginVolume;
             colorSliderEndVolume1.Value = synthGenerator.CurrentWave.EndVolume;
-            colorSliderDuration1.Value = synthGenerator.CurrentWave.NumSamples;
+            colorSliderDuration1.Value = synthGenerator.CurrentWave.NumSamples();
             colorSliderDelay1.Value = synthGenerator.CurrentWave.StartPosition;
             checkBoxEndVolume1.Checked = synthGenerator.CurrentWave.EndVolumeEnabled;
             checkBoxEndFrequency1.Checked = synthGenerator.CurrentWave.EndFrequencyEnabled;
             colorSliderWeight1.Value = synthGenerator.CurrentWave.Weight;
             checkBoxBeginEndBeginVolume1.Checked = synthGenerator.CurrentWave.BeginEndBeginVolumeEnabled;
             checkBoxBeginEndBeginFrequency1.Checked = synthGenerator.CurrentWave.BeginEndBeginFrequencyEnabled;
+            UpdateChannelText();
 
             labelWaveForm.Text = synthGenerator.CurrentWave.WaveForm;
             UpdateWaveFormPicture();
@@ -175,9 +178,6 @@ namespace SynthAnvil
 
             generatorEnabled = false;
 
-            // duration has been lost because of loading wave files.
-            colorSliderDuration1.Value = 100;
-
             // find all presets
             try
             {
@@ -206,21 +206,20 @@ namespace SynthAnvil
             generatorEnabled = true;
         }
 
-        private int GetChannel(int generatorNumber)
+        private void UpdateChannelText()
         {
-            int channel = 2;
-            Label label = (Label)this.Controls.Find("labelChannel" + generatorNumber, true)[0];
-
-            if (label.Text.Equals("left"))
+            switch (synthGenerator.CurrentWave.Channel)
             {
-                channel = 0;
+                case 0:
+                    labelChannel.Text = "left";
+                    break;
+                case 1:
+                    labelChannel.Text = "right";
+                    break;
+                case 2:
+                    labelChannel.Text = "both";
+                    break;
             }
-            if (label.Text.Equals("right"))
-            {
-                channel = 1;
-            }
-
-            return channel;
         }
 
         public void UpdateCurrentWaveInfo()
@@ -281,27 +280,19 @@ namespace SynthAnvil
 
         private void labelChannel1_Click(object sender, EventArgs e)
         {
-            if (labelChannel1.Text.Equals("both"))
+            synthGenerator.CurrentWave.Channel++;
+            if (synthGenerator.CurrentWave.Channel == 3)
             {
-                labelChannel1.Text = "left";
+                synthGenerator.CurrentWave.Channel = 0;
             }
-            else if (labelChannel1.Text.Equals("left"))
-            {
-                labelChannel1.Text = "right";
-            }
-            else
-            {
-                labelChannel1.Text = "both";
-            }
-            synthGenerator.CurrentWave.Channel = GetChannel(1);
+            UpdateChannelText();
             UpdateCurrentWaveInfo();
         }
 
 
         private void colorSliderDuration1_ValueChanged(object sender, EventArgs e)
         {
-            labelDuration1.Text = string.Format("{0:0.0000}", ((double)colorSliderDuration1.Value / SynthGenerator.SAMPLES_PER_SECOND));
-            synthGenerator.CurrentWave.NumSamples = (int)(colorSliderDuration1.Value);
+            labelDuration1.Text = string.Format("{0:0.0000}", (double)colorSliderDuration1.Value / SynthGenerator.SAMPLES_PER_SECOND);
         }
 
         private void colorSlider21_ValueChanged(object sender, EventArgs e)
@@ -398,6 +389,15 @@ namespace SynthAnvil
 
         private void colorSliderDuration1_MouseUp(object sender, MouseEventArgs e)
         {
+            if (synthGenerator.CurrentWave.WaveForm == "WavFile")
+            {
+                // The wav file is selected; stretch its wavefile data to the new duration
+                // TODO
+            }
+            else
+            {
+                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration1.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+            }
             UpdateCurrentWaveInfo();
         }
 
@@ -481,15 +481,26 @@ namespace SynthAnvil
                     synthGenerator.CurrentWave.WaveForm = "Noise";
                     break;
                 case "Noise":
-                    synthGenerator.CurrentWave.WaveForm = "File (.wav)";
+                    synthGenerator.CurrentWave.WaveForm = "WavFile";
                     break;
-                case "File (.wav)":
+                case "WavFile":
+                    synthGenerator.CurrentWave.WaveForm = "Custom";
+                    break;
+                case "Custom":
                     synthGenerator.CurrentWave.WaveForm = "Sine";
                     break;
             }
 
             UpdateWaveFormPicture();
-            labelWaveForm.Text = synthGenerator.CurrentWave.WaveForm;
+            if (synthGenerator.CurrentWave.WaveForm.Equals("WavFile"))
+            {
+                labelWaveForm.Text = "File (.wav)";
+            }
+            else
+            {
+                labelWaveForm.Text = synthGenerator.CurrentWave.WaveForm;
+            }
+
 
             UpdateVisibility();
 
@@ -498,9 +509,8 @@ namespace SynthAnvil
 
         private void UpdateVisibility()
         {
-            if (synthGenerator.CurrentWave.WaveForm.Equals("File (.wav)"))
+            if (synthGenerator.CurrentWave.WaveForm.Equals("WavFile") || synthGenerator.CurrentWave.WaveForm.Equals("Noise"))
             {
-                buttonSelectWav.Visible = true;
                 colorSliderBeginFrequency1.Visible = false;
                 colorSliderEndFrequency1.Visible = false;
                 labelBeginFreq1.Visible = false;
@@ -510,9 +520,16 @@ namespace SynthAnvil
                 checkBoxBeginEndBeginFrequency1.Visible = false;
                 buttonFreqMinus1.Visible = false;
                 buttonFreqPlus1.Visible = false;
+                buttonFreqMinus10.Visible = false;
+                buttonFreqPlus10.Visible = false;
+                buttonBeginFreqPlus1.Visible = false;
                 buttonBeginFreqMinus1.Visible = false;
                 buttonBeginFreqPlus10.Visible = false;
-                labelFileName.Visible = true;
+                buttonBeginFreqMinus10.Visible = false;
+                buttonCreateInharmonics.Enabled = false;
+                buttonCreateEvenHarmonics.Enabled = false;
+                buttonCreateOddHarmonics.Enabled = false;
+                buttonCreateSpikes.Enabled = false;
             }
             else
             {
@@ -526,9 +543,34 @@ namespace SynthAnvil
                 checkBoxBeginEndBeginFrequency1.Visible = true;
                 buttonFreqMinus1.Visible = true;
                 buttonFreqPlus1.Visible = true;
+                buttonFreqMinus10.Visible = true;
+                buttonFreqPlus10.Visible = true;
+                buttonBeginFreqPlus1.Visible = true;
                 buttonBeginFreqMinus1.Visible = true;
                 buttonBeginFreqPlus10.Visible = true;
+                buttonBeginFreqMinus10.Visible = true;
+                buttonCreateInharmonics.Enabled = true;
+                buttonCreateEvenHarmonics.Enabled = true;
+                buttonCreateOddHarmonics.Enabled = true;
+                buttonCreateSpikes.Enabled = true;
+            }
+            if (synthGenerator.CurrentWave.WaveForm.Equals("WavFile"))
+            {
+                buttonSelectWav.Visible = true;
+                labelFileName.Visible = true;
+            }
+            else
+            {
+                buttonSelectWav.Visible = false;
                 labelFileName.Visible = false;
+            }
+            if (synthGenerator.CurrentWave.WaveForm.Equals("Custom"))
+            {
+                pictureBoxCustomWave.Visible = true;
+            }
+            else
+            {
+                pictureBoxCustomWave.Visible = false;
             }
         }
 
@@ -658,7 +700,7 @@ namespace SynthAnvil
             if (buttonPlayContinuous.Text.Equals("Play Continuous"))
             {
                 buttonPlayContinuous.Text = "Stop playing";
-                aTimer.Interval = 2000;
+                aTimer.Interval = (int)(synthGenerator.CurrentWave.Duration() * 1000);
                 aTimer.Tick += new EventHandler(TimerEventProcessor);
                 aTimer.Enabled = true;
             }
@@ -816,7 +858,18 @@ namespace SynthAnvil
 
         private void buttonCreateSpikes_Click(object sender, EventArgs e)
         {
+            WaveInfo newWave = new WaveInfo();
+            newWave.BeginFrequency = synthGenerator.CurrentWave.BeginFrequency;
+            newWave.BeginVolume = synthGenerator.CurrentWave.BeginVolume;
+            newWave.BeginEndBeginFrequencyEnabled = synthGenerator.CurrentWave.BeginEndBeginFrequencyEnabled;
+            newWave.BeginEndBeginVolumeEnabled = synthGenerator.CurrentWave.BeginEndBeginVolumeEnabled;
+            newWave.EndFrequency = synthGenerator.CurrentWave.EndFrequency;
+            newWave.EndFrequencyEnabled = synthGenerator.CurrentWave.EndFrequencyEnabled;
+            newWave.EndVolume = synthGenerator.CurrentWave.EndVolume;
+            newWave.EndVolumeEnabled = synthGenerator.CurrentWave.EndVolumeEnabled;
+            newWave.WaveForm = "Custom";
 
+            // TODO : add waveformdata equally devided with amplitude based on currentwave wavedata
         }
 
         private void chartResultLeft_Paint(object sender, PaintEventArgs e)
@@ -828,7 +881,7 @@ namespace SynthAnvil
             double withPercentage = synthGenerator.CurrentWave.Duration() / synthGenerator.Duration();
             double startPercentage = synthGenerator.CurrentWave.StartTime() / synthGenerator.Duration();
             Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * withPercentage), 110);
-            System.Drawing.Pen myBrush = new System.Drawing.Pen(System.Drawing.Color.White);
+            Pen myBrush = new Pen(Color.White);
             e.Graphics.DrawRectangle(myBrush, rect);
         }
 
@@ -877,6 +930,48 @@ namespace SynthAnvil
                 if (dialogResult == DialogResult.Yes)
                 {
                     preset.Save(synthGenerator, currentPreset);
+                }
+            }
+        }
+
+        private void pictureBoxCustomWave_MouseMove(object sender, MouseEventArgs e)
+        {
+            pictureBoxCustomWave.Cursor = new Cursor(Properties.Resources.pencil.Handle);
+        }
+
+        private void pictureBoxCustomWave_Click(object sender, EventArgs e)
+        {
+            FormCustomWave formCustomWave = new FormCustomWave();
+            formCustomWave.MyParent = this;
+            formCustomWave.ShowDialog();
+        }
+
+        private void pictureBoxCustomWave_Paint(object sender, PaintEventArgs e)
+        {
+            Control control = (Control)sender;
+            using (LinearGradientBrush brush = new LinearGradientBrush(control.ClientRectangle,
+                                                                       Color.FromArgb(70, 87, 195),
+                                                                       Color.FromArgb(0, 0, 65),
+                                                                       90F))
+            {
+                e.Graphics.FillRectangle(brush, control.ClientRectangle);
+                ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.Gray, ButtonBorderStyle.Solid);
+            }
+
+            Pen pen = new Pen(Color.White);
+
+            if (synthGenerator.CurrentWave.WaveFormData.Length==SynthGenerator.NUM_CUSTOMWAVE_POINTS)
+            {
+                for (int x=0; x<pictureBoxCustomWave.Width; x++)
+                {
+                    int position = (int)(x / (double)pictureBoxCustomWave.Width * SynthGenerator.NUM_CUSTOMWAVE_POINTS);
+                    int next_position = (int)((x+1) / (double)pictureBoxCustomWave.Width * SynthGenerator.NUM_CUSTOMWAVE_POINTS);
+                    if (next_position < SynthGenerator.NUM_CUSTOMWAVE_POINTS)
+                    {
+                        int value1 = (int)((synthGenerator.CurrentWave.WaveFormData[position] + SynthGenerator.CUSTOMWAVE_MAX_VALUE) * (pictureBoxCustomWave.Height / (2.0 * SynthGenerator.CUSTOMWAVE_MAX_VALUE + 1)));
+                        int value2 = (int)((synthGenerator.CurrentWave.WaveFormData[next_position] + SynthGenerator.CUSTOMWAVE_MAX_VALUE) * (pictureBoxCustomWave.Height / (2.0 * SynthGenerator.CUSTOMWAVE_MAX_VALUE + 1)));
+                        e.Graphics.DrawLine(pen, new Point(x, value1), new Point(x + 1, value2));
+                    }
                 }
             }
         }

@@ -13,7 +13,8 @@ namespace SynthAnvil.Synth
         {
             if(name.Length==0)
             {
-                throw new Exception("preset name not set!");
+                name = "default";
+//                throw new Exception("preset name not set!");
             }
             using (System.IO.StreamWriter file =
                 new System.IO.StreamWriter(@".\presets\" + name + ".pst"))
@@ -36,11 +37,21 @@ namespace SynthAnvil.Synth
                     file.WriteLine(waveInfo.EndFrequencyEnabled);
                     file.WriteLine(waveInfo.EndVolume);
                     file.WriteLine(waveInfo.EndVolumeEnabled);
-                    file.WriteLine(waveInfo.NumSamples);
+                    file.WriteLine(waveInfo.NumSamples());
                     file.WriteLine(waveInfo.StartPosition);
                     file.WriteLine(waveInfo.WaveFile);
                     file.WriteLine(waveInfo.WaveForm);
                     file.WriteLine(waveInfo.Weight);
+                    file.WriteLine(waveInfo.WaveFileData.Length);
+                    for(int j = 0; j < waveInfo.WaveFileData.Length; j++)
+                    {
+                        file.WriteLine(waveInfo.WaveFileData[j]);
+                    }
+                    file.WriteLine(waveInfo.WaveFormData.Length);
+                    for (int j = 0; j < waveInfo.WaveFormData.Length; j++)
+                    {
+                        file.WriteLine(waveInfo.WaveFormData[j]);
+                    }
                 }
             }
         }
@@ -60,20 +71,33 @@ namespace SynthAnvil.Synth
                 {
                     WaveInfo newWave = new WaveInfo();
                     newWave.Number = i;
-                    newWave.BeginFrequency = float.Parse(srFile.ReadLine());
+                    newWave.BeginFrequency = double.Parse(srFile.ReadLine());
                     newWave.BeginVolume = int.Parse(srFile.ReadLine());
                     newWave.BeginEndBeginFrequencyEnabled = bool.Parse(srFile.ReadLine());
                     newWave.BeginEndBeginVolumeEnabled = bool.Parse(srFile.ReadLine());
                     newWave.Channel = int.Parse(srFile.ReadLine());
-                    newWave.EndFrequency = float.Parse(srFile.ReadLine());
+                    newWave.EndFrequency = double.Parse(srFile.ReadLine());
                     newWave.EndFrequencyEnabled = bool.Parse(srFile.ReadLine());
                     newWave.EndVolume = int.Parse(srFile.ReadLine());
                     newWave.EndVolumeEnabled = bool.Parse(srFile.ReadLine());
-                    newWave.NumSamples = int.Parse(srFile.ReadLine());
+                    newWave.WaveData = new double[int.Parse(srFile.ReadLine()) * 2];
                     newWave.StartPosition = int.Parse(srFile.ReadLine());
                     newWave.WaveFile = srFile.ReadLine();
                     newWave.WaveForm = srFile.ReadLine();
                     newWave.Weight = int.Parse(srFile.ReadLine());
+                    int waveFileDataLength = int.Parse(srFile.ReadLine());
+                    newWave.WaveFileData = new int[waveFileDataLength];
+                    for (int j = 0; j < waveFileDataLength; j++)
+                    {
+                        newWave.WaveFileData[j] = int.Parse(srFile.ReadLine());
+                    }
+                    int waveFormDataLength = int.Parse(srFile.ReadLine());
+                    newWave.WaveFormData = new int[waveFormDataLength];
+                    for (int j = 0; j < waveFormDataLength; j++)
+                    {
+                        newWave.WaveFormData[j] = int.Parse(srFile.ReadLine());
+                    }
+
                     newWave.SetName();
                     synthGenerator.Waves.Add(newWave);
                 }

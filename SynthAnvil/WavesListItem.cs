@@ -29,5 +29,13 @@ namespace SynthAnvil
             WavesListItem other = (WavesListItem)obj;
             return (Number == other.Number);
         }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -1156126842;
+            hashCode = hashCode * -1521134295 + number.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(name);
+            return hashCode;
+        }
     }
 }
