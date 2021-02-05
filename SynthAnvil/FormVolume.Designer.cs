@@ -37,8 +37,8 @@ namespace SynthAnvil
             this.buttonEndVolMinus1 = new SynthAnvil.CustomControls.GradientButton();
             this.buttonVolumeMinus10 = new SynthAnvil.CustomControls.GradientButton();
             this.buttonVolumeMinus1 = new SynthAnvil.CustomControls.GradientButton();
-            this.colorSliderEndVolume = new ColorSlider.ColorSlider();
-            this.colorSliderBeginVolume = new ColorSlider.ColorSlider();
+            this.colorSliderVolume2 = new ColorSlider.ColorSlider();
+            this.colorSliderVolume1 = new ColorSlider.ColorSlider();
             this.labelVolumeMin = new System.Windows.Forms.Label();
             this.labelVolumeMax = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,6 +52,13 @@ namespace SynthAnvil
             this.buttonApply = new SynthAnvil.CustomControls.GradientButton();
             this.gradientButton1 = new SynthAnvil.CustomControls.GradientButton();
             this.gradientButton2 = new SynthAnvil.CustomControls.GradientButton();
+            this.textBoxVolume1 = new System.Windows.Forms.TextBox();
+            this.textBoxVolume2 = new System.Windows.Forms.TextBox();
+            this.gradientButton3 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton4 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton5 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton6 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton7 = new SynthAnvil.CustomControls.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,129 +198,129 @@ namespace SynthAnvil
             this.buttonVolumeMinus1.UseVisualStyleBackColor = true;
             this.buttonVolumeMinus1.Click += new System.EventHandler(this.buttonVolumeMinus1_Click);
             // 
-            // colorSliderEndVolume
+            // colorSliderVolume2
             // 
-            this.colorSliderEndVolume.BackColor = System.Drawing.Color.Transparent;
-            this.colorSliderEndVolume.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
-            this.colorSliderEndVolume.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
-            this.colorSliderEndVolume.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-            this.colorSliderEndVolume.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderEndVolume.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
-            this.colorSliderEndVolume.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
-            this.colorSliderEndVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.colorSliderEndVolume.ForeColor = System.Drawing.Color.White;
-            this.colorSliderEndVolume.LargeChange = new decimal(new int[] {
+            this.colorSliderVolume2.BackColor = System.Drawing.Color.Transparent;
+            this.colorSliderVolume2.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
+            this.colorSliderVolume2.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
+            this.colorSliderVolume2.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.colorSliderVolume2.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume2.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
+            this.colorSliderVolume2.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
+            this.colorSliderVolume2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            this.colorSliderVolume2.ForeColor = System.Drawing.Color.White;
+            this.colorSliderVolume2.LargeChange = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.colorSliderEndVolume.Location = new System.Drawing.Point(435, 580);
-            this.colorSliderEndVolume.Maximum = new decimal(new int[] {
+            this.colorSliderVolume2.Location = new System.Drawing.Point(435, 580);
+            this.colorSliderVolume2.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.colorSliderEndVolume.Minimum = new decimal(new int[] {
+            this.colorSliderVolume2.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.colorSliderEndVolume.Name = "colorSliderEndVolume";
-            this.colorSliderEndVolume.ScaleDivisions = new decimal(new int[] {
+            this.colorSliderVolume2.Name = "colorSliderVolume2";
+            this.colorSliderVolume2.ScaleDivisions = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            this.colorSliderEndVolume.ScaleSubDivisions = new decimal(new int[] {
+            this.colorSliderVolume2.ScaleSubDivisions = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.colorSliderEndVolume.ShowDivisionsText = true;
-            this.colorSliderEndVolume.ShowSmallScale = false;
-            this.colorSliderEndVolume.Size = new System.Drawing.Size(382, 31);
-            this.colorSliderEndVolume.SmallChange = new decimal(new int[] {
+            this.colorSliderVolume2.ShowDivisionsText = true;
+            this.colorSliderVolume2.ShowSmallScale = false;
+            this.colorSliderVolume2.Size = new System.Drawing.Size(382, 31);
+            this.colorSliderVolume2.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.colorSliderEndVolume.TabIndex = 143;
-            this.colorSliderEndVolume.Text = "colorSlider5";
-            this.colorSliderEndVolume.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderEndVolume.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderEndVolume.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
-            this.colorSliderEndVolume.ThumbSize = new System.Drawing.Size(16, 16);
-            this.colorSliderEndVolume.TickAdd = 0F;
-            this.colorSliderEndVolume.TickColor = System.Drawing.Color.White;
-            this.colorSliderEndVolume.TickDivide = 0F;
-            this.colorSliderEndVolume.Value = new decimal(new int[] {
+            this.colorSliderVolume2.TabIndex = 143;
+            this.colorSliderVolume2.Text = "colorSlider5";
+            this.colorSliderVolume2.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume2.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume2.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
+            this.colorSliderVolume2.ThumbSize = new System.Drawing.Size(16, 16);
+            this.colorSliderVolume2.TickAdd = 0F;
+            this.colorSliderVolume2.TickColor = System.Drawing.Color.White;
+            this.colorSliderVolume2.TickDivide = 0F;
+            this.colorSliderVolume2.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.colorSliderEndVolume.ValueChanged += new System.EventHandler(this.colorSliderEndVolume_ValueChanged);
+            this.colorSliderVolume2.ValueChanged += new System.EventHandler(this.colorSliderEndVolume_ValueChanged);
             // 
-            // colorSliderBeginVolume
+            // colorSliderVolume1
             // 
-            this.colorSliderBeginVolume.BackColor = System.Drawing.Color.Transparent;
-            this.colorSliderBeginVolume.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
-            this.colorSliderBeginVolume.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
-            this.colorSliderBeginVolume.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-            this.colorSliderBeginVolume.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderBeginVolume.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
-            this.colorSliderBeginVolume.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
-            this.colorSliderBeginVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.colorSliderBeginVolume.ForeColor = System.Drawing.Color.White;
-            this.colorSliderBeginVolume.LargeChange = new decimal(new int[] {
+            this.colorSliderVolume1.BackColor = System.Drawing.Color.Transparent;
+            this.colorSliderVolume1.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
+            this.colorSliderVolume1.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
+            this.colorSliderVolume1.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.colorSliderVolume1.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume1.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
+            this.colorSliderVolume1.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
+            this.colorSliderVolume1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            this.colorSliderVolume1.ForeColor = System.Drawing.Color.White;
+            this.colorSliderVolume1.LargeChange = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.Location = new System.Drawing.Point(435, 533);
-            this.colorSliderBeginVolume.Maximum = new decimal(new int[] {
+            this.colorSliderVolume1.Location = new System.Drawing.Point(435, 533);
+            this.colorSliderVolume1.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.Minimum = new decimal(new int[] {
+            this.colorSliderVolume1.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.Name = "colorSliderBeginVolume";
-            this.colorSliderBeginVolume.ScaleDivisions = new decimal(new int[] {
+            this.colorSliderVolume1.Name = "colorSliderVolume1";
+            this.colorSliderVolume1.ScaleDivisions = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.ScaleSubDivisions = new decimal(new int[] {
+            this.colorSliderVolume1.ScaleSubDivisions = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.ShowDivisionsText = true;
-            this.colorSliderBeginVolume.ShowSmallScale = false;
-            this.colorSliderBeginVolume.Size = new System.Drawing.Size(382, 31);
-            this.colorSliderBeginVolume.SmallChange = new decimal(new int[] {
+            this.colorSliderVolume1.ShowDivisionsText = true;
+            this.colorSliderVolume1.ShowSmallScale = false;
+            this.colorSliderVolume1.Size = new System.Drawing.Size(382, 31);
+            this.colorSliderVolume1.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.TabIndex = 142;
-            this.colorSliderBeginVolume.Text = "colorSlider5";
-            this.colorSliderBeginVolume.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderBeginVolume.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderBeginVolume.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
-            this.colorSliderBeginVolume.ThumbSize = new System.Drawing.Size(16, 16);
-            this.colorSliderBeginVolume.TickAdd = 0F;
-            this.colorSliderBeginVolume.TickColor = System.Drawing.Color.White;
-            this.colorSliderBeginVolume.TickDivide = 0F;
-            this.colorSliderBeginVolume.Value = new decimal(new int[] {
+            this.colorSliderVolume1.TabIndex = 142;
+            this.colorSliderVolume1.Text = "colorSlider5";
+            this.colorSliderVolume1.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume1.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderVolume1.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
+            this.colorSliderVolume1.ThumbSize = new System.Drawing.Size(16, 16);
+            this.colorSliderVolume1.TickAdd = 0F;
+            this.colorSliderVolume1.TickColor = System.Drawing.Color.White;
+            this.colorSliderVolume1.TickDivide = 0F;
+            this.colorSliderVolume1.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.colorSliderBeginVolume.ValueChanged += new System.EventHandler(this.colorSliderBeginVolume_ValueChanged);
+            this.colorSliderVolume1.ValueChanged += new System.EventHandler(this.colorSliderBeginVolume_ValueChanged);
             // 
             // labelVolumeMin
             // 
@@ -379,7 +386,7 @@ namespace SynthAnvil
             this.buttonDecreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDecreasing.ForeColor = System.Drawing.Color.Black;
             this.buttonDecreasing.HorizontalGradient = false;
-            this.buttonDecreasing.Location = new System.Drawing.Point(22, 267);
+            this.buttonDecreasing.Location = new System.Drawing.Point(22, 90);
             this.buttonDecreasing.Name = "buttonDecreasing";
             this.buttonDecreasing.Size = new System.Drawing.Size(87, 22);
             this.buttonDecreasing.TabIndex = 158;
@@ -396,7 +403,7 @@ namespace SynthAnvil
             this.buttonIncreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncreasing.ForeColor = System.Drawing.Color.Black;
             this.buttonIncreasing.HorizontalGradient = false;
-            this.buttonIncreasing.Location = new System.Drawing.Point(22, 226);
+            this.buttonIncreasing.Location = new System.Drawing.Point(22, 60);
             this.buttonIncreasing.Name = "buttonIncreasing";
             this.buttonIncreasing.Size = new System.Drawing.Size(87, 22);
             this.buttonIncreasing.TabIndex = 157;
@@ -413,7 +420,7 @@ namespace SynthAnvil
             this.buttonFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFlat.ForeColor = System.Drawing.Color.Black;
             this.buttonFlat.HorizontalGradient = false;
-            this.buttonFlat.Location = new System.Drawing.Point(22, 185);
+            this.buttonFlat.Location = new System.Drawing.Point(22, 17);
             this.buttonFlat.Name = "buttonFlat";
             this.buttonFlat.Size = new System.Drawing.Size(87, 22);
             this.buttonFlat.TabIndex = 156;
@@ -430,7 +437,7 @@ namespace SynthAnvil
             this.buttonSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSine.ForeColor = System.Drawing.Color.Black;
             this.buttonSine.HorizontalGradient = false;
-            this.buttonSine.Location = new System.Drawing.Point(22, 68);
+            this.buttonSine.Location = new System.Drawing.Point(22, 208);
             this.buttonSine.Name = "buttonSine";
             this.buttonSine.Size = new System.Drawing.Size(87, 22);
             this.buttonSine.TabIndex = 155;
@@ -481,7 +488,7 @@ namespace SynthAnvil
             this.gradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gradientButton1.ForeColor = System.Drawing.Color.Black;
             this.gradientButton1.HorizontalGradient = false;
-            this.gradientButton1.Location = new System.Drawing.Point(22, 107);
+            this.gradientButton1.Location = new System.Drawing.Point(22, 239);
             this.gradientButton1.Name = "gradientButton1";
             this.gradientButton1.Size = new System.Drawing.Size(87, 22);
             this.gradientButton1.TabIndex = 161;
@@ -498,7 +505,7 @@ namespace SynthAnvil
             this.gradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gradientButton2.ForeColor = System.Drawing.Color.Black;
             this.gradientButton2.HorizontalGradient = false;
-            this.gradientButton2.Location = new System.Drawing.Point(22, 144);
+            this.gradientButton2.Location = new System.Drawing.Point(22, 270);
             this.gradientButton2.Name = "gradientButton2";
             this.gradientButton2.Size = new System.Drawing.Size(87, 22);
             this.gradientButton2.TabIndex = 162;
@@ -506,10 +513,118 @@ namespace SynthAnvil
             this.gradientButton2.UseVisualStyleBackColor = true;
             this.gradientButton2.Click += new System.EventHandler(this.gradientButton2_Click);
             // 
+            // textBoxVolume1
+            // 
+            this.textBoxVolume1.Location = new System.Drawing.Point(905, 536);
+            this.textBoxVolume1.Name = "textBoxVolume1";
+            this.textBoxVolume1.Size = new System.Drawing.Size(63, 20);
+            this.textBoxVolume1.TabIndex = 163;
+            this.textBoxVolume1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume1_KeyUp);
+            // 
+            // textBoxVolume2
+            // 
+            this.textBoxVolume2.Location = new System.Drawing.Point(905, 583);
+            this.textBoxVolume2.Name = "textBoxVolume2";
+            this.textBoxVolume2.Size = new System.Drawing.Size(63, 20);
+            this.textBoxVolume2.TabIndex = 164;
+            this.textBoxVolume2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume2_KeyUp);
+            // 
+            // gradientButton3
+            // 
+            this.gradientButton3.Active = false;
+            this.gradientButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton3.FlatAppearance.BorderSize = 2;
+            this.gradientButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton3.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton3.HorizontalGradient = false;
+            this.gradientButton3.Location = new System.Drawing.Point(22, 123);
+            this.gradientButton3.Name = "gradientButton3";
+            this.gradientButton3.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton3.TabIndex = 165;
+            this.gradientButton3.Text = "Inc -> Dec";
+            this.gradientButton3.UseVisualStyleBackColor = true;
+            this.gradientButton3.Click += new System.EventHandler(this.gradientButton3_Click);
+            // 
+            // gradientButton4
+            // 
+            this.gradientButton4.Active = false;
+            this.gradientButton4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton4.FlatAppearance.BorderSize = 2;
+            this.gradientButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton4.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton4.HorizontalGradient = false;
+            this.gradientButton4.Location = new System.Drawing.Point(22, 155);
+            this.gradientButton4.Name = "gradientButton4";
+            this.gradientButton4.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton4.TabIndex = 166;
+            this.gradientButton4.Text = "Dec -> Inc";
+            this.gradientButton4.UseVisualStyleBackColor = true;
+            this.gradientButton4.Click += new System.EventHandler(this.gradientButton4_Click);
+            // 
+            // gradientButton5
+            // 
+            this.gradientButton5.Active = false;
+            this.gradientButton5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton5.FlatAppearance.BorderSize = 2;
+            this.gradientButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton5.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton5.HorizontalGradient = false;
+            this.gradientButton5.Location = new System.Drawing.Point(22, 301);
+            this.gradientButton5.Name = "gradientButton5";
+            this.gradientButton5.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton5.TabIndex = 167;
+            this.gradientButton5.Text = "4x Sine";
+            this.gradientButton5.UseVisualStyleBackColor = true;
+            this.gradientButton5.Click += new System.EventHandler(this.gradientButton5_Click);
+            // 
+            // gradientButton6
+            // 
+            this.gradientButton6.Active = false;
+            this.gradientButton6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton6.FlatAppearance.BorderSize = 2;
+            this.gradientButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton6.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton6.HorizontalGradient = false;
+            this.gradientButton6.Location = new System.Drawing.Point(22, 332);
+            this.gradientButton6.Name = "gradientButton6";
+            this.gradientButton6.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton6.TabIndex = 168;
+            this.gradientButton6.Text = "5x Sine";
+            this.gradientButton6.UseVisualStyleBackColor = true;
+            this.gradientButton6.Click += new System.EventHandler(this.gradientButton6_Click);
+            // 
+            // gradientButton7
+            // 
+            this.gradientButton7.Active = false;
+            this.gradientButton7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton7.FlatAppearance.BorderSize = 2;
+            this.gradientButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton7.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton7.HorizontalGradient = false;
+            this.gradientButton7.Location = new System.Drawing.Point(22, 363);
+            this.gradientButton7.Name = "gradientButton7";
+            this.gradientButton7.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton7.TabIndex = 169;
+            this.gradientButton7.Text = "6x Sine";
+            this.gradientButton7.UseVisualStyleBackColor = true;
+            this.gradientButton7.Click += new System.EventHandler(this.gradientButton7_Click);
+            // 
             // FormVolume
             // 
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1226, 686);
+            this.Controls.Add(this.gradientButton7);
+            this.Controls.Add(this.gradientButton6);
+            this.Controls.Add(this.gradientButton5);
+            this.Controls.Add(this.gradientButton4);
+            this.Controls.Add(this.gradientButton3);
+            this.Controls.Add(this.textBoxVolume2);
+            this.Controls.Add(this.textBoxVolume1);
             this.Controls.Add(this.gradientButton2);
             this.Controls.Add(this.gradientButton1);
             this.Controls.Add(this.buttonCancel);
@@ -528,8 +643,8 @@ namespace SynthAnvil
             this.Controls.Add(this.buttonEndVolMinus1);
             this.Controls.Add(this.buttonVolumeMinus10);
             this.Controls.Add(this.buttonVolumeMinus1);
-            this.Controls.Add(this.colorSliderEndVolume);
-            this.Controls.Add(this.colorSliderBeginVolume);
+            this.Controls.Add(this.colorSliderVolume2);
+            this.Controls.Add(this.colorSliderVolume1);
             this.Controls.Add(this.labelVolumeMin);
             this.Controls.Add(this.labelVolumeMax);
             this.Controls.Add(this.label11);
@@ -556,8 +671,8 @@ namespace SynthAnvil
         private CustomControls.GradientButton buttonEndVolMinus1;
         private CustomControls.GradientButton buttonVolumeMinus10;
         private CustomControls.GradientButton buttonVolumeMinus1;
-        private ColorSlider.ColorSlider colorSliderEndVolume;
-        private ColorSlider.ColorSlider colorSliderBeginVolume;
+        private ColorSlider.ColorSlider colorSliderVolume2;
+        private ColorSlider.ColorSlider colorSliderVolume1;
         private System.Windows.Forms.Label labelVolumeMin;
         private System.Windows.Forms.Label labelVolumeMax;
         private System.Windows.Forms.Label label11;
@@ -571,5 +686,12 @@ namespace SynthAnvil
         private CustomControls.GradientButton buttonApply;
         private CustomControls.GradientButton gradientButton1;
         private CustomControls.GradientButton gradientButton2;
+        private System.Windows.Forms.TextBox textBoxVolume1;
+        private System.Windows.Forms.TextBox textBoxVolume2;
+        private CustomControls.GradientButton gradientButton3;
+        private CustomControls.GradientButton gradientButton4;
+        private CustomControls.GradientButton gradientButton5;
+        private CustomControls.GradientButton gradientButton6;
+        private CustomControls.GradientButton gradientButton7;
     }
 }

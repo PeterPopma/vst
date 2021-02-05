@@ -207,6 +207,15 @@ namespace SynthAnvil
                 labelFrequencyMin.Text = convertValueToFrequency(colorSliderFrequency1.Value).ToString("0.00");
                 labelFrequencyMax.Text = convertValueToFrequency(colorSliderFrequency2.Value).ToString("0.00");
             }
+
+            if (textBoxFrequency1.Text.Length==0 || (!Convert.ToDouble(textBoxFrequency1.Text).Equals(convertValueToFrequency(colorSliderFrequency1.Value))))
+            {
+                textBoxFrequency1.Text = convertValueToFrequency(colorSliderFrequency1.Value).ToString("0.00");
+            }
+            if (textBoxFrequency2.Text.Length == 0 || (!Convert.ToDouble(textBoxFrequency2.Text).Equals(convertValueToFrequency(colorSliderFrequency2.Value))))
+            {
+                textBoxFrequency2.Text = convertValueToFrequency(colorSliderFrequency2.Value).ToString("0.00");
+            }
         }
 
         private void buttonSine_Click(object sender, EventArgs e)
@@ -317,6 +326,89 @@ namespace SynthAnvil
             }
         }
 
+        private void textBoxFrequency1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBoxFrequency2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4XSine_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 8 * Math.PI) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE + SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
+
+        private void button5XSine_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 10 * Math.PI) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE + SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
+
+        private void gradientButton1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length / 2; i++)
+            {
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS - i*2) / (double)SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE);
+            }
+            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((i-WaveData.Length /2) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE)/ (WaveData.Length / 2));
+            }
+            Refresh();
+        }
+
+        private void textBoxFrequency1_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                colorSliderFrequency1.Value = convertFrequencyToValue(Convert.ToDouble(textBoxFrequency1.Text));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void textBoxFrequency2_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                colorSliderFrequency2.Value = convertFrequencyToValue(Convert.ToDouble(textBoxFrequency2.Text));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void gradientButton2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length / 2; i++)
+            {
+                WaveData[i] = (int)(((i) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE) / (WaveData.Length / 2));
+            }
+            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE);
+            }
+            Refresh();
+        }
+
+        private void gradientButton3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 12 * Math.PI) * SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE + SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
     }
 }

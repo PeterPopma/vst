@@ -146,8 +146,8 @@ namespace SynthAnvil
                 }
             }
 
-            colorSliderBeginVolume.Value = myParent.SynthGenerator.CurrentWave.MinVolume;
-            colorSliderEndVolume.Value = myParent.SynthGenerator.CurrentWave.MaxVolume;
+            colorSliderVolume1.Value = myParent.SynthGenerator.CurrentWave.MinVolume;
+            colorSliderVolume2.Value = myParent.SynthGenerator.CurrentWave.MaxVolume;
 
             pictureBoxCustomWave.Paint += new PaintEventHandler(PictureBoxPaint);
             pictureBoxCustomWave.Refresh();
@@ -214,80 +214,82 @@ namespace SynthAnvil
 
         private void buttonVolumeMinus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderBeginVolume.Value > 0)
+            if (colorSliderVolume1.Value > 0)
             {
-                colorSliderBeginVolume.Value -= 1;
+                colorSliderVolume1.Value -= 1;
             }
         }
 
         private void buttonVolumeMinus10_Click(object sender, EventArgs e)
         {
-            if (colorSliderBeginVolume.Value > 9)
+            if (colorSliderVolume1.Value > 9)
             {
-                colorSliderBeginVolume.Value -= 10;
+                colorSliderVolume1.Value -= 10;
             }
         }
 
         private void buttonEndVolMinus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderEndVolume.Value > 0)
+            if (colorSliderVolume2.Value > 0)
             {
-                colorSliderEndVolume.Value -= 1;
+                colorSliderVolume2.Value -= 1;
             }
         }
 
         private void buttonEndVolMinus10_Click(object sender, EventArgs e)
         {
-            if (colorSliderEndVolume.Value > 9)
+            if (colorSliderVolume2.Value > 9)
             {
-                colorSliderEndVolume.Value -= 10;
+                colorSliderVolume2.Value -= 10;
             }
         }
 
         private void buttonEndVolPlus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderEndVolume.Value < colorSliderEndVolume.Maximum)
+            if (colorSliderVolume2.Value < colorSliderVolume2.Maximum)
             {
-                colorSliderEndVolume.Value += 1;
+                colorSliderVolume2.Value += 1;
             }
         }
 
         private void buttonEndVolPlus10_Click(object sender, EventArgs e)
         {
-            if (colorSliderEndVolume.Value < colorSliderEndVolume.Maximum - 9)
+            if (colorSliderVolume2.Value < colorSliderVolume2.Maximum - 9)
             {
-                colorSliderEndVolume.Value += 10;
+                colorSliderVolume2.Value += 10;
             }
         }
 
         private void buttonVolumePlus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderBeginVolume.Value < colorSliderBeginVolume.Maximum)
+            if (colorSliderVolume1.Value < colorSliderVolume1.Maximum)
             {
-                colorSliderBeginVolume.Value += 1;
+                colorSliderVolume1.Value += 1;
             }
         }
 
         private void buttonVolumePlus10_Click(object sender, EventArgs e)
         {
-            if (colorSliderBeginVolume.Value < colorSliderBeginVolume.Maximum - 9)
+            if (colorSliderVolume1.Value < colorSliderVolume1.Maximum - 9)
             {
-                colorSliderBeginVolume.Value += 10;
+                colorSliderVolume1.Value += 10;
             }
         }
 
         private void UpdateVolumeLabels()
         {
-            if (colorSliderBeginVolume.Value>colorSliderEndVolume.Value)
+            if (colorSliderVolume1.Value>colorSliderVolume2.Value)
             {
-                labelVolumeMin.Text = colorSliderEndVolume.Value.ToString();
-                labelVolumeMax.Text = colorSliderBeginVolume.Value.ToString();
+                labelVolumeMin.Text = colorSliderVolume2.Value.ToString();
+                labelVolumeMax.Text = colorSliderVolume1.Value.ToString();
             }
             else
             {
-                labelVolumeMin.Text = colorSliderBeginVolume.Value.ToString();
-                labelVolumeMax.Text = colorSliderEndVolume.Value.ToString();
+                labelVolumeMin.Text = colorSliderVolume1.Value.ToString();
+                labelVolumeMax.Text = colorSliderVolume2.Value.ToString();
             }
+            textBoxVolume1.Text = colorSliderVolume1.Value.ToString();
+            textBoxVolume2.Text = colorSliderVolume2.Value.ToString();
         }
 
         private void colorSliderBeginVolume_ValueChanged(object sender, EventArgs e)
@@ -298,6 +300,81 @@ namespace SynthAnvil
         private void colorSliderEndVolume_ValueChanged(object sender, EventArgs e)
         {
             UpdateVolumeLabels();
+        }
+
+        private void textBoxVolume1_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                colorSliderVolume1.Value = Convert.ToDecimal(textBoxVolume1.Text);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void textBoxVolume2_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                colorSliderVolume2.Value = Convert.ToDecimal(textBoxVolume2.Text);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void gradientButton5_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 8 * Math.PI) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE + SynthGenerator.SHAPE_VOLUME_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
+
+        private void gradientButton6_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 10 * Math.PI) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE + SynthGenerator.SHAPE_VOLUME_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
+
+        private void gradientButton7_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 12 * Math.PI) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE + SynthGenerator.SHAPE_VOLUME_MAX_VALUE)) / 2.0);
+            }
+            Refresh();
+        }
+
+        private void gradientButton3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length / 2; i++)
+            {
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_VOLUME_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
+            }
+            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((i - WaveData.Length / 2) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE) / (WaveData.Length / 2));
+            }
+            Refresh();
+        }
+
+        private void gradientButton4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length / 2; i++)
+            {
+                WaveData[i] = (int)(((i) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE) / (WaveData.Length / 2));
+            }
+            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_VOLUME_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS) * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
+            }
+            Refresh();
         }
     }
 }

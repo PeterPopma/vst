@@ -126,69 +126,9 @@ namespace SynthAnvil
             labelScale.Text = graphScale.ToString();
         }
 
-        private void buttonDecreaseFrequency_Click(object sender, EventArgs e)
-        {
-            graphPosition -= 2;
-            if (graphPosition < 0)
-            {
-                graphPosition = 0;
-            }
-            UpdateAmplitudeGraph();
-        }
-
-        private void buttonIncreaseFrequency_Click(object sender, EventArgs e)
-        {
-            graphPosition +=2;
-            if (graphPosition > LastPossiblePosition())
-            {
-                graphPosition = LastPossiblePosition();
-            }
-            UpdateAmplitudeGraph();
-        }
-
-        private void buttonDecreaseFrequencyMajor_Click(object sender, EventArgs e)
-        {
-            graphPosition -= (int)(amplitudesLeft.Length / 20.0);
-            if (graphPosition < 0)
-            {
-                graphPosition = 0;
-            }
-            UpdateAmplitudeGraph();
-        }
-
         private int LastPossiblePosition()
         {
             return (int)(amplitudesLeft.Length - (amplitudesLeft.Length / graphScale));
-        }
-
-        private void buttonIncreaseFrequencyMajor_Click(object sender, EventArgs e)
-        {
-            graphPosition += (int)(amplitudesLeft.Length / 20.0);
-            if (graphPosition > LastPossiblePosition())
-            {
-                graphPosition = LastPossiblePosition();
-            }
-            UpdateAmplitudeGraph();
-        }
-
-        private void buttonDecreaseMiddle_Click(object sender, EventArgs e)
-        {
-            graphPosition -= 100;
-            if (graphPosition < 0)
-            {
-                graphPosition = 0;
-            }
-            UpdateAmplitudeGraph();
-        }
-
-        private void buttonIncreaseMiddle_Click(object sender, EventArgs e)
-        {
-            graphPosition += 100;
-            if (graphPosition > LastPossiblePosition())
-            {
-                graphPosition = LastPossiblePosition();
-            }
-            UpdateAmplitudeGraph();
         }
 
         private void radioButtonChannelBoth_CheckedChanged(object sender, EventArgs e)
@@ -209,5 +149,64 @@ namespace SynthAnvil
             UpdateAmplitudeGraph();
         }
 
+        private void gradientButton3_Click(object sender, EventArgs e)
+        {
+            graphPosition -= (int)(amplitudesLeft.Length / 20.0);
+            if (graphPosition < 0)
+            {
+                graphPosition = 0;
+            }
+            UpdateAmplitudeGraph();
+        }
+
+        private void gradientButton4_Click(object sender, EventArgs e)
+        {
+            graphPosition -= 100;
+            if (graphPosition < 0)
+            {
+                graphPosition = 0;
+            }
+            UpdateAmplitudeGraph();
+        }
+
+        private void gradientButton5_Click(object sender, EventArgs e)
+        {
+            graphPosition -= 2;
+            if (graphPosition < 0)
+            {
+                graphPosition = 0;
+            }
+            UpdateAmplitudeGraph();
+        }
+
+        private void gradientButton6_Click(object sender, EventArgs e)
+        {
+            graphPosition += 2;
+            if (graphPosition > LastPossiblePosition())
+            {
+                graphPosition = LastPossiblePosition();
+            }
+            UpdateAmplitudeGraph();
+        }
+
+        private void gradientButton7_Click(object sender, EventArgs e)
+        {
+            graphPosition += 100;
+            if (graphPosition > LastPossiblePosition())
+            {
+                graphPosition = LastPossiblePosition();
+            }
+            UpdateAmplitudeGraph();
+        }
+
+        private void gradientButton8_Click(object sender, EventArgs e)
+        {
+            graphPosition += (int)(amplitudesLeft.Length / 20.0);
+            if (graphPosition > LastPossiblePosition())
+            {
+                graphPosition = LastPossiblePosition();
+            }
+            UpdateAmplitudeGraph();
+        }
     }
 }

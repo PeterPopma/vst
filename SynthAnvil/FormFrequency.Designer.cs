@@ -52,6 +52,13 @@ namespace SynthAnvil
             this.labelFrequencyMin = new System.Windows.Forms.Label();
             this.labelFrequencyMax = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBoxFrequency1 = new System.Windows.Forms.TextBox();
+            this.textBoxFrequency2 = new System.Windows.Forms.TextBox();
+            this.button4XSine = new SynthAnvil.CustomControls.GradientButton();
+            this.button5XSine = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton1 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton2 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton3 = new SynthAnvil.CustomControls.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFrequencyShape)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +71,7 @@ namespace SynthAnvil
             this.button3XSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3XSine.ForeColor = System.Drawing.Color.Black;
             this.button3XSine.HorizontalGradient = false;
-            this.button3XSine.Location = new System.Drawing.Point(12, 143);
+            this.button3XSine.Location = new System.Drawing.Point(12, 311);
             this.button3XSine.Name = "button3XSine";
             this.button3XSine.Size = new System.Drawing.Size(87, 22);
             this.button3XSine.TabIndex = 185;
@@ -81,7 +88,7 @@ namespace SynthAnvil
             this.Button2XSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button2XSine.ForeColor = System.Drawing.Color.Black;
             this.Button2XSine.HorizontalGradient = false;
-            this.Button2XSine.Location = new System.Drawing.Point(12, 106);
+            this.Button2XSine.Location = new System.Drawing.Point(12, 275);
             this.Button2XSine.Name = "Button2XSine";
             this.Button2XSine.Size = new System.Drawing.Size(87, 22);
             this.Button2XSine.TabIndex = 184;
@@ -132,7 +139,7 @@ namespace SynthAnvil
             this.buttonDecreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDecreasing.ForeColor = System.Drawing.Color.Black;
             this.buttonDecreasing.HorizontalGradient = false;
-            this.buttonDecreasing.Location = new System.Drawing.Point(12, 266);
+            this.buttonDecreasing.Location = new System.Drawing.Point(12, 114);
             this.buttonDecreasing.Name = "buttonDecreasing";
             this.buttonDecreasing.Size = new System.Drawing.Size(87, 22);
             this.buttonDecreasing.TabIndex = 181;
@@ -149,7 +156,7 @@ namespace SynthAnvil
             this.buttonIncreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncreasing.ForeColor = System.Drawing.Color.Black;
             this.buttonIncreasing.HorizontalGradient = false;
-            this.buttonIncreasing.Location = new System.Drawing.Point(12, 225);
+            this.buttonIncreasing.Location = new System.Drawing.Point(12, 80);
             this.buttonIncreasing.Name = "buttonIncreasing";
             this.buttonIncreasing.Size = new System.Drawing.Size(87, 22);
             this.buttonIncreasing.TabIndex = 180;
@@ -166,7 +173,7 @@ namespace SynthAnvil
             this.buttonFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFlat.ForeColor = System.Drawing.Color.Black;
             this.buttonFlat.HorizontalGradient = false;
-            this.buttonFlat.Location = new System.Drawing.Point(12, 184);
+            this.buttonFlat.Location = new System.Drawing.Point(12, 33);
             this.buttonFlat.Name = "buttonFlat";
             this.buttonFlat.Size = new System.Drawing.Size(87, 22);
             this.buttonFlat.TabIndex = 179;
@@ -183,7 +190,7 @@ namespace SynthAnvil
             this.buttonSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSine.ForeColor = System.Drawing.Color.Black;
             this.buttonSine.HorizontalGradient = false;
-            this.buttonSine.Location = new System.Drawing.Point(12, 67);
+            this.buttonSine.Location = new System.Drawing.Point(12, 240);
             this.buttonSine.Name = "buttonSine";
             this.buttonSine.Size = new System.Drawing.Size(87, 22);
             this.buttonSine.TabIndex = 178;
@@ -222,7 +229,7 @@ namespace SynthAnvil
             this.buttonFrequency2Plus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequency2Plus1.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequency2Plus1.HorizontalGradient = true;
-            this.buttonFrequency2Plus1.Location = new System.Drawing.Point(1000, 583);
+            this.buttonFrequency2Plus1.Location = new System.Drawing.Point(958, 583);
             this.buttonFrequency2Plus1.Name = "buttonFrequency2Plus1";
             this.buttonFrequency2Plus1.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequency2Plus1.TabIndex = 175;
@@ -239,7 +246,7 @@ namespace SynthAnvil
             this.buttonFrequency2Plus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequency2Plus10.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequency2Plus10.HorizontalGradient = true;
-            this.buttonFrequency2Plus10.Location = new System.Drawing.Point(1029, 583);
+            this.buttonFrequency2Plus10.Location = new System.Drawing.Point(987, 583);
             this.buttonFrequency2Plus10.Name = "buttonFrequency2Plus10";
             this.buttonFrequency2Plus10.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequency2Plus10.TabIndex = 174;
@@ -256,7 +263,7 @@ namespace SynthAnvil
             this.buttonFrequencyPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequencyPlus1.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequencyPlus1.HorizontalGradient = true;
-            this.buttonFrequencyPlus1.Location = new System.Drawing.Point(1000, 537);
+            this.buttonFrequencyPlus1.Location = new System.Drawing.Point(958, 537);
             this.buttonFrequencyPlus1.Name = "buttonFrequencyPlus1";
             this.buttonFrequencyPlus1.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequencyPlus1.TabIndex = 173;
@@ -273,7 +280,7 @@ namespace SynthAnvil
             this.buttonFrequencyPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequencyPlus10.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequencyPlus10.HorizontalGradient = true;
-            this.buttonFrequencyPlus10.Location = new System.Drawing.Point(1029, 537);
+            this.buttonFrequencyPlus10.Location = new System.Drawing.Point(987, 537);
             this.buttonFrequencyPlus10.Name = "buttonFrequencyPlus10";
             this.buttonFrequencyPlus10.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequencyPlus10.TabIndex = 172;
@@ -290,7 +297,7 @@ namespace SynthAnvil
             this.buttonFrequency2Minus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequency2Minus10.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequency2Minus10.HorizontalGradient = true;
-            this.buttonFrequency2Minus10.Location = new System.Drawing.Point(253, 583);
+            this.buttonFrequency2Minus10.Location = new System.Drawing.Point(261, 583);
             this.buttonFrequency2Minus10.Name = "buttonFrequency2Minus10";
             this.buttonFrequency2Minus10.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequency2Minus10.TabIndex = 171;
@@ -307,7 +314,7 @@ namespace SynthAnvil
             this.buttonFrequency2Minus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequency2Minus1.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequency2Minus1.HorizontalGradient = true;
-            this.buttonFrequency2Minus1.Location = new System.Drawing.Point(282, 583);
+            this.buttonFrequency2Minus1.Location = new System.Drawing.Point(290, 583);
             this.buttonFrequency2Minus1.Name = "buttonFrequency2Minus1";
             this.buttonFrequency2Minus1.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequency2Minus1.TabIndex = 170;
@@ -324,7 +331,7 @@ namespace SynthAnvil
             this.buttonFrequencyMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequencyMinus10.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequencyMinus10.HorizontalGradient = true;
-            this.buttonFrequencyMinus10.Location = new System.Drawing.Point(253, 537);
+            this.buttonFrequencyMinus10.Location = new System.Drawing.Point(261, 537);
             this.buttonFrequencyMinus10.Name = "buttonFrequencyMinus10";
             this.buttonFrequencyMinus10.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequencyMinus10.TabIndex = 169;
@@ -341,7 +348,7 @@ namespace SynthAnvil
             this.buttonFrequencyMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFrequencyMinus1.ForeColor = System.Drawing.Color.Black;
             this.buttonFrequencyMinus1.HorizontalGradient = true;
-            this.buttonFrequencyMinus1.Location = new System.Drawing.Point(282, 537);
+            this.buttonFrequencyMinus1.Location = new System.Drawing.Point(290, 537);
             this.buttonFrequencyMinus1.Name = "buttonFrequencyMinus1";
             this.buttonFrequencyMinus1.Size = new System.Drawing.Size(30, 18);
             this.buttonFrequencyMinus1.TabIndex = 168;
@@ -365,7 +372,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderFrequency2.Location = new System.Drawing.Point(340, 579);
+            this.colorSliderFrequency2.Location = new System.Drawing.Point(328, 579);
             this.colorSliderFrequency2.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -427,7 +434,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderFrequency1.Location = new System.Drawing.Point(340, 535);
+            this.colorSliderFrequency1.Location = new System.Drawing.Point(328, 535);
             this.colorSliderFrequency1.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -506,10 +513,118 @@ namespace SynthAnvil
             this.label11.TabIndex = 163;
             this.label11.Text = "frequency 1";
             // 
+            // textBoxFrequency1
+            // 
+            this.textBoxFrequency1.Location = new System.Drawing.Point(1035, 536);
+            this.textBoxFrequency1.Name = "textBoxFrequency1";
+            this.textBoxFrequency1.Size = new System.Drawing.Size(63, 20);
+            this.textBoxFrequency1.TabIndex = 186;
+            this.textBoxFrequency1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFrequency1_KeyUp);
+            // 
+            // textBoxFrequency2
+            // 
+            this.textBoxFrequency2.Location = new System.Drawing.Point(1035, 580);
+            this.textBoxFrequency2.Name = "textBoxFrequency2";
+            this.textBoxFrequency2.Size = new System.Drawing.Size(63, 20);
+            this.textBoxFrequency2.TabIndex = 187;
+            this.textBoxFrequency2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFrequency2_KeyUp);
+            // 
+            // button4XSine
+            // 
+            this.button4XSine.Active = false;
+            this.button4XSine.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button4XSine.FlatAppearance.BorderSize = 2;
+            this.button4XSine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4XSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4XSine.ForeColor = System.Drawing.Color.Black;
+            this.button4XSine.HorizontalGradient = false;
+            this.button4XSine.Location = new System.Drawing.Point(12, 346);
+            this.button4XSine.Name = "button4XSine";
+            this.button4XSine.Size = new System.Drawing.Size(87, 22);
+            this.button4XSine.TabIndex = 188;
+            this.button4XSine.Text = "4x Sine";
+            this.button4XSine.UseVisualStyleBackColor = true;
+            this.button4XSine.Click += new System.EventHandler(this.button4XSine_Click);
+            // 
+            // button5XSine
+            // 
+            this.button5XSine.Active = false;
+            this.button5XSine.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button5XSine.FlatAppearance.BorderSize = 2;
+            this.button5XSine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5XSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5XSine.ForeColor = System.Drawing.Color.Black;
+            this.button5XSine.HorizontalGradient = false;
+            this.button5XSine.Location = new System.Drawing.Point(12, 379);
+            this.button5XSine.Name = "button5XSine";
+            this.button5XSine.Size = new System.Drawing.Size(87, 22);
+            this.button5XSine.TabIndex = 189;
+            this.button5XSine.Text = "5x Sine";
+            this.button5XSine.UseVisualStyleBackColor = true;
+            this.button5XSine.Click += new System.EventHandler(this.button5XSine_Click);
+            // 
+            // gradientButton1
+            // 
+            this.gradientButton1.Active = false;
+            this.gradientButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton1.FlatAppearance.BorderSize = 2;
+            this.gradientButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton1.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton1.HorizontalGradient = false;
+            this.gradientButton1.Location = new System.Drawing.Point(12, 147);
+            this.gradientButton1.Name = "gradientButton1";
+            this.gradientButton1.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton1.TabIndex = 190;
+            this.gradientButton1.Text = "Inc -> Dec";
+            this.gradientButton1.UseVisualStyleBackColor = true;
+            this.gradientButton1.Click += new System.EventHandler(this.gradientButton1_Click);
+            // 
+            // gradientButton2
+            // 
+            this.gradientButton2.Active = false;
+            this.gradientButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton2.FlatAppearance.BorderSize = 2;
+            this.gradientButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton2.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton2.HorizontalGradient = false;
+            this.gradientButton2.Location = new System.Drawing.Point(12, 180);
+            this.gradientButton2.Name = "gradientButton2";
+            this.gradientButton2.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton2.TabIndex = 191;
+            this.gradientButton2.Text = "Dec -> Inc";
+            this.gradientButton2.UseVisualStyleBackColor = true;
+            this.gradientButton2.Click += new System.EventHandler(this.gradientButton2_Click);
+            // 
+            // gradientButton3
+            // 
+            this.gradientButton3.Active = false;
+            this.gradientButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton3.FlatAppearance.BorderSize = 2;
+            this.gradientButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton3.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton3.HorizontalGradient = false;
+            this.gradientButton3.Location = new System.Drawing.Point(12, 411);
+            this.gradientButton3.Name = "gradientButton3";
+            this.gradientButton3.Size = new System.Drawing.Size(87, 22);
+            this.gradientButton3.TabIndex = 192;
+            this.gradientButton3.Text = "6x Sine";
+            this.gradientButton3.UseVisualStyleBackColor = true;
+            this.gradientButton3.Click += new System.EventHandler(this.gradientButton3_Click);
+            // 
             // FormFrequency
             // 
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1238, 669);
+            this.Controls.Add(this.gradientButton3);
+            this.Controls.Add(this.gradientButton2);
+            this.Controls.Add(this.gradientButton1);
+            this.Controls.Add(this.button5XSine);
+            this.Controls.Add(this.button4XSine);
+            this.Controls.Add(this.textBoxFrequency2);
+            this.Controls.Add(this.textBoxFrequency1);
             this.Controls.Add(this.button3XSine);
             this.Controls.Add(this.Button2XSine);
             this.Controls.Add(this.buttonCancel);
@@ -569,5 +684,12 @@ namespace SynthAnvil
         private System.Windows.Forms.Label labelFrequencyMin;
         private System.Windows.Forms.Label labelFrequencyMax;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxFrequency1;
+        private System.Windows.Forms.TextBox textBoxFrequency2;
+        private CustomControls.GradientButton button4XSine;
+        private CustomControls.GradientButton button5XSine;
+        private CustomControls.GradientButton gradientButton1;
+        private CustomControls.GradientButton gradientButton2;
+        private CustomControls.GradientButton gradientButton3;
     }
 }

@@ -29,9 +29,7 @@ C:\Projects\vst2\SynthAnvil\obj\Debug\SynthAnvil.pdb
 E:\Projects\vst\SynthAnvil\bin\Debug\SynthAnvil.exe.config
 E:\Projects\vst\SynthAnvil\bin\Debug\SynthAnvil.exe
 E:\Projects\vst\SynthAnvil\bin\Debug\SynthAnvil.pdb
-E:\Projects\vst\SynthAnvil\bin\Debug\ColorSlider.dll
 E:\Projects\vst\SynthAnvil\bin\Debug\NAudio.dll
-E:\Projects\vst\SynthAnvil\bin\Debug\ColorSlider.pdb
 E:\Projects\vst\SynthAnvil\bin\Debug\NAudio.xml
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.csprojAssemblyReference.cache
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormAmplitudeChart.resources
@@ -46,3 +44,5 @@ E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.exe
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.pdb
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormFrequency.resources
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormVolume.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\ColorSlider.ColorSlider.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\ColorSlider.ColorSlider2.resources

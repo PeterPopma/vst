@@ -32,20 +32,20 @@ namespace SynthAnvil
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartFFT = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonNextFFTPeriod = new System.Windows.Forms.Button();
-            this.buttonPreviousFFTPeriod = new System.Windows.Forms.Button();
             this.labelFFTPeriod = new System.Windows.Forms.Label();
             this.comboBoxFFTWindow = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelScale = new System.Windows.Forms.Label();
-            this.buttonDecreaseFrequency = new System.Windows.Forms.Button();
-            this.buttonIncreaseFrequency = new System.Windows.Forms.Button();
             this.labelFrequencyRange = new System.Windows.Forms.Label();
-            this.buttonDecreaseFrequencyMajor = new System.Windows.Forms.Button();
-            this.buttonIncreaseFrequencyMajor = new System.Windows.Forms.Button();
-            this.buttonDecreaseMiddle = new System.Windows.Forms.Button();
-            this.buttonIncreaseMiddle = new System.Windows.Forms.Button();
+            this.gradientButton8 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton7 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton6 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton5 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton4 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton3 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton2 = new SynthAnvil.CustomControls.GradientButton();
+            this.gradientButton1 = new SynthAnvil.CustomControls.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.chartFFT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,26 +84,6 @@ namespace SynthAnvil
             this.chartFFT.TabIndex = 0;
             this.chartFFT.Text = "chartFFT";
             this.chartFFT.Click += new System.EventHandler(this.chartFFT_Click);
-            // 
-            // buttonNextFFTPeriod
-            // 
-            this.buttonNextFFTPeriod.Location = new System.Drawing.Point(726, 22);
-            this.buttonNextFFTPeriod.Name = "buttonNextFFTPeriod";
-            this.buttonNextFFTPeriod.Size = new System.Drawing.Size(102, 27);
-            this.buttonNextFFTPeriod.TabIndex = 1;
-            this.buttonNextFFTPeriod.Text = ">>";
-            this.buttonNextFFTPeriod.UseVisualStyleBackColor = true;
-            this.buttonNextFFTPeriod.Click += new System.EventHandler(this.buttonNextFFTPeriod_Click);
-            // 
-            // buttonPreviousFFTPeriod
-            // 
-            this.buttonPreviousFFTPeriod.Location = new System.Drawing.Point(422, 22);
-            this.buttonPreviousFFTPeriod.Name = "buttonPreviousFFTPeriod";
-            this.buttonPreviousFFTPeriod.Size = new System.Drawing.Size(102, 27);
-            this.buttonPreviousFFTPeriod.TabIndex = 2;
-            this.buttonPreviousFFTPeriod.Text = "<<";
-            this.buttonPreviousFFTPeriod.UseVisualStyleBackColor = true;
-            this.buttonPreviousFFTPeriod.Click += new System.EventHandler(this.buttonPreviousFFTPeriod_Click);
             // 
             // labelFFTPeriod
             // 
@@ -176,26 +156,6 @@ namespace SynthAnvil
             this.labelScale.TabIndex = 7;
             this.labelScale.Text = "1";
             // 
-            // buttonDecreaseFrequency
-            // 
-            this.buttonDecreaseFrequency.Location = new System.Drawing.Point(540, 763);
-            this.buttonDecreaseFrequency.Name = "buttonDecreaseFrequency";
-            this.buttonDecreaseFrequency.Size = new System.Drawing.Size(66, 27);
-            this.buttonDecreaseFrequency.TabIndex = 8;
-            this.buttonDecreaseFrequency.Text = "<";
-            this.buttonDecreaseFrequency.UseVisualStyleBackColor = true;
-            this.buttonDecreaseFrequency.Click += new System.EventHandler(this.buttonDecreaseFrequency_Click);
-            // 
-            // buttonIncreaseFrequency
-            // 
-            this.buttonIncreaseFrequency.Location = new System.Drawing.Point(788, 762);
-            this.buttonIncreaseFrequency.Name = "buttonIncreaseFrequency";
-            this.buttonIncreaseFrequency.Size = new System.Drawing.Size(65, 27);
-            this.buttonIncreaseFrequency.TabIndex = 9;
-            this.buttonIncreaseFrequency.Text = ">";
-            this.buttonIncreaseFrequency.UseVisualStyleBackColor = true;
-            this.buttonIncreaseFrequency.Click += new System.EventHandler(this.buttonIncreaseFrequency_Click);
-            // 
             // labelFrequencyRange
             // 
             this.labelFrequencyRange.AutoSize = true;
@@ -210,67 +170,163 @@ namespace SynthAnvil
             this.labelFrequencyRange.Text = "xxxxxxxxxxxxxxxxxxxxx";
             this.labelFrequencyRange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonDecreaseFrequencyMajor
+            // gradientButton8
             // 
-            this.buttonDecreaseFrequencyMajor.Location = new System.Drawing.Point(396, 763);
-            this.buttonDecreaseFrequencyMajor.Name = "buttonDecreaseFrequencyMajor";
-            this.buttonDecreaseFrequencyMajor.Size = new System.Drawing.Size(64, 27);
-            this.buttonDecreaseFrequencyMajor.TabIndex = 11;
-            this.buttonDecreaseFrequencyMajor.Text = "<<<";
-            this.buttonDecreaseFrequencyMajor.UseVisualStyleBackColor = true;
-            this.buttonDecreaseFrequencyMajor.Click += new System.EventHandler(this.buttonDecreaseFrequencyMajor_Click);
+            this.gradientButton8.Active = false;
+            this.gradientButton8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton8.FlatAppearance.BorderSize = 2;
+            this.gradientButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton8.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton8.HorizontalGradient = false;
+            this.gradientButton8.Location = new System.Drawing.Point(933, 764);
+            this.gradientButton8.Name = "gradientButton8";
+            this.gradientButton8.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton8.TabIndex = 130;
+            this.gradientButton8.Text = ">>>";
+            this.gradientButton8.UseVisualStyleBackColor = true;
+            this.gradientButton8.Click += new System.EventHandler(this.gradientButton8_Click);
             // 
-            // buttonIncreaseFrequencyMajor
+            // gradientButton7
             // 
-            this.buttonIncreaseFrequencyMajor.Location = new System.Drawing.Point(931, 762);
-            this.buttonIncreaseFrequencyMajor.Name = "buttonIncreaseFrequencyMajor";
-            this.buttonIncreaseFrequencyMajor.Size = new System.Drawing.Size(67, 27);
-            this.buttonIncreaseFrequencyMajor.TabIndex = 12;
-            this.buttonIncreaseFrequencyMajor.Text = ">>>";
-            this.buttonIncreaseFrequencyMajor.UseVisualStyleBackColor = true;
-            this.buttonIncreaseFrequencyMajor.Click += new System.EventHandler(this.buttonIncreaseFrequencyMajor_Click);
+            this.gradientButton7.Active = false;
+            this.gradientButton7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton7.FlatAppearance.BorderSize = 2;
+            this.gradientButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton7.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton7.HorizontalGradient = false;
+            this.gradientButton7.Location = new System.Drawing.Point(861, 764);
+            this.gradientButton7.Name = "gradientButton7";
+            this.gradientButton7.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton7.TabIndex = 129;
+            this.gradientButton7.Text = ">>";
+            this.gradientButton7.UseVisualStyleBackColor = true;
+            this.gradientButton7.Click += new System.EventHandler(this.gradientButton7_Click);
             // 
-            // buttonDecreaseMiddle
+            // gradientButton6
             // 
-            this.buttonDecreaseMiddle.Location = new System.Drawing.Point(467, 763);
-            this.buttonDecreaseMiddle.Name = "buttonDecreaseMiddle";
-            this.buttonDecreaseMiddle.Size = new System.Drawing.Size(66, 27);
-            this.buttonDecreaseMiddle.TabIndex = 13;
-            this.buttonDecreaseMiddle.Text = "<<";
-            this.buttonDecreaseMiddle.UseVisualStyleBackColor = true;
-            this.buttonDecreaseMiddle.Click += new System.EventHandler(this.buttonDecreaseMiddle_Click);
+            this.gradientButton6.Active = false;
+            this.gradientButton6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton6.FlatAppearance.BorderSize = 2;
+            this.gradientButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton6.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton6.HorizontalGradient = false;
+            this.gradientButton6.Location = new System.Drawing.Point(789, 764);
+            this.gradientButton6.Name = "gradientButton6";
+            this.gradientButton6.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton6.TabIndex = 128;
+            this.gradientButton6.Text = ">";
+            this.gradientButton6.UseVisualStyleBackColor = true;
+            this.gradientButton6.Click += new System.EventHandler(this.gradientButton6_Click);
             // 
-            // buttonIncreaseMiddle
+            // gradientButton5
             // 
-            this.buttonIncreaseMiddle.Location = new System.Drawing.Point(860, 762);
-            this.buttonIncreaseMiddle.Name = "buttonIncreaseMiddle";
-            this.buttonIncreaseMiddle.Size = new System.Drawing.Size(65, 27);
-            this.buttonIncreaseMiddle.TabIndex = 14;
-            this.buttonIncreaseMiddle.Text = ">>";
-            this.buttonIncreaseMiddle.UseVisualStyleBackColor = true;
-            this.buttonIncreaseMiddle.Click += new System.EventHandler(this.buttonIncreaseMiddle_Click);
+            this.gradientButton5.Active = false;
+            this.gradientButton5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton5.FlatAppearance.BorderSize = 2;
+            this.gradientButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton5.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton5.HorizontalGradient = false;
+            this.gradientButton5.Location = new System.Drawing.Point(540, 764);
+            this.gradientButton5.Name = "gradientButton5";
+            this.gradientButton5.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton5.TabIndex = 127;
+            this.gradientButton5.Text = "<";
+            this.gradientButton5.UseVisualStyleBackColor = true;
+            this.gradientButton5.Click += new System.EventHandler(this.gradientButton5_Click);
             // 
-            // FormFFT
+            // gradientButton4
+            // 
+            this.gradientButton4.Active = false;
+            this.gradientButton4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton4.FlatAppearance.BorderSize = 2;
+            this.gradientButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton4.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton4.HorizontalGradient = false;
+            this.gradientButton4.Location = new System.Drawing.Point(468, 764);
+            this.gradientButton4.Name = "gradientButton4";
+            this.gradientButton4.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton4.TabIndex = 126;
+            this.gradientButton4.Text = "<<";
+            this.gradientButton4.UseVisualStyleBackColor = true;
+            this.gradientButton4.Click += new System.EventHandler(this.gradientButton4_Click);
+            // 
+            // gradientButton3
+            // 
+            this.gradientButton3.Active = false;
+            this.gradientButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton3.FlatAppearance.BorderSize = 2;
+            this.gradientButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton3.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton3.HorizontalGradient = false;
+            this.gradientButton3.Location = new System.Drawing.Point(396, 764);
+            this.gradientButton3.Name = "gradientButton3";
+            this.gradientButton3.Size = new System.Drawing.Size(64, 24);
+            this.gradientButton3.TabIndex = 125;
+            this.gradientButton3.Text = "<<<";
+            this.gradientButton3.UseVisualStyleBackColor = true;
+            this.gradientButton3.Click += new System.EventHandler(this.gradientButton3_Click);
+            // 
+            // gradientButton2
+            // 
+            this.gradientButton2.Active = false;
+            this.gradientButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton2.FlatAppearance.BorderSize = 2;
+            this.gradientButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton2.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton2.HorizontalGradient = false;
+            this.gradientButton2.Location = new System.Drawing.Point(426, 26);
+            this.gradientButton2.Name = "gradientButton2";
+            this.gradientButton2.Size = new System.Drawing.Size(98, 24);
+            this.gradientButton2.TabIndex = 124;
+            this.gradientButton2.Text = "<<";
+            this.gradientButton2.UseVisualStyleBackColor = true;
+            this.gradientButton2.Click += new System.EventHandler(this.gradientButton2_Click);
+            // 
+            // gradientButton1
+            // 
+            this.gradientButton1.Active = false;
+            this.gradientButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.gradientButton1.FlatAppearance.BorderSize = 2;
+            this.gradientButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientButton1.ForeColor = System.Drawing.Color.Black;
+            this.gradientButton1.HorizontalGradient = false;
+            this.gradientButton1.Location = new System.Drawing.Point(726, 26);
+            this.gradientButton1.Name = "gradientButton1";
+            this.gradientButton1.Size = new System.Drawing.Size(98, 24);
+            this.gradientButton1.TabIndex = 123;
+            this.gradientButton1.Text = ">>";
+            this.gradientButton1.UseVisualStyleBackColor = true;
+            this.gradientButton1.Click += new System.EventHandler(this.gradientButton1_Click);
+            // 
+            // FormFFTChart
             // 
             this.ClientSize = new System.Drawing.Size(1335, 812);
-            this.Controls.Add(this.buttonIncreaseMiddle);
-            this.Controls.Add(this.buttonDecreaseMiddle);
-            this.Controls.Add(this.buttonIncreaseFrequencyMajor);
-            this.Controls.Add(this.buttonDecreaseFrequencyMajor);
+            this.Controls.Add(this.gradientButton8);
+            this.Controls.Add(this.gradientButton7);
+            this.Controls.Add(this.gradientButton6);
+            this.Controls.Add(this.gradientButton5);
+            this.Controls.Add(this.gradientButton4);
+            this.Controls.Add(this.gradientButton3);
+            this.Controls.Add(this.gradientButton2);
+            this.Controls.Add(this.gradientButton1);
             this.Controls.Add(this.labelFrequencyRange);
-            this.Controls.Add(this.buttonIncreaseFrequency);
-            this.Controls.Add(this.buttonDecreaseFrequency);
             this.Controls.Add(this.labelScale);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxFFTWindow);
             this.Controls.Add(this.labelFFTPeriod);
-            this.Controls.Add(this.buttonPreviousFFTPeriod);
-            this.Controls.Add(this.buttonNextFFTPeriod);
             this.Controls.Add(this.chartFFT);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormFFT";
+            this.Name = "FormFFTChart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frequency Analysis";
             this.Load += new System.EventHandler(this.FormFFT_Load);
@@ -283,19 +339,19 @@ namespace SynthAnvil
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFFT;
-        private System.Windows.Forms.Button buttonNextFFTPeriod;
-        private System.Windows.Forms.Button buttonPreviousFFTPeriod;
         private System.Windows.Forms.Label labelFFTPeriod;
         private System.Windows.Forms.ComboBox comboBoxFFTWindow;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelScale;
-        private System.Windows.Forms.Button buttonDecreaseFrequency;
-        private System.Windows.Forms.Button buttonIncreaseFrequency;
         private System.Windows.Forms.Label labelFrequencyRange;
-        private System.Windows.Forms.Button buttonDecreaseFrequencyMajor;
-        private System.Windows.Forms.Button buttonIncreaseFrequencyMajor;
-        private System.Windows.Forms.Button buttonDecreaseMiddle;
-        private System.Windows.Forms.Button buttonIncreaseMiddle;
+        private CustomControls.GradientButton gradientButton1;
+        private CustomControls.GradientButton gradientButton2;
+        private CustomControls.GradientButton gradientButton3;
+        private CustomControls.GradientButton gradientButton4;
+        private CustomControls.GradientButton gradientButton5;
+        private CustomControls.GradientButton gradientButton6;
+        private CustomControls.GradientButton gradientButton7;
+        private CustomControls.GradientButton gradientButton8;
     }
 }

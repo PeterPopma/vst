@@ -20,10 +20,10 @@ namespace SynthAnvil.Synth
         public const int SHAPE_WAVE_MAX_VALUE = 327;
         public const int SHAPE_VOLUME_MAX_VALUE = 500;
         public const int SHAPE_FREQUENCY_MAX_VALUE = 500;
+        public const int MAX_VOLUME = 500;
         public const double SAMPLES_PER_SECOND = 44100.0;
         private const int MAX_AMPLITUDE = 32767;     // Max amplitude for 16-bit audio
         private const int GRAPH_POINTS_PLOTTED = 300;
-        private const double MAX_VOLUME = 1000.0;
         private const string DEFAULT_WAVE_NAME = "Wave";
 
         private float envelopAttack = 0;
@@ -239,14 +239,21 @@ namespace SynthAnvil.Synth
 
         private double CalculateCurrentFrequency(uint currentPosition, WaveInfo waveInfo)
         {
-            return (waveInfo.MinFrequency * (1 - currentPosition / (double)waveInfo.NumSamples())) + (waveInfo.MaxFrequency * currentPosition / (double)waveInfo.NumSamples());
+            int position = (int)(currentPosition / (double)waveInfo.NumSamples() * SHAPE_FREQUENCY_NUMPOINTS);
+
+            // a value of 0 means max. frequency, a value of SHAPE_FREQUENCY_MAX_VALUE means min. frequency.
+            return (waveInfo.MaxFrequency * waveInfo.ShapeFrequency[position] + (waveInfo.MinFrequency * (SHAPE_FREQUENCY_MAX_VALUE-waveInfo.ShapeFrequency[position]))) / (double)SHAPE_FREQUENCY_MAX_VALUE;
         }
 
         // Calculates the current volume
-        // currentPosition = current position regardless the number of channels
+        // currentPosition = current sample position regardless the number of channels
+        // returns the volume as a value between 0 and 1
         private double CalculateCurrentVolume(uint currentPosition, WaveInfo waveInfo)
         {
-            return ((waveInfo.MinVolume * (1 - currentPosition / (double)waveInfo.NumSamples())) + (waveInfo.MaxVolume * currentPosition / (double)waveInfo.NumSamples())) / MAX_VOLUME;
+            int position = (int)(currentPosition / (double)waveInfo.NumSamples() * SHAPE_VOLUME_NUMPOINTS);
+
+            // a value of 0 means max. volume, a value of SHAPE_VOLUME_MAX_VALUE means min. volume.
+            return (waveInfo.MaxVolume * waveInfo.ShapeVolume[position] + (waveInfo.MinVolume * (SHAPE_VOLUME_MAX_VALUE - waveInfo.ShapeVolume[position]))) / (double)(SHAPE_VOLUME_MAX_VALUE * MAX_VOLUME);
         }
 
         // Apply [wave] volume to [waveData]
@@ -289,7 +296,7 @@ namespace SynthAnvil.Synth
                 }
             }
 
-//            NormalizeVolume(tempData);
+            NormalizeVolume(tempData);
             ApplyAHDSR(tempData);
         }
 
@@ -762,6 +769,8 @@ namespace SynthAnvil.Synth
             newWave.WaveData = new double[currentWave.WaveData.Length];
             newWave.WaveFileData = currentWave.WaveFileData.Clone() as int[];
             newWave.ShapeWave = currentWave.ShapeWave.Clone() as int[];
+            newWave.ShapeVolume = currentWave.ShapeVolume.Clone() as int[];
+            newWave.ShapeFrequency = currentWave.ShapeFrequency.Clone() as int[];
             Waves.Add(newWave);
 
             return newWave;

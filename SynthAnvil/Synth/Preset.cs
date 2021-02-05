@@ -39,15 +39,25 @@ namespace SynthAnvil.Synth
                     file.WriteLine(waveInfo.WaveFile);
                     file.WriteLine(waveInfo.WaveForm);
                     file.WriteLine(waveInfo.Weight);
-                    file.WriteLine(waveInfo.WaveFileData.Length);
-                    for(int j = 0; j < waveInfo.WaveFileData.Length; j++)
-                    {
-                        file.WriteLine(waveInfo.WaveFileData[j]);
-                    }
                     file.WriteLine(waveInfo.ShapeWave.Length);
                     for (int j = 0; j < waveInfo.ShapeWave.Length; j++)
                     {
                         file.WriteLine(waveInfo.ShapeWave[j]);
+                    }
+                    file.WriteLine(waveInfo.ShapeFrequency.Length);
+                    for (int j = 0; j < waveInfo.ShapeFrequency.Length; j++)
+                    {
+                        file.WriteLine(waveInfo.ShapeFrequency[j]);
+                    }
+                    file.WriteLine(waveInfo.ShapeVolume.Length);
+                    for (int j = 0; j < waveInfo.ShapeVolume.Length; j++)
+                    {
+                        file.WriteLine(waveInfo.ShapeVolume[j]);
+                    }
+                    file.WriteLine(waveInfo.WaveFileData.Length);
+                    for (int j = 0; j < waveInfo.WaveFileData.Length; j++)
+                    {
+                        file.WriteLine(waveInfo.WaveFileData[j]);
                     }
                 }
             }
@@ -79,12 +89,6 @@ namespace SynthAnvil.Synth
                     newWave.WaveForm = srFile.ReadLine();
                     newWave.Weight = int.Parse(srFile.ReadLine());
                     int length = int.Parse(srFile.ReadLine());
-                    newWave.WaveFileData = new int[length];
-                    for (int j = 0; j < length; j++)
-                    {
-                        newWave.WaveFileData[j] = int.Parse(srFile.ReadLine());
-                    }
-                    length = int.Parse(srFile.ReadLine());
                     newWave.ShapeWave = new int[length];
                     for (int j = 0; j < length; j++)
                     {
@@ -101,6 +105,12 @@ namespace SynthAnvil.Synth
                     for (int j = 0; j < length; j++)
                     {
                         newWave.ShapeVolume[j] = int.Parse(srFile.ReadLine());
+                    }
+                    length = int.Parse(srFile.ReadLine());
+                    newWave.WaveFileData = new int[length];
+                    for (int j = 0; j < length; j++)
+                    {
+                        newWave.WaveFileData[j] = int.Parse(srFile.ReadLine());
                     }
 
                     synthGenerator.Waves.Add(newWave);

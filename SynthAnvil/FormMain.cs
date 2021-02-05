@@ -571,7 +571,7 @@ namespace SynthAnvil
 
         private void listBoxWaves_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxWaves.SelectedItem != null)
+            if (listBoxWaves.SelectedItem != null && generatorEnabled)
             {
                 synthGenerator.SetCurrentWaveByName(listBoxWaves.SelectedItem.ToString());
                 synthGenerator.GenerateSound();     // redraw the graphs, etc.
@@ -606,6 +606,7 @@ namespace SynthAnvil
             {
                 synthGenerator.Waves.RemoveAt(synthGenerator.Waves.Count - 1);
             }
+            listBoxWaves.SelectedIndex = 0;
             RecreateWavesLists();
             GenerateSound();
             UpdateWaveControls();
@@ -645,7 +646,8 @@ namespace SynthAnvil
             double durationFactor = Math.Pow(((double)numericUpDownHarmDuration.Value / 100.0), harmonic_number);
             double amplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownHarmDecay.Value / 100.0), harmonic_number);
             WaveInfo newWave = synthGenerator.CloneWave(harmonic_factor, amplitudeFactor);
-            newWave.MaxVolume = (int)(amplitudeDecayFactor * newWave.MinVolume);
+            newWave.MinVolume = (int)(amplitudeDecayFactor * newWave.MinVolume);
+            newWave.MaxVolume = (int)(amplitudeDecayFactor * newWave.MaxVolume);
             newWave.SetDuration(newWave.Duration() * durationFactor);
             AddWaveToLists(newWave);
         }
@@ -850,6 +852,7 @@ namespace SynthAnvil
         {
             if (!isPlaying)
             {
+                synthGenerator.Play();
                 buttonPlay.Image = SynthAnvil.Properties.Resources.pausebutton;
                 isPlaying = true;
                 aTimer.Interval = (int)(synthGenerator.CurrentWave.Duration() * 1000);

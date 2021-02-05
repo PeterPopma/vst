@@ -48,14 +48,23 @@ namespace SynthAnvil.Synth
             this.startPosition = 0;
             this.minFrequency = 440;
             this.maxFrequency = 440;
-            this.minVolume = 255;
-            this.maxVolume = 255;
+            this.minVolume = SynthGenerator.MAX_VOLUME;
+            this.maxVolume = SynthGenerator.MAX_VOLUME;
             this.channel = 2;
             this.waveForm = "Sine";
             this.waveFile = "";
             this.waveData = new double[44100 * 2];
             this.weight = 255;
+
+            ShapeWave = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
+            ArrayUtils.Populate(ShapeWave, 0);
+            ShapeVolume = new int[SynthGenerator.SHAPE_VOLUME_NUMPOINTS];
+            ArrayUtils.Populate(ShapeVolume, SynthGenerator.SHAPE_VOLUME_MAX_VALUE / 2);
+            ShapeFrequency = new int[SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS];
+            ArrayUtils.Populate(ShapeFrequency, SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE / 2);
         }
+
+
 
         public WaveInfo(string name, int numSamples, int startPosition, double beginFrequency, double endFrequency, int beginVolume, int endVolume, int channel, string waveForm, string waveFile, int weight)
         {

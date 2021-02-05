@@ -108,7 +108,7 @@ namespace SynthAnvil
         private void FormFFT_Load(object sender, EventArgs e)
         {
             chartFFT.Cursor = new Cursor(Properties.Resources.magnifying_glass.Handle);
-            comboBoxFFTWindow.SelectedIndex = 2;
+            comboBoxFFTWindow.SelectedIndex = 5;
             UpdateFFT();
         }
 
@@ -117,22 +117,6 @@ namespace SynthAnvil
             labelFFTPeriod.Text = string.Format("{0:0.00}", startSample / 44100.0) + " s - " + string.Format("{0:0.00}", (startSample + fftWindow) / 44100.0) + " s";
             CalcFFT();
             UpdateFFTGraph();
-        }
-
-        private void buttonNextFFTPeriod_Click(object sender, EventArgs e)
-        {
-            startSample += fftWindow;
-            UpdateFFT();
-        }
-
-        private void buttonPreviousFFTPeriod_Click(object sender, EventArgs e)
-        {
-            startSample -= fftWindow;
-            if(startSample<0)
-            {
-                startSample = 0;
-            }
-            UpdateFFT();
         }
 
         private void comboBoxFFTWindow_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,27 +173,28 @@ namespace SynthAnvil
             labelScale.Text = graphScale.ToString();
         }
 
-        private void buttonDecreaseFrequency_Click(object sender, EventArgs e)
+        private int LastPossiblePosition()
         {
-            graphPosition -= 2;
-            if (graphPosition < 0)
-            {
-                graphPosition = 0;
-            }
-            UpdateFFTGraph();
+            return (int)(frequencies.Length - (frequencies.Length / graphScale));
         }
 
-        private void buttonIncreaseFrequency_Click(object sender, EventArgs e)
+        private void gradientButton2_Click(object sender, EventArgs e)
         {
-            graphPosition +=2;
-            if (graphPosition > LastPossiblePosition())
+            startSample -= fftWindow;
+            if (startSample < 0)
             {
-                graphPosition = LastPossiblePosition();
+                startSample = 0;
             }
-            UpdateFFTGraph();
+            UpdateFFT();
         }
 
-        private void buttonDecreaseFrequencyMajor_Click(object sender, EventArgs e)
+        private void gradientButton1_Click(object sender, EventArgs e)
+        {
+            startSample += fftWindow;
+            UpdateFFT();
+        }
+
+        private void gradientButton3_Click(object sender, EventArgs e)
         {
             graphPosition -= (int)(frequencies.Length / 20.0);
             if (graphPosition < 0)
@@ -219,22 +204,7 @@ namespace SynthAnvil
             UpdateFFTGraph();
         }
 
-        private int LastPossiblePosition()
-        {
-            return (int)(frequencies.Length - (frequencies.Length / graphScale));
-        }
-
-        private void buttonIncreaseFrequencyMajor_Click(object sender, EventArgs e)
-        {
-            graphPosition += (int)(frequencies.Length / 20.0);
-            if (graphPosition > LastPossiblePosition())
-            {
-                graphPosition = LastPossiblePosition();
-            }
-            UpdateFFTGraph();
-        }
-
-        private void buttonDecreaseMiddle_Click(object sender, EventArgs e)
+        private void gradientButton4_Click(object sender, EventArgs e)
         {
             graphPosition -= 100;
             if (graphPosition < 0)
@@ -244,9 +214,39 @@ namespace SynthAnvil
             UpdateFFTGraph();
         }
 
-        private void buttonIncreaseMiddle_Click(object sender, EventArgs e)
+        private void gradientButton5_Click(object sender, EventArgs e)
+        {
+            graphPosition -= 2;
+            if (graphPosition < 0)
+            {
+                graphPosition = 0;
+            }
+            UpdateFFTGraph();
+        }
+
+        private void gradientButton6_Click(object sender, EventArgs e)
+        {
+            graphPosition += 2;
+            if (graphPosition > LastPossiblePosition())
+            {
+                graphPosition = LastPossiblePosition();
+            }
+            UpdateFFTGraph();
+        }
+
+        private void gradientButton7_Click(object sender, EventArgs e)
         {
             graphPosition += 100;
+            if (graphPosition > LastPossiblePosition())
+            {
+                graphPosition = LastPossiblePosition();
+            }
+            UpdateFFTGraph();
+        }
+
+        private void gradientButton8_Click(object sender, EventArgs e)
+        {
+            graphPosition += (int)(frequencies.Length / 20.0);
             if (graphPosition > LastPossiblePosition())
             {
                 graphPosition = LastPossiblePosition();
