@@ -28,15 +28,12 @@ namespace SynthAnvil.Synth
                 for (int i = 0; i < synthGenerator.Waves.Count; i++)
                 {
                     WaveInfo waveInfo = synthGenerator.Waves[i];
-                    file.WriteLine(waveInfo.BeginFrequency);
-                    file.WriteLine(waveInfo.BeginVolume);
-                    file.WriteLine(waveInfo.BeginEndBeginFrequencyEnabled);
-                    file.WriteLine(waveInfo.BeginEndBeginVolumeEnabled);
+                    file.WriteLine(waveInfo.Name);
+                    file.WriteLine(waveInfo.MinFrequency);
+                    file.WriteLine(waveInfo.MinVolume);
                     file.WriteLine(waveInfo.Channel);
-                    file.WriteLine(waveInfo.EndFrequency);
-                    file.WriteLine(waveInfo.EndFrequencyEnabled);
-                    file.WriteLine(waveInfo.EndVolume);
-                    file.WriteLine(waveInfo.EndVolumeEnabled);
+                    file.WriteLine(waveInfo.MaxFrequency);
+                    file.WriteLine(waveInfo.MaxVolume);
                     file.WriteLine(waveInfo.NumSamples());
                     file.WriteLine(waveInfo.StartPosition);
                     file.WriteLine(waveInfo.WaveFile);
@@ -47,10 +44,10 @@ namespace SynthAnvil.Synth
                     {
                         file.WriteLine(waveInfo.WaveFileData[j]);
                     }
-                    file.WriteLine(waveInfo.WaveFormData.Length);
-                    for (int j = 0; j < waveInfo.WaveFormData.Length; j++)
+                    file.WriteLine(waveInfo.ShapeWave.Length);
+                    for (int j = 0; j < waveInfo.ShapeWave.Length; j++)
                     {
-                        file.WriteLine(waveInfo.WaveFormData[j]);
+                        file.WriteLine(waveInfo.ShapeWave[j]);
                     }
                 }
             }
@@ -70,39 +67,52 @@ namespace SynthAnvil.Synth
                 for (int i = 0; i < numWaves; i++)
                 {
                     WaveInfo newWave = new WaveInfo();
-                    newWave.Number = i;
-                    newWave.BeginFrequency = double.Parse(srFile.ReadLine());
-                    newWave.BeginVolume = int.Parse(srFile.ReadLine());
-                    newWave.BeginEndBeginFrequencyEnabled = bool.Parse(srFile.ReadLine());
-                    newWave.BeginEndBeginVolumeEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.Name = srFile.ReadLine();
+                    newWave.MinFrequency = double.Parse(srFile.ReadLine());
+                    newWave.MinVolume = int.Parse(srFile.ReadLine());
                     newWave.Channel = int.Parse(srFile.ReadLine());
-                    newWave.EndFrequency = double.Parse(srFile.ReadLine());
-                    newWave.EndFrequencyEnabled = bool.Parse(srFile.ReadLine());
-                    newWave.EndVolume = int.Parse(srFile.ReadLine());
-                    newWave.EndVolumeEnabled = bool.Parse(srFile.ReadLine());
+                    newWave.MaxFrequency = double.Parse(srFile.ReadLine());
+                    newWave.MaxVolume = int.Parse(srFile.ReadLine());
                     newWave.WaveData = new double[int.Parse(srFile.ReadLine()) * 2];
                     newWave.StartPosition = int.Parse(srFile.ReadLine());
                     newWave.WaveFile = srFile.ReadLine();
                     newWave.WaveForm = srFile.ReadLine();
                     newWave.Weight = int.Parse(srFile.ReadLine());
-                    int waveFileDataLength = int.Parse(srFile.ReadLine());
-                    newWave.WaveFileData = new int[waveFileDataLength];
-                    for (int j = 0; j < waveFileDataLength; j++)
+                    int length = int.Parse(srFile.ReadLine());
+                    newWave.WaveFileData = new int[length];
+                    for (int j = 0; j < length; j++)
                     {
                         newWave.WaveFileData[j] = int.Parse(srFile.ReadLine());
                     }
-                    int waveFormDataLength = int.Parse(srFile.ReadLine());
-                    newWave.WaveFormData = new int[waveFormDataLength];
-                    for (int j = 0; j < waveFormDataLength; j++)
+                    length = int.Parse(srFile.ReadLine());
+                    newWave.ShapeWave = new int[length];
+                    for (int j = 0; j < length; j++)
                     {
-                        newWave.WaveFormData[j] = int.Parse(srFile.ReadLine());
+                        newWave.ShapeWave[j] = int.Parse(srFile.ReadLine());
+                    }
+                    length = int.Parse(srFile.ReadLine());
+                    newWave.ShapeFrequency = new int[length];
+                    for (int j = 0; j < length; j++)
+                    {
+                        newWave.ShapeFrequency[j] = int.Parse(srFile.ReadLine());
+                    }
+                    length = int.Parse(srFile.ReadLine());
+                    newWave.ShapeVolume = new int[length];
+                    for (int j = 0; j < length; j++)
+                    {
+                        newWave.ShapeVolume[j] = int.Parse(srFile.ReadLine());
                     }
 
-                    newWave.SetName();
                     synthGenerator.Waves.Add(newWave);
                 }
+
                 synthGenerator.CurrentWave = synthGenerator.Waves.Last();
             }
+        }
+
+        public void Delete(string name)
+        {
+            File.Delete((@".\presets\" + name + ".pst"));
         }
     }
 }

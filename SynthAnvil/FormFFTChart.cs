@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SynthAnvil
 {
-    public partial class FormFFT : Form
+    public partial class FormFFTChart : Form
     {
         private FormMain myParent = null;
         int startSample = 0;
@@ -22,7 +22,7 @@ namespace SynthAnvil
         uint graphScale = 1;     // 1..1024 in steps of *2
         int graphPosition = 0;
 
-        public FormFFT()
+        public FormFFTChart()
         {
             InitializeComponent();
         }
@@ -57,7 +57,7 @@ namespace SynthAnvil
 
         private void CalcFFT()
         {
-            numSamples = myParent.SynthGenerator.FinalData.shortArray.Length / 2;
+            numSamples = myParent.SynthGenerator.TempData.Length / 2;
             frequencySpectrum = new Complex[fftWindow];
             for (int i = 0; i < fftWindow; i++)
             {
@@ -67,7 +67,7 @@ namespace SynthAnvil
                 }
                 else
                 {
-                    frequencySpectrum[i] = new Complex(myParent.SynthGenerator.FinalData.shortArray[2*(startSample + i)], 0);
+                    frequencySpectrum[i] = new Complex(myParent.SynthGenerator.TempData[2*(startSample + i)], 0);
                 }
             }
 

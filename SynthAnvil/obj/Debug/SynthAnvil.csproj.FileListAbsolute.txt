@@ -34,8 +34,9 @@ E:\Projects\vst\SynthAnvil\bin\Debug\NAudio.dll
 E:\Projects\vst\SynthAnvil\bin\Debug\ColorSlider.pdb
 E:\Projects\vst\SynthAnvil\bin\Debug\NAudio.xml
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.csprojAssemblyReference.cache
-E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormAmplitude.resources
-E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormFFT.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormAmplitudeChart.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormCustomShape.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormFFTChart.resources
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormMain.resources
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.Properties.Resources.resources
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.csproj.GenerateResource.cache
@@ -43,4 +44,5 @@ E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.csproj.CoreCompileInputs.cache
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.csproj.CopyComplete
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.exe
 E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.pdb
-E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormCustomWave.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormFrequency.resources
+E:\Projects\vst\SynthAnvil\obj\Debug\SynthAnvil.FormVolume.resources

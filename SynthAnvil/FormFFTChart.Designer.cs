@@ -1,7 +1,7 @@
 ﻿
 namespace SynthAnvil
 {
-    partial class FormFFT
+    partial class FormFFTChart
     {
         /// <summary>
         /// Required designer variable.

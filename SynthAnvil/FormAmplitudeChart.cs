@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
-using System.Numerics;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SynthAnvil
 {
-    public partial class FormAmplitude : Form
+    public partial class FormAmplitudeChart : Form
     {
         private FormMain myParent = null;
         int startSample = 0;
@@ -24,7 +18,7 @@ namespace SynthAnvil
         private const int GRAPH_POINTS_PLOTTED = 5000;
         private const double SAMPLES_PER_SECOND = 44100.0;
 
-        public FormAmplitude()
+        public FormAmplitudeChart()
         {
             InitializeComponent();
         }
@@ -59,18 +53,18 @@ namespace SynthAnvil
 
         private void UpdateWaveData()
         {
-            amplitudesLeft = new short[myParent.SynthGenerator.FinalData.shortArray.Length / 2];
-            amplitudesRight = new short[myParent.SynthGenerator.FinalData.shortArray.Length / 2];
+            amplitudesLeft = new short[myParent.SynthGenerator.TempData.Length / 2];
+            amplitudesRight = new short[myParent.SynthGenerator.TempData.Length / 2];
 
-            for (int i = 0; i < myParent.SynthGenerator.FinalData.shortArray.Length; i ++)
+            for (int i = 0; i < myParent.SynthGenerator.TempData.Length; i ++)
             {
                 if (i % 2 == 0)
                 {
-                    amplitudesLeft[i/2] = myParent.SynthGenerator.FinalData.shortArray[i];
+                    amplitudesLeft[i/2] = (short)myParent.SynthGenerator.TempData[i];
                 }
                 else
                 {
-                    amplitudesRight[i/2] = myParent.SynthGenerator.FinalData.shortArray[i];
+                    amplitudesRight[i/2] = (short)myParent.SynthGenerator.TempData[i];
                 }
             }
             labelDuration.Text = "Duration: " + string.Format("{0:0.000} s", (amplitudesLeft.Length / SAMPLES_PER_SECOND));

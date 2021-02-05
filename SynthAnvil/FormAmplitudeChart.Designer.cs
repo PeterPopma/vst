@@ -1,7 +1,7 @@
 ﻿
 namespace SynthAnvil
 {
-    partial class FormAmplitude
+    partial class FormAmplitudeChart
     {
         /// <summary>
         /// Required designer variable.

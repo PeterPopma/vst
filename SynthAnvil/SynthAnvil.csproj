@@ -55,23 +55,35 @@
     <Compile Include="CustomControls\GradientButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormAmplitude.cs">
+    <Compile Include="FormAmplitudeChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAmplitude.Designer.cs">
-      <DependentUpon>FormAmplitude.cs</DependentUpon>
+    <Compile Include="FormAmplitudeChart.Designer.cs">
+      <DependentUpon>FormAmplitudeChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomWave.cs">
+    <Compile Include="FormCustomShape.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomWave.Designer.cs">
-      <DependentUpon>FormCustomWave.cs</DependentUpon>
+    <Compile Include="FormCustomShape.Designer.cs">
+      <DependentUpon>FormCustomShape.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFFT.cs">
+    <Compile Include="FormFFTChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFFT.Designer.cs">
-      <DependentUpon>FormFFT.cs</DependentUpon>
+    <Compile Include="FormFFTChart.Designer.cs">
+      <DependentUpon>FormFFTChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrequency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrequency.Designer.cs">
+      <DependentUpon>FormFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVolume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVolume.Designer.cs">
+      <DependentUpon>FormVolume.cs</DependentUpon>
     </Compile>
     <Compile Include="MathUtils\FFTTransformation.cs" />
     <Compile Include="FormMain.cs">
@@ -88,18 +100,23 @@
     <Compile Include="Synth\WaveDataChunk.cs" />
     <Compile Include="Synth\WaveFormatChunk.cs" />
     <Compile Include="Synth\WaveHeader.cs" />
-    <Compile Include="WavesListItem.cs" />
-    <EmbeddedResource Include="FormAmplitude.resx">
-      <DependentUpon>FormAmplitude.cs</DependentUpon>
+    <EmbeddedResource Include="FormAmplitudeChart.resx">
+      <DependentUpon>FormAmplitudeChart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomWave.resx">
-      <DependentUpon>FormCustomWave.cs</DependentUpon>
+    <EmbeddedResource Include="FormCustomShape.resx">
+      <DependentUpon>FormCustomShape.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFFT.resx">
-      <DependentUpon>FormFFT.cs</DependentUpon>
+    <EmbeddedResource Include="FormFFTChart.resx">
+      <DependentUpon>FormFFTChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrequency.resx">
+      <DependentUpon>FormFrequency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVolume.resx">
+      <DependentUpon>FormVolume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -157,7 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\pencil.ico" />
+    <None Include="Images\buttonsave.png" />
     <Content Include="Images\custom.png" />
+    <None Include="Images\pausebutton.png" />
+    <None Include="Images\playbutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
