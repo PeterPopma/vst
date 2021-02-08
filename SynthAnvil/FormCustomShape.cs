@@ -17,10 +17,15 @@ namespace SynthAnvil
         bool isMouseButtonDown = false;
         Point previousPoint;
         Random random = new Random();
+        Timer aTimer = new Timer();
+        int AdjustDataWidth = 0;
+
 
         public FormCustomShape()
         {
             InitializeComponent();
+            aTimer.Interval = 50;
+            aTimer.Tick += new EventHandler(TimerEventProcessor);
         }
 
         public FormMain MyParent { get => myParent; set => myParent = value; }
@@ -64,6 +69,42 @@ namespace SynthAnvil
             }
         }
 
+        private void TimerEventProcessor(Object myObject,
+                           EventArgs myEventArgs)
+        {
+            AdjustDataWidth++;
+
+            int begin_x = previousPoint.X - AdjustDataWidth;
+            int x_position = begin_x + 1;
+            int end_x = previousPoint.X;
+            int begin_y = WaveData[begin_x];
+            int end_y = previousPoint.Y;
+
+            // adjust all points left of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y)) / (end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            begin_x = previousPoint.X;
+            x_position = begin_x + 1;
+            end_x = begin_x + AdjustDataWidth;
+            begin_y = previousPoint.Y;
+            end_y = WaveData[end_x];
+
+            // adjust all points right of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y)) / (end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            Refresh();
+        }
+
         private void FormCustomWave_Load(object sender, EventArgs e)
         {
             if (myParent.SynthGenerator.CurrentWave.ShapeWave.Length < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
@@ -105,13 +146,15 @@ namespace SynthAnvil
 
         private void pictureBoxCustomWave_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.X >= 0 && e.X < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
+            if (!isMouseButtonDown && e.X >= 0 && e.X < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
             {
                 WaveData[e.X] = e.Y;
                 Refresh();
                 previousPoint.X = e.X;
                 previousPoint.Y = e.Y;
                 isMouseButtonDown = true;
+                AdjustDataWidth = 1;
+                aTimer.Enabled = true;
             }
         }
 
@@ -129,6 +172,7 @@ namespace SynthAnvil
         private void pictureBoxCustomWave_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseButtonDown = false;
+            aTimer.Enabled = false;
         }
 
         // Fill all data from previous point to current point with interpolated values
@@ -190,23 +234,29 @@ namespace SynthAnvil
 
         private void buttonRipples_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < WaveData.Length; i++)
+            int x_position = 0;
+            while (x_position < WaveData.Length)
             {
-                if (i % 100 < 5)
+                if (x_position < SynthGenerator.SHAPE_WAVE_NUMPOINTS - 5 && random.Next(30) == 11)
                 {
-                    // up spike
-                    WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE - ((int)(SynthGenerator.SHAPE_WAVE_MAX_VALUE * Math.Sin((((i % 100) + 1) / 6.0) * Math.PI)));
-                }
-                else if (i % 100 > 50 && i % 100 < 55)
-                {
-                    int pos = i % 100 - 50;
-                    // down spike
-                    WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE + ((int)(SynthGenerator.SHAPE_WAVE_MAX_VALUE * Math.Sin(((pos + 1) / 6.0) * Math.PI)));
+                    int amplitude = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    int up_down_spike = 1;
+                    if (random.Next(100) < 50)
+                    {
+                        // down spike
+                        up_down_spike = -1;
+                    }
+                    for (int j = 0; j < 5; j++)
+                    {
+                        WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
+                        x_position++;
+                    }
                 }
                 else
                 {
-                    WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
                 }
+                x_position++;
             }
             Refresh();
         }

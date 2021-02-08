@@ -67,7 +67,7 @@ namespace SynthAnvil
             this.buttonRandomRipples.Name = "buttonRandomRipples";
             this.buttonRandomRipples.Size = new System.Drawing.Size(87, 22);
             this.buttonRandomRipples.TabIndex = 109;
-            this.buttonRandomRipples.Text = "Random Ripples";
+            this.buttonRandomRipples.Text = "Ripples";
             this.buttonRandomRipples.UseVisualStyleBackColor = true;
             this.buttonRandomRipples.Click += new System.EventHandler(this.buttonRandomRipples_Click);
             // 
@@ -84,7 +84,7 @@ namespace SynthAnvil
             this.buttonRipples.Name = "buttonRipples";
             this.buttonRipples.Size = new System.Drawing.Size(87, 22);
             this.buttonRipples.TabIndex = 108;
-            this.buttonRipples.Text = "Ripples";
+            this.buttonRipples.Text = "1 Size Ripples";
             this.buttonRipples.UseVisualStyleBackColor = true;
             this.buttonRipples.Click += new System.EventHandler(this.buttonRipples_Click);
             // 
@@ -224,7 +224,7 @@ namespace SynthAnvil
             this.buttonFlatHigh.UseVisualStyleBackColor = true;
             this.buttonFlatHigh.Click += new System.EventHandler(this.buttonFlatHigh_Click);
             // 
-            // FormCustomWave
+            // FormCustomShape
             // 
             this.ClientSize = new System.Drawing.Size(1111, 715);
             this.Controls.Add(this.buttonFlatHigh);
@@ -241,7 +241,7 @@ namespace SynthAnvil
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormCustomWave";
+            this.Name = "FormCustomShape";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormCustomWave_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).EndInit();

@@ -16,10 +16,14 @@ namespace SynthAnvil
         private int[] WaveData = new int[SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS];
         bool isMouseButtonDown = false;
         Point previousPoint;
+        Timer aTimer = new Timer();
+        int AdjustDataWidth = 0;
 
         public FormFrequency()
         {
             InitializeComponent();
+            aTimer.Interval = 50;
+            aTimer.Tick += new EventHandler(TimerEventProcessor);
         }
 
         public FormMain MyParent { get => myParent; set => myParent = value; }
@@ -272,6 +276,42 @@ namespace SynthAnvil
             Refresh();
         }
 
+        private void TimerEventProcessor(Object myObject,
+                                   EventArgs myEventArgs)
+        {
+            AdjustDataWidth++;
+
+            int begin_x = previousPoint.X - AdjustDataWidth;
+            int x_position = begin_x + 1;
+            int end_x = previousPoint.X;
+            int begin_y = WaveData[begin_x];
+            int end_y = previousPoint.Y;
+
+            // adjust all points left of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y)) / (end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            begin_x = previousPoint.X;
+            x_position = begin_x + 1;
+            end_x = begin_x + AdjustDataWidth;
+            begin_y = previousPoint.Y;
+            end_y = WaveData[end_x];
+
+            // adjust all points right of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y)) / (end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            Refresh();
+        }
+
         private void FormFrequency_Load(object sender, EventArgs e)
         {
             if (myParent.SynthGenerator.CurrentWave.ShapeFrequency.Length < SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS)     // No data yet
@@ -298,13 +338,15 @@ namespace SynthAnvil
 
         private void pictureBoxFrequencyShape_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.X >= 0 && e.X < SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS)
+            if (!isMouseButtonDown && e.X >= 0 && e.X < SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS)
             {
                 WaveData[e.X] = e.Y;
                 Refresh();
                 previousPoint.X = e.X;
                 previousPoint.Y = e.Y;
                 isMouseButtonDown = true;
+                AdjustDataWidth = 1;
+                aTimer.Enabled = true;
             }
         }
 
@@ -323,6 +365,7 @@ namespace SynthAnvil
         {
             {
                 isMouseButtonDown = false;
+                aTimer.Enabled = false;
             }
         }
 

@@ -16,10 +16,14 @@ namespace SynthAnvil
         private int[] WaveData = new int[SynthGenerator.SHAPE_VOLUME_NUMPOINTS];
         bool isMouseButtonDown = false;
         Point previousPoint;
+        Timer aTimer = new Timer();
+        int AdjustDataWidth = 0;
 
         public FormVolume()
         {
             InitializeComponent();
+            aTimer.Interval = 50;
+            aTimer.Tick += new EventHandler(TimerEventProcessor);
         }
 
         public FormMain MyParent { get => myParent; set => myParent = value; }
@@ -41,13 +45,15 @@ namespace SynthAnvil
 
         private void pictureBoxCustomWave_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.X >= 0 && e.X < SynthGenerator.SHAPE_VOLUME_NUMPOINTS)
+            if (!isMouseButtonDown && e.X >= 0 && e.X < SynthGenerator.SHAPE_VOLUME_NUMPOINTS)
             {
                 WaveData[e.X] = e.Y;
                 Refresh();
                 previousPoint.X = e.X;
                 previousPoint.Y = e.Y;
                 isMouseButtonDown = true;
+                AdjustDataWidth = 1;
+                aTimer.Enabled = true;
             }
         }
 
@@ -65,6 +71,7 @@ namespace SynthAnvil
         private void pictureBoxCustomWave_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseButtonDown = false;
+            aTimer.Enabled = false;
         }
 
         private void buttonApply_Click(object sender, EventArgs e)
@@ -97,6 +104,42 @@ namespace SynthAnvil
                 ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.Gray, ButtonBorderStyle.Solid);
                 DrawGraph(e);
             }
+        }
+
+        private void TimerEventProcessor(Object myObject,
+                                           EventArgs myEventArgs)
+        {
+            AdjustDataWidth++;
+
+            int begin_x = previousPoint.X - AdjustDataWidth;
+            int x_position = begin_x + 1;
+            int end_x = previousPoint.X;
+            int begin_y = WaveData[begin_x];
+            int end_y = previousPoint.Y;
+
+            // adjust all points left of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y))/(end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            begin_x = previousPoint.X;
+            x_position = begin_x + 1;
+            end_x = begin_x + AdjustDataWidth;
+            begin_y = previousPoint.Y;
+            end_y = WaveData[end_x];
+
+            // adjust all points right of mouse pointer
+            while (x_position < end_x)
+            {
+                int interpolated_value = (((x_position - begin_x) * end_y) + ((end_x - x_position) * begin_y)) / (end_x - begin_x);
+                WaveData[x_position] = (WaveData[x_position] + interpolated_value) / 2;
+                x_position++;
+            }
+
+            Refresh();
         }
 
         private void DrawGraph(PaintEventArgs e)
