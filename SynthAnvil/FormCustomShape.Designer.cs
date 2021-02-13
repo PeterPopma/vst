@@ -55,7 +55,7 @@ namespace SynthAnvil
             // 
             // pictureBoxCustomWave
             // 
-            this.pictureBoxCustomWave.Location = new System.Drawing.Point(105, 7);
+            this.pictureBoxCustomWave.Location = new System.Drawing.Point(162, 7);
             this.pictureBoxCustomWave.Name = "pictureBoxCustomWave";
             this.pictureBoxCustomWave.Size = new System.Drawing.Size(1000, 654);
             this.pictureBoxCustomWave.TabIndex = 0;
@@ -70,7 +70,7 @@ namespace SynthAnvil
             this.pictureBoxWaveForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxWaveForm.Image = global::SynthAnvil.Properties.Resources.sine;
             this.pictureBoxWaveForm.InitialImage = null;
-            this.pictureBoxWaveForm.Location = new System.Drawing.Point(17, 88);
+            this.pictureBoxWaveForm.Location = new System.Drawing.Point(8, 12);
             this.pictureBoxWaveForm.Name = "pictureBoxWaveForm";
             this.pictureBoxWaveForm.Size = new System.Drawing.Size(70, 70);
             this.pictureBoxWaveForm.TabIndex = 201;
@@ -83,7 +83,7 @@ namespace SynthAnvil
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SynthAnvil.Properties.Resources.square;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 202;
@@ -96,7 +96,7 @@ namespace SynthAnvil
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::SynthAnvil.Properties.Resources.triangle;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 240);
+            this.pictureBox2.Location = new System.Drawing.Point(84, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 70);
             this.pictureBox2.TabIndex = 203;
@@ -109,7 +109,7 @@ namespace SynthAnvil
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::SynthAnvil.Properties.Resources.sawtooth;
             this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(17, 316);
+            this.pictureBox3.Location = new System.Drawing.Point(84, 88);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 70);
             this.pictureBox3.TabIndex = 204;
@@ -122,7 +122,7 @@ namespace SynthAnvil
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::SynthAnvil.Properties.Resources.flat;
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(17, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(84, 164);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 70);
             this.pictureBox4.TabIndex = 205;
@@ -135,7 +135,7 @@ namespace SynthAnvil
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::SynthAnvil.Properties.Resources.ripples;
             this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(17, 392);
+            this.pictureBox5.Location = new System.Drawing.Point(8, 164);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(70, 70);
             this.pictureBox5.TabIndex = 206;
@@ -148,7 +148,7 @@ namespace SynthAnvil
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::SynthAnvil.Properties.Resources.randomwave;
             this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(17, 468);
+            this.pictureBox6.Location = new System.Drawing.Point(8, 240);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 70);
             this.pictureBox6.TabIndex = 207;
@@ -161,7 +161,7 @@ namespace SynthAnvil
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::SynthAnvil.Properties.Resources.incsine;
             this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(17, 544);
+            this.pictureBox7.Location = new System.Drawing.Point(8, 316);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(70, 70);
             this.pictureBox7.TabIndex = 208;
@@ -174,7 +174,7 @@ namespace SynthAnvil
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = global::SynthAnvil.Properties.Resources.loginc;
             this.pictureBox8.InitialImage = null;
-            this.pictureBox8.Location = new System.Drawing.Point(17, 620);
+            this.pictureBox8.Location = new System.Drawing.Point(84, 240);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(70, 70);
             this.pictureBox8.TabIndex = 209;
@@ -190,7 +190,7 @@ namespace SynthAnvil
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.ForeColor = System.Drawing.Color.Black;
             this.buttonCancel.HorizontalGradient = false;
-            this.buttonCancel.Location = new System.Drawing.Point(640, 682);
+            this.buttonCancel.Location = new System.Drawing.Point(642, 682);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(87, 22);
             this.buttonCancel.TabIndex = 103;
@@ -217,7 +217,7 @@ namespace SynthAnvil
             // 
             // FormCustomShape
             // 
-            this.ClientSize = new System.Drawing.Size(1111, 721);
+            this.ClientSize = new System.Drawing.Size(1171, 721);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -234,6 +234,7 @@ namespace SynthAnvil
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCustomShape";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormCustomWave_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).EndInit();

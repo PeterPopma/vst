@@ -315,6 +315,7 @@ namespace SynthAnvil
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAmplitudeChart";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amplitude Analysis";
             this.Load += new System.EventHandler(this.FormAmplitude_Load);

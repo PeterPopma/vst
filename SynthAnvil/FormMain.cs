@@ -87,11 +87,11 @@ namespace SynthAnvil
         {
             generatorEnabled = false;
 
-//            colorSliderDuration.Value = synthGenerator.CurrentWave.NumSamples();
+            colorSliderDuration.Value = synthGenerator.CurrentWave.NumSamples();
             textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
             textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
-//            colorSliderDelay.Value = synthGenerator.CurrentWave.StartPosition;
-//            colorSliderWeight1.Value = synthGenerator.CurrentWave.Weight;
+            colorSliderDelay.Value = synthGenerator.CurrentWave.StartPosition;
+            colorSliderWeight1.Value = synthGenerator.CurrentWave.Weight;
             UpdateChannelText();
 
             if (synthGenerator.CurrentWave.WaveForm.Equals("WavFile"))
@@ -592,92 +592,6 @@ namespace SynthAnvil
             UpdateWaveControls();
         }
 
-        private void CreateInharmonics()
-        {
-            for (int inharmonic_number = 1; inharmonic_number <= numericUpDownAmount.Value; inharmonic_number++)
-            {
-                double durationFactor = Math.Pow(((double)numericUpDownDuration.Value / 100.0), inharmonic_number);
-                double deviation = inharmonic_number / (double)numericUpDownAmount.Value * (double)numericUpDownSpread.Value / 100.0;
-                if (checkBoxRandomFrequency.Checked)
-                {
-                    // choose a random spot between this and the previous deviation
-                    double previous_deviation = (inharmonic_number - 1) / (double)numericUpDownAmount.Value * (double)numericUpDownSpread.Value / 100.0;
-                    double place = random.Next(1000) / 1000.0;
-                    deviation = (previous_deviation * place) + (deviation * (1 - place));
-                }
-                double frequency_factor = 1 + deviation;
-                if (inharmonic_number % 2 == 0)
-                {
-                    frequency_factor = 1 / frequency_factor;
-                }
-
-                if ((frequency_factor * synthGenerator.CurrentWave.MinFrequency) < SynthGenerator.MAX_FREQUENCY && (frequency_factor * synthGenerator.CurrentWave.MaxFrequency) < SynthGenerator.MAX_FREQUENCY)
-                {
-                    double amplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), inharmonic_number);
-                    if (checkBoxRandomDecay.Checked)
-                    {
-                        double previousAmplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), inharmonic_number - 1);
-                        amplitudeDecayFactor = previousAmplitudeDecayFactor + random.NextDouble() * (amplitudeDecayFactor - previousAmplitudeDecayFactor);
-                    }
-                    WaveInfo newWave = synthGenerator.CloneWave(frequency_factor, amplitudeDecayFactor);
-                    newWave.SetDuration(newWave.Duration() * durationFactor);
-                    AddWaveToLists(newWave);
-                }
-            }
-        }
-
-        private void CreateHarmonic(int harmonic_number, double harmonic_factor)
-        {
-            double amplitudeFactor = Math.Pow(((double)numericUpDownVolume.Value / 100.0), harmonic_number);
-            double durationFactor = Math.Pow(((double)numericUpDownDuration.Value / 100.0), harmonic_number);
-            double amplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), harmonic_number);
-            if (checkBoxRandomDecay.Checked)
-            {
-                double previousAmplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), harmonic_number - 1);
-                amplitudeDecayFactor = previousAmplitudeDecayFactor + random.NextDouble() * (amplitudeDecayFactor - previousAmplitudeDecayFactor);
-            }
-            WaveInfo newWave = synthGenerator.CloneWave(harmonic_factor, amplitudeFactor);
-            newWave.MinVolume = (int)(amplitudeDecayFactor * newWave.MinVolume);
-            newWave.MaxVolume = (int)(amplitudeDecayFactor * newWave.MaxVolume);
-            newWave.SetDuration(newWave.Duration() * durationFactor);
-            AddWaveToLists(newWave);
-        }
-
-        private void CreateHarmonics()
-        {
-            int num_harmonics = 0;
-            int harmonic_factor = 2;
-            while (num_harmonics < (int)numericUpDownAmount.Value)
-            {
-                if (harmonic_factor % 2 == 0 && radioButtonEvenHarmonics.Checked)
-                {
-                    num_harmonics++;
-                    if (radioButtonUnderTones.Checked)
-                    {
-                        CreateHarmonic(num_harmonics, 1 / (double)harmonic_factor);
-                    }
-                    else
-                    {
-                        CreateHarmonic(num_harmonics, harmonic_factor);
-                    }
-                }
-                if (harmonic_factor % 2 == 1 && radioButtonOddHarmonics.Checked)
-                {
-                    num_harmonics++;
-                    if (radioButtonUnderTones.Checked)
-                    {
-                        CreateHarmonic(num_harmonics, 1 / (double)harmonic_factor);
-                    }
-                    else
-                    {
-                        CreateHarmonic(num_harmonics, harmonic_factor);
-                    }
-                }
-
-                harmonic_factor++;
-            }
-        }
-
         private void chartResultLeft_Paint(object sender, PaintEventArgs e)
         {
             if (synthGenerator.CurrentWave.Channel == 1)
@@ -1109,13 +1023,111 @@ namespace SynthAnvil
             }
         }
 
+        private void CreateInharmonics()
+        {
+            if(!radioButtonUnderTones.Checked)
+            {
+                CreateInharmonics(false);
+            }
+            if (!radioButtonOverTones.Checked)
+            {
+                CreateInharmonics(true);
+            }
+        }
+
+        private void CreateInharmonics(bool undertones)
+        {
+            for (int inharmonic_number = 1; inharmonic_number <= numericUpDownAmount.Value; inharmonic_number++)
+            {
+                double durationFactor = Math.Pow(((double)numericUpDownDuration.Value / 100.0), inharmonic_number);
+                double deviation = inharmonic_number / (double)numericUpDownAmount.Value * (double)numericUpDownSpread.Value / 100.0;
+                if (checkBoxRandomFrequency.Checked)
+                {
+                    // choose a random spot between this and the previous deviation
+                    double previous_deviation = (inharmonic_number - 1) / (double)numericUpDownAmount.Value * (double)numericUpDownSpread.Value / 100.0;
+                    double place = random.Next(1000) / 1000.0;
+                    deviation = (previous_deviation * place) + (deviation * (1 - place));
+                }
+                double frequency_factor = 1 + deviation;
+                if (undertones)
+                {
+                    frequency_factor = 1 / frequency_factor;
+                }
+
+                if ((frequency_factor * synthGenerator.CurrentWave.MinFrequency) < SynthGenerator.MAX_FREQUENCY && (frequency_factor * synthGenerator.CurrentWave.MaxFrequency) < SynthGenerator.MAX_FREQUENCY)
+                {
+                    double amplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), inharmonic_number);
+                    if (checkBoxRandomDecay.Checked)
+                    {
+                        double previousAmplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), inharmonic_number - 1);
+                        amplitudeDecayFactor = previousAmplitudeDecayFactor + random.NextDouble() * (amplitudeDecayFactor - previousAmplitudeDecayFactor);
+                    }
+                    WaveInfo newWave = synthGenerator.CloneWave(frequency_factor, amplitudeDecayFactor);
+                    newWave.SetDuration(newWave.Duration() * durationFactor);
+                    AddWaveToLists(newWave);
+                }
+            }
+        }
+
+        private void CreateHarmonic(int harmonic_number, double frequency_factor)
+        {
+            double amplitudeFactor = Math.Pow(((double)numericUpDownVolume.Value / 100.0), harmonic_number);
+            double durationFactor = Math.Pow(((double)numericUpDownDuration.Value / 100.0), harmonic_number);
+            double amplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), harmonic_number);
+            if (checkBoxRandomDecay.Checked)
+            {
+                double previousAmplitudeDecayFactor = 1 / Math.Pow(1 + ((double)numericUpDownVolumeDecay.Value / 100.0), harmonic_number - 1);
+                amplitudeDecayFactor = previousAmplitudeDecayFactor + random.NextDouble() * (amplitudeDecayFactor - previousAmplitudeDecayFactor);
+            }
+            WaveInfo newWave = synthGenerator.CloneWave(frequency_factor, amplitudeFactor);
+            newWave.MinVolume = (int)(amplitudeDecayFactor * newWave.MinVolume);
+            newWave.MaxVolume = (int)(amplitudeDecayFactor * newWave.MaxVolume);
+            newWave.SetDuration(newWave.Duration() * durationFactor);
+            AddWaveToLists(newWave);
+        }
+
+        private void CreateHarmonics(int startFactor)
+        {
+            int num_undertones = radioButtonOverTones.Checked ? 0 : (int)numericUpDownAmount.Value;
+            int num_overtones = radioButtonUnderTones.Checked ? 0 : (int)numericUpDownAmount.Value;
+
+            int harmonic_factor = startFactor;
+            for (int harmonic_number=1; harmonic_number<=num_undertones; harmonic_number++)
+            {
+                CreateHarmonic(harmonic_number, 1 / (double)harmonic_factor);
+                harmonic_factor += 2;
+            }
+
+            harmonic_factor = startFactor;
+            for (int harmonic_number = 1; harmonic_number <= num_overtones; harmonic_number++)
+            {
+                CreateHarmonic(harmonic_number, (double)harmonic_factor);
+                harmonic_factor += 2;
+            }
+        }
+
         private void CreateSplitMerge()
+        {
+            double min_frequency = synthGenerator.CurrentWave.MinFrequency;
+            double max_frequency = synthGenerator.CurrentWave.MinFrequency;
+            FadeCurrentWave(radioButtonSplit.Checked);
+            if (!radioButtonUnderTones.Checked)
+            {
+                CreateSplitMerge(min_frequency, max_frequency, false);
+            }
+            if (!radioButtonOverTones.Checked)
+            {
+                CreateSplitMerge(min_frequency, max_frequency, true);
+            }
+        }
+
+        private void FadeCurrentWave(bool fadeOut)
         {
             synthGenerator.CurrentWave.MinVolume = 0;
             synthGenerator.CurrentWave.MaxVolume = SynthGenerator.MAX_VOLUME;
             for (int i = 0; i < synthGenerator.CurrentWave.ShapeVolume.Length; i++)
             {
-                if (radioButtonSplit.Checked)
+                if (fadeOut)
                 {
                     // fade out
                     synthGenerator.CurrentWave.ShapeVolume[i] = (int)(SynthGenerator.SHAPE_VOLUME_MAX_VALUE - i / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
@@ -1126,54 +1138,57 @@ namespace SynthAnvil
                     synthGenerator.CurrentWave.ShapeVolume[i] = (int)(SynthGenerator.SHAPE_VOLUME_MAX_VALUE - (SynthGenerator.SHAPE_VOLUME_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
                 }
             }
+        }
 
+        private void CreateSplitMerge(double min_frequency, double max_frequency, bool undertones)
+        {
             double min_frequency_low;
-            if (!radioButtonOverTones.Checked)
+            if (undertones)
             {
-                min_frequency_low = synthGenerator.CurrentWave.MinFrequency - ((double)numericUpDownSpread.Value / 100.0) * synthGenerator.CurrentWave.MinFrequency;
+                min_frequency_low = min_frequency - ((double)numericUpDownSpread.Value / 100.0) * min_frequency;
             }
             else
             {
-                min_frequency_low = synthGenerator.CurrentWave.MinFrequency;
+                min_frequency_low = min_frequency;
             }
             if (min_frequency_low < 0.01)
             {
                 min_frequency_low = 0.01;
             }
             double min_frequency_high;
-            if (!radioButtonUnderTones.Checked)
+            if (!undertones)
             {
-                min_frequency_high = synthGenerator.CurrentWave.MinFrequency + ((double)numericUpDownSpread.Value / 100.0) * synthGenerator.CurrentWave.MinFrequency;
+                min_frequency_high = min_frequency + ((double)numericUpDownSpread.Value / 100.0) * min_frequency;
             }
             else
             {
-                min_frequency_high = synthGenerator.CurrentWave.MinFrequency;
+                min_frequency_high = min_frequency;
             }
             if (min_frequency_high > SynthGenerator.MAX_FREQUENCY)
             {
                 min_frequency_high = SynthGenerator.MAX_FREQUENCY;
             }
             double max_frequency_low;
-            if (!radioButtonOverTones.Checked)
+            if (undertones)
             {
-                max_frequency_low = synthGenerator.CurrentWave.MaxFrequency - ((double)numericUpDownSpread.Value / 100.0) * synthGenerator.CurrentWave.MaxFrequency;
+                max_frequency_low = max_frequency - ((double)numericUpDownSpread.Value / 100.0) * max_frequency;
             }
             else
             {
-                max_frequency_low = synthGenerator.CurrentWave.MaxFrequency;
+                max_frequency_low = max_frequency;
             }
             if (max_frequency_low < 0.01)
             {
                 max_frequency_low = 0.01;
             }
             double max_frequency_high;
-            if (!radioButtonUnderTones.Checked)
+            if (!undertones)
             {
-                max_frequency_high = synthGenerator.CurrentWave.MaxFrequency + ((double)numericUpDownSpread.Value / 100.0) * synthGenerator.CurrentWave.MaxFrequency;
+                max_frequency_high = max_frequency + ((double)numericUpDownSpread.Value / 100.0) * max_frequency;
             }
             else
             {
-                max_frequency_high = synthGenerator.CurrentWave.MaxFrequency;
+                max_frequency_high = max_frequency;
             }
             if (max_frequency_high > SynthGenerator.MAX_FREQUENCY)
             {
@@ -1182,26 +1197,22 @@ namespace SynthAnvil
 
             for (int split_wave_number = 0; split_wave_number < numericUpDownAmount.Value; split_wave_number++)
             {
-                WaveInfo newWave = synthGenerator.CloneWave();
-                newWave.MinFrequency = min_frequency_low + (split_wave_number / (double)numericUpDownAmount.Value * (min_frequency_high - min_frequency_low));
-                newWave.MaxFrequency = max_frequency_low + (split_wave_number / (double)numericUpDownAmount.Value * (max_frequency_high - max_frequency_low));
-
-                // fade in/out this wave
-                for (int i = 0; i < newWave.ShapeVolume.Length; i++)
+                synthGenerator.CurrentWave = synthGenerator.CloneWave();
+                if (undertones)
                 {
-                    if (radioButtonMerge.Checked)
-                    {
-                        // fade out
-                        synthGenerator.CurrentWave.ShapeVolume[i] = (int)(SynthGenerator.SHAPE_VOLUME_MAX_VALUE - i / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
-                    }
-                    else
-                    {
-                        // fade in
-                        synthGenerator.CurrentWave.ShapeVolume[i] = (int)(SynthGenerator.SHAPE_VOLUME_MAX_VALUE - (SynthGenerator.SHAPE_VOLUME_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_VOLUME_NUMPOINTS * SynthGenerator.SHAPE_VOLUME_MAX_VALUE);
-                    }
+                    synthGenerator.CurrentWave.MinFrequency = min_frequency_low + (split_wave_number / (double)numericUpDownAmount.Value * (min_frequency_high - min_frequency_low));
+                    synthGenerator.CurrentWave.MaxFrequency = max_frequency_low + (split_wave_number / (double)numericUpDownAmount.Value * (max_frequency_high - max_frequency_low));
+                }
+                else
+                {
+                    synthGenerator.CurrentWave.MinFrequency = min_frequency_high - (split_wave_number / (double)numericUpDownAmount.Value * (min_frequency_high - min_frequency_low));
+                    synthGenerator.CurrentWave.MaxFrequency = max_frequency_high - (split_wave_number / (double)numericUpDownAmount.Value * (max_frequency_high - max_frequency_low));
                 }
 
-                AddWaveToLists(newWave);
+                // fade in/out this wave
+                FadeCurrentWave(radioButtonMerge.Checked);
+
+                AddWaveToLists(synthGenerator.CurrentWave);
             }
         }
 
@@ -1211,9 +1222,13 @@ namespace SynthAnvil
             {
                 CreateSplitMerge();
             }
-            if (radioButtonOddHarmonics.Checked || radioButtonEvenHarmonics.Checked)
+            if (radioButtonOddHarmonics.Checked)
             {
-                CreateHarmonics();
+                CreateHarmonics(3);
+            }
+            if (radioButtonEvenHarmonics.Checked)
+            {
+                CreateHarmonics(2);
             }
             if (radioButtonInharmonics.Checked)
             {
@@ -1221,6 +1236,7 @@ namespace SynthAnvil
             }
 
             synthGenerator.UpdateAllWaveData();
+            UpdateSelectedWave();
         }
 
         private void pictureBoxFrequencyShape_MouseMove(object sender, MouseEventArgs e)
@@ -1245,7 +1261,7 @@ namespace SynthAnvil
             }
         }
 
-        private void listBoxWaves_MouseUp(object sender, MouseEventArgs e)
+        private void UpdateSelectedWave()
         {
             if (listBoxWaves.SelectedItem != null && generatorEnabled)
             {
@@ -1254,8 +1270,15 @@ namespace SynthAnvil
                 pictureBoxCustomWave.Refresh();
                 pictureBoxFrequencyShape.Refresh();
                 pictureBoxVolumeShape.Refresh();
+                chartResultLeft.Refresh();
+                chartResultRight.Refresh();
                 UpdateWaveControls();
             }
+        }
+
+        private void listBoxWaves_MouseUp(object sender, MouseEventArgs e)
+        {
+            UpdateSelectedWave();
         }
 
         private void textBoxDelay_KeyUp(object sender, KeyEventArgs e)
@@ -1277,5 +1300,48 @@ namespace SynthAnvil
             synthGenerator.UpdateCurrentWaveData();
         }
 
+        private void listBoxWaves_KeyUp(object sender, KeyEventArgs e)
+        {
+            UpdateSelectedWave();
+        }
+
+        private void ChangePartialsVisibility()
+        {
+            if (radioButtonEvenHarmonics.Checked || radioButtonOddHarmonics.Checked)
+            {
+                numericUpDownSpread.Enabled = false;
+                checkBoxRandomFrequency.Enabled = false;
+            }
+            else
+            {
+                numericUpDownSpread.Enabled = true;
+                checkBoxRandomFrequency.Enabled = true;
+            }
+        }
+
+        private void radioButtonEvenHarmonics_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangePartialsVisibility();
+        }
+
+        private void radioButtonOddHarmonics_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangePartialsVisibility();
+        }
+
+        private void radioButtonInharmonics_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangePartialsVisibility();
+        }
+
+        private void radioButtonSplit_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangePartialsVisibility();
+        }
+
+        private void radioButtonMerge_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangePartialsVisibility();
+        }
     }
 }

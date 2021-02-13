@@ -327,6 +327,7 @@ namespace SynthAnvil
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormFFTChart";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frequency Analysis";
             this.Load += new System.EventHandler(this.FormFFT_Load);

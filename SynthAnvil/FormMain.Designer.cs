@@ -29,18 +29,18 @@ namespace SynthAnvil
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea49 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series49 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea50 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea51 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series51 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea52 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea53 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea54 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorSliderWeight1 = new ColorSlider.ColorSlider2();
             this.buttonDelayMinus10 = new SynthAnvil.CustomControls.GradientButton();
@@ -780,27 +780,27 @@ namespace SynthAnvil
             // chartCurrentWave
             // 
             this.chartCurrentWave.BackColor = System.Drawing.Color.Transparent;
-            chartArea13.AxisX.LabelStyle.Enabled = false;
-            chartArea13.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea13.AxisX.MajorGrid.Enabled = false;
-            chartArea13.AxisX.MajorTickMark.Enabled = false;
-            chartArea13.AxisY.LabelStyle.Enabled = false;
-            chartArea13.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea13.AxisY.MajorGrid.Enabled = false;
-            chartArea13.AxisY.MajorTickMark.Enabled = false;
-            chartArea13.BackColor = System.Drawing.Color.Silver;
-            chartArea13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea13.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea13.Name = "ChartArea1";
-            this.chartCurrentWave.ChartAreas.Add(chartArea13);
+            chartArea49.AxisX.LabelStyle.Enabled = false;
+            chartArea49.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea49.AxisX.MajorGrid.Enabled = false;
+            chartArea49.AxisX.MajorTickMark.Enabled = false;
+            chartArea49.AxisY.LabelStyle.Enabled = false;
+            chartArea49.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea49.AxisY.MajorGrid.Enabled = false;
+            chartArea49.AxisY.MajorTickMark.Enabled = false;
+            chartArea49.BackColor = System.Drawing.Color.Silver;
+            chartArea49.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea49.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea49.Name = "ChartArea1";
+            this.chartCurrentWave.ChartAreas.Add(chartArea49);
             this.chartCurrentWave.Location = new System.Drawing.Point(71, 460);
             this.chartCurrentWave.Name = "chartCurrentWave";
-            series13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series13.Color = System.Drawing.Color.Yellow;
-            series13.Name = "Series1";
-            this.chartCurrentWave.Series.Add(series13);
+            series49.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series49.ChartArea = "ChartArea1";
+            series49.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series49.Color = System.Drawing.Color.Yellow;
+            series49.Name = "Series1";
+            this.chartCurrentWave.Series.Add(series49);
             this.chartCurrentWave.Size = new System.Drawing.Size(447, 103);
             this.chartCurrentWave.TabIndex = 44;
             this.chartCurrentWave.Text = "chart1";
@@ -1120,25 +1120,25 @@ namespace SynthAnvil
             // chartFFTRight
             // 
             this.chartFFTRight.BackColor = System.Drawing.Color.Transparent;
-            chartArea14.AxisX.LabelStyle.Enabled = false;
-            chartArea14.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea14.AxisX.MajorGrid.Enabled = false;
-            chartArea14.AxisX.MajorTickMark.Enabled = false;
-            chartArea14.AxisY.LabelStyle.Enabled = false;
-            chartArea14.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea14.AxisY.MajorGrid.Enabled = false;
-            chartArea14.AxisY.MajorTickMark.Enabled = false;
-            chartArea14.BackColor = System.Drawing.Color.Silver;
-            chartArea14.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea14.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea14.Name = "ChartArea1";
-            this.chartFFTRight.ChartAreas.Add(chartArea14);
-            this.chartFFTRight.Location = new System.Drawing.Point(357, 141);
+            chartArea50.AxisX.LabelStyle.Enabled = false;
+            chartArea50.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea50.AxisX.MajorGrid.Enabled = false;
+            chartArea50.AxisX.MajorTickMark.Enabled = false;
+            chartArea50.AxisY.LabelStyle.Enabled = false;
+            chartArea50.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea50.AxisY.MajorGrid.Enabled = false;
+            chartArea50.AxisY.MajorTickMark.Enabled = false;
+            chartArea50.BackColor = System.Drawing.Color.Silver;
+            chartArea50.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea50.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea50.Name = "ChartArea1";
+            this.chartFFTRight.ChartAreas.Add(chartArea50);
+            this.chartFFTRight.Location = new System.Drawing.Point(355, 141);
             this.chartFFTRight.Name = "chartFFTRight";
-            series14.ChartArea = "ChartArea1";
-            series14.Color = System.Drawing.Color.Blue;
-            series14.Name = "Series1";
-            this.chartFFTRight.Series.Add(series14);
+            series50.ChartArea = "ChartArea1";
+            series50.Color = System.Drawing.Color.Blue;
+            series50.Name = "Series1";
+            this.chartFFTRight.Series.Add(series50);
             this.chartFFTRight.Size = new System.Drawing.Size(388, 120);
             this.chartFFTRight.TabIndex = 77;
             this.chartFFTRight.Text = "chart1";
@@ -1148,27 +1148,27 @@ namespace SynthAnvil
             // chartFFTLeft
             // 
             this.chartFFTLeft.BackColor = System.Drawing.Color.Transparent;
-            chartArea15.AxisX.LabelStyle.Enabled = false;
-            chartArea15.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea15.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea15.AxisX.LineWidth = 0;
-            chartArea15.AxisX.MajorGrid.Enabled = false;
-            chartArea15.AxisX.MajorTickMark.Enabled = false;
-            chartArea15.AxisY.LabelStyle.Enabled = false;
-            chartArea15.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea15.AxisY.MajorGrid.Enabled = false;
-            chartArea15.AxisY.MajorTickMark.Enabled = false;
-            chartArea15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea15.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea15.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea15.Name = "ChartArea1";
-            this.chartFFTLeft.ChartAreas.Add(chartArea15);
+            chartArea51.AxisX.LabelStyle.Enabled = false;
+            chartArea51.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea51.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea51.AxisX.LineWidth = 0;
+            chartArea51.AxisX.MajorGrid.Enabled = false;
+            chartArea51.AxisX.MajorTickMark.Enabled = false;
+            chartArea51.AxisY.LabelStyle.Enabled = false;
+            chartArea51.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea51.AxisY.MajorGrid.Enabled = false;
+            chartArea51.AxisY.MajorTickMark.Enabled = false;
+            chartArea51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea51.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea51.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea51.Name = "ChartArea1";
+            this.chartFFTLeft.ChartAreas.Add(chartArea51);
             this.chartFFTLeft.Location = new System.Drawing.Point(355, 19);
             this.chartFFTLeft.Name = "chartFFTLeft";
-            series15.ChartArea = "ChartArea1";
-            series15.Color = System.Drawing.Color.Blue;
-            series15.Name = "Series1";
-            this.chartFFTLeft.Series.Add(series15);
+            series51.ChartArea = "ChartArea1";
+            series51.Color = System.Drawing.Color.Blue;
+            series51.Name = "Series1";
+            this.chartFFTLeft.Series.Add(series51);
             this.chartFFTLeft.Size = new System.Drawing.Size(388, 120);
             this.chartFFTLeft.TabIndex = 76;
             this.chartFFTLeft.Text = "chart1";
@@ -1187,26 +1187,26 @@ namespace SynthAnvil
             // chartResultRight
             // 
             this.chartResultRight.BackColor = System.Drawing.Color.Transparent;
-            chartArea16.AxisX.LabelStyle.Enabled = false;
-            chartArea16.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea16.AxisX.MajorGrid.Enabled = false;
-            chartArea16.AxisX.MajorTickMark.Enabled = false;
-            chartArea16.AxisY.LabelStyle.Enabled = false;
-            chartArea16.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea16.AxisY.MajorGrid.Enabled = false;
-            chartArea16.AxisY.MajorTickMark.Enabled = false;
-            chartArea16.BackColor = System.Drawing.Color.Silver;
-            chartArea16.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea16.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea16.Name = "ChartArea1";
-            this.chartResultRight.ChartAreas.Add(chartArea16);
+            chartArea52.AxisX.LabelStyle.Enabled = false;
+            chartArea52.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea52.AxisX.MajorGrid.Enabled = false;
+            chartArea52.AxisX.MajorTickMark.Enabled = false;
+            chartArea52.AxisY.LabelStyle.Enabled = false;
+            chartArea52.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea52.AxisY.MajorGrid.Enabled = false;
+            chartArea52.AxisY.MajorTickMark.Enabled = false;
+            chartArea52.BackColor = System.Drawing.Color.Silver;
+            chartArea52.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea52.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea52.Name = "ChartArea1";
+            this.chartResultRight.ChartAreas.Add(chartArea52);
             this.chartResultRight.Location = new System.Drawing.Point(716, 141);
             this.chartResultRight.Name = "chartResultRight";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series16.Color = System.Drawing.Color.Yellow;
-            series16.Name = "Series1";
-            this.chartResultRight.Series.Add(series16);
+            series52.ChartArea = "ChartArea1";
+            series52.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series52.Color = System.Drawing.Color.Yellow;
+            series52.Name = "Series1";
+            this.chartResultRight.Series.Add(series52);
             this.chartResultRight.Size = new System.Drawing.Size(388, 120);
             this.chartResultRight.TabIndex = 73;
             this.chartResultRight.Text = "chart1";
@@ -1217,28 +1217,28 @@ namespace SynthAnvil
             // chartResultLeft
             // 
             this.chartResultLeft.BackColor = System.Drawing.Color.Transparent;
-            chartArea17.AxisX.LabelStyle.Enabled = false;
-            chartArea17.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea17.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea17.AxisX.LineWidth = 0;
-            chartArea17.AxisX.MajorGrid.Enabled = false;
-            chartArea17.AxisX.MajorTickMark.Enabled = false;
-            chartArea17.AxisY.LabelStyle.Enabled = false;
-            chartArea17.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea17.AxisY.MajorGrid.Enabled = false;
-            chartArea17.AxisY.MajorTickMark.Enabled = false;
-            chartArea17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea17.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea17.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea17.Name = "ChartArea1";
-            this.chartResultLeft.ChartAreas.Add(chartArea17);
-            this.chartResultLeft.Location = new System.Drawing.Point(715, 19);
+            chartArea53.AxisX.LabelStyle.Enabled = false;
+            chartArea53.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea53.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea53.AxisX.LineWidth = 0;
+            chartArea53.AxisX.MajorGrid.Enabled = false;
+            chartArea53.AxisX.MajorTickMark.Enabled = false;
+            chartArea53.AxisY.LabelStyle.Enabled = false;
+            chartArea53.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea53.AxisY.MajorGrid.Enabled = false;
+            chartArea53.AxisY.MajorTickMark.Enabled = false;
+            chartArea53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea53.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea53.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea53.Name = "ChartArea1";
+            this.chartResultLeft.ChartAreas.Add(chartArea53);
+            this.chartResultLeft.Location = new System.Drawing.Point(716, 19);
             this.chartResultLeft.Name = "chartResultLeft";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Color = System.Drawing.Color.Yellow;
-            series17.Name = "Series1";
-            this.chartResultLeft.Series.Add(series17);
+            series53.ChartArea = "ChartArea1";
+            series53.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series53.Color = System.Drawing.Color.Yellow;
+            series53.Name = "Series1";
+            this.chartResultLeft.Series.Add(series53);
             this.chartResultLeft.Size = new System.Drawing.Size(388, 120);
             this.chartResultLeft.TabIndex = 72;
             this.chartResultLeft.Text = "chart1";
@@ -1608,27 +1608,27 @@ namespace SynthAnvil
             // chartAHDSR
             // 
             this.chartAHDSR.BackColor = System.Drawing.Color.Transparent;
-            chartArea18.AxisX.LabelStyle.Enabled = false;
-            chartArea18.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea18.AxisX.MajorGrid.Enabled = false;
-            chartArea18.AxisX.MajorTickMark.Enabled = false;
-            chartArea18.AxisY.LabelStyle.Enabled = false;
-            chartArea18.AxisY.LineColor = System.Drawing.Color.DimGray;
-            chartArea18.AxisY.MajorGrid.Enabled = false;
-            chartArea18.AxisY.MajorTickMark.Enabled = false;
-            chartArea18.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
-            chartArea18.BackSecondaryColor = System.Drawing.Color.Silver;
-            chartArea18.Name = "ChartArea1";
-            this.chartAHDSR.ChartAreas.Add(chartArea18);
+            chartArea54.AxisX.LabelStyle.Enabled = false;
+            chartArea54.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea54.AxisX.MajorGrid.Enabled = false;
+            chartArea54.AxisX.MajorTickMark.Enabled = false;
+            chartArea54.AxisY.LabelStyle.Enabled = false;
+            chartArea54.AxisY.LineColor = System.Drawing.Color.DimGray;
+            chartArea54.AxisY.MajorGrid.Enabled = false;
+            chartArea54.AxisY.MajorTickMark.Enabled = false;
+            chartArea54.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+            chartArea54.BackSecondaryColor = System.Drawing.Color.Silver;
+            chartArea54.Name = "ChartArea1";
+            this.chartAHDSR.ChartAreas.Add(chartArea54);
             this.chartAHDSR.Location = new System.Drawing.Point(68, 174);
             this.chartAHDSR.Name = "chartAHDSR";
-            series18.BorderWidth = 2;
-            series18.ChartArea = "ChartArea1";
-            series18.Color = System.Drawing.Color.IndianRed;
-            series18.MarkerBorderWidth = 2;
-            series18.MarkerSize = 10;
-            series18.Name = "Series1";
-            this.chartAHDSR.Series.Add(series18);
+            series54.BorderWidth = 2;
+            series54.ChartArea = "ChartArea1";
+            series54.Color = System.Drawing.Color.IndianRed;
+            series54.MarkerBorderWidth = 2;
+            series54.MarkerSize = 10;
+            series54.Name = "Series1";
+            this.chartAHDSR.Series.Add(series54);
             this.chartAHDSR.Size = new System.Drawing.Size(190, 71);
             this.chartAHDSR.TabIndex = 83;
             this.chartAHDSR.Text = "chartADSR";
@@ -1836,7 +1836,8 @@ namespace SynthAnvil
             // 
             this.checkBoxRandomFrequency.AutoSize = true;
             this.checkBoxRandomFrequency.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxRandomFrequency.Location = new System.Drawing.Point(206, 259);
+            this.checkBoxRandomFrequency.Enabled = false;
+            this.checkBoxRandomFrequency.Location = new System.Drawing.Point(218, 254);
             this.checkBoxRandomFrequency.Name = "checkBoxRandomFrequency";
             this.checkBoxRandomFrequency.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxRandomFrequency.Size = new System.Drawing.Size(111, 17);
@@ -1847,12 +1848,13 @@ namespace SynthAnvil
             // numericUpDownSpread
             // 
             this.numericUpDownSpread.DecimalPlaces = 2;
+            this.numericUpDownSpread.Enabled = false;
             this.numericUpDownSpread.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDownSpread.Location = new System.Drawing.Point(265, 218);
+            this.numericUpDownSpread.Location = new System.Drawing.Point(277, 213);
             this.numericUpDownSpread.Maximum = new decimal(new int[] {
             99,
             0,
@@ -1876,7 +1878,7 @@ namespace SynthAnvil
             // 
             this.label50.AutoSize = true;
             this.label50.BackColor = System.Drawing.Color.Transparent;
-            this.label50.Location = new System.Drawing.Point(186, 222);
+            this.label50.Location = new System.Drawing.Point(198, 217);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(75, 13);
             this.label50.TabIndex = 94;
@@ -1953,6 +1955,7 @@ namespace SynthAnvil
             this.listBoxWaves.Name = "listBoxWaves";
             this.listBoxWaves.Size = new System.Drawing.Size(312, 392);
             this.listBoxWaves.TabIndex = 71;
+            this.listBoxWaves.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listBoxWaves_KeyUp);
             this.listBoxWaves.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBoxWaves_MouseUp);
             // 
             // groupBox4
@@ -1976,7 +1979,7 @@ namespace SynthAnvil
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(996, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(400, 369);
+            this.groupBox4.Size = new System.Drawing.Size(400, 342);
             this.groupBox4.TabIndex = 71;
             this.groupBox4.TabStop = false;
             // 
@@ -1999,7 +2002,7 @@ namespace SynthAnvil
             this.buttonCreatePartials.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreatePartials.ForeColor = System.Drawing.Color.Black;
             this.buttonCreatePartials.HorizontalGradient = false;
-            this.buttonCreatePartials.Location = new System.Drawing.Point(282, 311);
+            this.buttonCreatePartials.Location = new System.Drawing.Point(286, 295);
             this.buttonCreatePartials.Name = "buttonCreatePartials";
             this.buttonCreatePartials.Size = new System.Drawing.Size(93, 29);
             this.buttonCreatePartials.TabIndex = 145;
@@ -2015,7 +2018,7 @@ namespace SynthAnvil
             this.panel5.Controls.Add(this.radioButtonInharmonics);
             this.panel5.Controls.Add(this.radioButtonOddHarmonics);
             this.panel5.Controls.Add(this.radioButtonEvenHarmonics);
-            this.panel5.Location = new System.Drawing.Point(211, 58);
+            this.panel5.Location = new System.Drawing.Point(50, 54);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(127, 106);
             this.panel5.TabIndex = 115;
@@ -2030,6 +2033,7 @@ namespace SynthAnvil
             this.radioButtonMerge.TabIndex = 117;
             this.radioButtonMerge.Text = "merge";
             this.radioButtonMerge.UseVisualStyleBackColor = false;
+            this.radioButtonMerge.CheckedChanged += new System.EventHandler(this.radioButtonMerge_CheckedChanged);
             // 
             // radioButtonSplit
             // 
@@ -2041,6 +2045,7 @@ namespace SynthAnvil
             this.radioButtonSplit.TabIndex = 116;
             this.radioButtonSplit.Text = "split";
             this.radioButtonSplit.UseVisualStyleBackColor = false;
+            this.radioButtonSplit.CheckedChanged += new System.EventHandler(this.radioButtonSplit_CheckedChanged);
             // 
             // radioButtonInharmonics
             // 
@@ -2052,6 +2057,7 @@ namespace SynthAnvil
             this.radioButtonInharmonics.TabIndex = 115;
             this.radioButtonInharmonics.Text = "inharmonic partials";
             this.radioButtonInharmonics.UseVisualStyleBackColor = false;
+            this.radioButtonInharmonics.CheckedChanged += new System.EventHandler(this.radioButtonInharmonics_CheckedChanged);
             // 
             // radioButtonOddHarmonics
             // 
@@ -2063,6 +2069,7 @@ namespace SynthAnvil
             this.radioButtonOddHarmonics.TabIndex = 114;
             this.radioButtonOddHarmonics.Text = "odd harmonics";
             this.radioButtonOddHarmonics.UseVisualStyleBackColor = false;
+            this.radioButtonOddHarmonics.CheckedChanged += new System.EventHandler(this.radioButtonOddHarmonics_CheckedChanged);
             // 
             // radioButtonEvenHarmonics
             // 
@@ -2076,6 +2083,7 @@ namespace SynthAnvil
             this.radioButtonEvenHarmonics.TabStop = true;
             this.radioButtonEvenHarmonics.Text = "even harmonics";
             this.radioButtonEvenHarmonics.UseVisualStyleBackColor = false;
+            this.radioButtonEvenHarmonics.CheckedChanged += new System.EventHandler(this.radioButtonEvenHarmonics_CheckedChanged);
             // 
             // panel4
             // 
@@ -2083,7 +2091,7 @@ namespace SynthAnvil
             this.panel4.Controls.Add(this.radioButtonOverTones);
             this.panel4.Controls.Add(this.radioButtonUnderTones);
             this.panel4.Controls.Add(this.radioButtonBothTones);
-            this.panel4.Location = new System.Drawing.Point(79, 94);
+            this.panel4.Location = new System.Drawing.Point(207, 56);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(86, 65);
             this.panel4.TabIndex = 114;
@@ -2092,10 +2100,12 @@ namespace SynthAnvil
             // 
             this.radioButtonOverTones.AutoSize = true;
             this.radioButtonOverTones.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonOverTones.Location = new System.Drawing.Point(3, 40);
+            this.radioButtonOverTones.Checked = true;
+            this.radioButtonOverTones.Location = new System.Drawing.Point(3, 0);
             this.radioButtonOverTones.Name = "radioButtonOverTones";
             this.radioButtonOverTones.Size = new System.Drawing.Size(72, 17);
             this.radioButtonOverTones.TabIndex = 112;
+            this.radioButtonOverTones.TabStop = true;
             this.radioButtonOverTones.Text = "overtones";
             this.radioButtonOverTones.UseVisualStyleBackColor = false;
             // 
@@ -2114,12 +2124,10 @@ namespace SynthAnvil
             // 
             this.radioButtonBothTones.AutoSize = true;
             this.radioButtonBothTones.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonBothTones.Checked = true;
-            this.radioButtonBothTones.Location = new System.Drawing.Point(3, 0);
+            this.radioButtonBothTones.Location = new System.Drawing.Point(3, 39);
             this.radioButtonBothTones.Name = "radioButtonBothTones";
             this.radioButtonBothTones.Size = new System.Drawing.Size(46, 17);
             this.radioButtonBothTones.TabIndex = 110;
-            this.radioButtonBothTones.TabStop = true;
             this.radioButtonBothTones.Text = "both";
             this.radioButtonBothTones.UseVisualStyleBackColor = false;
             // 
@@ -2127,7 +2135,7 @@ namespace SynthAnvil
             // 
             this.checkBoxRandomDecay.AutoSize = true;
             this.checkBoxRandomDecay.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxRandomDecay.Location = new System.Drawing.Point(72, 260);
+            this.checkBoxRandomDecay.Location = new System.Drawing.Point(84, 255);
             this.checkBoxRandomDecay.Name = "checkBoxRandomDecay";
             this.checkBoxRandomDecay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxRandomDecay.Size = new System.Drawing.Size(93, 17);
@@ -2137,7 +2145,7 @@ namespace SynthAnvil
             // 
             // numericUpDownVolume
             // 
-            this.numericUpDownVolume.Location = new System.Drawing.Point(113, 178);
+            this.numericUpDownVolume.Location = new System.Drawing.Point(125, 173);
             this.numericUpDownVolume.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2154,7 +2162,7 @@ namespace SynthAnvil
             // 
             // numericUpDownDuration
             // 
-            this.numericUpDownDuration.Location = new System.Drawing.Point(265, 178);
+            this.numericUpDownDuration.Location = new System.Drawing.Point(277, 173);
             this.numericUpDownDuration.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2173,7 +2181,7 @@ namespace SynthAnvil
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(57, 182);
+            this.label7.Location = new System.Drawing.Point(69, 177);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 106;
@@ -2183,7 +2191,7 @@ namespace SynthAnvil
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(205, 183);
+            this.label6.Location = new System.Drawing.Point(217, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 105;
@@ -2191,7 +2199,7 @@ namespace SynthAnvil
             // 
             // numericUpDownVolumeDecay
             // 
-            this.numericUpDownVolumeDecay.Location = new System.Drawing.Point(113, 218);
+            this.numericUpDownVolumeDecay.Location = new System.Drawing.Point(125, 213);
             this.numericUpDownVolumeDecay.Maximum = new decimal(new int[] {
             90,
             0,
@@ -2205,7 +2213,7 @@ namespace SynthAnvil
             // 
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Location = new System.Drawing.Point(25, 222);
+            this.label45.Location = new System.Drawing.Point(37, 217);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(84, 13);
             this.label45.TabIndex = 102;
@@ -2213,7 +2221,7 @@ namespace SynthAnvil
             // 
             // numericUpDownAmount
             // 
-            this.numericUpDownAmount.Location = new System.Drawing.Point(85, 50);
+            this.numericUpDownAmount.Location = new System.Drawing.Point(269, 19);
             this.numericUpDownAmount.Maximum = new decimal(new int[] {
             50,
             0,
@@ -2237,7 +2245,7 @@ namespace SynthAnvil
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Location = new System.Drawing.Point(30, 52);
+            this.label17.Location = new System.Drawing.Point(214, 21);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(42, 13);
             this.label17.TabIndex = 101;
@@ -2260,7 +2268,7 @@ namespace SynthAnvil
             this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sculptor v1.0";
+            this.Text = "Wavecraft v1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);

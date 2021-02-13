@@ -653,6 +653,7 @@ namespace SynthAnvil
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormFrequency";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormFrequency_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFrequencyShape)).EndInit();

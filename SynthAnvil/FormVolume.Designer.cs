@@ -639,6 +639,7 @@ namespace SynthAnvil
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormVolume";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormVolume_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).EndInit();

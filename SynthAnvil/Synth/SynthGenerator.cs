@@ -808,6 +808,7 @@ namespace SynthAnvil.Synth
             newWave.ShapeVolume = currentWave.ShapeVolume.Clone() as int[];
             newWave.ShapeFrequency = currentWave.ShapeFrequency.Clone() as int[];
             Waves.Add(newWave);
+            CreateWave(newWave, 1, 1);
 
             return newWave;
         }

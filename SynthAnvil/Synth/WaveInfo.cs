@@ -48,12 +48,12 @@ namespace SynthAnvil.Synth
             this.startPosition = 0;
             this.minFrequency = 440;
             this.maxFrequency = 440;
-            this.minVolume = SynthGenerator.MAX_VOLUME;
+            this.minVolume = 0;
             this.maxVolume = SynthGenerator.MAX_VOLUME;
             this.channel = 2;
             this.waveForm = "Custom";
             this.waveFile = "";
-            this.waveData = new double[44100 * 2];
+            this.waveData = new double[44100 * 2];          // default 1 sec.
             this.weight = 255;
 
             ShapeWave = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
@@ -62,6 +62,12 @@ namespace SynthAnvil.Synth
             ArrayUtils.Populate(ShapeVolume, SynthGenerator.SHAPE_VOLUME_MAX_VALUE / 2);
             ShapeFrequency = new int[SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS];
             ArrayUtils.Populate(ShapeFrequency, SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE / 2);
+
+            // default use a sine wave
+            for (int i = 0; i < ShapeWave.Length; i++)
+            {
+                ShapeWave[i] = (int)(Math.Sin(i / (double)ShapeWave.Length * 2 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+            }
         }
 
 
