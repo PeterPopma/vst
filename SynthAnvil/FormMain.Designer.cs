@@ -29,20 +29,34 @@ namespace SynthAnvil
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.colorSliderWeight1 = new ColorSlider.ColorSlider2();
+            this.buttonDelayMinus10 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDelayMinus1 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDelayPlus10 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDelayPlus1 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDurationMinus10 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDurationMinus1 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDurationPlus10 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDurationPlus1 = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonChange = new System.Windows.Forms.Button();
+            this.colorSliderDelay = new ColorSlider.ColorSlider();
+            this.textBoxDelay = new System.Windows.Forms.TextBox();
+            this.textBoxDuration = new System.Windows.Forms.TextBox();
+            this.colorSliderDuration = new ColorSlider.ColorSlider();
+            this.buttonSelectWav = new SynthAnvil.CustomControls.GradientButton();
             this.label14 = new System.Windows.Forms.Label();
             this.labelFrequencyTitle = new System.Windows.Forms.Label();
             this.labelFreqMaxTitle = new System.Windows.Forms.Label();
@@ -56,18 +70,13 @@ namespace SynthAnvil
             this.labelFileName = new System.Windows.Forms.Label();
             this.labelWaveForm = new System.Windows.Forms.Label();
             this.pictureBoxWaveForm = new System.Windows.Forms.PictureBox();
-            this.colorSliderDelay = new ColorSlider.ColorSlider();
             this.labelWeight1 = new System.Windows.Forms.Label();
-            this.colorSliderWeight1 = new ColorSlider.ColorSlider2();
             this.label1 = new System.Windows.Forms.Label();
-            this.colorSliderDuration = new ColorSlider.ColorSlider();
             this.labelChannel = new System.Windows.Forms.Label();
             this.chartCurrentWave = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelDelay1 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.labelFrequencyMin = new System.Windows.Forms.Label();
             this.labelFrequencyMax = new System.Windows.Forms.Label();
-            this.labelDuration1 = new System.Windows.Forms.Label();
             this.labelVolumeMax = new System.Windows.Forms.Label();
             this.labelVolumeMin = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -98,14 +107,14 @@ namespace SynthAnvil
             this.chartResultRight = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartResultLeft = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelHold = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.colorSliderHold = new ColorSlider.ColorSlider();
-            this.chartAHDSR = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.colorSliderRelease = new ColorSlider.ColorSlider();
             this.colorSliderSustain = new ColorSlider.ColorSlider();
             this.colorSliderDecay = new ColorSlider.ColorSlider();
+            this.colorSliderHold = new ColorSlider.ColorSlider();
             this.colorSliderAttack = new ColorSlider.ColorSlider();
+            this.labelHold = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chartAHDSR = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelRelease = new System.Windows.Forms.Label();
             this.labelSustain = new System.Windows.Forms.Label();
             this.labelDecay = new System.Windows.Forms.Label();
@@ -116,51 +125,44 @@ namespace SynthAnvil
             this.label37 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.buttonDeletePreset = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonSavePreset = new SynthAnvil.CustomControls.GradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonAddPreset = new SynthAnvil.CustomControls.GradientButton();
             this.textBoxPresetName = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.comboBoxPresets = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBoxRandomInharmonics = new System.Windows.Forms.CheckBox();
-            this.numericUpDownInHarmonicsDecay = new System.Windows.Forms.NumericUpDown();
-            this.label51 = new System.Windows.Forms.Label();
-            this.numericUpDownInHarmonicsSpread = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxRandomFrequency = new System.Windows.Forms.CheckBox();
+            this.numericUpDownSpread = new System.Windows.Forms.NumericUpDown();
             this.label50 = new System.Windows.Forms.Label();
-            this.numericUpDownInHarmonics = new System.Windows.Forms.NumericUpDown();
-            this.label46 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ButtonDeleteAll = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonDelete = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonAdd = new SynthAnvil.CustomControls.GradientButton();
             this.listBoxWaves = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBoxLowerFrequencies = new System.Windows.Forms.CheckBox();
-            this.numericUpDownHarmVolume = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownHarmDuration = new System.Windows.Forms.NumericUpDown();
-            this.radioButtonHarmEven = new System.Windows.Forms.RadioButton();
-            this.radioButtonHarmOdd = new System.Windows.Forms.RadioButton();
-            this.radioButtonHarmBoth = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonCreatePartials = new SynthAnvil.CustomControls.GradientButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButtonMerge = new System.Windows.Forms.RadioButton();
+            this.radioButtonSplit = new System.Windows.Forms.RadioButton();
+            this.radioButtonInharmonics = new System.Windows.Forms.RadioButton();
+            this.radioButtonOddHarmonics = new System.Windows.Forms.RadioButton();
+            this.radioButtonEvenHarmonics = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButtonOverTones = new System.Windows.Forms.RadioButton();
+            this.radioButtonUnderTones = new System.Windows.Forms.RadioButton();
+            this.radioButtonBothTones = new System.Windows.Forms.RadioButton();
+            this.checkBoxRandomDecay = new System.Windows.Forms.CheckBox();
+            this.numericUpDownVolume = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDownHarmDecay = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownVolumeDecay = new System.Windows.Forms.NumericUpDown();
             this.label45 = new System.Windows.Forms.Label();
-            this.numericUpDownHarmonics = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAmount = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
-            this.buttonCreateHarmonics = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonAddNewWave = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDeleteAll = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDeleteWave = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonCreateInharmonics = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDeletePreset2 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonSavePreset2 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonAddPreset2 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDelayPlus1 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDelayPlus10 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDurationPlus1 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDurationPlus10 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDelayMinus10 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDelayMinus1 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDurationMinus10 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDurationMinus1 = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonSelectWav = new SynthAnvil.CustomControls.GradientButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFrequencyShape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVolumeShape)).BeginInit();
@@ -176,21 +178,35 @@ namespace SynthAnvil
             ((System.ComponentModel.ISupportInitialize)(this.chartAHDSR)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonicsDecay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonicsSpread)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpread)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmDecay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmonics)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVolumeDecay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.colorSliderWeight1);
+            this.groupBox1.Controls.Add(this.buttonDelayMinus10);
+            this.groupBox1.Controls.Add(this.buttonDelayMinus1);
+            this.groupBox1.Controls.Add(this.buttonDelayPlus10);
+            this.groupBox1.Controls.Add(this.buttonDelayPlus1);
+            this.groupBox1.Controls.Add(this.buttonDurationMinus10);
+            this.groupBox1.Controls.Add(this.buttonDurationMinus1);
+            this.groupBox1.Controls.Add(this.buttonDurationPlus10);
+            this.groupBox1.Controls.Add(this.buttonDurationPlus1);
+            this.groupBox1.Controls.Add(this.buttonChange);
+            this.groupBox1.Controls.Add(this.colorSliderDelay);
+            this.groupBox1.Controls.Add(this.textBoxDelay);
+            this.groupBox1.Controls.Add(this.textBoxDuration);
+            this.groupBox1.Controls.Add(this.colorSliderDuration);
+            this.groupBox1.Controls.Add(this.buttonSelectWav);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.labelFrequencyTitle);
             this.groupBox1.Controls.Add(this.labelFreqMaxTitle);
@@ -199,32 +215,18 @@ namespace SynthAnvil
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBoxFrequencyShape);
             this.groupBox1.Controls.Add(this.pictureBoxVolumeShape);
-            this.groupBox1.Controls.Add(this.buttonDelayPlus1);
-            this.groupBox1.Controls.Add(this.buttonDelayPlus10);
-            this.groupBox1.Controls.Add(this.buttonDurationPlus1);
-            this.groupBox1.Controls.Add(this.buttonDurationPlus10);
-            this.groupBox1.Controls.Add(this.buttonDelayMinus10);
-            this.groupBox1.Controls.Add(this.buttonDelayMinus1);
-            this.groupBox1.Controls.Add(this.buttonDurationMinus10);
-            this.groupBox1.Controls.Add(this.buttonDurationMinus1);
             this.groupBox1.Controls.Add(this.buttonPlayWave);
             this.groupBox1.Controls.Add(this.pictureBoxCustomWave);
-            this.groupBox1.Controls.Add(this.buttonSelectWav);
             this.groupBox1.Controls.Add(this.labelFileName);
             this.groupBox1.Controls.Add(this.labelWaveForm);
             this.groupBox1.Controls.Add(this.pictureBoxWaveForm);
-            this.groupBox1.Controls.Add(this.colorSliderDelay);
             this.groupBox1.Controls.Add(this.labelWeight1);
-            this.groupBox1.Controls.Add(this.colorSliderWeight1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.colorSliderDuration);
             this.groupBox1.Controls.Add(this.labelChannel);
             this.groupBox1.Controls.Add(this.chartCurrentWave);
-            this.groupBox1.Controls.Add(this.labelDelay1);
             this.groupBox1.Controls.Add(this.label42);
             this.groupBox1.Controls.Add(this.labelFrequencyMin);
             this.groupBox1.Controls.Add(this.labelFrequencyMax);
-            this.groupBox1.Controls.Add(this.labelDuration1);
             this.groupBox1.Controls.Add(this.labelVolumeMax);
             this.groupBox1.Controls.Add(this.labelVolumeMin);
             this.groupBox1.Controls.Add(this.label11);
@@ -237,141 +239,209 @@ namespace SynthAnvil
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // label14
+            // colorSliderWeight1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(70, 51);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 20);
-            this.label14.TabIndex = 143;
-            this.label14.Text = "wave type";
+            this.colorSliderWeight1.BackColor = System.Drawing.Color.Transparent;
+            this.colorSliderWeight1.BarPenColorBottom = System.Drawing.Color.White;
+            this.colorSliderWeight1.BarPenColorTop = System.Drawing.Color.Silver;
+            this.colorSliderWeight1.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.colorSliderWeight1.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderWeight1.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
+            this.colorSliderWeight1.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
+            this.colorSliderWeight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            this.colorSliderWeight1.ForeColor = System.Drawing.Color.White;
+            this.colorSliderWeight1.LargeChange = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.Location = new System.Drawing.Point(95, 570);
+            this.colorSliderWeight1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.Name = "colorSliderWeight1";
+            this.colorSliderWeight1.ScaleDivisions = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.ScaleSubDivisions = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.ShowDivisionsText = false;
+            this.colorSliderWeight1.ShowSmallScale = false;
+            this.colorSliderWeight1.Size = new System.Drawing.Size(468, 48);
+            this.colorSliderWeight1.SmallChange = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.TabIndex = 157;
+            this.colorSliderWeight1.Text = "colorSlider21";
+            this.colorSliderWeight1.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderWeight1.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderWeight1.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+            this.colorSliderWeight1.ThumbSize = new System.Drawing.Size(16, 16);
+            this.colorSliderWeight1.TickAdd = 0F;
+            this.colorSliderWeight1.TickColor = System.Drawing.Color.White;
+            this.colorSliderWeight1.TickDivide = 0F;
+            this.colorSliderWeight1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.colorSliderWeight1.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.colorSliderWeight1.ValueChanged += new System.EventHandler(this.colorSlider21_ValueChanged);
+            this.colorSliderWeight1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderWeight1_MouseUp);
             // 
-            // labelFrequencyTitle
+            // buttonDelayMinus10
             // 
-            this.labelFrequencyTitle.AutoSize = true;
-            this.labelFrequencyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequencyTitle.Location = new System.Drawing.Point(75, 146);
-            this.labelFrequencyTitle.Name = "labelFrequencyTitle";
-            this.labelFrequencyTitle.Size = new System.Drawing.Size(79, 20);
-            this.labelFrequencyTitle.TabIndex = 142;
-            this.labelFrequencyTitle.Text = "frequency";
+            this.buttonDelayMinus10.Active = false;
+            this.buttonDelayMinus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDelayMinus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelayMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelayMinus10.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelayMinus10.HorizontalGradient = true;
+            this.buttonDelayMinus10.Location = new System.Drawing.Point(229, 413);
+            this.buttonDelayMinus10.Name = "buttonDelayMinus10";
+            this.buttonDelayMinus10.Size = new System.Drawing.Size(41, 22);
+            this.buttonDelayMinus10.TabIndex = 156;
+            this.buttonDelayMinus10.Text = "<<";
+            this.buttonDelayMinus10.UseVisualStyleBackColor = true;
+            this.buttonDelayMinus10.Click += new System.EventHandler(this.buttonDelayMinus10_Click);
             // 
-            // labelFreqMaxTitle
+            // buttonDelayMinus1
             // 
-            this.labelFreqMaxTitle.AutoSize = true;
-            this.labelFreqMaxTitle.Location = new System.Drawing.Point(419, 146);
-            this.labelFreqMaxTitle.Name = "labelFreqMaxTitle";
-            this.labelFreqMaxTitle.Size = new System.Drawing.Size(35, 13);
-            this.labelFreqMaxTitle.TabIndex = 141;
-            this.labelFreqMaxTitle.Text = "max. :";
+            this.buttonDelayMinus1.Active = false;
+            this.buttonDelayMinus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDelayMinus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelayMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelayMinus1.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelayMinus1.HorizontalGradient = true;
+            this.buttonDelayMinus1.Location = new System.Drawing.Point(269, 413);
+            this.buttonDelayMinus1.Name = "buttonDelayMinus1";
+            this.buttonDelayMinus1.Size = new System.Drawing.Size(41, 22);
+            this.buttonDelayMinus1.TabIndex = 155;
+            this.buttonDelayMinus1.Text = "<";
+            this.buttonDelayMinus1.UseVisualStyleBackColor = true;
+            this.buttonDelayMinus1.Click += new System.EventHandler(this.buttonDelayMinus1_Click);
             // 
-            // labelFreqMinTitle
+            // buttonDelayPlus10
             // 
-            this.labelFreqMinTitle.AutoSize = true;
-            this.labelFreqMinTitle.Location = new System.Drawing.Point(419, 169);
-            this.labelFreqMinTitle.Name = "labelFreqMinTitle";
-            this.labelFreqMinTitle.Size = new System.Drawing.Size(32, 13);
-            this.labelFreqMinTitle.TabIndex = 140;
-            this.labelFreqMinTitle.Text = "min. :";
+            this.buttonDelayPlus10.Active = false;
+            this.buttonDelayPlus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDelayPlus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelayPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelayPlus10.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelayPlus10.HorizontalGradient = true;
+            this.buttonDelayPlus10.Location = new System.Drawing.Point(376, 413);
+            this.buttonDelayPlus10.Name = "buttonDelayPlus10";
+            this.buttonDelayPlus10.Size = new System.Drawing.Size(41, 22);
+            this.buttonDelayPlus10.TabIndex = 154;
+            this.buttonDelayPlus10.Text = ">>";
+            this.buttonDelayPlus10.UseVisualStyleBackColor = true;
+            this.buttonDelayPlus10.Click += new System.EventHandler(this.buttonDelayPlus10_Click);
             // 
-            // label4
+            // buttonDelayPlus1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(418, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 139;
-            this.label4.Text = "max. :";
+            this.buttonDelayPlus1.Active = false;
+            this.buttonDelayPlus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDelayPlus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelayPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelayPlus1.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelayPlus1.HorizontalGradient = true;
+            this.buttonDelayPlus1.Location = new System.Drawing.Point(336, 413);
+            this.buttonDelayPlus1.Name = "buttonDelayPlus1";
+            this.buttonDelayPlus1.Size = new System.Drawing.Size(41, 22);
+            this.buttonDelayPlus1.TabIndex = 153;
+            this.buttonDelayPlus1.Text = ">";
+            this.buttonDelayPlus1.UseVisualStyleBackColor = true;
+            this.buttonDelayPlus1.Click += new System.EventHandler(this.buttonDelayPlus1_Click);
             // 
-            // label2
+            // buttonDurationMinus10
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(418, 259);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 138;
-            this.label2.Text = "min. :";
+            this.buttonDurationMinus10.Active = false;
+            this.buttonDurationMinus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDurationMinus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDurationMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDurationMinus10.ForeColor = System.Drawing.Color.Black;
+            this.buttonDurationMinus10.HorizontalGradient = true;
+            this.buttonDurationMinus10.Location = new System.Drawing.Point(229, 347);
+            this.buttonDurationMinus10.Name = "buttonDurationMinus10";
+            this.buttonDurationMinus10.Size = new System.Drawing.Size(41, 22);
+            this.buttonDurationMinus10.TabIndex = 152;
+            this.buttonDurationMinus10.Text = "<<";
+            this.buttonDurationMinus10.UseVisualStyleBackColor = true;
+            this.buttonDurationMinus10.Click += new System.EventHandler(this.buttonDurationMinus10_Click);
             // 
-            // pictureBoxFrequencyShape
+            // buttonDurationMinus1
             // 
-            this.pictureBoxFrequencyShape.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxFrequencyShape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxFrequencyShape.Location = new System.Drawing.Point(165, 127);
-            this.pictureBoxFrequencyShape.Name = "pictureBoxFrequencyShape";
-            this.pictureBoxFrequencyShape.Size = new System.Drawing.Size(248, 72);
-            this.pictureBoxFrequencyShape.TabIndex = 137;
-            this.pictureBoxFrequencyShape.TabStop = false;
-            this.pictureBoxFrequencyShape.Click += new System.EventHandler(this.pictureBoxFrequencyShape_Click);
-            this.pictureBoxFrequencyShape.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFrequencyShape_Paint);
+            this.buttonDurationMinus1.Active = false;
+            this.buttonDurationMinus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDurationMinus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDurationMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDurationMinus1.ForeColor = System.Drawing.Color.Black;
+            this.buttonDurationMinus1.HorizontalGradient = true;
+            this.buttonDurationMinus1.Location = new System.Drawing.Point(269, 347);
+            this.buttonDurationMinus1.Name = "buttonDurationMinus1";
+            this.buttonDurationMinus1.Size = new System.Drawing.Size(41, 22);
+            this.buttonDurationMinus1.TabIndex = 151;
+            this.buttonDurationMinus1.Text = "<";
+            this.buttonDurationMinus1.UseVisualStyleBackColor = true;
+            this.buttonDurationMinus1.Click += new System.EventHandler(this.buttonDurationMinus1_Click);
             // 
-            // pictureBoxVolumeShape
+            // buttonDurationPlus10
             // 
-            this.pictureBoxVolumeShape.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxVolumeShape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxVolumeShape.Location = new System.Drawing.Point(165, 219);
-            this.pictureBoxVolumeShape.Name = "pictureBoxVolumeShape";
-            this.pictureBoxVolumeShape.Size = new System.Drawing.Size(248, 72);
-            this.pictureBoxVolumeShape.TabIndex = 136;
-            this.pictureBoxVolumeShape.TabStop = false;
-            this.pictureBoxVolumeShape.Click += new System.EventHandler(this.pictureBoxVolumeShape_Click);
-            this.pictureBoxVolumeShape.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxVolumeShape_Paint);
+            this.buttonDurationPlus10.Active = false;
+            this.buttonDurationPlus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDurationPlus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDurationPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDurationPlus10.ForeColor = System.Drawing.Color.Black;
+            this.buttonDurationPlus10.HorizontalGradient = true;
+            this.buttonDurationPlus10.Location = new System.Drawing.Point(376, 347);
+            this.buttonDurationPlus10.Name = "buttonDurationPlus10";
+            this.buttonDurationPlus10.Size = new System.Drawing.Size(41, 22);
+            this.buttonDurationPlus10.TabIndex = 150;
+            this.buttonDurationPlus10.Text = ">>";
+            this.buttonDurationPlus10.UseVisualStyleBackColor = true;
+            this.buttonDurationPlus10.Click += new System.EventHandler(this.buttonDurationPlus10_Click);
             // 
-            // buttonPlayWave
+            // buttonDurationPlus1
             // 
-            this.buttonPlayWave.FlatAppearance.BorderSize = 0;
-            this.buttonPlayWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlayWave.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonPlayWave.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlayWave.Image")));
-            this.buttonPlayWave.Location = new System.Drawing.Point(528, 482);
-            this.buttonPlayWave.Name = "buttonPlayWave";
-            this.buttonPlayWave.Size = new System.Drawing.Size(56, 56);
-            this.buttonPlayWave.TabIndex = 119;
-            this.buttonPlayWave.UseVisualStyleBackColor = true;
-            this.buttonPlayWave.Click += new System.EventHandler(this.buttonPlayWav_Click);
+            this.buttonDurationPlus1.Active = false;
+            this.buttonDurationPlus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDurationPlus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDurationPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDurationPlus1.ForeColor = System.Drawing.Color.Black;
+            this.buttonDurationPlus1.HorizontalGradient = true;
+            this.buttonDurationPlus1.Location = new System.Drawing.Point(336, 347);
+            this.buttonDurationPlus1.Name = "buttonDurationPlus1";
+            this.buttonDurationPlus1.Size = new System.Drawing.Size(41, 22);
+            this.buttonDurationPlus1.TabIndex = 149;
+            this.buttonDurationPlus1.Text = ">";
+            this.buttonDurationPlus1.UseVisualStyleBackColor = true;
+            this.buttonDurationPlus1.Click += new System.EventHandler(this.buttonDurationPlus1_Click);
             // 
-            // pictureBoxCustomWave
+            // buttonChange
             // 
-            this.pictureBoxCustomWave.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxCustomWave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxCustomWave.Location = new System.Drawing.Point(267, 20);
-            this.pictureBoxCustomWave.Name = "pictureBoxCustomWave";
-            this.pictureBoxCustomWave.Size = new System.Drawing.Size(248, 72);
-            this.pictureBoxCustomWave.TabIndex = 106;
-            this.pictureBoxCustomWave.TabStop = false;
-            this.pictureBoxCustomWave.Click += new System.EventHandler(this.pictureBoxCustomWave_Click);
-            this.pictureBoxCustomWave.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxCustomWave_Paint);
-            this.pictureBoxCustomWave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseMove);
-            // 
-            // labelFileName
-            // 
-            this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFileName.Location = new System.Drawing.Point(250, 34);
-            this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(209, 27);
-            this.labelFileName.TabIndex = 94;
-            // 
-            // labelWaveForm
-            // 
-            this.labelWaveForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWaveForm.Location = new System.Drawing.Point(161, 92);
-            this.labelWaveForm.Name = "labelWaveForm";
-            this.labelWaveForm.Size = new System.Drawing.Size(83, 27);
-            this.labelWaveForm.TabIndex = 93;
-            this.labelWaveForm.Text = "File (.wav)";
-            this.labelWaveForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBoxWaveForm
-            // 
-            this.pictureBoxWaveForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxWaveForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxWaveForm.InitialImage = null;
-            this.pictureBoxWaveForm.Location = new System.Drawing.Point(165, 20);
-            this.pictureBoxWaveForm.Name = "pictureBoxWaveForm";
-            this.pictureBoxWaveForm.Size = new System.Drawing.Size(70, 70);
-            this.pictureBoxWaveForm.TabIndex = 91;
-            this.pictureBoxWaveForm.TabStop = false;
-            this.pictureBoxWaveForm.Click += new System.EventHandler(this.pictureBoxWaveForm_Click);
+            this.buttonChange.FlatAppearance.BorderSize = 0;
+            this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChange.Image = global::SynthAnvil.Properties.Resources.change;
+            this.buttonChange.Location = new System.Drawing.Point(434, 36);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(52, 55);
+            this.buttonChange.TabIndex = 147;
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // colorSliderDelay
             // 
@@ -389,7 +459,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDelay.Location = new System.Drawing.Point(146, 391);
+            this.colorSliderDelay.Location = new System.Drawing.Point(165, 386);
             this.colorSliderDelay.Maximum = new decimal(new int[] {
             882000,
             0,
@@ -411,16 +481,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDelay.ShowDivisionsText = true;
+            this.colorSliderDelay.ShowDivisionsText = false;
             this.colorSliderDelay.ShowSmallScale = false;
-            this.colorSliderDelay.Size = new System.Drawing.Size(382, 31);
+            this.colorSliderDelay.Size = new System.Drawing.Size(321, 39);
             this.colorSliderDelay.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.colorSliderDelay.TabIndex = 61;
-            this.colorSliderDelay.Text = "colorSliderDelay1";
+            this.colorSliderDelay.TabIndex = 146;
+            this.colorSliderDelay.Text = "colorSlider2";
             this.colorSliderDelay.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDelay.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDelay.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -433,96 +503,27 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDelay.ValueChanged += new System.EventHandler(this.colorSliderDelay1_ValueChanged);
             this.colorSliderDelay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderDelay1_MouseUp);
             // 
-            // labelWeight1
+            // textBoxDelay
             // 
-            this.labelWeight1.AutoSize = true;
-            this.labelWeight1.BackColor = System.Drawing.Color.Transparent;
-            this.labelWeight1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeight1.ForeColor = System.Drawing.Color.White;
-            this.labelWeight1.Location = new System.Drawing.Point(564, 578);
-            this.labelWeight1.Name = "labelWeight1";
-            this.labelWeight1.Size = new System.Drawing.Size(55, 30);
-            this.labelWeight1.TabIndex = 60;
-            this.labelWeight1.Text = "100";
+            this.textBoxDelay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxDelay.ForeColor = System.Drawing.Color.White;
+            this.textBoxDelay.Location = new System.Drawing.Point(528, 387);
+            this.textBoxDelay.Name = "textBoxDelay";
+            this.textBoxDelay.Size = new System.Drawing.Size(74, 20);
+            this.textBoxDelay.TabIndex = 73;
+            this.textBoxDelay.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDelay_KeyUp);
             // 
-            // colorSliderWeight1
+            // textBoxDuration
             // 
-            this.colorSliderWeight1.BackColor = System.Drawing.Color.Transparent;
-            this.colorSliderWeight1.BarInnerColor = System.Drawing.Color.Transparent;
-            this.colorSliderWeight1.BarPenColorBottom = System.Drawing.Color.Yellow;
-            this.colorSliderWeight1.BarPenColorTop = System.Drawing.Color.White;
-            this.colorSliderWeight1.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-            this.colorSliderWeight1.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderWeight1.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
-            this.colorSliderWeight1.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
-            this.colorSliderWeight1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.colorSliderWeight1.ForeColor = System.Drawing.Color.White;
-            this.colorSliderWeight1.LargeChange = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.Location = new System.Drawing.Point(89, 581);
-            this.colorSliderWeight1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.Name = "colorSliderWeight1";
-            this.colorSliderWeight1.ScaleDivisions = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.ScaleSubDivisions = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.ShowDivisionsText = false;
-            this.colorSliderWeight1.ShowSmallScale = false;
-            this.colorSliderWeight1.Size = new System.Drawing.Size(476, 29);
-            this.colorSliderWeight1.SmallChange = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.TabIndex = 59;
-            this.colorSliderWeight1.Text = "colorSliderWeight1";
-            this.colorSliderWeight1.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderWeight1.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderWeight1.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
-            this.colorSliderWeight1.ThumbSize = new System.Drawing.Size(16, 16);
-            this.colorSliderWeight1.TickAdd = 0F;
-            this.colorSliderWeight1.TickColor = System.Drawing.Color.White;
-            this.colorSliderWeight1.TickDivide = 0F;
-            this.colorSliderWeight1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.colorSliderWeight1.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.colorSliderWeight1.ValueChanged += new System.EventHandler(this.colorSlider21_ValueChanged);
-            this.colorSliderWeight1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderWeight1_MouseUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 585);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "weight";
+            this.textBoxDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxDuration.ForeColor = System.Drawing.Color.White;
+            this.textBoxDuration.Location = new System.Drawing.Point(528, 322);
+            this.textBoxDuration.Name = "textBoxDuration";
+            this.textBoxDuration.Size = new System.Drawing.Size(74, 20);
+            this.textBoxDuration.TabIndex = 72;
+            this.textBoxDuration.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDuration_KeyUp);
             // 
             // colorSliderDuration
             // 
@@ -540,7 +541,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDuration.Location = new System.Drawing.Point(146, 320);
+            this.colorSliderDuration.Location = new System.Drawing.Point(165, 316);
             this.colorSliderDuration.Maximum = new decimal(new int[] {
             882000,
             0,
@@ -562,16 +563,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDuration.ShowDivisionsText = true;
+            this.colorSliderDuration.ShowDivisionsText = false;
             this.colorSliderDuration.ShowSmallScale = false;
-            this.colorSliderDuration.Size = new System.Drawing.Size(382, 31);
+            this.colorSliderDuration.Size = new System.Drawing.Size(321, 39);
             this.colorSliderDuration.SmallChange = new decimal(new int[] {
-            50,
+            1,
             0,
             0,
             0});
-            this.colorSliderDuration.TabIndex = 51;
-            this.colorSliderDuration.Text = "colorSliderDuration1";
+            this.colorSliderDuration.TabIndex = 145;
+            this.colorSliderDuration.Text = "colorSlider1";
             this.colorSliderDuration.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDuration.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDuration.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -580,21 +581,198 @@ namespace SynthAnvil
             this.colorSliderDuration.TickColor = System.Drawing.Color.White;
             this.colorSliderDuration.TickDivide = 0F;
             this.colorSliderDuration.Value = new decimal(new int[] {
-            100,
+            30,
             0,
             0,
             0});
-            this.colorSliderDuration.ValueChanged += new System.EventHandler(this.colorSliderDuration1_ValueChanged);
             this.colorSliderDuration.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderDuration1_MouseUp);
+            // 
+            // buttonSelectWav
+            // 
+            this.buttonSelectWav.Active = false;
+            this.buttonSelectWav.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSelectWav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSelectWav.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelectWav.ForeColor = System.Drawing.Color.Black;
+            this.buttonSelectWav.HorizontalGradient = false;
+            this.buttonSelectWav.Location = new System.Drawing.Point(336, 32);
+            this.buttonSelectWav.Name = "buttonSelectWav";
+            this.buttonSelectWav.Size = new System.Drawing.Size(75, 23);
+            this.buttonSelectWav.TabIndex = 144;
+            this.buttonSelectWav.Text = "Select";
+            this.buttonSelectWav.UseVisualStyleBackColor = true;
+            this.buttonSelectWav.Click += new System.EventHandler(this.buttonSelectWav_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(70, 51);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 20);
+            this.label14.TabIndex = 143;
+            this.label14.Text = "wave type";
+            // 
+            // labelFrequencyTitle
+            // 
+            this.labelFrequencyTitle.AutoSize = true;
+            this.labelFrequencyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFrequencyTitle.Location = new System.Drawing.Point(75, 140);
+            this.labelFrequencyTitle.Name = "labelFrequencyTitle";
+            this.labelFrequencyTitle.Size = new System.Drawing.Size(79, 20);
+            this.labelFrequencyTitle.TabIndex = 142;
+            this.labelFrequencyTitle.Text = "frequency";
+            // 
+            // labelFreqMaxTitle
+            // 
+            this.labelFreqMaxTitle.AutoSize = true;
+            this.labelFreqMaxTitle.Location = new System.Drawing.Point(419, 136);
+            this.labelFreqMaxTitle.Name = "labelFreqMaxTitle";
+            this.labelFreqMaxTitle.Size = new System.Drawing.Size(35, 13);
+            this.labelFreqMaxTitle.TabIndex = 141;
+            this.labelFreqMaxTitle.Text = "max. :";
+            // 
+            // labelFreqMinTitle
+            // 
+            this.labelFreqMinTitle.AutoSize = true;
+            this.labelFreqMinTitle.Location = new System.Drawing.Point(419, 159);
+            this.labelFreqMinTitle.Name = "labelFreqMinTitle";
+            this.labelFreqMinTitle.Size = new System.Drawing.Size(32, 13);
+            this.labelFreqMinTitle.TabIndex = 140;
+            this.labelFreqMinTitle.Text = "min. :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(418, 230);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "max. :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(418, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 138;
+            this.label2.Text = "min. :";
+            // 
+            // pictureBoxFrequencyShape
+            // 
+            this.pictureBoxFrequencyShape.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxFrequencyShape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxFrequencyShape.Location = new System.Drawing.Point(165, 118);
+            this.pictureBoxFrequencyShape.Name = "pictureBoxFrequencyShape";
+            this.pictureBoxFrequencyShape.Size = new System.Drawing.Size(248, 72);
+            this.pictureBoxFrequencyShape.TabIndex = 137;
+            this.pictureBoxFrequencyShape.TabStop = false;
+            this.pictureBoxFrequencyShape.Click += new System.EventHandler(this.pictureBoxFrequencyShape_Click);
+            this.pictureBoxFrequencyShape.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFrequencyShape_Paint);
+            this.pictureBoxFrequencyShape.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxFrequencyShape_MouseMove);
+            // 
+            // pictureBoxVolumeShape
+            // 
+            this.pictureBoxVolumeShape.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxVolumeShape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxVolumeShape.Location = new System.Drawing.Point(165, 213);
+            this.pictureBoxVolumeShape.Name = "pictureBoxVolumeShape";
+            this.pictureBoxVolumeShape.Size = new System.Drawing.Size(248, 72);
+            this.pictureBoxVolumeShape.TabIndex = 136;
+            this.pictureBoxVolumeShape.TabStop = false;
+            this.pictureBoxVolumeShape.Click += new System.EventHandler(this.pictureBoxVolumeShape_Click);
+            this.pictureBoxVolumeShape.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxVolumeShape_Paint);
+            this.pictureBoxVolumeShape.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxVolumeShape_MouseMove);
+            // 
+            // buttonPlayWave
+            // 
+            this.buttonPlayWave.FlatAppearance.BorderSize = 0;
+            this.buttonPlayWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPlayWave.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonPlayWave.Image = global::SynthAnvil.Properties.Resources.playbutton;
+            this.buttonPlayWave.Location = new System.Drawing.Point(528, 482);
+            this.buttonPlayWave.Name = "buttonPlayWave";
+            this.buttonPlayWave.Size = new System.Drawing.Size(56, 56);
+            this.buttonPlayWave.TabIndex = 119;
+            this.buttonPlayWave.UseVisualStyleBackColor = true;
+            this.buttonPlayWave.Click += new System.EventHandler(this.buttonPlayWav_Click);
+            // 
+            // pictureBoxCustomWave
+            // 
+            this.pictureBoxCustomWave.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxCustomWave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxCustomWave.Location = new System.Drawing.Point(165, 27);
+            this.pictureBoxCustomWave.Name = "pictureBoxCustomWave";
+            this.pictureBoxCustomWave.Size = new System.Drawing.Size(248, 72);
+            this.pictureBoxCustomWave.TabIndex = 106;
+            this.pictureBoxCustomWave.TabStop = false;
+            this.pictureBoxCustomWave.Click += new System.EventHandler(this.pictureBoxCustomWave_Click);
+            this.pictureBoxCustomWave.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxCustomWave_Paint);
+            this.pictureBoxCustomWave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseMove);
+            // 
+            // labelFileName
+            // 
+            this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFileName.ForeColor = System.Drawing.Color.Yellow;
+            this.labelFileName.Location = new System.Drawing.Point(253, 67);
+            this.labelFileName.Name = "labelFileName";
+            this.labelFileName.Size = new System.Drawing.Size(209, 24);
+            this.labelFileName.TabIndex = 94;
+            // 
+            // labelWaveForm
+            // 
+            this.labelWaveForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWaveForm.Location = new System.Drawing.Point(250, 47);
+            this.labelWaveForm.Name = "labelWaveForm";
+            this.labelWaveForm.Size = new System.Drawing.Size(99, 27);
+            this.labelWaveForm.TabIndex = 93;
+            this.labelWaveForm.Text = "File (.wav)";
+            this.labelWaveForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBoxWaveForm
+            // 
+            this.pictureBoxWaveForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxWaveForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxWaveForm.InitialImage = null;
+            this.pictureBoxWaveForm.Location = new System.Drawing.Point(176, 29);
+            this.pictureBoxWaveForm.Name = "pictureBoxWaveForm";
+            this.pictureBoxWaveForm.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxWaveForm.TabIndex = 91;
+            this.pictureBoxWaveForm.TabStop = false;
+            this.pictureBoxWaveForm.Click += new System.EventHandler(this.pictureBoxWaveForm_Click);
+            // 
+            // labelWeight1
+            // 
+            this.labelWeight1.AutoSize = true;
+            this.labelWeight1.BackColor = System.Drawing.Color.Transparent;
+            this.labelWeight1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWeight1.ForeColor = System.Drawing.Color.White;
+            this.labelWeight1.Location = new System.Drawing.Point(564, 578);
+            this.labelWeight1.Name = "labelWeight1";
+            this.labelWeight1.Size = new System.Drawing.Size(55, 30);
+            this.labelWeight1.TabIndex = 60;
+            this.labelWeight1.Text = "100";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(34, 585);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "weight";
             // 
             // labelChannel
             // 
             this.labelChannel.AutoSize = true;
-            this.labelChannel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChannel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChannel.ForeColor = System.Drawing.Color.Gold;
-            this.labelChannel.Location = new System.Drawing.Point(590, 18);
+            this.labelChannel.Location = new System.Drawing.Point(590, 17);
             this.labelChannel.Name = "labelChannel";
-            this.labelChannel.Size = new System.Drawing.Size(40, 17);
+            this.labelChannel.Size = new System.Drawing.Size(41, 18);
             this.labelChannel.TabIndex = 50;
             this.labelChannel.Text = "both";
             this.labelChannel.Click += new System.EventHandler(this.labelChannel1_Click);
@@ -602,39 +780,30 @@ namespace SynthAnvil
             // chartCurrentWave
             // 
             this.chartCurrentWave.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.LabelStyle.Enabled = false;
-            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.LabelStyle.Enabled = false;
-            chartArea1.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.BackColor = System.Drawing.Color.Silver;
-            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartCurrentWave.ChartAreas.Add(chartArea1);
+            chartArea13.AxisX.LabelStyle.Enabled = false;
+            chartArea13.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea13.AxisX.MajorGrid.Enabled = false;
+            chartArea13.AxisX.MajorTickMark.Enabled = false;
+            chartArea13.AxisY.LabelStyle.Enabled = false;
+            chartArea13.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea13.AxisY.MajorGrid.Enabled = false;
+            chartArea13.AxisY.MajorTickMark.Enabled = false;
+            chartArea13.BackColor = System.Drawing.Color.Silver;
+            chartArea13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea13.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea13.Name = "ChartArea1";
+            this.chartCurrentWave.ChartAreas.Add(chartArea13);
             this.chartCurrentWave.Location = new System.Drawing.Point(71, 460);
             this.chartCurrentWave.Name = "chartCurrentWave";
-            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Yellow;
-            series1.Name = "Series1";
-            this.chartCurrentWave.Series.Add(series1);
+            series13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Color = System.Drawing.Color.Yellow;
+            series13.Name = "Series1";
+            this.chartCurrentWave.Series.Add(series13);
             this.chartCurrentWave.Size = new System.Drawing.Size(447, 103);
             this.chartCurrentWave.TabIndex = 44;
             this.chartCurrentWave.Text = "chart1";
-            // 
-            // labelDelay1
-            // 
-            this.labelDelay1.AutoSize = true;
-            this.labelDelay1.Location = new System.Drawing.Point(552, 393);
-            this.labelDelay1.Name = "labelDelay1";
-            this.labelDelay1.Size = new System.Drawing.Size(13, 13);
-            this.labelDelay1.TabIndex = 42;
-            this.labelDelay1.Text = "0";
             // 
             // label42
             // 
@@ -649,7 +818,7 @@ namespace SynthAnvil
             // labelFrequencyMin
             // 
             this.labelFrequencyMin.AutoSize = true;
-            this.labelFrequencyMin.Location = new System.Drawing.Point(456, 171);
+            this.labelFrequencyMin.Location = new System.Drawing.Point(456, 161);
             this.labelFrequencyMin.Name = "labelFrequencyMin";
             this.labelFrequencyMin.Size = new System.Drawing.Size(52, 13);
             this.labelFrequencyMin.TabIndex = 39;
@@ -658,25 +827,16 @@ namespace SynthAnvil
             // labelFrequencyMax
             // 
             this.labelFrequencyMax.AutoSize = true;
-            this.labelFrequencyMax.Location = new System.Drawing.Point(456, 147);
+            this.labelFrequencyMax.Location = new System.Drawing.Point(456, 137);
             this.labelFrequencyMax.Name = "labelFrequencyMax";
             this.labelFrequencyMax.Size = new System.Drawing.Size(52, 13);
             this.labelFrequencyMax.TabIndex = 38;
             this.labelFrequencyMax.Text = "22222.22";
             // 
-            // labelDuration1
-            // 
-            this.labelDuration1.AutoSize = true;
-            this.labelDuration1.Location = new System.Drawing.Point(552, 326);
-            this.labelDuration1.Name = "labelDuration1";
-            this.labelDuration1.Size = new System.Drawing.Size(13, 13);
-            this.labelDuration1.TabIndex = 35;
-            this.labelDuration1.Text = "1";
-            // 
             // labelVolumeMax
             // 
             this.labelVolumeMax.AutoSize = true;
-            this.labelVolumeMax.Location = new System.Drawing.Point(456, 236);
+            this.labelVolumeMax.Location = new System.Drawing.Point(456, 230);
             this.labelVolumeMax.Name = "labelVolumeMax";
             this.labelVolumeMax.Size = new System.Drawing.Size(25, 13);
             this.labelVolumeMax.TabIndex = 33;
@@ -685,7 +845,7 @@ namespace SynthAnvil
             // labelVolumeMin
             // 
             this.labelVolumeMin.AutoSize = true;
-            this.labelVolumeMin.Location = new System.Drawing.Point(456, 259);
+            this.labelVolumeMin.Location = new System.Drawing.Point(456, 253);
             this.labelVolumeMin.Name = "labelVolumeMin";
             this.labelVolumeMin.Size = new System.Drawing.Size(25, 13);
             this.labelVolumeMin.TabIndex = 31;
@@ -695,7 +855,7 @@ namespace SynthAnvil
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(78, 247);
+            this.label11.Location = new System.Drawing.Point(78, 241);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 20);
             this.label11.TabIndex = 24;
@@ -704,9 +864,10 @@ namespace SynthAnvil
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(543, 21);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(526, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.Size = new System.Drawing.Size(58, 17);
             this.label5.TabIndex = 20;
             this.label5.Text = "channel";
             // 
@@ -818,13 +979,13 @@ namespace SynthAnvil
             this.buttonPlay.FlatAppearance.BorderSize = 0;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
+            this.buttonPlay.Image = global::SynthAnvil.Properties.Resources.playbutton;
             this.buttonPlay.Location = new System.Drawing.Point(1188, 187);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(56, 56);
             this.buttonPlay.TabIndex = 118;
             this.buttonPlay.UseVisualStyleBackColor = true;
-            this.buttonPlay.Click += new System.EventHandler(this.button1_Click);
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlayContinuous);
             // 
             // buttonPlayC5Sharp
             // 
@@ -959,25 +1120,25 @@ namespace SynthAnvil
             // chartFFTRight
             // 
             this.chartFFTRight.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisX.LabelStyle.Enabled = false;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.LabelStyle.Enabled = false;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorTickMark.Enabled = false;
-            chartArea2.BackColor = System.Drawing.Color.Silver;
-            chartArea2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartFFTRight.ChartAreas.Add(chartArea2);
+            chartArea14.AxisX.LabelStyle.Enabled = false;
+            chartArea14.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea14.AxisX.MajorGrid.Enabled = false;
+            chartArea14.AxisX.MajorTickMark.Enabled = false;
+            chartArea14.AxisY.LabelStyle.Enabled = false;
+            chartArea14.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea14.AxisY.MajorGrid.Enabled = false;
+            chartArea14.AxisY.MajorTickMark.Enabled = false;
+            chartArea14.BackColor = System.Drawing.Color.Silver;
+            chartArea14.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea14.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea14.Name = "ChartArea1";
+            this.chartFFTRight.ChartAreas.Add(chartArea14);
             this.chartFFTRight.Location = new System.Drawing.Point(357, 141);
             this.chartFFTRight.Name = "chartFFTRight";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Blue;
-            series2.Name = "Series1";
-            this.chartFFTRight.Series.Add(series2);
+            series14.ChartArea = "ChartArea1";
+            series14.Color = System.Drawing.Color.Blue;
+            series14.Name = "Series1";
+            this.chartFFTRight.Series.Add(series14);
             this.chartFFTRight.Size = new System.Drawing.Size(388, 120);
             this.chartFFTRight.TabIndex = 77;
             this.chartFFTRight.Text = "chart1";
@@ -987,27 +1148,27 @@ namespace SynthAnvil
             // chartFFTLeft
             // 
             this.chartFFTLeft.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisX.LabelStyle.Enabled = false;
-            chartArea3.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea3.AxisX.LineWidth = 0;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisX.MajorTickMark.Enabled = false;
-            chartArea3.AxisY.LabelStyle.Enabled = false;
-            chartArea3.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorTickMark.Enabled = false;
-            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartFFTLeft.ChartAreas.Add(chartArea3);
-            this.chartFFTLeft.Location = new System.Drawing.Point(357, 19);
+            chartArea15.AxisX.LabelStyle.Enabled = false;
+            chartArea15.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea15.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea15.AxisX.LineWidth = 0;
+            chartArea15.AxisX.MajorGrid.Enabled = false;
+            chartArea15.AxisX.MajorTickMark.Enabled = false;
+            chartArea15.AxisY.LabelStyle.Enabled = false;
+            chartArea15.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea15.AxisY.MajorGrid.Enabled = false;
+            chartArea15.AxisY.MajorTickMark.Enabled = false;
+            chartArea15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea15.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea15.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea15.Name = "ChartArea1";
+            this.chartFFTLeft.ChartAreas.Add(chartArea15);
+            this.chartFFTLeft.Location = new System.Drawing.Point(355, 19);
             this.chartFFTLeft.Name = "chartFFTLeft";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.Blue;
-            series3.Name = "Series1";
-            this.chartFFTLeft.Series.Add(series3);
+            series15.ChartArea = "ChartArea1";
+            series15.Color = System.Drawing.Color.Blue;
+            series15.Name = "Series1";
+            this.chartFFTLeft.Series.Add(series15);
             this.chartFFTLeft.Size = new System.Drawing.Size(388, 120);
             this.chartFFTLeft.TabIndex = 76;
             this.chartFFTLeft.Text = "chart1";
@@ -1026,26 +1187,26 @@ namespace SynthAnvil
             // chartResultRight
             // 
             this.chartResultRight.BackColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisX.LabelStyle.Enabled = false;
-            chartArea4.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisX.MajorTickMark.Enabled = false;
-            chartArea4.AxisY.LabelStyle.Enabled = false;
-            chartArea4.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorTickMark.Enabled = false;
-            chartArea4.BackColor = System.Drawing.Color.Silver;
-            chartArea4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea4.Name = "ChartArea1";
-            this.chartResultRight.ChartAreas.Add(chartArea4);
+            chartArea16.AxisX.LabelStyle.Enabled = false;
+            chartArea16.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea16.AxisX.MajorGrid.Enabled = false;
+            chartArea16.AxisX.MajorTickMark.Enabled = false;
+            chartArea16.AxisY.LabelStyle.Enabled = false;
+            chartArea16.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea16.AxisY.MajorGrid.Enabled = false;
+            chartArea16.AxisY.MajorTickMark.Enabled = false;
+            chartArea16.BackColor = System.Drawing.Color.Silver;
+            chartArea16.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea16.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea16.Name = "ChartArea1";
+            this.chartResultRight.ChartAreas.Add(chartArea16);
             this.chartResultRight.Location = new System.Drawing.Point(716, 141);
             this.chartResultRight.Name = "chartResultRight";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Yellow;
-            series4.Name = "Series1";
-            this.chartResultRight.Series.Add(series4);
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series16.Color = System.Drawing.Color.Yellow;
+            series16.Name = "Series1";
+            this.chartResultRight.Series.Add(series16);
             this.chartResultRight.Size = new System.Drawing.Size(388, 120);
             this.chartResultRight.TabIndex = 73;
             this.chartResultRight.Text = "chart1";
@@ -1056,28 +1217,28 @@ namespace SynthAnvil
             // chartResultLeft
             // 
             this.chartResultLeft.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.LabelStyle.Enabled = false;
-            chartArea5.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea5.AxisX.LineWidth = 0;
-            chartArea5.AxisX.MajorGrid.Enabled = false;
-            chartArea5.AxisX.MajorTickMark.Enabled = false;
-            chartArea5.AxisY.LabelStyle.Enabled = false;
-            chartArea5.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisY.MajorGrid.Enabled = false;
-            chartArea5.AxisY.MajorTickMark.Enabled = false;
-            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea5.Name = "ChartArea1";
-            this.chartResultLeft.ChartAreas.Add(chartArea5);
+            chartArea17.AxisX.LabelStyle.Enabled = false;
+            chartArea17.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea17.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea17.AxisX.LineWidth = 0;
+            chartArea17.AxisX.MajorGrid.Enabled = false;
+            chartArea17.AxisX.MajorTickMark.Enabled = false;
+            chartArea17.AxisY.LabelStyle.Enabled = false;
+            chartArea17.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea17.AxisY.MajorGrid.Enabled = false;
+            chartArea17.AxisY.MajorTickMark.Enabled = false;
+            chartArea17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea17.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea17.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea17.Name = "ChartArea1";
+            this.chartResultLeft.ChartAreas.Add(chartArea17);
             this.chartResultLeft.Location = new System.Drawing.Point(715, 19);
             this.chartResultLeft.Name = "chartResultLeft";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Color = System.Drawing.Color.Yellow;
-            series5.Name = "Series1";
-            this.chartResultLeft.Series.Add(series5);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series17.Color = System.Drawing.Color.Yellow;
+            series17.Name = "Series1";
+            this.chartResultLeft.Series.Add(series17);
             this.chartResultLeft.Size = new System.Drawing.Size(388, 120);
             this.chartResultLeft.TabIndex = 72;
             this.chartResultLeft.Text = "chart1";
@@ -1088,14 +1249,14 @@ namespace SynthAnvil
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.labelHold);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.colorSliderHold);
-            this.panel1.Controls.Add(this.chartAHDSR);
             this.panel1.Controls.Add(this.colorSliderRelease);
             this.panel1.Controls.Add(this.colorSliderSustain);
             this.panel1.Controls.Add(this.colorSliderDecay);
+            this.panel1.Controls.Add(this.colorSliderHold);
             this.panel1.Controls.Add(this.colorSliderAttack);
+            this.panel1.Controls.Add(this.labelHold);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.chartAHDSR);
             this.panel1.Controls.Add(this.labelRelease);
             this.panel1.Controls.Add(this.labelSustain);
             this.panel1.Controls.Add(this.labelDecay);
@@ -1110,115 +1271,6 @@ namespace SynthAnvil
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(337, 259);
             this.panel1.TabIndex = 71;
-            // 
-            // labelHold
-            // 
-            this.labelHold.AutoSize = true;
-            this.labelHold.Location = new System.Drawing.Point(288, 42);
-            this.labelHold.Name = "labelHold";
-            this.labelHold.Size = new System.Drawing.Size(25, 13);
-            this.labelHold.TabIndex = 86;
-            this.labelHold.Text = "440";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 85;
-            this.label8.Text = "Hold";
-            // 
-            // colorSliderHold
-            // 
-            this.colorSliderHold.BackColor = System.Drawing.Color.Transparent;
-            this.colorSliderHold.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
-            this.colorSliderHold.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
-            this.colorSliderHold.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-            this.colorSliderHold.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderHold.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
-            this.colorSliderHold.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
-            this.colorSliderHold.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.colorSliderHold.ForeColor = System.Drawing.Color.White;
-            this.colorSliderHold.LargeChange = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.colorSliderHold.Location = new System.Drawing.Point(63, 40);
-            this.colorSliderHold.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.colorSliderHold.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.colorSliderHold.Name = "colorSliderHold";
-            this.colorSliderHold.ScaleDivisions = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.colorSliderHold.ScaleSubDivisions = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.colorSliderHold.ShowDivisionsText = true;
-            this.colorSliderHold.ShowSmallScale = false;
-            this.colorSliderHold.Size = new System.Drawing.Size(216, 31);
-            this.colorSliderHold.SmallChange = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.colorSliderHold.TabIndex = 84;
-            this.colorSliderHold.Text = "colorSlider1";
-            this.colorSliderHold.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderHold.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
-            this.colorSliderHold.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
-            this.colorSliderHold.ThumbSize = new System.Drawing.Size(16, 16);
-            this.colorSliderHold.TickAdd = 0F;
-            this.colorSliderHold.TickColor = System.Drawing.Color.White;
-            this.colorSliderHold.TickDivide = 0F;
-            this.colorSliderHold.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.colorSliderHold.ValueChanged += new System.EventHandler(this.colorSliderHold_ValueChanged);
-            this.colorSliderHold.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderHold_MouseUp);
-            // 
-            // chartAHDSR
-            // 
-            this.chartAHDSR.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.AxisX.LabelStyle.Enabled = false;
-            chartArea6.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea6.AxisX.MajorGrid.Enabled = false;
-            chartArea6.AxisX.MajorTickMark.Enabled = false;
-            chartArea6.AxisY.LabelStyle.Enabled = false;
-            chartArea6.AxisY.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.MajorGrid.Enabled = false;
-            chartArea6.AxisY.MajorTickMark.Enabled = false;
-            chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
-            chartArea6.BackSecondaryColor = System.Drawing.Color.Silver;
-            chartArea6.Name = "ChartArea1";
-            this.chartAHDSR.ChartAreas.Add(chartArea6);
-            this.chartAHDSR.Location = new System.Drawing.Point(68, 174);
-            this.chartAHDSR.Name = "chartAHDSR";
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.Color = System.Drawing.Color.IndianRed;
-            series6.MarkerBorderWidth = 2;
-            series6.MarkerSize = 10;
-            series6.Name = "Series1";
-            this.chartAHDSR.Series.Add(series6);
-            this.chartAHDSR.Size = new System.Drawing.Size(190, 71);
-            this.chartAHDSR.TabIndex = 83;
-            this.chartAHDSR.Text = "chartADSR";
             // 
             // colorSliderRelease
             // 
@@ -1236,7 +1288,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderRelease.Location = new System.Drawing.Point(63, 136);
+            this.colorSliderRelease.Location = new System.Drawing.Point(72, 134);
             this.colorSliderRelease.Maximum = new decimal(new int[] {
             100,
             0,
@@ -1258,16 +1310,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderRelease.ShowDivisionsText = true;
+            this.colorSliderRelease.ShowDivisionsText = false;
             this.colorSliderRelease.ShowSmallScale = false;
-            this.colorSliderRelease.Size = new System.Drawing.Size(216, 31);
+            this.colorSliderRelease.Size = new System.Drawing.Size(200, 31);
             this.colorSliderRelease.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
-            65536});
-            this.colorSliderRelease.TabIndex = 82;
-            this.colorSliderRelease.Text = "colorSliderRelease";
+            0});
+            this.colorSliderRelease.TabIndex = 151;
+            this.colorSliderRelease.Text = "colorSlider2";
             this.colorSliderRelease.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderRelease.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderRelease.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -1276,7 +1328,7 @@ namespace SynthAnvil
             this.colorSliderRelease.TickColor = System.Drawing.Color.White;
             this.colorSliderRelease.TickDivide = 0F;
             this.colorSliderRelease.Value = new decimal(new int[] {
-            0,
+            30,
             0,
             0,
             0});
@@ -1299,7 +1351,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderSustain.Location = new System.Drawing.Point(65, 108);
+            this.colorSliderSustain.Location = new System.Drawing.Point(72, 99);
             this.colorSliderSustain.Maximum = new decimal(new int[] {
             100,
             0,
@@ -1321,16 +1373,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderSustain.ShowDivisionsText = true;
+            this.colorSliderSustain.ShowDivisionsText = false;
             this.colorSliderSustain.ShowSmallScale = false;
-            this.colorSliderSustain.Size = new System.Drawing.Size(216, 31);
+            this.colorSliderSustain.Size = new System.Drawing.Size(200, 31);
             this.colorSliderSustain.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
-            65536});
-            this.colorSliderSustain.TabIndex = 81;
-            this.colorSliderSustain.Text = "colorSliderSustain";
+            0});
+            this.colorSliderSustain.TabIndex = 150;
+            this.colorSliderSustain.Text = "colorSlider2";
             this.colorSliderSustain.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderSustain.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderSustain.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -1339,7 +1391,7 @@ namespace SynthAnvil
             this.colorSliderSustain.TickColor = System.Drawing.Color.White;
             this.colorSliderSustain.TickDivide = 0F;
             this.colorSliderSustain.Value = new decimal(new int[] {
-            0,
+            30,
             0,
             0,
             0});
@@ -1362,7 +1414,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDecay.Location = new System.Drawing.Point(63, 77);
+            this.colorSliderDecay.Location = new System.Drawing.Point(72, 66);
             this.colorSliderDecay.Maximum = new decimal(new int[] {
             100,
             0,
@@ -1384,16 +1436,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderDecay.ShowDivisionsText = true;
+            this.colorSliderDecay.ShowDivisionsText = false;
             this.colorSliderDecay.ShowSmallScale = false;
-            this.colorSliderDecay.Size = new System.Drawing.Size(216, 31);
+            this.colorSliderDecay.Size = new System.Drawing.Size(200, 31);
             this.colorSliderDecay.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
-            65536});
-            this.colorSliderDecay.TabIndex = 80;
-            this.colorSliderDecay.Text = "colorSliderDecay";
+            0});
+            this.colorSliderDecay.TabIndex = 149;
+            this.colorSliderDecay.Text = "colorSlider2";
             this.colorSliderDecay.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDecay.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderDecay.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -1402,12 +1454,75 @@ namespace SynthAnvil
             this.colorSliderDecay.TickColor = System.Drawing.Color.White;
             this.colorSliderDecay.TickDivide = 0F;
             this.colorSliderDecay.Value = new decimal(new int[] {
-            0,
+            30,
             0,
             0,
             0});
             this.colorSliderDecay.ValueChanged += new System.EventHandler(this.colorSliderDecay_ValueChanged_1);
             this.colorSliderDecay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderDecay_MouseUp);
+            // 
+            // colorSliderHold
+            // 
+            this.colorSliderHold.BackColor = System.Drawing.Color.Transparent;
+            this.colorSliderHold.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
+            this.colorSliderHold.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
+            this.colorSliderHold.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.colorSliderHold.ElapsedInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderHold.ElapsedPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(130)))), ((int)(((byte)(208)))));
+            this.colorSliderHold.ElapsedPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(140)))), ((int)(((byte)(180)))));
+            this.colorSliderHold.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            this.colorSliderHold.ForeColor = System.Drawing.Color.White;
+            this.colorSliderHold.LargeChange = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.colorSliderHold.Location = new System.Drawing.Point(72, 34);
+            this.colorSliderHold.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.colorSliderHold.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.colorSliderHold.Name = "colorSliderHold";
+            this.colorSliderHold.ScaleDivisions = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.colorSliderHold.ScaleSubDivisions = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.colorSliderHold.ShowDivisionsText = false;
+            this.colorSliderHold.ShowSmallScale = false;
+            this.colorSliderHold.Size = new System.Drawing.Size(200, 31);
+            this.colorSliderHold.SmallChange = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.colorSliderHold.TabIndex = 148;
+            this.colorSliderHold.Text = "colorSlider2";
+            this.colorSliderHold.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderHold.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
+            this.colorSliderHold.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
+            this.colorSliderHold.ThumbSize = new System.Drawing.Size(16, 16);
+            this.colorSliderHold.TickAdd = 0F;
+            this.colorSliderHold.TickColor = System.Drawing.Color.White;
+            this.colorSliderHold.TickDivide = 0F;
+            this.colorSliderHold.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.colorSliderHold.ValueChanged += new System.EventHandler(this.colorSliderHold_ValueChanged);
+            this.colorSliderHold.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderHold_MouseUp);
             // 
             // colorSliderAttack
             // 
@@ -1425,7 +1540,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderAttack.Location = new System.Drawing.Point(63, 9);
+            this.colorSliderAttack.Location = new System.Drawing.Point(72, 6);
             this.colorSliderAttack.Maximum = new decimal(new int[] {
             100,
             0,
@@ -1447,16 +1562,16 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderAttack.ShowDivisionsText = true;
+            this.colorSliderAttack.ShowDivisionsText = false;
             this.colorSliderAttack.ShowSmallScale = false;
-            this.colorSliderAttack.Size = new System.Drawing.Size(216, 31);
+            this.colorSliderAttack.Size = new System.Drawing.Size(200, 31);
             this.colorSliderAttack.SmallChange = new decimal(new int[] {
             1,
             0,
             0,
-            65536});
-            this.colorSliderAttack.TabIndex = 79;
-            this.colorSliderAttack.Text = "colorSliderAttack";
+            0});
+            this.colorSliderAttack.TabIndex = 147;
+            this.colorSliderAttack.Text = "colorSlider2";
             this.colorSliderAttack.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderAttack.ThumbPenColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(56)))), ((int)(((byte)(152)))));
             this.colorSliderAttack.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -1465,12 +1580,58 @@ namespace SynthAnvil
             this.colorSliderAttack.TickColor = System.Drawing.Color.White;
             this.colorSliderAttack.TickDivide = 0F;
             this.colorSliderAttack.Value = new decimal(new int[] {
-            0,
+            30,
             0,
             0,
             0});
             this.colorSliderAttack.ValueChanged += new System.EventHandler(this.colorSliderAttack_ValueChanged_1);
             this.colorSliderAttack.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderAttack_MouseUp);
+            // 
+            // labelHold
+            // 
+            this.labelHold.AutoSize = true;
+            this.labelHold.Location = new System.Drawing.Point(288, 42);
+            this.labelHold.Name = "labelHold";
+            this.labelHold.Size = new System.Drawing.Size(25, 13);
+            this.labelHold.TabIndex = 86;
+            this.labelHold.Text = "440";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 85;
+            this.label8.Text = "Hold";
+            // 
+            // chartAHDSR
+            // 
+            this.chartAHDSR.BackColor = System.Drawing.Color.Transparent;
+            chartArea18.AxisX.LabelStyle.Enabled = false;
+            chartArea18.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea18.AxisX.MajorGrid.Enabled = false;
+            chartArea18.AxisX.MajorTickMark.Enabled = false;
+            chartArea18.AxisY.LabelStyle.Enabled = false;
+            chartArea18.AxisY.LineColor = System.Drawing.Color.DimGray;
+            chartArea18.AxisY.MajorGrid.Enabled = false;
+            chartArea18.AxisY.MajorTickMark.Enabled = false;
+            chartArea18.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
+            chartArea18.BackSecondaryColor = System.Drawing.Color.Silver;
+            chartArea18.Name = "ChartArea1";
+            this.chartAHDSR.ChartAreas.Add(chartArea18);
+            this.chartAHDSR.Location = new System.Drawing.Point(68, 174);
+            this.chartAHDSR.Name = "chartAHDSR";
+            series18.BorderWidth = 2;
+            series18.ChartArea = "ChartArea1";
+            series18.Color = System.Drawing.Color.IndianRed;
+            series18.MarkerBorderWidth = 2;
+            series18.MarkerSize = 10;
+            series18.Name = "Series1";
+            this.chartAHDSR.Series.Add(series18);
+            this.chartAHDSR.Size = new System.Drawing.Size(190, 71);
+            this.chartAHDSR.TabIndex = 83;
+            this.chartAHDSR.Text = "chartADSR";
             // 
             // labelRelease
             // 
@@ -1555,8 +1716,8 @@ namespace SynthAnvil
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox6.Controls.Add(this.buttonDeletePreset2);
-            this.groupBox6.Controls.Add(this.buttonSavePreset2);
+            this.groupBox6.Controls.Add(this.buttonDeletePreset);
+            this.groupBox6.Controls.Add(this.buttonSavePreset);
             this.groupBox6.Controls.Add(this.panel2);
             this.groupBox6.Controls.Add(this.label48);
             this.groupBox6.Controls.Add(this.comboBoxPresets);
@@ -1567,16 +1728,64 @@ namespace SynthAnvil
             this.groupBox6.TabIndex = 68;
             this.groupBox6.TabStop = false;
             // 
+            // buttonDeletePreset
+            // 
+            this.buttonDeletePreset.Active = false;
+            this.buttonDeletePreset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDeletePreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeletePreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeletePreset.ForeColor = System.Drawing.Color.Black;
+            this.buttonDeletePreset.HorizontalGradient = false;
+            this.buttonDeletePreset.Location = new System.Drawing.Point(228, 55);
+            this.buttonDeletePreset.Name = "buttonDeletePreset";
+            this.buttonDeletePreset.Size = new System.Drawing.Size(86, 24);
+            this.buttonDeletePreset.TabIndex = 148;
+            this.buttonDeletePreset.Text = "Delete";
+            this.buttonDeletePreset.UseVisualStyleBackColor = true;
+            this.buttonDeletePreset.Click += new System.EventHandler(this.buttonDeletePreset2_Click);
+            // 
+            // buttonSavePreset
+            // 
+            this.buttonSavePreset.Active = false;
+            this.buttonSavePreset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSavePreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSavePreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSavePreset.ForeColor = System.Drawing.Color.Black;
+            this.buttonSavePreset.HorizontalGradient = false;
+            this.buttonSavePreset.Location = new System.Drawing.Point(228, 23);
+            this.buttonSavePreset.Name = "buttonSavePreset";
+            this.buttonSavePreset.Size = new System.Drawing.Size(86, 24);
+            this.buttonSavePreset.TabIndex = 147;
+            this.buttonSavePreset.Text = "Save";
+            this.buttonSavePreset.UseVisualStyleBackColor = true;
+            this.buttonSavePreset.Click += new System.EventHandler(this.buttonSavePreset2_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.buttonAddPreset);
             this.panel2.Controls.Add(this.textBoxPresetName);
             this.panel2.Controls.Add(this.label47);
-            this.panel2.Controls.Add(this.buttonAddPreset2);
             this.panel2.Location = new System.Drawing.Point(8, 87);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 46);
             this.panel2.TabIndex = 51;
+            // 
+            // buttonAddPreset
+            // 
+            this.buttonAddPreset.Active = false;
+            this.buttonAddPreset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonAddPreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddPreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddPreset.ForeColor = System.Drawing.Color.Black;
+            this.buttonAddPreset.HorizontalGradient = false;
+            this.buttonAddPreset.Location = new System.Drawing.Point(206, 12);
+            this.buttonAddPreset.Name = "buttonAddPreset";
+            this.buttonAddPreset.Size = new System.Drawing.Size(70, 22);
+            this.buttonAddPreset.TabIndex = 147;
+            this.buttonAddPreset.Text = "Add";
+            this.buttonAddPreset.UseVisualStyleBackColor = true;
+            this.buttonAddPreset.Click += new System.EventHandler(this.buttonAddPreset2_Click);
             // 
             // textBoxPresetName
             // 
@@ -1623,92 +1832,41 @@ namespace SynthAnvil
             this.comboBoxPresets.SelectedIndexChanged += new System.EventHandler(this.comboBoxPresets_SelectedIndexChanged);
             this.comboBoxPresets.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxPresets_KeyPress);
             // 
-            // groupBox2
+            // checkBoxRandomFrequency
             // 
-            this.groupBox2.Controls.Add(this.checkBoxRandomInharmonics);
-            this.groupBox2.Controls.Add(this.numericUpDownInHarmonicsDecay);
-            this.groupBox2.Controls.Add(this.label51);
-            this.groupBox2.Controls.Add(this.buttonCreateInharmonics);
-            this.groupBox2.Controls.Add(this.numericUpDownInHarmonicsSpread);
-            this.groupBox2.Controls.Add(this.label50);
-            this.groupBox2.Controls.Add(this.numericUpDownInHarmonics);
-            this.groupBox2.Controls.Add(this.label46);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(996, 6);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(400, 95);
-            this.groupBox2.TabIndex = 69;
-            this.groupBox2.TabStop = false;
+            this.checkBoxRandomFrequency.AutoSize = true;
+            this.checkBoxRandomFrequency.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxRandomFrequency.Location = new System.Drawing.Point(206, 259);
+            this.checkBoxRandomFrequency.Name = "checkBoxRandomFrequency";
+            this.checkBoxRandomFrequency.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxRandomFrequency.Size = new System.Drawing.Size(111, 17);
+            this.checkBoxRandomFrequency.TabIndex = 98;
+            this.checkBoxRandomFrequency.Text = "random frequency";
+            this.checkBoxRandomFrequency.UseVisualStyleBackColor = false;
             // 
-            // checkBoxRandomInharmonics
+            // numericUpDownSpread
             // 
-            this.checkBoxRandomInharmonics.AutoSize = true;
-            this.checkBoxRandomInharmonics.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxRandomInharmonics.Location = new System.Drawing.Point(7, 60);
-            this.checkBoxRandomInharmonics.Name = "checkBoxRandomInharmonics";
-            this.checkBoxRandomInharmonics.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxRandomInharmonics.Size = new System.Drawing.Size(114, 17);
-            this.checkBoxRandomInharmonics.TabIndex = 98;
-            this.checkBoxRandomInharmonics.Text = "random distribution";
-            this.checkBoxRandomInharmonics.UseVisualStyleBackColor = false;
-            // 
-            // numericUpDownInHarmonicsDecay
-            // 
-            this.numericUpDownInHarmonicsDecay.Location = new System.Drawing.Point(210, 56);
-            this.numericUpDownInHarmonicsDecay.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDownInHarmonicsDecay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownInHarmonicsDecay.Name = "numericUpDownInHarmonicsDecay";
-            this.numericUpDownInHarmonicsDecay.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDownInHarmonicsDecay.TabIndex = 97;
-            this.numericUpDownInHarmonicsDecay.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.Color.Transparent;
-            this.label51.Location = new System.Drawing.Point(152, 60);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(47, 13);
-            this.label51.TabIndex = 96;
-            this.label51.Text = "decay %";
-            // 
-            // numericUpDownInHarmonicsSpread
-            // 
-            this.numericUpDownInHarmonicsSpread.DecimalPlaces = 2;
-            this.numericUpDownInHarmonicsSpread.Increment = new decimal(new int[] {
+            this.numericUpDownSpread.DecimalPlaces = 2;
+            this.numericUpDownSpread.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDownInHarmonicsSpread.Location = new System.Drawing.Point(225, 19);
-            this.numericUpDownInHarmonicsSpread.Maximum = new decimal(new int[] {
+            this.numericUpDownSpread.Location = new System.Drawing.Point(265, 218);
+            this.numericUpDownSpread.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
-            this.numericUpDownInHarmonicsSpread.Minimum = new decimal(new int[] {
+            this.numericUpDownSpread.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDownInHarmonicsSpread.Name = "numericUpDownInHarmonicsSpread";
-            this.numericUpDownInHarmonicsSpread.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDownInHarmonicsSpread.TabIndex = 95;
-            this.numericUpDownInHarmonicsSpread.Value = new decimal(new int[] {
+            this.numericUpDownSpread.Name = "numericUpDownSpread";
+            this.numericUpDownSpread.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDownSpread.TabIndex = 95;
+            this.numericUpDownSpread.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -1718,45 +1876,18 @@ namespace SynthAnvil
             // 
             this.label50.AutoSize = true;
             this.label50.BackColor = System.Drawing.Color.Transparent;
-            this.label50.Location = new System.Drawing.Point(140, 23);
+            this.label50.Location = new System.Drawing.Point(186, 222);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(75, 13);
             this.label50.TabIndex = 94;
             this.label50.Text = "max. spread %";
             // 
-            // numericUpDownInHarmonics
-            // 
-            this.numericUpDownInHarmonics.Location = new System.Drawing.Point(80, 20);
-            this.numericUpDownInHarmonics.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownInHarmonics.Name = "numericUpDownInHarmonics";
-            this.numericUpDownInHarmonics.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownInHarmonics.TabIndex = 91;
-            this.numericUpDownInHarmonics.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.Transparent;
-            this.label46.Location = new System.Drawing.Point(7, 23);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(63, 13);
-            this.label46.TabIndex = 90;
-            this.label46.Text = "inharmonics";
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.buttonAddNewWave);
-            this.groupBox3.Controls.Add(this.buttonDeleteAll);
-            this.groupBox3.Controls.Add(this.buttonDeleteWave);
+            this.groupBox3.Controls.Add(this.ButtonDeleteAll);
+            this.groupBox3.Controls.Add(this.buttonDelete);
+            this.groupBox3.Controls.Add(this.buttonAdd);
             this.groupBox3.Controls.Add(this.listBoxWaves);
             this.groupBox3.Location = new System.Drawing.Point(3, 153);
             this.groupBox3.Name = "groupBox3";
@@ -1764,125 +1895,285 @@ namespace SynthAnvil
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             // 
+            // ButtonDeleteAll
+            // 
+            this.ButtonDeleteAll.Active = false;
+            this.ButtonDeleteAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ButtonDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeleteAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDeleteAll.ForeColor = System.Drawing.Color.Black;
+            this.ButtonDeleteAll.HorizontalGradient = false;
+            this.ButtonDeleteAll.Location = new System.Drawing.Point(207, 20);
+            this.ButtonDeleteAll.Name = "ButtonDeleteAll";
+            this.ButtonDeleteAll.Size = new System.Drawing.Size(70, 22);
+            this.ButtonDeleteAll.TabIndex = 148;
+            this.ButtonDeleteAll.Text = "Delete All";
+            this.ButtonDeleteAll.UseVisualStyleBackColor = true;
+            this.ButtonDeleteAll.Click += new System.EventHandler(this.buttonDeleteAll_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Active = false;
+            this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.Black;
+            this.buttonDelete.HorizontalGradient = false;
+            this.buttonDelete.Location = new System.Drawing.Point(127, 20);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(70, 22);
+            this.buttonDelete.TabIndex = 147;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDeleteWave_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Active = false;
+            this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.ForeColor = System.Drawing.Color.Black;
+            this.buttonAdd.HorizontalGradient = false;
+            this.buttonAdd.Location = new System.Drawing.Point(13, 20);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(70, 22);
+            this.buttonAdd.TabIndex = 146;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAddNewWave_Click);
+            // 
             // listBoxWaves
             // 
             this.listBoxWaves.BackColor = System.Drawing.Color.DimGray;
             this.listBoxWaves.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxWaves.ForeColor = System.Drawing.Color.White;
             this.listBoxWaves.FormattingEnabled = true;
-            this.listBoxWaves.Location = new System.Drawing.Point(7, 57);
+            this.listBoxWaves.Location = new System.Drawing.Point(12, 57);
             this.listBoxWaves.Name = "listBoxWaves";
             this.listBoxWaves.Size = new System.Drawing.Size(312, 392);
             this.listBoxWaves.TabIndex = 71;
-            this.listBoxWaves.SelectedIndexChanged += new System.EventHandler(this.listBoxWaves_SelectedIndexChanged);
+            this.listBoxWaves.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBoxWaves_MouseUp);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBoxLowerFrequencies);
-            this.groupBox4.Controls.Add(this.numericUpDownHarmVolume);
-            this.groupBox4.Controls.Add(this.numericUpDownHarmDuration);
-            this.groupBox4.Controls.Add(this.radioButtonHarmEven);
-            this.groupBox4.Controls.Add(this.radioButtonHarmOdd);
-            this.groupBox4.Controls.Add(this.radioButtonHarmBoth);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.buttonCreatePartials);
+            this.groupBox4.Controls.Add(this.panel5);
+            this.groupBox4.Controls.Add(this.panel4);
+            this.groupBox4.Controls.Add(this.checkBoxRandomDecay);
+            this.groupBox4.Controls.Add(this.checkBoxRandomFrequency);
+            this.groupBox4.Controls.Add(this.numericUpDownVolume);
+            this.groupBox4.Controls.Add(this.numericUpDownDuration);
+            this.groupBox4.Controls.Add(this.label50);
+            this.groupBox4.Controls.Add(this.numericUpDownSpread);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.buttonCreateHarmonics);
-            this.groupBox4.Controls.Add(this.numericUpDownHarmDecay);
+            this.groupBox4.Controls.Add(this.numericUpDownVolumeDecay);
             this.groupBox4.Controls.Add(this.label45);
-            this.groupBox4.Controls.Add(this.numericUpDownHarmonics);
+            this.groupBox4.Controls.Add(this.numericUpDownAmount);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(996, 108);
+            this.groupBox4.Location = new System.Drawing.Point(996, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(400, 136);
+            this.groupBox4.Size = new System.Drawing.Size(400, 369);
             this.groupBox4.TabIndex = 71;
             this.groupBox4.TabStop = false;
             // 
-            // checkBoxLowerFrequencies
+            // label10
             // 
-            this.checkBoxLowerFrequencies.AutoSize = true;
-            this.checkBoxLowerFrequencies.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxLowerFrequencies.Location = new System.Drawing.Point(178, 104);
-            this.checkBoxLowerFrequencies.Name = "checkBoxLowerFrequencies";
-            this.checkBoxLowerFrequencies.Size = new System.Drawing.Size(109, 17);
-            this.checkBoxLowerFrequencies.TabIndex = 112;
-            this.checkBoxLowerFrequencies.Text = "lower frequencies";
-            this.checkBoxLowerFrequencies.UseVisualStyleBackColor = false;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 20);
+            this.label10.TabIndex = 146;
+            this.label10.Text = "Create partials";
             // 
-            // numericUpDownHarmVolume
+            // buttonCreatePartials
             // 
-            this.numericUpDownHarmVolume.Location = new System.Drawing.Point(68, 59);
-            this.numericUpDownHarmVolume.Minimum = new decimal(new int[] {
+            this.buttonCreatePartials.Active = false;
+            this.buttonCreatePartials.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCreatePartials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreatePartials.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreatePartials.ForeColor = System.Drawing.Color.Black;
+            this.buttonCreatePartials.HorizontalGradient = false;
+            this.buttonCreatePartials.Location = new System.Drawing.Point(282, 311);
+            this.buttonCreatePartials.Name = "buttonCreatePartials";
+            this.buttonCreatePartials.Size = new System.Drawing.Size(93, 29);
+            this.buttonCreatePartials.TabIndex = 145;
+            this.buttonCreatePartials.Text = "Create";
+            this.buttonCreatePartials.UseVisualStyleBackColor = true;
+            this.buttonCreatePartials.Click += new System.EventHandler(this.buttonCreatePartials_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.radioButtonMerge);
+            this.panel5.Controls.Add(this.radioButtonSplit);
+            this.panel5.Controls.Add(this.radioButtonInharmonics);
+            this.panel5.Controls.Add(this.radioButtonOddHarmonics);
+            this.panel5.Controls.Add(this.radioButtonEvenHarmonics);
+            this.panel5.Location = new System.Drawing.Point(211, 58);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(127, 106);
+            this.panel5.TabIndex = 115;
+            // 
+            // radioButtonMerge
+            // 
+            this.radioButtonMerge.AutoSize = true;
+            this.radioButtonMerge.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonMerge.Location = new System.Drawing.Point(6, 80);
+            this.radioButtonMerge.Name = "radioButtonMerge";
+            this.radioButtonMerge.Size = new System.Drawing.Size(54, 17);
+            this.radioButtonMerge.TabIndex = 117;
+            this.radioButtonMerge.Text = "merge";
+            this.radioButtonMerge.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonSplit
+            // 
+            this.radioButtonSplit.AutoSize = true;
+            this.radioButtonSplit.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonSplit.Location = new System.Drawing.Point(6, 60);
+            this.radioButtonSplit.Name = "radioButtonSplit";
+            this.radioButtonSplit.Size = new System.Drawing.Size(43, 17);
+            this.radioButtonSplit.TabIndex = 116;
+            this.radioButtonSplit.Text = "split";
+            this.radioButtonSplit.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonInharmonics
+            // 
+            this.radioButtonInharmonics.AutoSize = true;
+            this.radioButtonInharmonics.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonInharmonics.Location = new System.Drawing.Point(6, 40);
+            this.radioButtonInharmonics.Name = "radioButtonInharmonics";
+            this.radioButtonInharmonics.Size = new System.Drawing.Size(112, 17);
+            this.radioButtonInharmonics.TabIndex = 115;
+            this.radioButtonInharmonics.Text = "inharmonic partials";
+            this.radioButtonInharmonics.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonOddHarmonics
+            // 
+            this.radioButtonOddHarmonics.AutoSize = true;
+            this.radioButtonOddHarmonics.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonOddHarmonics.Location = new System.Drawing.Point(6, 20);
+            this.radioButtonOddHarmonics.Name = "radioButtonOddHarmonics";
+            this.radioButtonOddHarmonics.Size = new System.Drawing.Size(94, 17);
+            this.radioButtonOddHarmonics.TabIndex = 114;
+            this.radioButtonOddHarmonics.Text = "odd harmonics";
+            this.radioButtonOddHarmonics.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonEvenHarmonics
+            // 
+            this.radioButtonEvenHarmonics.AutoSize = true;
+            this.radioButtonEvenHarmonics.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonEvenHarmonics.Checked = true;
+            this.radioButtonEvenHarmonics.Location = new System.Drawing.Point(6, 0);
+            this.radioButtonEvenHarmonics.Name = "radioButtonEvenHarmonics";
+            this.radioButtonEvenHarmonics.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonEvenHarmonics.TabIndex = 113;
+            this.radioButtonEvenHarmonics.TabStop = true;
+            this.radioButtonEvenHarmonics.Text = "even harmonics";
+            this.radioButtonEvenHarmonics.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.radioButtonOverTones);
+            this.panel4.Controls.Add(this.radioButtonUnderTones);
+            this.panel4.Controls.Add(this.radioButtonBothTones);
+            this.panel4.Location = new System.Drawing.Point(79, 94);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(86, 65);
+            this.panel4.TabIndex = 114;
+            // 
+            // radioButtonOverTones
+            // 
+            this.radioButtonOverTones.AutoSize = true;
+            this.radioButtonOverTones.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonOverTones.Location = new System.Drawing.Point(3, 40);
+            this.radioButtonOverTones.Name = "radioButtonOverTones";
+            this.radioButtonOverTones.Size = new System.Drawing.Size(72, 17);
+            this.radioButtonOverTones.TabIndex = 112;
+            this.radioButtonOverTones.Text = "overtones";
+            this.radioButtonOverTones.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonUnderTones
+            // 
+            this.radioButtonUnderTones.AutoSize = true;
+            this.radioButtonUnderTones.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonUnderTones.Location = new System.Drawing.Point(3, 20);
+            this.radioButtonUnderTones.Name = "radioButtonUnderTones";
+            this.radioButtonUnderTones.Size = new System.Drawing.Size(78, 17);
+            this.radioButtonUnderTones.TabIndex = 111;
+            this.radioButtonUnderTones.Text = "undertones";
+            this.radioButtonUnderTones.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonBothTones
+            // 
+            this.radioButtonBothTones.AutoSize = true;
+            this.radioButtonBothTones.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonBothTones.Checked = true;
+            this.radioButtonBothTones.Location = new System.Drawing.Point(3, 0);
+            this.radioButtonBothTones.Name = "radioButtonBothTones";
+            this.radioButtonBothTones.Size = new System.Drawing.Size(46, 17);
+            this.radioButtonBothTones.TabIndex = 110;
+            this.radioButtonBothTones.TabStop = true;
+            this.radioButtonBothTones.Text = "both";
+            this.radioButtonBothTones.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxRandomDecay
+            // 
+            this.checkBoxRandomDecay.AutoSize = true;
+            this.checkBoxRandomDecay.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxRandomDecay.Location = new System.Drawing.Point(72, 260);
+            this.checkBoxRandomDecay.Name = "checkBoxRandomDecay";
+            this.checkBoxRandomDecay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxRandomDecay.Size = new System.Drawing.Size(93, 17);
+            this.checkBoxRandomDecay.TabIndex = 113;
+            this.checkBoxRandomDecay.Text = "random decay";
+            this.checkBoxRandomDecay.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDownVolume
+            // 
+            this.numericUpDownVolume.Location = new System.Drawing.Point(113, 178);
+            this.numericUpDownVolume.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownHarmVolume.Name = "numericUpDownHarmVolume";
-            this.numericUpDownHarmVolume.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDownHarmVolume.TabIndex = 111;
-            this.numericUpDownHarmVolume.Value = new decimal(new int[] {
+            this.numericUpDownVolume.Name = "numericUpDownVolume";
+            this.numericUpDownVolume.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDownVolume.TabIndex = 111;
+            this.numericUpDownVolume.Value = new decimal(new int[] {
             95,
             0,
             0,
             0});
             // 
-            // numericUpDownHarmDuration
+            // numericUpDownDuration
             // 
-            this.numericUpDownHarmDuration.Location = new System.Drawing.Point(228, 59);
-            this.numericUpDownHarmDuration.Minimum = new decimal(new int[] {
+            this.numericUpDownDuration.Location = new System.Drawing.Point(265, 178);
+            this.numericUpDownDuration.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownHarmDuration.Name = "numericUpDownHarmDuration";
-            this.numericUpDownHarmDuration.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDownHarmDuration.TabIndex = 110;
-            this.numericUpDownHarmDuration.Value = new decimal(new int[] {
+            this.numericUpDownDuration.Name = "numericUpDownDuration";
+            this.numericUpDownDuration.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDownDuration.TabIndex = 110;
+            this.numericUpDownDuration.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
             // 
-            // radioButtonHarmEven
-            // 
-            this.radioButtonHarmEven.AutoSize = true;
-            this.radioButtonHarmEven.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonHarmEven.Location = new System.Drawing.Point(111, 100);
-            this.radioButtonHarmEven.Name = "radioButtonHarmEven";
-            this.radioButtonHarmEven.Size = new System.Drawing.Size(49, 17);
-            this.radioButtonHarmEven.TabIndex = 109;
-            this.radioButtonHarmEven.Text = "even";
-            this.radioButtonHarmEven.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonHarmOdd
-            // 
-            this.radioButtonHarmOdd.AutoSize = true;
-            this.radioButtonHarmOdd.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonHarmOdd.Location = new System.Drawing.Point(67, 100);
-            this.radioButtonHarmOdd.Name = "radioButtonHarmOdd";
-            this.radioButtonHarmOdd.Size = new System.Drawing.Size(43, 17);
-            this.radioButtonHarmOdd.TabIndex = 108;
-            this.radioButtonHarmOdd.Text = "odd";
-            this.radioButtonHarmOdd.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonHarmBoth
-            // 
-            this.radioButtonHarmBoth.AutoSize = true;
-            this.radioButtonHarmBoth.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonHarmBoth.Checked = true;
-            this.radioButtonHarmBoth.Location = new System.Drawing.Point(13, 100);
-            this.radioButtonHarmBoth.Name = "radioButtonHarmBoth";
-            this.radioButtonHarmBoth.Size = new System.Drawing.Size(46, 17);
-            this.radioButtonHarmBoth.TabIndex = 107;
-            this.radioButtonHarmBoth.TabStop = true;
-            this.radioButtonHarmBoth.Text = "both";
-            this.radioButtonHarmBoth.UseVisualStyleBackColor = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(10, 63);
+            this.label7.Location = new System.Drawing.Point(57, 182);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 106;
@@ -1892,51 +2183,51 @@ namespace SynthAnvil
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(166, 63);
+            this.label6.Location = new System.Drawing.Point(205, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 105;
             this.label6.Text = "duration %";
             // 
-            // numericUpDownHarmDecay
+            // numericUpDownVolumeDecay
             // 
-            this.numericUpDownHarmDecay.Location = new System.Drawing.Point(229, 18);
-            this.numericUpDownHarmDecay.Maximum = new decimal(new int[] {
+            this.numericUpDownVolumeDecay.Location = new System.Drawing.Point(113, 218);
+            this.numericUpDownVolumeDecay.Maximum = new decimal(new int[] {
             90,
             0,
             0,
             0});
-            this.numericUpDownHarmDecay.Name = "numericUpDownHarmDecay";
-            this.numericUpDownHarmDecay.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDownHarmDecay.TabIndex = 103;
+            this.numericUpDownVolumeDecay.Name = "numericUpDownVolumeDecay";
+            this.numericUpDownVolumeDecay.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDownVolumeDecay.TabIndex = 103;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Location = new System.Drawing.Point(141, 20);
+            this.label45.Location = new System.Drawing.Point(25, 222);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(84, 13);
             this.label45.TabIndex = 102;
             this.label45.Text = "volume decay %";
             // 
-            // numericUpDownHarmonics
+            // numericUpDownAmount
             // 
-            this.numericUpDownHarmonics.Location = new System.Drawing.Point(66, 18);
-            this.numericUpDownHarmonics.Maximum = new decimal(new int[] {
+            this.numericUpDownAmount.Location = new System.Drawing.Point(85, 50);
+            this.numericUpDownAmount.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.numericUpDownHarmonics.Minimum = new decimal(new int[] {
+            this.numericUpDownAmount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownHarmonics.Name = "numericUpDownHarmonics";
-            this.numericUpDownHarmonics.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownHarmonics.TabIndex = 100;
-            this.numericUpDownHarmonics.Value = new decimal(new int[] {
+            this.numericUpDownAmount.Name = "numericUpDownAmount";
+            this.numericUpDownAmount.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownAmount.TabIndex = 100;
+            this.numericUpDownAmount.Value = new decimal(new int[] {
             3,
             0,
             0,
@@ -1946,300 +2237,11 @@ namespace SynthAnvil
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Location = new System.Drawing.Point(5, 21);
+            this.label17.Location = new System.Drawing.Point(30, 52);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.Size = new System.Drawing.Size(42, 13);
             this.label17.TabIndex = 101;
-            this.label17.Text = "harmonics";
-            // 
-            // buttonCreateHarmonics
-            // 
-            this.buttonCreateHarmonics.Active = false;
-            this.buttonCreateHarmonics.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCreateHarmonics.FlatAppearance.BorderSize = 2;
-            this.buttonCreateHarmonics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCreateHarmonics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateHarmonics.ForeColor = System.Drawing.Color.Black;
-            this.buttonCreateHarmonics.HorizontalGradient = false;
-            this.buttonCreateHarmonics.Location = new System.Drawing.Point(303, 100);
-            this.buttonCreateHarmonics.Name = "buttonCreateHarmonics";
-            this.buttonCreateHarmonics.Size = new System.Drawing.Size(79, 23);
-            this.buttonCreateHarmonics.TabIndex = 104;
-            this.buttonCreateHarmonics.Text = "Create";
-            this.buttonCreateHarmonics.UseVisualStyleBackColor = true;
-            this.buttonCreateHarmonics.Click += new System.EventHandler(this.buttonCreateHarmonics_Click);
-            // 
-            // buttonAddNewWave
-            // 
-            this.buttonAddNewWave.Active = false;
-            this.buttonAddNewWave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonAddNewWave.FlatAppearance.BorderSize = 2;
-            this.buttonAddNewWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddNewWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddNewWave.ForeColor = System.Drawing.Color.Black;
-            this.buttonAddNewWave.HorizontalGradient = false;
-            this.buttonAddNewWave.Location = new System.Drawing.Point(26, 19);
-            this.buttonAddNewWave.Name = "buttonAddNewWave";
-            this.buttonAddNewWave.Size = new System.Drawing.Size(64, 23);
-            this.buttonAddNewWave.TabIndex = 79;
-            this.buttonAddNewWave.Text = "Add";
-            this.buttonAddNewWave.UseVisualStyleBackColor = true;
-            this.buttonAddNewWave.Click += new System.EventHandler(this.buttonAddNewWave_Click);
-            // 
-            // buttonDeleteAll
-            // 
-            this.buttonDeleteAll.Active = false;
-            this.buttonDeleteAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDeleteAll.FlatAppearance.BorderSize = 2;
-            this.buttonDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteAll.ForeColor = System.Drawing.Color.Black;
-            this.buttonDeleteAll.HorizontalGradient = false;
-            this.buttonDeleteAll.Location = new System.Drawing.Point(187, 19);
-            this.buttonDeleteAll.Name = "buttonDeleteAll";
-            this.buttonDeleteAll.Size = new System.Drawing.Size(64, 23);
-            this.buttonDeleteAll.TabIndex = 78;
-            this.buttonDeleteAll.Text = "Delete All";
-            this.buttonDeleteAll.UseVisualStyleBackColor = true;
-            this.buttonDeleteAll.Click += new System.EventHandler(this.buttonDeleteAll_Click);
-            // 
-            // buttonDeleteWave
-            // 
-            this.buttonDeleteWave.Active = false;
-            this.buttonDeleteWave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDeleteWave.FlatAppearance.BorderSize = 2;
-            this.buttonDeleteWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteWave.ForeColor = System.Drawing.Color.Black;
-            this.buttonDeleteWave.HorizontalGradient = false;
-            this.buttonDeleteWave.Location = new System.Drawing.Point(117, 19);
-            this.buttonDeleteWave.Name = "buttonDeleteWave";
-            this.buttonDeleteWave.Size = new System.Drawing.Size(64, 23);
-            this.buttonDeleteWave.TabIndex = 77;
-            this.buttonDeleteWave.Text = "Delete";
-            this.buttonDeleteWave.UseVisualStyleBackColor = true;
-            this.buttonDeleteWave.Click += new System.EventHandler(this.buttonDeleteWave_Click);
-            // 
-            // buttonCreateInharmonics
-            // 
-            this.buttonCreateInharmonics.Active = false;
-            this.buttonCreateInharmonics.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCreateInharmonics.FlatAppearance.BorderSize = 2;
-            this.buttonCreateInharmonics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCreateInharmonics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateInharmonics.ForeColor = System.Drawing.Color.Black;
-            this.buttonCreateInharmonics.HorizontalGradient = false;
-            this.buttonCreateInharmonics.Location = new System.Drawing.Point(303, 54);
-            this.buttonCreateInharmonics.Name = "buttonCreateInharmonics";
-            this.buttonCreateInharmonics.Size = new System.Drawing.Size(79, 23);
-            this.buttonCreateInharmonics.TabIndex = 73;
-            this.buttonCreateInharmonics.Text = "Create";
-            this.buttonCreateInharmonics.UseVisualStyleBackColor = true;
-            this.buttonCreateInharmonics.Click += new System.EventHandler(this.buttonCreateInharmonics_Click);
-            // 
-            // buttonDeletePreset2
-            // 
-            this.buttonDeletePreset2.Active = false;
-            this.buttonDeletePreset2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDeletePreset2.FlatAppearance.BorderSize = 2;
-            this.buttonDeletePreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeletePreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeletePreset2.ForeColor = System.Drawing.Color.Black;
-            this.buttonDeletePreset2.HorizontalGradient = false;
-            this.buttonDeletePreset2.Location = new System.Drawing.Point(220, 54);
-            this.buttonDeletePreset2.Name = "buttonDeletePreset2";
-            this.buttonDeletePreset2.Size = new System.Drawing.Size(99, 23);
-            this.buttonDeletePreset2.TabIndex = 76;
-            this.buttonDeletePreset2.Text = "Delete";
-            this.buttonDeletePreset2.UseVisualStyleBackColor = true;
-            this.buttonDeletePreset2.Click += new System.EventHandler(this.buttonDeletePreset2_Click);
-            // 
-            // buttonSavePreset2
-            // 
-            this.buttonSavePreset2.Active = false;
-            this.buttonSavePreset2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonSavePreset2.FlatAppearance.BorderSize = 2;
-            this.buttonSavePreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSavePreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSavePreset2.ForeColor = System.Drawing.Color.Black;
-            this.buttonSavePreset2.HorizontalGradient = false;
-            this.buttonSavePreset2.Location = new System.Drawing.Point(220, 22);
-            this.buttonSavePreset2.Name = "buttonSavePreset2";
-            this.buttonSavePreset2.Size = new System.Drawing.Size(99, 23);
-            this.buttonSavePreset2.TabIndex = 75;
-            this.buttonSavePreset2.Text = "Save";
-            this.buttonSavePreset2.UseVisualStyleBackColor = true;
-            this.buttonSavePreset2.Click += new System.EventHandler(this.buttonSavePreset2_Click);
-            // 
-            // buttonAddPreset2
-            // 
-            this.buttonAddPreset2.Active = false;
-            this.buttonAddPreset2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonAddPreset2.FlatAppearance.BorderSize = 2;
-            this.buttonAddPreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddPreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddPreset2.ForeColor = System.Drawing.Color.Black;
-            this.buttonAddPreset2.HorizontalGradient = false;
-            this.buttonAddPreset2.Location = new System.Drawing.Point(178, 11);
-            this.buttonAddPreset2.Name = "buttonAddPreset2";
-            this.buttonAddPreset2.Size = new System.Drawing.Size(99, 23);
-            this.buttonAddPreset2.TabIndex = 74;
-            this.buttonAddPreset2.Text = "Add";
-            this.buttonAddPreset2.UseVisualStyleBackColor = true;
-            this.buttonAddPreset2.Click += new System.EventHandler(this.buttonAddPreset2_Click);
-            // 
-            // buttonDelayPlus1
-            // 
-            this.buttonDelayPlus1.Active = false;
-            this.buttonDelayPlus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDelayPlus1.FlatAppearance.BorderSize = 2;
-            this.buttonDelayPlus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelayPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelayPlus1.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelayPlus1.HorizontalGradient = true;
-            this.buttonDelayPlus1.Location = new System.Drawing.Point(327, 421);
-            this.buttonDelayPlus1.Name = "buttonDelayPlus1";
-            this.buttonDelayPlus1.Size = new System.Drawing.Size(30, 18);
-            this.buttonDelayPlus1.TabIndex = 127;
-            this.buttonDelayPlus1.Text = ">";
-            this.buttonDelayPlus1.UseVisualStyleBackColor = true;
-            this.buttonDelayPlus1.Click += new System.EventHandler(this.buttonDelayPlus1_Click);
-            // 
-            // buttonDelayPlus10
-            // 
-            this.buttonDelayPlus10.Active = false;
-            this.buttonDelayPlus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDelayPlus10.FlatAppearance.BorderSize = 2;
-            this.buttonDelayPlus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelayPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelayPlus10.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelayPlus10.HorizontalGradient = true;
-            this.buttonDelayPlus10.Location = new System.Drawing.Point(356, 421);
-            this.buttonDelayPlus10.Name = "buttonDelayPlus10";
-            this.buttonDelayPlus10.Size = new System.Drawing.Size(30, 18);
-            this.buttonDelayPlus10.TabIndex = 126;
-            this.buttonDelayPlus10.Text = ">>";
-            this.buttonDelayPlus10.UseVisualStyleBackColor = true;
-            this.buttonDelayPlus10.Click += new System.EventHandler(this.buttonDelayPlus10_Click);
-            // 
-            // buttonDurationPlus1
-            // 
-            this.buttonDurationPlus1.Active = false;
-            this.buttonDurationPlus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDurationPlus1.FlatAppearance.BorderSize = 2;
-            this.buttonDurationPlus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDurationPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDurationPlus1.ForeColor = System.Drawing.Color.Black;
-            this.buttonDurationPlus1.HorizontalGradient = true;
-            this.buttonDurationPlus1.Location = new System.Drawing.Point(327, 347);
-            this.buttonDurationPlus1.Name = "buttonDurationPlus1";
-            this.buttonDurationPlus1.Size = new System.Drawing.Size(30, 18);
-            this.buttonDurationPlus1.TabIndex = 125;
-            this.buttonDurationPlus1.Text = ">";
-            this.buttonDurationPlus1.UseVisualStyleBackColor = true;
-            this.buttonDurationPlus1.Click += new System.EventHandler(this.buttonDurationPlus1_Click);
-            // 
-            // buttonDurationPlus10
-            // 
-            this.buttonDurationPlus10.Active = false;
-            this.buttonDurationPlus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDurationPlus10.FlatAppearance.BorderSize = 2;
-            this.buttonDurationPlus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDurationPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDurationPlus10.ForeColor = System.Drawing.Color.Black;
-            this.buttonDurationPlus10.HorizontalGradient = true;
-            this.buttonDurationPlus10.Location = new System.Drawing.Point(356, 347);
-            this.buttonDurationPlus10.Name = "buttonDurationPlus10";
-            this.buttonDurationPlus10.Size = new System.Drawing.Size(30, 18);
-            this.buttonDurationPlus10.TabIndex = 124;
-            this.buttonDurationPlus10.Text = ">>";
-            this.buttonDurationPlus10.UseVisualStyleBackColor = true;
-            this.buttonDurationPlus10.Click += new System.EventHandler(this.buttonDurationPlus10_Click);
-            // 
-            // buttonDelayMinus10
-            // 
-            this.buttonDelayMinus10.Active = false;
-            this.buttonDelayMinus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDelayMinus10.FlatAppearance.BorderSize = 2;
-            this.buttonDelayMinus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelayMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelayMinus10.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelayMinus10.HorizontalGradient = true;
-            this.buttonDelayMinus10.Location = new System.Drawing.Point(218, 420);
-            this.buttonDelayMinus10.Name = "buttonDelayMinus10";
-            this.buttonDelayMinus10.Size = new System.Drawing.Size(30, 18);
-            this.buttonDelayMinus10.TabIndex = 123;
-            this.buttonDelayMinus10.Text = "<<";
-            this.buttonDelayMinus10.UseVisualStyleBackColor = true;
-            this.buttonDelayMinus10.Click += new System.EventHandler(this.buttonDelayMinus10_Click);
-            // 
-            // buttonDelayMinus1
-            // 
-            this.buttonDelayMinus1.Active = false;
-            this.buttonDelayMinus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDelayMinus1.FlatAppearance.BorderSize = 2;
-            this.buttonDelayMinus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelayMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelayMinus1.ForeColor = System.Drawing.Color.Black;
-            this.buttonDelayMinus1.HorizontalGradient = true;
-            this.buttonDelayMinus1.Location = new System.Drawing.Point(247, 420);
-            this.buttonDelayMinus1.Name = "buttonDelayMinus1";
-            this.buttonDelayMinus1.Size = new System.Drawing.Size(30, 18);
-            this.buttonDelayMinus1.TabIndex = 122;
-            this.buttonDelayMinus1.Text = "<";
-            this.buttonDelayMinus1.UseVisualStyleBackColor = true;
-            this.buttonDelayMinus1.Click += new System.EventHandler(this.buttonDelayMinus1_Click);
-            // 
-            // buttonDurationMinus10
-            // 
-            this.buttonDurationMinus10.Active = false;
-            this.buttonDurationMinus10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDurationMinus10.FlatAppearance.BorderSize = 2;
-            this.buttonDurationMinus10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDurationMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDurationMinus10.ForeColor = System.Drawing.Color.Black;
-            this.buttonDurationMinus10.HorizontalGradient = true;
-            this.buttonDurationMinus10.Location = new System.Drawing.Point(218, 347);
-            this.buttonDurationMinus10.Name = "buttonDurationMinus10";
-            this.buttonDurationMinus10.Size = new System.Drawing.Size(30, 18);
-            this.buttonDurationMinus10.TabIndex = 121;
-            this.buttonDurationMinus10.Text = "<<";
-            this.buttonDurationMinus10.UseVisualStyleBackColor = true;
-            this.buttonDurationMinus10.Click += new System.EventHandler(this.buttonDurationMinus10_Click);
-            // 
-            // buttonDurationMinus1
-            // 
-            this.buttonDurationMinus1.Active = false;
-            this.buttonDurationMinus1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDurationMinus1.FlatAppearance.BorderSize = 2;
-            this.buttonDurationMinus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDurationMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDurationMinus1.ForeColor = System.Drawing.Color.Black;
-            this.buttonDurationMinus1.HorizontalGradient = true;
-            this.buttonDurationMinus1.Location = new System.Drawing.Point(247, 347);
-            this.buttonDurationMinus1.Name = "buttonDurationMinus1";
-            this.buttonDurationMinus1.Size = new System.Drawing.Size(30, 18);
-            this.buttonDurationMinus1.TabIndex = 120;
-            this.buttonDurationMinus1.Text = "<";
-            this.buttonDurationMinus1.UseVisualStyleBackColor = true;
-            this.buttonDurationMinus1.Click += new System.EventHandler(this.buttonDurationMinus1_Click);
-            // 
-            // buttonSelectWav
-            // 
-            this.buttonSelectWav.Active = false;
-            this.buttonSelectWav.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonSelectWav.FlatAppearance.BorderSize = 2;
-            this.buttonSelectWav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSelectWav.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelectWav.ForeColor = System.Drawing.Color.Black;
-            this.buttonSelectWav.HorizontalGradient = false;
-            this.buttonSelectWav.Location = new System.Drawing.Point(265, 68);
-            this.buttonSelectWav.Name = "buttonSelectWav";
-            this.buttonSelectWav.Size = new System.Drawing.Size(68, 22);
-            this.buttonSelectWav.TabIndex = 100;
-            this.buttonSelectWav.Text = "Select";
-            this.buttonSelectWav.UseVisualStyleBackColor = true;
-            this.buttonSelectWav.Click += new System.EventHandler(this.buttonSelectWav_Click);
+            this.label17.Text = "amount";
             // 
             // FormMain
             // 
@@ -2249,7 +2251,6 @@ namespace SynthAnvil
             this.ClientSize = new System.Drawing.Size(1422, 920);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
@@ -2283,18 +2284,18 @@ namespace SynthAnvil
             this.groupBox6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonicsDecay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonicsSpread)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInHarmonics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpread)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmDecay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHarmonics)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVolumeDecay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2307,8 +2308,6 @@ namespace SynthAnvil
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelVolumeMin;
         private System.Windows.Forms.Label labelVolumeMax;
-        private System.Windows.Forms.Label labelDuration1;
-        private System.Windows.Forms.Label labelDelay1;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label labelFrequencyMin;
         private System.Windows.Forms.Label labelFrequencyMax;
@@ -2316,14 +2315,8 @@ namespace SynthAnvil
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label labelChannel;
         private System.Windows.Forms.Label label1;
-        private ColorSlider.ColorSlider2 colorSliderWeight1;
         private System.Windows.Forms.Label labelWeight1;
-        private ColorSlider.ColorSlider colorSliderDelay;
         private System.Windows.Forms.Panel panel1;
-        private ColorSlider.ColorSlider colorSliderRelease;
-        private ColorSlider.ColorSlider colorSliderSustain;
-        private ColorSlider.ColorSlider colorSliderDecay;
-        private ColorSlider.ColorSlider colorSliderAttack;
         private System.Windows.Forms.Label labelRelease;
         private System.Windows.Forms.Label labelSustain;
         private System.Windows.Forms.Label labelDecay;
@@ -2344,46 +2337,27 @@ namespace SynthAnvil
         private System.Windows.Forms.ComboBox comboBoxPresets;
         private System.Windows.Forms.Label labelHold;
         private System.Windows.Forms.Label label8;
-        private ColorSlider.ColorSlider colorSliderHold;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDownInHarmonicsDecay;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.NumericUpDown numericUpDownInHarmonicsSpread;
+        private System.Windows.Forms.NumericUpDown numericUpDownSpread;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.NumericUpDown numericUpDownInHarmonics;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.PictureBox pictureBoxWaveForm;
         private System.Windows.Forms.Label labelWaveForm;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartFFTRight;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartFFTLeft;
         private System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.Label labelFileName;
-        private CustomControls.GradientButton buttonCreateInharmonics;
-        private CustomControls.GradientButton buttonDeletePreset2;
-        private CustomControls.GradientButton buttonSavePreset2;
-        private CustomControls.GradientButton buttonAddPreset2;
-        private CustomControls.GradientButton buttonSelectWav;
-        private CustomControls.GradientButton buttonAddNewWave;
-        private CustomControls.GradientButton buttonDeleteAll;
-        private CustomControls.GradientButton buttonDeleteWave;
         private System.Windows.Forms.ListBox listBoxWaves;
-        private System.Windows.Forms.CheckBox checkBoxRandomInharmonics;
+        private System.Windows.Forms.CheckBox checkBoxRandomFrequency;
         private System.Windows.Forms.GroupBox groupBox4;
-        private CustomControls.GradientButton buttonCreateHarmonics;
-        private System.Windows.Forms.NumericUpDown numericUpDownHarmDecay;
+        private System.Windows.Forms.NumericUpDown numericUpDownVolumeDecay;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.NumericUpDown numericUpDownHarmonics;
+        private System.Windows.Forms.NumericUpDown numericUpDownAmount;
         private System.Windows.Forms.Label label17;
         internal System.Windows.Forms.PictureBox pictureBoxCustomWave;
-        private System.Windows.Forms.NumericUpDown numericUpDownHarmVolume;
-        private System.Windows.Forms.NumericUpDown numericUpDownHarmDuration;
-        private System.Windows.Forms.RadioButton radioButtonHarmEven;
-        private System.Windows.Forms.RadioButton radioButtonHarmOdd;
-        private System.Windows.Forms.RadioButton radioButtonHarmBoth;
+        private System.Windows.Forms.NumericUpDown numericUpDownVolume;
+        private System.Windows.Forms.NumericUpDown numericUpDownDuration;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBoxLowerFrequencies;
         private System.Windows.Forms.Button buttonPlayA4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonPlayE4;
@@ -2403,15 +2377,6 @@ namespace SynthAnvil
         private System.Windows.Forms.Button buttonPlayD4;
         private System.Windows.Forms.Button buttonPlayD5Sharp;
         private System.Windows.Forms.Button buttonPlayE5;
-        private CustomControls.GradientButton buttonDelayPlus1;
-        private CustomControls.GradientButton buttonDelayPlus10;
-        private CustomControls.GradientButton buttonDurationPlus1;
-        private CustomControls.GradientButton buttonDurationPlus10;
-        private CustomControls.GradientButton buttonDelayMinus10;
-        private CustomControls.GradientButton buttonDelayMinus1;
-        private CustomControls.GradientButton buttonDurationMinus10;
-        private CustomControls.GradientButton buttonDurationMinus1;
-        internal ColorSlider.ColorSlider colorSliderDuration;
         internal System.Windows.Forms.PictureBox pictureBoxFrequencyShape;
         internal System.Windows.Forms.PictureBox pictureBoxVolumeShape;
         private System.Windows.Forms.Label label4;
@@ -2420,6 +2385,45 @@ namespace SynthAnvil
         private System.Windows.Forms.Label labelFreqMaxTitle;
         private System.Windows.Forms.Label labelFreqMinTitle;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxDuration;
+        private System.Windows.Forms.TextBox textBoxDelay;
+        private System.Windows.Forms.CheckBox checkBoxRandomDecay;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton radioButtonMerge;
+        private System.Windows.Forms.RadioButton radioButtonSplit;
+        private System.Windows.Forms.RadioButton radioButtonInharmonics;
+        private System.Windows.Forms.RadioButton radioButtonOddHarmonics;
+        private System.Windows.Forms.RadioButton radioButtonEvenHarmonics;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radioButtonOverTones;
+        private System.Windows.Forms.RadioButton radioButtonUnderTones;
+        private System.Windows.Forms.RadioButton radioButtonBothTones;
+        private ColorSlider.ColorSlider colorSliderDelay;
+        private CustomControls.GradientButton buttonSelectWav;
+        private ColorSlider.ColorSlider colorSliderRelease;
+        private ColorSlider.ColorSlider colorSliderSustain;
+        private ColorSlider.ColorSlider colorSliderDecay;
+        private ColorSlider.ColorSlider colorSliderHold;
+        private ColorSlider.ColorSlider colorSliderAttack;
+        private CustomControls.GradientButton buttonCreatePartials;
+        internal ColorSlider.ColorSlider colorSliderDuration;
+        private System.Windows.Forms.Button buttonChange;
+        private CustomControls.GradientButton ButtonDeleteAll;
+        private CustomControls.GradientButton buttonDelete;
+        private CustomControls.GradientButton buttonAdd;
+        private CustomControls.GradientButton buttonDeletePreset;
+        private CustomControls.GradientButton buttonSavePreset;
+        private CustomControls.GradientButton buttonAddPreset;
+        private CustomControls.GradientButton buttonDelayMinus10;
+        private CustomControls.GradientButton buttonDelayMinus1;
+        private CustomControls.GradientButton buttonDelayPlus10;
+        private CustomControls.GradientButton buttonDelayPlus1;
+        private CustomControls.GradientButton buttonDurationMinus10;
+        private CustomControls.GradientButton buttonDurationMinus1;
+        private CustomControls.GradientButton buttonDurationPlus10;
+        private CustomControls.GradientButton buttonDurationPlus1;
+        private System.Windows.Forms.Label label10;
+        private ColorSlider.ColorSlider2 colorSliderWeight1;
     }
 }
 

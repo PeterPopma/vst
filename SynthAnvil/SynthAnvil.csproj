@@ -52,19 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControls\ColorSlider.cs">
+    <Compile Include="Custom Controls\ColorSlider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\ColorSlider.Designer.cs">
+    <Compile Include="Custom Controls\ColorSlider.Designer.cs">
       <DependentUpon>ColorSlider.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\ColorSlider2.cs">
+    <Compile Include="Custom Controls\ColorSlider2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\ColorSlider2.Designer.cs">
+    <Compile Include="Custom Controls\ColorSlider2.Designer.cs">
       <DependentUpon>ColorSlider2.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\GradientButton.cs">
+    <Compile Include="Custom Controls\GradientButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAmplitudeChart.cs">
@@ -113,11 +113,12 @@
     <Compile Include="Synth\WaveDataChunk.cs" />
     <Compile Include="Synth\WaveFormatChunk.cs" />
     <Compile Include="Synth\WaveHeader.cs" />
-    <EmbeddedResource Include="CustomControls\ColorSlider.resx">
+    <Compile Include="Synth\WaveListItem.cs" />
+    <EmbeddedResource Include="Custom Controls\ColorSlider.resx">
       <DependentUpon>ColorSlider.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ColorSlider2.resx">
+    <EmbeddedResource Include="Custom Controls\ColorSlider2.resx">
       <DependentUpon>ColorSlider2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -189,9 +190,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\pencil.ico" />
+    <None Include="Images\decinc.png" />
+    <None Include="Images\dec.png" />
+    <None Include="Images\waves.png" />
+    <None Include="Images\loginc2.png" />
+    <None Include="Images\logdec2.png" />
+    <None Include="Images\logdec.png" />
+    <None Include="Images\incdec.png" />
+    <None Include="Images\inc.png" />
+    <None Include="Images\decsine.png" />
+    <None Include="Images\ripples.png" />
+    <None Include="Images\randomwave.png" />
+    <None Include="Images\loginc.png" />
+    <None Include="Images\incsine.png" />
+    <None Include="Images\flat.png" />
     <None Include="Resources\BTN_Thumb.bmp" />
     <None Include="Resources\BTN_Thumb_Blue.bmp" />
     <None Include="Images\buttonsave.png" />
+    <None Include="Images\change.png" />
     <Content Include="Images\custom.png" />
     <None Include="Images\pausebutton.png" />
     <None Include="Images\playbutton.png" />

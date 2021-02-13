@@ -30,17 +30,27 @@ namespace SynthAnvil
         private void InitializeComponent()
         {
             this.pictureBoxCustomWave = new System.Windows.Forms.PictureBox();
-            this.buttonRandomRipples = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonRipples = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonDecreasing = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonIncreasing = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonFlat = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonSine = new SynthAnvil.CustomControls.GradientButton();
+            this.pictureBoxWaveForm = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.buttonCancel = new SynthAnvil.CustomControls.GradientButton();
             this.buttonApply = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonFlatLow = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonFlatHigh = new SynthAnvil.CustomControls.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWaveForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxCustomWave
@@ -54,107 +64,122 @@ namespace SynthAnvil
             this.pictureBoxCustomWave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseMove);
             this.pictureBoxCustomWave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseUp);
             // 
-            // buttonRandomRipples
+            // pictureBoxWaveForm
             // 
-            this.buttonRandomRipples.Active = false;
-            this.buttonRandomRipples.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonRandomRipples.FlatAppearance.BorderSize = 2;
-            this.buttonRandomRipples.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRandomRipples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRandomRipples.ForeColor = System.Drawing.Color.Black;
-            this.buttonRandomRipples.HorizontalGradient = false;
-            this.buttonRandomRipples.Location = new System.Drawing.Point(9, 354);
-            this.buttonRandomRipples.Name = "buttonRandomRipples";
-            this.buttonRandomRipples.Size = new System.Drawing.Size(87, 22);
-            this.buttonRandomRipples.TabIndex = 109;
-            this.buttonRandomRipples.Text = "Ripples";
-            this.buttonRandomRipples.UseVisualStyleBackColor = true;
-            this.buttonRandomRipples.Click += new System.EventHandler(this.buttonRandomRipples_Click);
+            this.pictureBoxWaveForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxWaveForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxWaveForm.Image = global::SynthAnvil.Properties.Resources.sine;
+            this.pictureBoxWaveForm.InitialImage = null;
+            this.pictureBoxWaveForm.Location = new System.Drawing.Point(17, 88);
+            this.pictureBoxWaveForm.Name = "pictureBoxWaveForm";
+            this.pictureBoxWaveForm.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxWaveForm.TabIndex = 201;
+            this.pictureBoxWaveForm.TabStop = false;
+            this.pictureBoxWaveForm.Click += new System.EventHandler(this.pictureBoxWaveForm_Click);
             // 
-            // buttonRipples
+            // pictureBox1
             // 
-            this.buttonRipples.Active = false;
-            this.buttonRipples.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonRipples.FlatAppearance.BorderSize = 2;
-            this.buttonRipples.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRipples.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRipples.ForeColor = System.Drawing.Color.Black;
-            this.buttonRipples.HorizontalGradient = false;
-            this.buttonRipples.Location = new System.Drawing.Point(9, 311);
-            this.buttonRipples.Name = "buttonRipples";
-            this.buttonRipples.Size = new System.Drawing.Size(87, 22);
-            this.buttonRipples.TabIndex = 108;
-            this.buttonRipples.Text = "1 Size Ripples";
-            this.buttonRipples.UseVisualStyleBackColor = true;
-            this.buttonRipples.Click += new System.EventHandler(this.buttonRipples_Click);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::SynthAnvil.Properties.Resources.square;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.TabIndex = 202;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // buttonDecreasing
+            // pictureBox2
             // 
-            this.buttonDecreasing.Active = false;
-            this.buttonDecreasing.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDecreasing.FlatAppearance.BorderSize = 2;
-            this.buttonDecreasing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDecreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDecreasing.ForeColor = System.Drawing.Color.Black;
-            this.buttonDecreasing.HorizontalGradient = false;
-            this.buttonDecreasing.Location = new System.Drawing.Point(9, 268);
-            this.buttonDecreasing.Name = "buttonDecreasing";
-            this.buttonDecreasing.Size = new System.Drawing.Size(87, 22);
-            this.buttonDecreasing.TabIndex = 107;
-            this.buttonDecreasing.Text = "Decreasing";
-            this.buttonDecreasing.UseVisualStyleBackColor = true;
-            this.buttonDecreasing.Click += new System.EventHandler(this.buttonDecreasing_Click);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SynthAnvil.Properties.Resources.triangle;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 240);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox2.TabIndex = 203;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // buttonIncreasing
+            // pictureBox3
             // 
-            this.buttonIncreasing.Active = false;
-            this.buttonIncreasing.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonIncreasing.FlatAppearance.BorderSize = 2;
-            this.buttonIncreasing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIncreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIncreasing.ForeColor = System.Drawing.Color.Black;
-            this.buttonIncreasing.HorizontalGradient = false;
-            this.buttonIncreasing.Location = new System.Drawing.Point(9, 227);
-            this.buttonIncreasing.Name = "buttonIncreasing";
-            this.buttonIncreasing.Size = new System.Drawing.Size(87, 22);
-            this.buttonIncreasing.TabIndex = 106;
-            this.buttonIncreasing.Text = "Increasing";
-            this.buttonIncreasing.UseVisualStyleBackColor = true;
-            this.buttonIncreasing.Click += new System.EventHandler(this.buttonIncreasing_Click);
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::SynthAnvil.Properties.Resources.sawtooth;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(17, 316);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox3.TabIndex = 204;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // buttonFlat
+            // pictureBox4
             // 
-            this.buttonFlat.Active = false;
-            this.buttonFlat.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonFlat.FlatAppearance.BorderSize = 2;
-            this.buttonFlat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlat.ForeColor = System.Drawing.Color.Black;
-            this.buttonFlat.HorizontalGradient = false;
-            this.buttonFlat.Location = new System.Drawing.Point(9, 111);
-            this.buttonFlat.Name = "buttonFlat";
-            this.buttonFlat.Size = new System.Drawing.Size(87, 22);
-            this.buttonFlat.TabIndex = 105;
-            this.buttonFlat.Text = "Flat";
-            this.buttonFlat.UseVisualStyleBackColor = true;
-            this.buttonFlat.Click += new System.EventHandler(this.buttonFlat_Click);
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::SynthAnvil.Properties.Resources.flat;
+            this.pictureBox4.InitialImage = null;
+            this.pictureBox4.Location = new System.Drawing.Point(17, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox4.TabIndex = 205;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // buttonSine
+            // pictureBox5
             // 
-            this.buttonSine.Active = false;
-            this.buttonSine.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonSine.FlatAppearance.BorderSize = 2;
-            this.buttonSine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSine.ForeColor = System.Drawing.Color.Black;
-            this.buttonSine.HorizontalGradient = false;
-            this.buttonSine.Location = new System.Drawing.Point(9, 72);
-            this.buttonSine.Name = "buttonSine";
-            this.buttonSine.Size = new System.Drawing.Size(87, 22);
-            this.buttonSine.TabIndex = 104;
-            this.buttonSine.Text = "Sine";
-            this.buttonSine.UseVisualStyleBackColor = true;
-            this.buttonSine.Click += new System.EventHandler(this.buttonSine_Click);
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::SynthAnvil.Properties.Resources.ripples;
+            this.pictureBox5.InitialImage = null;
+            this.pictureBox5.Location = new System.Drawing.Point(17, 392);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox5.TabIndex = 206;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::SynthAnvil.Properties.Resources.randomwave;
+            this.pictureBox6.InitialImage = null;
+            this.pictureBox6.Location = new System.Drawing.Point(17, 468);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox6.TabIndex = 207;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::SynthAnvil.Properties.Resources.incsine;
+            this.pictureBox7.InitialImage = null;
+            this.pictureBox7.Location = new System.Drawing.Point(17, 544);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox7.TabIndex = 208;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::SynthAnvil.Properties.Resources.loginc;
+            this.pictureBox8.InitialImage = null;
+            this.pictureBox8.Location = new System.Drawing.Point(17, 620);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox8.TabIndex = 209;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // buttonCancel
             // 
@@ -165,7 +190,7 @@ namespace SynthAnvil
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.ForeColor = System.Drawing.Color.Black;
             this.buttonCancel.HorizontalGradient = false;
-            this.buttonCancel.Location = new System.Drawing.Point(640, 678);
+            this.buttonCancel.Location = new System.Drawing.Point(640, 682);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(87, 22);
             this.buttonCancel.TabIndex = 103;
@@ -182,7 +207,7 @@ namespace SynthAnvil
             this.buttonApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonApply.ForeColor = System.Drawing.Color.Black;
             this.buttonApply.HorizontalGradient = false;
-            this.buttonApply.Location = new System.Drawing.Point(415, 678);
+            this.buttonApply.Location = new System.Drawing.Point(415, 682);
             this.buttonApply.Name = "buttonApply";
             this.buttonApply.Size = new System.Drawing.Size(87, 22);
             this.buttonApply.TabIndex = 102;
@@ -190,51 +215,18 @@ namespace SynthAnvil
             this.buttonApply.UseVisualStyleBackColor = true;
             this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
-            // buttonFlatLow
-            // 
-            this.buttonFlatLow.Active = false;
-            this.buttonFlatLow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonFlatLow.FlatAppearance.BorderSize = 2;
-            this.buttonFlatLow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFlatLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlatLow.ForeColor = System.Drawing.Color.Black;
-            this.buttonFlatLow.HorizontalGradient = false;
-            this.buttonFlatLow.Location = new System.Drawing.Point(9, 149);
-            this.buttonFlatLow.Name = "buttonFlatLow";
-            this.buttonFlatLow.Size = new System.Drawing.Size(87, 22);
-            this.buttonFlatLow.TabIndex = 110;
-            this.buttonFlatLow.Text = "Flat low";
-            this.buttonFlatLow.UseVisualStyleBackColor = true;
-            this.buttonFlatLow.Click += new System.EventHandler(this.buttonFlatLow_Click);
-            // 
-            // buttonFlatHigh
-            // 
-            this.buttonFlatHigh.Active = false;
-            this.buttonFlatHigh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonFlatHigh.FlatAppearance.BorderSize = 2;
-            this.buttonFlatHigh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFlatHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlatHigh.ForeColor = System.Drawing.Color.Black;
-            this.buttonFlatHigh.HorizontalGradient = false;
-            this.buttonFlatHigh.Location = new System.Drawing.Point(9, 188);
-            this.buttonFlatHigh.Name = "buttonFlatHigh";
-            this.buttonFlatHigh.Size = new System.Drawing.Size(87, 22);
-            this.buttonFlatHigh.TabIndex = 111;
-            this.buttonFlatHigh.Text = "Flat high";
-            this.buttonFlatHigh.UseVisualStyleBackColor = true;
-            this.buttonFlatHigh.Click += new System.EventHandler(this.buttonFlatHigh_Click);
-            // 
             // FormCustomShape
             // 
-            this.ClientSize = new System.Drawing.Size(1111, 715);
-            this.Controls.Add(this.buttonFlatHigh);
-            this.Controls.Add(this.buttonFlatLow);
-            this.Controls.Add(this.buttonRandomRipples);
-            this.Controls.Add(this.buttonRipples);
-            this.Controls.Add(this.buttonDecreasing);
-            this.Controls.Add(this.buttonIncreasing);
-            this.Controls.Add(this.buttonFlat);
-            this.Controls.Add(this.buttonSine);
+            this.ClientSize = new System.Drawing.Size(1111, 721);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxWaveForm);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonApply);
             this.Controls.Add(this.pictureBoxCustomWave);
@@ -245,6 +237,15 @@ namespace SynthAnvil
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormCustomWave_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWaveForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,13 +255,14 @@ namespace SynthAnvil
         private System.Windows.Forms.PictureBox pictureBoxCustomWave;
         private CustomControls.GradientButton buttonApply;
         private CustomControls.GradientButton buttonCancel;
-        private CustomControls.GradientButton buttonSine;
-        private CustomControls.GradientButton buttonFlat;
-        private CustomControls.GradientButton buttonIncreasing;
-        private CustomControls.GradientButton buttonDecreasing;
-        private CustomControls.GradientButton buttonRipples;
-        private CustomControls.GradientButton buttonRandomRipples;
-        private CustomControls.GradientButton buttonFlatLow;
-        private CustomControls.GradientButton buttonFlatHigh;
+        private System.Windows.Forms.PictureBox pictureBoxWaveForm;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

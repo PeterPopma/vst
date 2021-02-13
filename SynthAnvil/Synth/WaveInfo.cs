@@ -51,7 +51,7 @@ namespace SynthAnvil.Synth
             this.minVolume = SynthGenerator.MAX_VOLUME;
             this.maxVolume = SynthGenerator.MAX_VOLUME;
             this.channel = 2;
-            this.waveForm = "Sine";
+            this.waveForm = "Custom";
             this.waveFile = "";
             this.waveData = new double[44100 * 2];
             this.weight = 255;
@@ -87,17 +87,17 @@ namespace SynthAnvil.Synth
             return waveData.Length / 2;
         }
 
-        public string GetInfo()
+        public string DisplayName()
         {
-            string info = startPosition + "-" + waveForm + "-" + NumSamples() + "-";
+            string info = Name + " - " + startPosition + ":" + NumSamples();
             if (waveForm.Equals("WavFile"))
             {
-                info += "-" + Path.GetFileName(waveFile); 
+                info += " - " + Path.GetFileName(waveFile); 
             }
             else if (!waveForm.Equals("Noise"))
             {
-                info += "-" + minFrequency;
-                info += "->" + maxFrequency;
+                info += " - " + string.Format("{0:0.00}", minFrequency);
+                info += ":" + string.Format("{0:0.00}", maxFrequency);
             }
 
             return info;

@@ -21,6 +21,7 @@ namespace SynthAnvil.Synth
         public const int SHAPE_VOLUME_MAX_VALUE = 500;
         public const int SHAPE_FREQUENCY_MAX_VALUE = 500;
         public const int MAX_VOLUME = 500;
+        public const int MAX_FREQUENCY = 22387;
         public const double SAMPLES_PER_SECOND = 44100.0;
         private const int MAX_AMPLITUDE = 32767;     // Max amplitude for 16-bit audio
         private const int GRAPH_POINTS_PLOTTED = 300;
@@ -73,13 +74,40 @@ namespace SynthAnvil.Synth
             return tempData.Length / NUM_AUDIO_CHANNELS / SAMPLES_PER_SECOND;
         }
 
-        public void GenerateSound()
+        public void UpdateCurrentWaveData()
         {
-            foreach (WaveInfo waveInfo in waves)
+            if (currentWave.WaveForm.Equals("WavFile"))
+            {
+                if (currentWave.WaveFileData.Length > 0)
+                {
+                    currentWave.WaveData = currentWave.WaveFileData.Select(d => (double)d).ToArray();
+                }
+                else
+                {
+                    // create empty data
+                    currentWave.WaveData = new double[currentWave.WaveData.Length];
+                }
+            }
+            else
+            {
+                CreateWave(currentWave, 1, 1);
+            }
+
+            UpdateMixedSound();
+            parentForm.UpdateWavesList();
+            parentForm.pictureBoxCustomWave.Refresh();
+            parentForm.pictureBoxFrequencyShape.Refresh();
+            parentForm.pictureBoxVolumeShape.Refresh();
+            parentForm.ChangedPresetData = true;
+        }
+
+        public void UpdateAllWaveData()
+        {
+            foreach (WaveInfo waveInfo in Waves)
             {
                 if (waveInfo.WaveForm.Equals("WavFile"))
                 {
-                    if (waveInfo.WaveFileData.Length>0)
+                    if (waveInfo.WaveFileData.Length > 0)
                     {
                         waveInfo.WaveData = waveInfo.WaveFileData.Select(d => (double)d).ToArray();
                     }
@@ -93,10 +121,13 @@ namespace SynthAnvil.Synth
                 {
                     CreateWave(waveInfo, 1, 1);
                 }
-
-                //            NormalizeVolume(waveInfo.WaveData);
             }
 
+            UpdateMixedSound();
+        }
+
+        public void UpdateMixedSound()
+        {
             MixWaves();
             UpdateGraphs();
             parentForm.labelDuration.Text = string.Format("{0:0.00} s", Duration());
@@ -402,6 +433,11 @@ namespace SynthAnvil.Synth
                 {
                     position++;     // start with left channel
                 }
+                if (position >= tempData.Length)
+                {
+                    position = tempData.Length - 1;
+                }
+
 
                 for (int channel = 0; channel < NUM_AUDIO_CHANNELS; channel++)
                 {
@@ -421,7 +457,7 @@ namespace SynthAnvil.Synth
 
         // Draw graph of the current wave pattern.
         // use channel left, right or average of both, depending on channel mode
-        private void UpdateWaveGraph()
+        public void UpdateWaveGraph()
         {
             parentForm.chartCurrentWave.Series["Series1"].Points.Clear();
 
@@ -641,10 +677,10 @@ namespace SynthAnvil.Synth
                 }
 
                 // update duration
-                parentForm.colorSliderDuration.Value = (decimal)(CurrentWave.NumSamples());
+                parentForm.colorSliderDuration.Value = (int)(CurrentWave.NumSamples());
 
                 parentForm.labelFileName.Text = Path.GetFileName(CurrentWave.WaveFile);
-                parentForm.GenerateSound();
+                parentForm.SynthGenerator.UpdateCurrentWaveData();
             }
         }
 
@@ -776,9 +812,10 @@ namespace SynthAnvil.Synth
             return newWave;
         }
 
-        public void SetCurrentWaveByName(string name)
+        public void SetCurrentWaveByDisplayName(string name)
         {
-            CurrentWave = Waves.Find(o => o.Name.Equals(name));
+            string name_part = name.Substring(0, name.IndexOf(" "));
+            CurrentWave = Waves.Find(o => o.Name.Equals(name_part));
         }
 
         public void RemoveCurrentWave()

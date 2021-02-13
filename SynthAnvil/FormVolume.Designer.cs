@@ -29,6 +29,27 @@ namespace SynthAnvil
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelVolumeMin = new System.Windows.Forms.Label();
+            this.labelVolumeMax = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxCustomWave = new System.Windows.Forms.PictureBox();
+            this.textBoxVolume1 = new System.Windows.Forms.TextBox();
+            this.textBoxVolume2 = new System.Windows.Forms.TextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBoxNumSines = new System.Windows.Forms.TextBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.buttonCancel = new SynthAnvil.CustomControls.GradientButton();
+            this.buttonApply = new SynthAnvil.CustomControls.GradientButton();
             this.buttonEndVolPlus1 = new SynthAnvil.CustomControls.GradientButton();
             this.buttonEndVolPlus10 = new SynthAnvil.CustomControls.GradientButton();
             this.buttonVolumePlus1 = new SynthAnvil.CustomControls.GradientButton();
@@ -39,28 +60,282 @@ namespace SynthAnvil
             this.buttonVolumeMinus1 = new SynthAnvil.CustomControls.GradientButton();
             this.colorSliderVolume2 = new ColorSlider.ColorSlider();
             this.colorSliderVolume1 = new ColorSlider.ColorSlider();
-            this.labelVolumeMin = new System.Windows.Forms.Label();
-            this.labelVolumeMax = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxCustomWave = new System.Windows.Forms.PictureBox();
-            this.buttonDecreasing = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonIncreasing = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonFlat = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonSine = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonCancel = new SynthAnvil.CustomControls.GradientButton();
-            this.buttonApply = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton1 = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton2 = new SynthAnvil.CustomControls.GradientButton();
-            this.textBoxVolume1 = new System.Windows.Forms.TextBox();
-            this.textBoxVolume2 = new System.Windows.Forms.TextBox();
-            this.gradientButton3 = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton4 = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton5 = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton6 = new SynthAnvil.CustomControls.GradientButton();
-            this.gradientButton7 = new SynthAnvil.CustomControls.GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelVolumeMin
+            // 
+            this.labelVolumeMin.AutoSize = true;
+            this.labelVolumeMin.BackColor = System.Drawing.Color.Transparent;
+            this.labelVolumeMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolumeMin.Location = new System.Drawing.Point(1180, 490);
+            this.labelVolumeMin.Name = "labelVolumeMin";
+            this.labelVolumeMin.Size = new System.Drawing.Size(52, 29);
+            this.labelVolumeMin.TabIndex = 140;
+            this.labelVolumeMin.Text = "100";
+            // 
+            // labelVolumeMax
+            // 
+            this.labelVolumeMax.AutoSize = true;
+            this.labelVolumeMax.BackColor = System.Drawing.Color.Transparent;
+            this.labelVolumeMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolumeMax.Location = new System.Drawing.Point(1180, 5);
+            this.labelVolumeMax.Name = "labelVolumeMax";
+            this.labelVolumeMax.Size = new System.Drawing.Size(52, 29);
+            this.labelVolumeMax.TabIndex = 139;
+            this.labelVolumeMax.Text = "100";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(321, 535);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 20);
+            this.label11.TabIndex = 138;
+            this.label11.Text = "volume 1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(321, 581);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.TabIndex = 153;
+            this.label1.Text = "volume 2";
+            // 
+            // pictureBoxCustomWave
+            // 
+            this.pictureBoxCustomWave.Location = new System.Drawing.Point(173, 12);
+            this.pictureBoxCustomWave.Name = "pictureBoxCustomWave";
+            this.pictureBoxCustomWave.Size = new System.Drawing.Size(1000, 500);
+            this.pictureBoxCustomWave.TabIndex = 154;
+            this.pictureBoxCustomWave.TabStop = false;
+            this.pictureBoxCustomWave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseDown);
+            this.pictureBoxCustomWave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseMove);
+            this.pictureBoxCustomWave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseUp);
+            // 
+            // textBoxVolume1
+            // 
+            this.textBoxVolume1.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxVolume1.ForeColor = System.Drawing.Color.White;
+            this.textBoxVolume1.Location = new System.Drawing.Point(939, 535);
+            this.textBoxVolume1.Name = "textBoxVolume1";
+            this.textBoxVolume1.Size = new System.Drawing.Size(63, 20);
+            this.textBoxVolume1.TabIndex = 163;
+            this.textBoxVolume1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume1_KeyUp);
+            // 
+            // textBoxVolume2
+            // 
+            this.textBoxVolume2.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxVolume2.ForeColor = System.Drawing.Color.White;
+            this.textBoxVolume2.Location = new System.Drawing.Point(939, 582);
+            this.textBoxVolume2.Name = "textBoxVolume2";
+            this.textBoxVolume2.Size = new System.Drawing.Size(63, 20);
+            this.textBoxVolume2.TabIndex = 164;
+            this.textBoxVolume2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume2_KeyUp);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox11.Image = global::SynthAnvil.Properties.Resources.waves;
+            this.pictureBox11.InitialImage = null;
+            this.pictureBox11.Location = new System.Drawing.Point(88, 8);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox11.TabIndex = 229;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox10.Image = global::SynthAnvil.Properties.Resources.decsine;
+            this.pictureBox10.InitialImage = null;
+            this.pictureBox10.Location = new System.Drawing.Point(88, 312);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox10.TabIndex = 228;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox9.Image = global::SynthAnvil.Properties.Resources.incsine;
+            this.pictureBox9.InitialImage = null;
+            this.pictureBox9.Location = new System.Drawing.Point(88, 236);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox9.TabIndex = 227;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::SynthAnvil.Properties.Resources.decinc;
+            this.pictureBox7.InitialImage = null;
+            this.pictureBox7.Location = new System.Drawing.Point(88, 158);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox7.TabIndex = 225;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::SynthAnvil.Properties.Resources.incdec;
+            this.pictureBox6.InitialImage = null;
+            this.pictureBox6.Location = new System.Drawing.Point(88, 84);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox6.TabIndex = 224;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::SynthAnvil.Properties.Resources.logdec;
+            this.pictureBox5.InitialImage = null;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 312);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox5.TabIndex = 223;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::SynthAnvil.Properties.Resources.loginc;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 236);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox3.TabIndex = 222;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SynthAnvil.Properties.Resources.dec;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 160);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox2.TabIndex = 221;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::SynthAnvil.Properties.Resources.inc;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.TabIndex = 220;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::SynthAnvil.Properties.Resources.flat;
+            this.pictureBox4.InitialImage = null;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox4.TabIndex = 219;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // textBoxNumSines
+            // 
+            this.textBoxNumSines.BackColor = System.Drawing.Color.Black;
+            this.textBoxNumSines.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumSines.ForeColor = System.Drawing.Color.White;
+            this.textBoxNumSines.Location = new System.Drawing.Point(58, 435);
+            this.textBoxNumSines.Name = "textBoxNumSines";
+            this.textBoxNumSines.Size = new System.Drawing.Size(24, 23);
+            this.textBoxNumSines.TabIndex = 218;
+            this.textBoxNumSines.Text = "1";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox12.Image = global::SynthAnvil.Properties.Resources.sine;
+            this.pictureBox12.InitialImage = null;
+            this.pictureBox12.Location = new System.Drawing.Point(12, 388);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox12.TabIndex = 230;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Active = false;
+            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonCancel.FlatAppearance.BorderSize = 2;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.Color.Black;
+            this.buttonCancel.HorizontalGradient = false;
+            this.buttonCancel.Location = new System.Drawing.Point(710, 636);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(87, 22);
+            this.buttonCancel.TabIndex = 160;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonApply
+            // 
+            this.buttonApply.Active = false;
+            this.buttonApply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonApply.FlatAppearance.BorderSize = 2;
+            this.buttonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonApply.ForeColor = System.Drawing.Color.Black;
+            this.buttonApply.HorizontalGradient = false;
+            this.buttonApply.Location = new System.Drawing.Point(485, 636);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(87, 22);
+            this.buttonApply.TabIndex = 159;
+            this.buttonApply.Text = "Apply";
+            this.buttonApply.UseVisualStyleBackColor = true;
+            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // buttonEndVolPlus1
             // 
@@ -71,7 +346,7 @@ namespace SynthAnvil
             this.buttonEndVolPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEndVolPlus1.ForeColor = System.Drawing.Color.Black;
             this.buttonEndVolPlus1.HorizontalGradient = true;
-            this.buttonEndVolPlus1.Location = new System.Drawing.Point(827, 584);
+            this.buttonEndVolPlus1.Location = new System.Drawing.Point(861, 583);
             this.buttonEndVolPlus1.Name = "buttonEndVolPlus1";
             this.buttonEndVolPlus1.Size = new System.Drawing.Size(30, 18);
             this.buttonEndVolPlus1.TabIndex = 152;
@@ -88,7 +363,7 @@ namespace SynthAnvil
             this.buttonEndVolPlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEndVolPlus10.ForeColor = System.Drawing.Color.Black;
             this.buttonEndVolPlus10.HorizontalGradient = true;
-            this.buttonEndVolPlus10.Location = new System.Drawing.Point(856, 584);
+            this.buttonEndVolPlus10.Location = new System.Drawing.Point(890, 583);
             this.buttonEndVolPlus10.Name = "buttonEndVolPlus10";
             this.buttonEndVolPlus10.Size = new System.Drawing.Size(30, 18);
             this.buttonEndVolPlus10.TabIndex = 151;
@@ -105,7 +380,7 @@ namespace SynthAnvil
             this.buttonVolumePlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVolumePlus1.ForeColor = System.Drawing.Color.Black;
             this.buttonVolumePlus1.HorizontalGradient = true;
-            this.buttonVolumePlus1.Location = new System.Drawing.Point(827, 538);
+            this.buttonVolumePlus1.Location = new System.Drawing.Point(861, 537);
             this.buttonVolumePlus1.Name = "buttonVolumePlus1";
             this.buttonVolumePlus1.Size = new System.Drawing.Size(30, 18);
             this.buttonVolumePlus1.TabIndex = 150;
@@ -122,7 +397,7 @@ namespace SynthAnvil
             this.buttonVolumePlus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVolumePlus10.ForeColor = System.Drawing.Color.Black;
             this.buttonVolumePlus10.HorizontalGradient = true;
-            this.buttonVolumePlus10.Location = new System.Drawing.Point(856, 538);
+            this.buttonVolumePlus10.Location = new System.Drawing.Point(890, 537);
             this.buttonVolumePlus10.Name = "buttonVolumePlus10";
             this.buttonVolumePlus10.Size = new System.Drawing.Size(30, 18);
             this.buttonVolumePlus10.TabIndex = 149;
@@ -139,7 +414,7 @@ namespace SynthAnvil
             this.buttonEndVolMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEndVolMinus10.ForeColor = System.Drawing.Color.Black;
             this.buttonEndVolMinus10.HorizontalGradient = true;
-            this.buttonEndVolMinus10.Location = new System.Drawing.Point(368, 584);
+            this.buttonEndVolMinus10.Location = new System.Drawing.Point(402, 583);
             this.buttonEndVolMinus10.Name = "buttonEndVolMinus10";
             this.buttonEndVolMinus10.Size = new System.Drawing.Size(30, 18);
             this.buttonEndVolMinus10.TabIndex = 148;
@@ -156,7 +431,7 @@ namespace SynthAnvil
             this.buttonEndVolMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEndVolMinus1.ForeColor = System.Drawing.Color.Black;
             this.buttonEndVolMinus1.HorizontalGradient = true;
-            this.buttonEndVolMinus1.Location = new System.Drawing.Point(397, 584);
+            this.buttonEndVolMinus1.Location = new System.Drawing.Point(431, 583);
             this.buttonEndVolMinus1.Name = "buttonEndVolMinus1";
             this.buttonEndVolMinus1.Size = new System.Drawing.Size(30, 18);
             this.buttonEndVolMinus1.TabIndex = 147;
@@ -173,7 +448,7 @@ namespace SynthAnvil
             this.buttonVolumeMinus10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVolumeMinus10.ForeColor = System.Drawing.Color.Black;
             this.buttonVolumeMinus10.HorizontalGradient = true;
-            this.buttonVolumeMinus10.Location = new System.Drawing.Point(368, 538);
+            this.buttonVolumeMinus10.Location = new System.Drawing.Point(402, 537);
             this.buttonVolumeMinus10.Name = "buttonVolumeMinus10";
             this.buttonVolumeMinus10.Size = new System.Drawing.Size(30, 18);
             this.buttonVolumeMinus10.TabIndex = 146;
@@ -190,7 +465,7 @@ namespace SynthAnvil
             this.buttonVolumeMinus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVolumeMinus1.ForeColor = System.Drawing.Color.Black;
             this.buttonVolumeMinus1.HorizontalGradient = true;
-            this.buttonVolumeMinus1.Location = new System.Drawing.Point(397, 538);
+            this.buttonVolumeMinus1.Location = new System.Drawing.Point(431, 537);
             this.buttonVolumeMinus1.Name = "buttonVolumeMinus1";
             this.buttonVolumeMinus1.Size = new System.Drawing.Size(30, 18);
             this.buttonVolumeMinus1.TabIndex = 145;
@@ -214,7 +489,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderVolume2.Location = new System.Drawing.Point(435, 580);
+            this.colorSliderVolume2.Location = new System.Drawing.Point(469, 579);
             this.colorSliderVolume2.Maximum = new decimal(new int[] {
             500,
             0,
@@ -259,6 +534,7 @@ namespace SynthAnvil
             0,
             0});
             this.colorSliderVolume2.ValueChanged += new System.EventHandler(this.colorSliderEndVolume_ValueChanged);
+            this.colorSliderVolume2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderVolume2_MouseUp);
             // 
             // colorSliderVolume1
             // 
@@ -276,7 +552,7 @@ namespace SynthAnvil
             0,
             0,
             0});
-            this.colorSliderVolume1.Location = new System.Drawing.Point(435, 533);
+            this.colorSliderVolume1.Location = new System.Drawing.Point(469, 532);
             this.colorSliderVolume1.Maximum = new decimal(new int[] {
             500,
             0,
@@ -321,318 +597,28 @@ namespace SynthAnvil
             0,
             0});
             this.colorSliderVolume1.ValueChanged += new System.EventHandler(this.colorSliderBeginVolume_ValueChanged);
-            // 
-            // labelVolumeMin
-            // 
-            this.labelVolumeMin.AutoSize = true;
-            this.labelVolumeMin.BackColor = System.Drawing.Color.Transparent;
-            this.labelVolumeMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVolumeMin.Location = new System.Drawing.Point(1138, 494);
-            this.labelVolumeMin.Name = "labelVolumeMin";
-            this.labelVolumeMin.Size = new System.Drawing.Size(52, 29);
-            this.labelVolumeMin.TabIndex = 140;
-            this.labelVolumeMin.Text = "100";
-            // 
-            // labelVolumeMax
-            // 
-            this.labelVolumeMax.AutoSize = true;
-            this.labelVolumeMax.BackColor = System.Drawing.Color.Transparent;
-            this.labelVolumeMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVolumeMax.Location = new System.Drawing.Point(1142, 9);
-            this.labelVolumeMax.Name = "labelVolumeMax";
-            this.labelVolumeMax.Size = new System.Drawing.Size(52, 29);
-            this.labelVolumeMax.TabIndex = 139;
-            this.labelVolumeMax.Text = "100";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(287, 536);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 20);
-            this.label11.TabIndex = 138;
-            this.label11.Text = "volume 1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(287, 582);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
-            this.label1.TabIndex = 153;
-            this.label1.Text = "volume 2";
-            // 
-            // pictureBoxCustomWave
-            // 
-            this.pictureBoxCustomWave.Location = new System.Drawing.Point(132, 13);
-            this.pictureBoxCustomWave.Name = "pictureBoxCustomWave";
-            this.pictureBoxCustomWave.Size = new System.Drawing.Size(1000, 500);
-            this.pictureBoxCustomWave.TabIndex = 154;
-            this.pictureBoxCustomWave.TabStop = false;
-            this.pictureBoxCustomWave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseDown);
-            this.pictureBoxCustomWave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseMove);
-            this.pictureBoxCustomWave.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxCustomWave_MouseUp);
-            // 
-            // buttonDecreasing
-            // 
-            this.buttonDecreasing.Active = false;
-            this.buttonDecreasing.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonDecreasing.FlatAppearance.BorderSize = 2;
-            this.buttonDecreasing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDecreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDecreasing.ForeColor = System.Drawing.Color.Black;
-            this.buttonDecreasing.HorizontalGradient = false;
-            this.buttonDecreasing.Location = new System.Drawing.Point(22, 90);
-            this.buttonDecreasing.Name = "buttonDecreasing";
-            this.buttonDecreasing.Size = new System.Drawing.Size(87, 22);
-            this.buttonDecreasing.TabIndex = 158;
-            this.buttonDecreasing.Text = "Decreasing";
-            this.buttonDecreasing.UseVisualStyleBackColor = true;
-            this.buttonDecreasing.Click += new System.EventHandler(this.buttonDecreasing_Click);
-            // 
-            // buttonIncreasing
-            // 
-            this.buttonIncreasing.Active = false;
-            this.buttonIncreasing.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonIncreasing.FlatAppearance.BorderSize = 2;
-            this.buttonIncreasing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIncreasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIncreasing.ForeColor = System.Drawing.Color.Black;
-            this.buttonIncreasing.HorizontalGradient = false;
-            this.buttonIncreasing.Location = new System.Drawing.Point(22, 60);
-            this.buttonIncreasing.Name = "buttonIncreasing";
-            this.buttonIncreasing.Size = new System.Drawing.Size(87, 22);
-            this.buttonIncreasing.TabIndex = 157;
-            this.buttonIncreasing.Text = "Increasing";
-            this.buttonIncreasing.UseVisualStyleBackColor = true;
-            this.buttonIncreasing.Click += new System.EventHandler(this.buttonIncreasing_Click);
-            // 
-            // buttonFlat
-            // 
-            this.buttonFlat.Active = false;
-            this.buttonFlat.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonFlat.FlatAppearance.BorderSize = 2;
-            this.buttonFlat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlat.ForeColor = System.Drawing.Color.Black;
-            this.buttonFlat.HorizontalGradient = false;
-            this.buttonFlat.Location = new System.Drawing.Point(22, 17);
-            this.buttonFlat.Name = "buttonFlat";
-            this.buttonFlat.Size = new System.Drawing.Size(87, 22);
-            this.buttonFlat.TabIndex = 156;
-            this.buttonFlat.Text = "Flat";
-            this.buttonFlat.UseVisualStyleBackColor = true;
-            this.buttonFlat.Click += new System.EventHandler(this.buttonFlat_Click);
-            // 
-            // buttonSine
-            // 
-            this.buttonSine.Active = false;
-            this.buttonSine.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonSine.FlatAppearance.BorderSize = 2;
-            this.buttonSine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSine.ForeColor = System.Drawing.Color.Black;
-            this.buttonSine.HorizontalGradient = false;
-            this.buttonSine.Location = new System.Drawing.Point(22, 208);
-            this.buttonSine.Name = "buttonSine";
-            this.buttonSine.Size = new System.Drawing.Size(87, 22);
-            this.buttonSine.TabIndex = 155;
-            this.buttonSine.Text = "Sine";
-            this.buttonSine.UseVisualStyleBackColor = true;
-            this.buttonSine.Click += new System.EventHandler(this.buttonSine_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Active = false;
-            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonCancel.FlatAppearance.BorderSize = 2;
-            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.ForeColor = System.Drawing.Color.Black;
-            this.buttonCancel.HorizontalGradient = false;
-            this.buttonCancel.Location = new System.Drawing.Point(676, 637);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(87, 22);
-            this.buttonCancel.TabIndex = 160;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonApply
-            // 
-            this.buttonApply.Active = false;
-            this.buttonApply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonApply.FlatAppearance.BorderSize = 2;
-            this.buttonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonApply.ForeColor = System.Drawing.Color.Black;
-            this.buttonApply.HorizontalGradient = false;
-            this.buttonApply.Location = new System.Drawing.Point(451, 637);
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(87, 22);
-            this.buttonApply.TabIndex = 159;
-            this.buttonApply.Text = "Apply";
-            this.buttonApply.UseVisualStyleBackColor = true;
-            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
-            // 
-            // gradientButton1
-            // 
-            this.gradientButton1.Active = false;
-            this.gradientButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton1.FlatAppearance.BorderSize = 2;
-            this.gradientButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton1.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton1.HorizontalGradient = false;
-            this.gradientButton1.Location = new System.Drawing.Point(22, 239);
-            this.gradientButton1.Name = "gradientButton1";
-            this.gradientButton1.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton1.TabIndex = 161;
-            this.gradientButton1.Text = "2x Sine";
-            this.gradientButton1.UseVisualStyleBackColor = true;
-            this.gradientButton1.Click += new System.EventHandler(this.gradientButton1_Click);
-            // 
-            // gradientButton2
-            // 
-            this.gradientButton2.Active = false;
-            this.gradientButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton2.FlatAppearance.BorderSize = 2;
-            this.gradientButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton2.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton2.HorizontalGradient = false;
-            this.gradientButton2.Location = new System.Drawing.Point(22, 270);
-            this.gradientButton2.Name = "gradientButton2";
-            this.gradientButton2.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton2.TabIndex = 162;
-            this.gradientButton2.Text = "3x Sine";
-            this.gradientButton2.UseVisualStyleBackColor = true;
-            this.gradientButton2.Click += new System.EventHandler(this.gradientButton2_Click);
-            // 
-            // textBoxVolume1
-            // 
-            this.textBoxVolume1.Location = new System.Drawing.Point(905, 536);
-            this.textBoxVolume1.Name = "textBoxVolume1";
-            this.textBoxVolume1.Size = new System.Drawing.Size(63, 20);
-            this.textBoxVolume1.TabIndex = 163;
-            this.textBoxVolume1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume1_KeyUp);
-            // 
-            // textBoxVolume2
-            // 
-            this.textBoxVolume2.Location = new System.Drawing.Point(905, 583);
-            this.textBoxVolume2.Name = "textBoxVolume2";
-            this.textBoxVolume2.Size = new System.Drawing.Size(63, 20);
-            this.textBoxVolume2.TabIndex = 164;
-            this.textBoxVolume2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxVolume2_KeyUp);
-            // 
-            // gradientButton3
-            // 
-            this.gradientButton3.Active = false;
-            this.gradientButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton3.FlatAppearance.BorderSize = 2;
-            this.gradientButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton3.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton3.HorizontalGradient = false;
-            this.gradientButton3.Location = new System.Drawing.Point(22, 123);
-            this.gradientButton3.Name = "gradientButton3";
-            this.gradientButton3.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton3.TabIndex = 165;
-            this.gradientButton3.Text = "Inc -> Dec";
-            this.gradientButton3.UseVisualStyleBackColor = true;
-            this.gradientButton3.Click += new System.EventHandler(this.gradientButton3_Click);
-            // 
-            // gradientButton4
-            // 
-            this.gradientButton4.Active = false;
-            this.gradientButton4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton4.FlatAppearance.BorderSize = 2;
-            this.gradientButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton4.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton4.HorizontalGradient = false;
-            this.gradientButton4.Location = new System.Drawing.Point(22, 155);
-            this.gradientButton4.Name = "gradientButton4";
-            this.gradientButton4.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton4.TabIndex = 166;
-            this.gradientButton4.Text = "Dec -> Inc";
-            this.gradientButton4.UseVisualStyleBackColor = true;
-            this.gradientButton4.Click += new System.EventHandler(this.gradientButton4_Click);
-            // 
-            // gradientButton5
-            // 
-            this.gradientButton5.Active = false;
-            this.gradientButton5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton5.FlatAppearance.BorderSize = 2;
-            this.gradientButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton5.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton5.HorizontalGradient = false;
-            this.gradientButton5.Location = new System.Drawing.Point(22, 301);
-            this.gradientButton5.Name = "gradientButton5";
-            this.gradientButton5.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton5.TabIndex = 167;
-            this.gradientButton5.Text = "4x Sine";
-            this.gradientButton5.UseVisualStyleBackColor = true;
-            this.gradientButton5.Click += new System.EventHandler(this.gradientButton5_Click);
-            // 
-            // gradientButton6
-            // 
-            this.gradientButton6.Active = false;
-            this.gradientButton6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton6.FlatAppearance.BorderSize = 2;
-            this.gradientButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton6.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton6.HorizontalGradient = false;
-            this.gradientButton6.Location = new System.Drawing.Point(22, 332);
-            this.gradientButton6.Name = "gradientButton6";
-            this.gradientButton6.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton6.TabIndex = 168;
-            this.gradientButton6.Text = "5x Sine";
-            this.gradientButton6.UseVisualStyleBackColor = true;
-            this.gradientButton6.Click += new System.EventHandler(this.gradientButton6_Click);
-            // 
-            // gradientButton7
-            // 
-            this.gradientButton7.Active = false;
-            this.gradientButton7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.gradientButton7.FlatAppearance.BorderSize = 2;
-            this.gradientButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradientButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientButton7.ForeColor = System.Drawing.Color.Black;
-            this.gradientButton7.HorizontalGradient = false;
-            this.gradientButton7.Location = new System.Drawing.Point(22, 363);
-            this.gradientButton7.Name = "gradientButton7";
-            this.gradientButton7.Size = new System.Drawing.Size(87, 22);
-            this.gradientButton7.TabIndex = 169;
-            this.gradientButton7.Text = "6x Sine";
-            this.gradientButton7.UseVisualStyleBackColor = true;
-            this.gradientButton7.Click += new System.EventHandler(this.gradientButton7_Click);
+            this.colorSliderVolume1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderVolume1_MouseUp);
             // 
             // FormVolume
             // 
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1226, 686);
-            this.Controls.Add(this.gradientButton7);
-            this.Controls.Add(this.gradientButton6);
-            this.Controls.Add(this.gradientButton5);
-            this.Controls.Add(this.gradientButton4);
-            this.Controls.Add(this.gradientButton3);
+            this.ClientSize = new System.Drawing.Size(1254, 686);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.textBoxNumSines);
+            this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.textBoxVolume2);
             this.Controls.Add(this.textBoxVolume1);
-            this.Controls.Add(this.gradientButton2);
-            this.Controls.Add(this.gradientButton1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonApply);
-            this.Controls.Add(this.buttonDecreasing);
-            this.Controls.Add(this.buttonIncreasing);
-            this.Controls.Add(this.buttonFlat);
-            this.Controls.Add(this.buttonSine);
             this.Controls.Add(this.pictureBoxCustomWave);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonEndVolPlus1);
@@ -656,6 +642,17 @@ namespace SynthAnvil
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormVolume_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,20 +675,21 @@ namespace SynthAnvil
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxCustomWave;
-        private CustomControls.GradientButton buttonDecreasing;
-        private CustomControls.GradientButton buttonIncreasing;
-        private CustomControls.GradientButton buttonFlat;
-        private CustomControls.GradientButton buttonSine;
         private CustomControls.GradientButton buttonCancel;
         private CustomControls.GradientButton buttonApply;
-        private CustomControls.GradientButton gradientButton1;
-        private CustomControls.GradientButton gradientButton2;
         private System.Windows.Forms.TextBox textBoxVolume1;
         private System.Windows.Forms.TextBox textBoxVolume2;
-        private CustomControls.GradientButton gradientButton3;
-        private CustomControls.GradientButton gradientButton4;
-        private CustomControls.GradientButton gradientButton5;
-        private CustomControls.GradientButton gradientButton6;
-        private CustomControls.GradientButton gradientButton7;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox textBoxNumSines;
+        private System.Windows.Forms.PictureBox pictureBox12;
     }
 }
