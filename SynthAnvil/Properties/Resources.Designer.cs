@@ -83,6 +83,16 @@ namespace SynthAnvil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap cogwheel {
+            get {
+                object obj = ResourceManager.GetObject("cogwheel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap custom {
             get {
                 object obj = ResourceManager.GetObject("custom", resourceCulture);

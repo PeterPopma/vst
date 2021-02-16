@@ -91,6 +91,12 @@
     <Compile Include="FormFrequency.Designer.cs">
       <DependentUpon>FormFrequency.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVolume.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVolume.resx">
       <DependentUpon>FormVolume.cs</DependentUpon>
@@ -208,6 +217,7 @@
     <None Include="Resources\BTN_Thumb_Blue.bmp" />
     <None Include="Images\buttonsave.png" />
     <None Include="Images\change.png" />
+    <None Include="Images\cogwheel.png" />
     <Content Include="Images\custom.png" />
     <None Include="Images\pausebutton.png" />
     <None Include="Images\playbutton.png" />

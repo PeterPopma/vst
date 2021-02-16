@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SynthAnvil.Synth;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,7 +115,7 @@ namespace SynthAnvil
 
         private void UpdateFFT()
         {
-            labelFFTPeriod.Text = string.Format("{0:0.00}", startSample / 44100.0) + " s - " + string.Format("{0:0.00}", (startSample + fftWindow) / 44100.0) + " s";
+            labelFFTPeriod.Text = string.Format("{0:0.00}", startSample / myParent.SynthGenerator.SamplesPerSecond) + " s - " + string.Format("{0:0.00}", (startSample + fftWindow) / myParent.SynthGenerator.SamplesPerSecond) + " s";
             CalcFFT();
             UpdateFFTGraph();
         }

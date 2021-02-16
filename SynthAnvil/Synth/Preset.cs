@@ -76,7 +76,7 @@ namespace SynthAnvil.Synth
                 synthGenerator.Waves.Clear();
                 for (int i = 0; i < numWaves; i++)
                 {
-                    WaveInfo newWave = new WaveInfo();
+                    WaveInfo newWave = new WaveInfo(synthGenerator.SamplesPerSecond);
                     newWave.Name = srFile.ReadLine();
                     newWave.MinFrequency = double.Parse(srFile.ReadLine());
                     newWave.MinVolume = int.Parse(srFile.ReadLine());

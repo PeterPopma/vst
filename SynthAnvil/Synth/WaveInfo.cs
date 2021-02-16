@@ -42,7 +42,7 @@ namespace SynthAnvil.Synth
         public int[] ShapeVolume { get => shapeVolume; set => shapeVolume = value; }
         public int[] ShapeFrequency { get => shapeFrequency; set => shapeFrequency = value; }
 
-        public WaveInfo()
+        public WaveInfo(int samplesPerSecond)
         {
             this.name = "Wave1";
             this.startPosition = 0;
@@ -53,7 +53,7 @@ namespace SynthAnvil.Synth
             this.channel = 2;
             this.waveForm = "Custom";
             this.waveFile = "";
-            this.waveData = new double[44100 * 2];          // default 1 sec.
+            this.waveData = new double[samplesPerSecond * 2];          // default 1 sec.
             this.weight = 255;
 
             ShapeWave = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
@@ -109,19 +109,9 @@ namespace SynthAnvil.Synth
             return info;
         }
 
-        public double Duration()
+        public void SetNumSamples(int numSamples)
         {
-            return NumSamples() / SynthGenerator.SAMPLES_PER_SECOND;
-        }
-
-        public void SetDuration(double seconds)
-        {
-            waveData = new double[(int)(2 * seconds * SynthGenerator.SAMPLES_PER_SECOND)];
-        }
-
-        public double StartTime()
-        {
-            return startPosition / SynthGenerator.SAMPLES_PER_SECOND;
+            waveData = new double[(int)(2 * numSamples)];
         }
     }
 }

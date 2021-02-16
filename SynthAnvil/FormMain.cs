@@ -87,11 +87,11 @@ namespace SynthAnvil
         {
             generatorEnabled = false;
 
-            colorSliderDuration.Value = synthGenerator.CurrentWave.NumSamples();
-            textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
-            textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
-            colorSliderDelay.Value = synthGenerator.CurrentWave.StartPosition;
+            colorSliderDuration.Value = 1000 * synthGenerator.CurrentWave.NumSamples() / synthGenerator.SamplesPerSecond;
+            colorSliderDelay.Value = 1000 * synthGenerator.CurrentWave.StartPosition / synthGenerator.SamplesPerSecond;
             colorSliderWeight1.Value = synthGenerator.CurrentWave.Weight;
+            textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SamplesPerSecond);
+            textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SamplesPerSecond);
             UpdateChannelText();
 
             if (synthGenerator.CurrentWave.WaveForm.Equals("WavFile"))
@@ -140,7 +140,7 @@ namespace SynthAnvil
             synthGenerator = new SynthGenerator(this);
 
             // Init generators
-            synthGenerator.Waves.Add(new WaveInfo());
+            synthGenerator.Waves.Add(new WaveInfo(synthGenerator.SamplesPerSecond));
             synthGenerator.CurrentWave = synthGenerator.Waves[0];
 
             UpdateWaveControls();
@@ -285,7 +285,27 @@ namespace SynthAnvil
         private void colorSliderDuration1_MouseUp(object sender, MouseEventArgs e)
         {
             UpdateDuration();
-            textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
+            textBoxDuration.Text = string.Format("{0:0.0000}", DurationSliderToText());
+        }
+
+        private int DurationToNumSamples()
+        {
+            return (int)(synthGenerator.SamplesPerSecond * Convert.ToDouble(colorSliderDuration.Value) / 10000.0) * SynthGenerator.NUM_AUDIO_CHANNELS;
+        }
+
+        private double DurationSliderToText()
+        {
+            return Convert.ToDouble(colorSliderDuration.Value) / 10000.0;
+        }
+
+        private int DelayToStartPosition()
+        {
+            return (int)(synthGenerator.SamplesPerSecond * Convert.ToDouble(colorSliderDelay.Value) / 10000.0);
+        }
+
+        private double DelayToText()
+        {
+            return Convert.ToDouble(colorSliderDelay.Value) / 10000.0;
         }
 
         private void UpdateDuration()
@@ -297,16 +317,16 @@ namespace SynthAnvil
             }
             else
             {
-                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+                synthGenerator.CurrentWave.WaveData = new double[DurationToNumSamples()];
             }
             synthGenerator.UpdateCurrentWaveData();
         }
 
         private void colorSliderDelay1_MouseUp(object sender, MouseEventArgs e)
         {
-            synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+            synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
             synthGenerator.UpdateCurrentWaveData();
-            textBoxDelay.Text = string.Format("{0:0.0000}", ((double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND));
+            textBoxDelay.Text = string.Format("{0:0.0000}", DelayToText());
         }
 
         private void colorSliderWeight1_MouseUp(object sender, MouseEventArgs e)
@@ -598,9 +618,9 @@ namespace SynthAnvil
             {
                 return;     // skip if only right channel
             }
-            double withPercentage = synthGenerator.CurrentWave.Duration() / synthGenerator.Duration();
-            double startPercentage = synthGenerator.CurrentWave.StartTime() / synthGenerator.Duration();
-            Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * withPercentage), 110);
+            double widthPercentage = synthGenerator.CurrentWave.NumSamples() / synthGenerator.NumSamples();
+            double startPercentage = synthGenerator.CurrentWave.StartPosition / synthGenerator.NumSamples();
+            Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * widthPercentage), 110);
             Pen myBrush = new Pen(Color.White);
             e.Graphics.DrawRectangle(myBrush, rect);
         }
@@ -611,8 +631,8 @@ namespace SynthAnvil
             {
                 return;     // skip if only left channel
             }
-            double withPercentage = synthGenerator.CurrentWave.Duration() / synthGenerator.Duration();
-            double startPercentage = synthGenerator.CurrentWave.StartTime() / synthGenerator.Duration();
+            double withPercentage = synthGenerator.CurrentWave.NumSamples() / synthGenerator.NumSamples();
+            double startPercentage = synthGenerator.CurrentWave.StartPosition / synthGenerator.NumSamples();
             Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * withPercentage), 110);
             System.Drawing.Pen myBrush = new System.Drawing.Pen(System.Drawing.Color.White);
             e.Graphics.DrawRectangle(myBrush, rect);
@@ -748,7 +768,7 @@ namespace SynthAnvil
                 synthGenerator.Play();
                 buttonPlay.Image = SynthAnvil.Properties.Resources.pausebutton;
                 isPlaying = true;
-                aTimer.Interval = (int)(synthGenerator.CurrentWave.Duration() * 1000);
+                aTimer.Interval = (int)(synthGenerator.CurrentWave.NumSamples()/synthGenerator.SamplesPerSecond * 1000);
                 aTimer.Tick += new EventHandler(TimerEventProcessor);
                 aTimer.Enabled = true;
             }
@@ -862,12 +882,12 @@ namespace SynthAnvil
 
         private void buttonDurationMinus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderDuration.Value > 9)
+            if (colorSliderDuration.Value > 1)
             {
-                colorSliderDuration.Value -= 10;
-                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+                colorSliderDuration.Value -= 1;
+                synthGenerator.CurrentWave.WaveData = new double[DurationToNumSamples()];
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDuration.Text = string.Format("{0:0.0000}", DurationSliderToText());
             }
         }
 
@@ -876,9 +896,9 @@ namespace SynthAnvil
             if (colorSliderDuration.Value > 99)
             {
                 colorSliderDuration.Value -= 100;
-                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+                synthGenerator.CurrentWave.WaveData = new double[DurationToNumSamples()];
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDuration.Text = string.Format("{0:0.0000}", DurationSliderToText());
             }
         }
 
@@ -887,20 +907,20 @@ namespace SynthAnvil
             if (colorSliderDuration.Value + 100 <= colorSliderDuration.Maximum)
             {
                 colorSliderDuration.Value += 100;
-                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+                synthGenerator.CurrentWave.WaveData = new double[DurationToNumSamples()];
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDuration.Text = string.Format("{0:0.0000}", DurationSliderToText());
             }
         }
 
         private void buttonDurationPlus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderDuration.Value + 10 <= colorSliderDuration.Maximum)
+            if (colorSliderDuration.Value + 1 <= colorSliderDuration.Maximum)
             {
-                colorSliderDuration.Value += 10;
-                synthGenerator.CurrentWave.WaveData = new double[(int)(colorSliderDuration.Value) * SynthGenerator.NUM_AUDIO_CHANNELS];
+                colorSliderDuration.Value += 1;
+                synthGenerator.CurrentWave.WaveData = new double[DurationToNumSamples()];
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDuration.Text = string.Format("{0:0.0000}", (double)colorSliderDuration.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDuration.Text = string.Format("{0:0.0000}", DurationSliderToText());
             }
         }
 
@@ -909,32 +929,32 @@ namespace SynthAnvil
             if (colorSliderDelay.Value > 99)
             {
                 colorSliderDelay.Value -= 100;
-                synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+                synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDelay.Text = string.Format("{0:0.0000}", DelayToText());
 
             }
         }
 
         private void buttonDelayMinus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderDelay.Value > 9)
+            if (colorSliderDelay.Value > 1)
             {
-                colorSliderDelay.Value -= 10;
-                synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+                colorSliderDelay.Value -= 1;
+                synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDelay.Text = string.Format("{0:0.0000}", DelayToText());
             }
         }
 
         private void buttonDelayPlus1_Click(object sender, EventArgs e)
         {
-            if (colorSliderDelay.Value + 10 <= colorSliderDelay.Maximum)
+            if (colorSliderDelay.Value + 1 <= colorSliderDelay.Maximum)
             {
-                colorSliderDelay.Value += 10;
-                synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+                colorSliderDelay.Value += 1;
+                synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDelay.Text = string.Format("{0:0.0000}", DelayToText());
             }
         }
 
@@ -943,9 +963,9 @@ namespace SynthAnvil
             if (colorSliderDelay.Value + 100 <= colorSliderDelay.Maximum)
             {
                 colorSliderDelay.Value += 100;
-                synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+                synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
                 synthGenerator.UpdateCurrentWaveData();
-                textBoxDelay.Text = string.Format("{0:0.0000}", (double)colorSliderDelay.Value / SynthGenerator.SAMPLES_PER_SECOND);
+                textBoxDelay.Text = string.Format("{0:0.0000}", DelayToText());
             }
         }
 
@@ -1063,7 +1083,11 @@ namespace SynthAnvil
                         amplitudeDecayFactor = previousAmplitudeDecayFactor + random.NextDouble() * (amplitudeDecayFactor - previousAmplitudeDecayFactor);
                     }
                     WaveInfo newWave = synthGenerator.CloneWave(frequency_factor, amplitudeDecayFactor);
-                    newWave.SetDuration(newWave.Duration() * durationFactor);
+                    newWave.SetNumSamples((int)(newWave.NumSamples() * durationFactor));
+                    if (numericUpDownTimeShift.Value > 0)
+                    {
+                        newWave.StartPosition += (int)(newWave.NumSamples() * Convert.ToDouble(inharmonic_number * numericUpDownTimeShift.Value) / 100.0);
+                    }
                     AddWaveToLists(newWave);
                 }
             }
@@ -1082,7 +1106,11 @@ namespace SynthAnvil
             WaveInfo newWave = synthGenerator.CloneWave(frequency_factor, amplitudeFactor);
             newWave.MinVolume = (int)(amplitudeDecayFactor * newWave.MinVolume);
             newWave.MaxVolume = (int)(amplitudeDecayFactor * newWave.MaxVolume);
-            newWave.SetDuration(newWave.Duration() * durationFactor);
+            newWave.SetNumSamples((int)(newWave.NumSamples() * durationFactor));
+            if(numericUpDownTimeShift.Value>0)
+            {
+                newWave.StartPosition += (int)(newWave.NumSamples()* Convert.ToDouble(harmonic_number*numericUpDownTimeShift.Value)/100.0);
+            }
             AddWaveToLists(newWave);
         }
 
@@ -1198,6 +1226,10 @@ namespace SynthAnvil
             for (int split_wave_number = 0; split_wave_number < numericUpDownAmount.Value; split_wave_number++)
             {
                 synthGenerator.CurrentWave = synthGenerator.CloneWave();
+                if (numericUpDownTimeShift.Value > 0)
+                {
+                    synthGenerator.CurrentWave.StartPosition += (int)(synthGenerator.CurrentWave.NumSamples() * Convert.ToDouble((split_wave_number+1) * numericUpDownTimeShift.Value) / 100.0);
+                }
                 if (undertones)
                 {
                     synthGenerator.CurrentWave.MinFrequency = min_frequency_low + (split_wave_number / (double)numericUpDownAmount.Value * (min_frequency_high - min_frequency_low));
@@ -1253,7 +1285,7 @@ namespace SynthAnvil
         {
             try
             {
-                colorSliderDuration.Value = (int)(Convert.ToDecimal(textBoxDuration.Text) * Convert.ToDecimal(SynthGenerator.SAMPLES_PER_SECOND));
+                colorSliderDuration.Value = (int)(Convert.ToDecimal(textBoxDuration.Text) * 10000);
                 UpdateDuration();
             }
             catch (Exception)
@@ -1285,8 +1317,8 @@ namespace SynthAnvil
         {
             try
             {
-                colorSliderDelay.Value = (int)(Convert.ToDecimal(textBoxDelay.Text) * Convert.ToDecimal(SynthGenerator.SAMPLES_PER_SECOND));
-                synthGenerator.CurrentWave.StartPosition = (int)(colorSliderDelay.Value);
+                colorSliderDelay.Value = (int)(Convert.ToDecimal(textBoxDelay.Text) * 1000);
+                synthGenerator.CurrentWave.StartPosition = DelayToStartPosition();
                 synthGenerator.UpdateCurrentWaveData();
             }
             catch (Exception)
@@ -1342,6 +1374,18 @@ namespace SynthAnvil
         private void radioButtonMerge_CheckedChanged(object sender, EventArgs e)
         {
             ChangePartialsVisibility();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSettings formSettings = new FormSettings();
+            formSettings.MyParent = this;
+            formSettings.ShowDialog();
+        }
+
+        private void colorSliderDuration_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

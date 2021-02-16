@@ -22,10 +22,11 @@ namespace SynthAnvil.Synth
         public const int SHAPE_FREQUENCY_MAX_VALUE = 500;
         public const int MAX_VOLUME = 500;
         public const int MAX_FREQUENCY = 22387;
-        public const double SAMPLES_PER_SECOND = 44100.0;
         private const int MAX_AMPLITUDE = 32767;     // Max amplitude for 16-bit audio
         private const int GRAPH_POINTS_PLOTTED = 300;
         private const string DEFAULT_WAVE_NAME = "Wave";
+
+        private int samplesPerSecond = 44100;
 
         private float envelopAttack = 0;
         private float envelopHold = 1;
@@ -68,10 +69,11 @@ namespace SynthAnvil.Synth
         public WaveInfo CurrentWave { get => currentWave; set => currentWave = value; }
         public List<WaveInfo> Waves { get => waves; set => waves = value; }
         public double[] TempData { get => tempData; set => tempData = value; }
+        public int SamplesPerSecond { get => samplesPerSecond; set => samplesPerSecond = value; }
 
-        public double Duration()
+        public double NumSamples()
         {
-            return tempData.Length / NUM_AUDIO_CHANNELS / SAMPLES_PER_SECOND;
+            return tempData.Length / NUM_AUDIO_CHANNELS;
         }
 
         public void UpdateCurrentWaveData()
@@ -101,10 +103,14 @@ namespace SynthAnvil.Synth
             parentForm.ChangedPresetData = true;
         }
 
-        public void UpdateAllWaveData()
+        public void UpdateAllWaveData(double sampleRateRatio=0)
         {
             foreach (WaveInfo waveInfo in Waves)
             {
+                if (sampleRateRatio!=0)
+                {
+                    waveInfo.WaveData = new double[(int)(sampleRateRatio * waveInfo.WaveData.Length)];
+                }
                 if (waveInfo.WaveForm.Equals("WavFile"))
                 {
                     if (waveInfo.WaveFileData.Length > 0)
@@ -130,7 +136,7 @@ namespace SynthAnvil.Synth
         {
             MixWaves();
             UpdateGraphs();
-            parentForm.labelDuration.Text = string.Format("{0:0.00} s", Duration());
+            parentForm.labelDuration.Text = string.Format("{0:0.00} s", NumSamples()/SamplesPerSecond);
         }
 
         private int findMaxNumSamples()
@@ -505,7 +511,7 @@ namespace SynthAnvil.Synth
                 throw new Exception("frequency should not be negative!");
             }
             // The period of the wave.
-            double deltaT = (Math.PI * 2 * frequency) / format.dwSamplesPerSec;
+            double deltaT = (Math.PI * 2 * frequency) / samplesPerSecond;
 
             for (int channel = 0; channel < NUM_AUDIO_CHANNELS; channel++)
             {
@@ -552,7 +558,7 @@ namespace SynthAnvil.Synth
                 return 0;
             }
 
-            double waveformSamplesPerStep = SynthGenerator.SHAPE_WAVE_NUMPOINTS / (format.dwSamplesPerSec / frequency);
+            double waveformSamplesPerStep = SynthGenerator.SHAPE_WAVE_NUMPOINTS / (samplesPerSecond / frequency);
 
             if (waveformSamplesPerStep <= 1)
             {
@@ -570,7 +576,7 @@ namespace SynthAnvil.Synth
             }
             else        // there is multiple waveformdata for this part of the wave; take the average of all values
             {
-                double next_phase_position = (phase + (Math.PI * 2 * frequency) / format.dwSamplesPerSec) / (2 * Math.PI) * SHAPE_WAVE_NUMPOINTS;
+                double next_phase_position = (phase + (Math.PI * 2 * frequency) / samplesPerSecond) / (2 * Math.PI) * SHAPE_WAVE_NUMPOINTS;
                 int count = 0;
                 while(int_position < next_phase_position)
                 {
@@ -595,17 +601,17 @@ namespace SynthAnvil.Synth
             {
                 byte[] buffer = new byte[reader.Length];
                 int read = reader.Read(buffer, 0, buffer.Length);
-                double sampleRatio = SAMPLES_PER_SECOND / reader.WaveFormat.SampleRate;
+                double sampleRatio = samplesPerSecond / reader.WaveFormat.SampleRate;
                 int numSamples = (int)(reader.SampleCount * sampleRatio);
                 CurrentWave.WaveFileData = new int[numSamples * 2];            // output=2 channels
                 short[] tempData = new short[numSamples * 2];            // output=2 channels
 
-                if (reader.WaveFormat.BitsPerSample == 8 && reader.WaveFormat.SampleRate == SAMPLES_PER_SECOND && reader.WaveFormat.Channels == 2)
+                if (reader.WaveFormat.BitsPerSample == 8 && reader.WaveFormat.SampleRate == samplesPerSecond && reader.WaveFormat.Channels == 2)
                 {
                     // We can copy everything 
                     tempData = Array.ConvertAll(buffer, b => (short)((b - 128) * 256));
                 }
-                else if (reader.WaveFormat.BitsPerSample == 16 && reader.WaveFormat.SampleRate == SAMPLES_PER_SECOND && reader.WaveFormat.Channels == 2)
+                else if (reader.WaveFormat.BitsPerSample == 16 && reader.WaveFormat.SampleRate == samplesPerSecond && reader.WaveFormat.Channels == 2)
                 {
                     // We can copy everything 
                     tempData = new short[(int)Math.Ceiling(buffer.Length / 2.0)];
@@ -714,8 +720,8 @@ namespace SynthAnvil.Synth
             writer.Write(format.dwChunkSize);
             writer.Write(format.wFormatTag);
             writer.Write(format.wChannels);
-            writer.Write(format.dwSamplesPerSec);
-            writer.Write(format.dwAvgBytesPerSec);
+            writer.Write(samplesPerSecond);
+            writer.Write(samplesPerSecond * format.wBlockAlign);
             writer.Write(format.wBlockAlign);
             writer.Write(format.wBitsPerSample);
 
