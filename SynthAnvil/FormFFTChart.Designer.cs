@@ -103,6 +103,8 @@ namespace SynthAnvil
             this.comboBoxFFTWindow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFFTWindow.FormattingEnabled = true;
             this.comboBoxFFTWindow.Items.AddRange(new object[] {
+            "128",
+            "256",
             "512",
             "1024",
             "2048",

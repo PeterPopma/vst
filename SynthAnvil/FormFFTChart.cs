@@ -18,8 +18,8 @@ namespace SynthAnvil
         int startSample = 0;
         int fftWindow = 4096;
         int numSamples;
-        Complex[] frequencySpectrum;
-        double[] frequencies;
+        Complex[] frequencySpectrumLeft;
+        double[] frequenciesLeft;
         uint graphScale = 1;     // 1..1024 in steps of *2
         int graphPosition = 0;
 
@@ -36,20 +36,20 @@ namespace SynthAnvil
 
         private int PointToFrequency(int pointNumber)
         {
-            return (int)(22050 * pointNumber / frequencies.Length);
+            return (int)(22050 * pointNumber / frequenciesLeft.Length);
         }
 
         private void UpdateFFTGraph()
         {
             chartFFT.Series["Series1"].Points.Clear();
-            int numPoints = (int)(frequencies.Length / graphScale);
+            int numPoints = (int)(frequenciesLeft.Length / graphScale);
             int lastPoint = numPoints + graphPosition;
 
             for (int pointNumber = graphPosition; pointNumber < lastPoint; pointNumber++)
             {
                 int frequency = PointToFrequency(pointNumber);
-
-                chartFFT.Series["Series1"].Points.AddXY(frequency, frequencies[pointNumber]);
+                frequency = frequency * myParent.SynthGenerator.SamplesPerSecond / 44100;
+                chartFFT.Series["Series1"].Points.AddXY(frequency, frequenciesLeft[pointNumber]);
             }
             chartFFT.ChartAreas[0].AxisX.Minimum = PointToFrequency(graphPosition);
             chartFFT.ChartAreas[0].AxisX.Maximum = PointToFrequency(lastPoint);
@@ -59,33 +59,34 @@ namespace SynthAnvil
         private void CalcFFT()
         {
             numSamples = myParent.SynthGenerator.TempData.Length / 2;
-            frequencySpectrum = new Complex[fftWindow];
+            frequencySpectrumLeft = new Complex[fftWindow];
             for (int i = 0; i < fftWindow; i++)
             {
                 if (2 * (startSample + i) > numSamples)
                 {
-                    frequencySpectrum[i] = new Complex(0, 0);
+                    frequencySpectrumLeft[i] = new Complex(0, 0);
                 }
                 else
                 {
-                    frequencySpectrum[i] = new Complex(myParent.SynthGenerator.TempData[2*(startSample + i)], 0);
+                    // TODO : use also second channel here when asked
+                    frequencySpectrumLeft[i] = new Complex(myParent.SynthGenerator.TempData[2*(startSample + i)], 0);
                 }
             }
 
-            MathUtils.FFT.Transform(frequencySpectrum);
+            MathUtils.FFT.Transform(frequencySpectrumLeft);
             ToNormalizedFrequenciesArray();
         }
 
         private void ToNormalizedFrequenciesArray()
         {
             double max_value = 0;
-            frequencies = new double[fftWindow/2];
-            for (int i = 0; i < frequencies.Length; i++)
+            frequenciesLeft = new double[fftWindow/2];
+            for (int i = 0; i < frequenciesLeft.Length; i++)
             {
-                frequencies[i] = Math.Abs(frequencySpectrum[i].Real);
-                if (frequencies[i] > max_value)
+                frequenciesLeft[i] = Math.Abs(frequencySpectrumLeft[i].Real);
+                if (frequenciesLeft[i] > max_value)
                 {
-                    max_value = frequencies[i];
+                    max_value = frequenciesLeft[i];
                 }
             }
 
@@ -95,15 +96,14 @@ namespace SynthAnvil
             }
 
             double scale_factor = 100 / max_value;
-            for (int i = 0; i < frequencies.Length; i++)
+            for (int i = 0; i < frequenciesLeft.Length; i++)
             {
-                frequencies[i] *= scale_factor;
-                if (frequencies[i] >= 100)     // rounding errors
+                frequenciesLeft[i] *= scale_factor;
+                if (frequenciesLeft[i] >= 100)     // rounding errors
                 {
-                    frequencies[i] = 99.999;
+                    frequenciesLeft[i] = 99.999;
                 }
             }
-            
         }
 
         private void FormFFT_Load(object sender, EventArgs e)
@@ -115,8 +115,9 @@ namespace SynthAnvil
 
         private void UpdateFFT()
         {
-            labelFFTPeriod.Text = string.Format("{0:0.00}", startSample / myParent.SynthGenerator.SamplesPerSecond) + " s - " + string.Format("{0:0.00}", (startSample + fftWindow) / myParent.SynthGenerator.SamplesPerSecond) + " s";
+            labelFFTPeriod.Text = string.Format("{0:0.00}", startSample / (double)myParent.SynthGenerator.SamplesPerSecond) + " s - " + string.Format("{0:0.00}", (startSample + fftWindow) / (double)myParent.SynthGenerator.SamplesPerSecond) + " s";
             CalcFFT();
+            LimitGraphPosition();
             UpdateFFTGraph();
         }
 
@@ -141,12 +142,24 @@ namespace SynthAnvil
             }
         }
 
+        private void LimitGraphPosition()
+        {
+            if (graphPosition < 0)
+            {
+                graphPosition = 0;
+            }
+            if (graphPosition >= (frequenciesLeft.Length - (frequenciesLeft.Length / graphScale)))
+            {
+                graphPosition = (int)(frequenciesLeft.Length - (frequenciesLeft.Length / graphScale));
+            }
+        }
+
         private void chartFFT_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
 
             double position = me.X / (double)chartFFT.Width;
-            int numPoints = (int)(frequencies.Length / graphScale);
+            int numPoints = (int)(frequenciesLeft.Length / graphScale);
             int graph_center = (int)(graphPosition + position * numPoints);
 
             if (me.Button == System.Windows.Forms.MouseButtons.Left && graphScale < 1024)
@@ -158,17 +171,9 @@ namespace SynthAnvil
                 graphScale /= 2;
             }
 
-            graphPosition = (int)(graph_center - (frequencies.Length / graphScale / 2));
-
-            if (graphPosition < 0)
-            {
-                graphPosition = 0;
-            }
-            if (graphPosition >= (frequencies.Length - (frequencies.Length / graphScale)))
-            {
-                graphPosition = (int)(frequencies.Length - (frequencies.Length / graphScale));
-            }
-
+            graphPosition = (int)(graph_center - (frequenciesLeft.Length / graphScale / 2));
+            
+            LimitGraphPosition();
             UpdateFFTGraph();
 
             labelScale.Text = graphScale.ToString();
@@ -176,7 +181,7 @@ namespace SynthAnvil
 
         private int LastPossiblePosition()
         {
-            return (int)(frequencies.Length - (frequencies.Length / graphScale));
+            return (int)(frequenciesLeft.Length - (frequenciesLeft.Length / graphScale));
         }
 
         private void gradientButton2_Click(object sender, EventArgs e)
@@ -197,7 +202,7 @@ namespace SynthAnvil
 
         private void gradientButton3_Click(object sender, EventArgs e)
         {
-            graphPosition -= (int)(frequencies.Length / 20.0);
+            graphPosition -= (int)(frequenciesLeft.Length / 20.0);
             if (graphPosition < 0)
             {
                 graphPosition = 0;
@@ -247,7 +252,7 @@ namespace SynthAnvil
 
         private void gradientButton8_Click(object sender, EventArgs e)
         {
-            graphPosition += (int)(frequencies.Length / 20.0);
+            graphPosition += (int)(frequenciesLeft.Length / 20.0);
             if (graphPosition > LastPossiblePosition())
             {
                 graphPosition = LastPossiblePosition();

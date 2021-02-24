@@ -9,21 +9,21 @@ namespace SynthAnvil.Synth
 {
     public class WaveInfo
     {
-        string name;
+        string name;                // unique name
         int startPosition;          // delay in seconds * 44100 (start sample)
-        double minFrequency;     // in Hz
-        double maxFrequency;          // in Hz
-        int minVolume;     // 0..100
-        int maxVolume;          // 0..100
-        int channel;        // 2=both, 0=left, 1=right
-        string waveForm;
-        string waveFile;
-        double[] waveData;
-        int[] waveFileData = new int[0];          // data read from .wav file
-        int[] shapeWave = new int[0];          // shape of the custom waveform. this consists of 1000 items with value between -327 and 327
+        double minFrequency;        // in Hz
+        double maxFrequency;        // in Hz
+        int minVolume;              // 0..100
+        int maxVolume;              // 0..100
+        int channel;                // 2=both, 0=left, 1=right
+        string waveForm;            // sine, noise, or .wav file
+        string waveFile;            // .wav file data
+        double[] waveData;          // resulting data after applying all properties (freq, vol, waveshape, etc.)
+        int[] waveFileData = new int[0];            // data read from .wav file
+        int[] shapeWave = new int[0];               // shape of the custom waveform. this consists of 1000 items with value between -327 and 327
         int[] shapeFrequency = new int[0];          // shape of the frequency. this consists of 1000 items with value between 0 and 1000
-        int[] shapeVolume = new int[0];          // shape of the volume. this consists of 1000 items with value between 0 and 1000
-        int weight;
+        int[] shapeVolume = new int[0];             // shape of the volume. this consists of 1000 items with value between 0 and 1000
+        int weight;                 // weight compared to other waves
 
         public double MinFrequency { get => minFrequency; set => minFrequency = value; }
         public double MaxFrequency { get => maxFrequency; set => maxFrequency = value; }
@@ -38,9 +38,9 @@ namespace SynthAnvil.Synth
         public string Name { get => name; set => name = value; }
         public double[] WaveData { get => waveData; set => waveData = value; }
         public int[] WaveFileData { get => waveFileData; set => waveFileData = value; }
-        public int[] ShapeWave { get => shapeWave; set => shapeWave = value; }
         public int[] ShapeVolume { get => shapeVolume; set => shapeVolume = value; }
         public int[] ShapeFrequency { get => shapeFrequency; set => shapeFrequency = value; }
+        public int[] ShapeWave { get => shapeWave; set => shapeWave = value; }
 
         public WaveInfo(int samplesPerSecond)
         {
@@ -51,26 +51,16 @@ namespace SynthAnvil.Synth
             this.minVolume = 0;
             this.maxVolume = SynthGenerator.MAX_VOLUME;
             this.channel = 2;
-            this.waveForm = "Custom";
+            this.waveForm = "Sine";
             this.waveFile = "";
             this.waveData = new double[samplesPerSecond * 2];          // default 1 sec.
             this.weight = 255;
 
-            ShapeWave = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
-            ArrayUtils.Populate(ShapeWave, 0);
-            ShapeVolume = new int[SynthGenerator.SHAPE_VOLUME_NUMPOINTS];
-            ArrayUtils.Populate(ShapeVolume, SynthGenerator.SHAPE_VOLUME_MAX_VALUE / 2);
-            ShapeFrequency = new int[SynthGenerator.SHAPE_FREQUENCY_NUMPOINTS];
-            ArrayUtils.Populate(ShapeFrequency, SynthGenerator.SHAPE_FREQUENCY_MAX_VALUE / 2);
-
-            // default use a sine wave
-            for (int i = 0; i < ShapeWave.Length; i++)
-            {
-                ShapeWave[i] = (int)(Math.Sin(i / (double)ShapeWave.Length * 2 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
-            }
+            ShapeVolume = new int[SynthGenerator.SHAPE_NUMPOINTS];
+            ArrayUtils.Populate(ShapeVolume, SynthGenerator.SHAPE_MAX_VALUE / 2);
+            ShapeFrequency = new int[SynthGenerator.SHAPE_NUMPOINTS];
+            ArrayUtils.Populate(ShapeFrequency, SynthGenerator.SHAPE_MAX_VALUE / 2);
         }
-
-
 
         public WaveInfo(string name, int numSamples, int startPosition, double beginFrequency, double endFrequency, int beginVolume, int endVolume, int channel, string waveForm, string waveFile, int weight)
         {
@@ -96,16 +86,17 @@ namespace SynthAnvil.Synth
         public string DisplayName()
         {
             string info = Name + " - " + startPosition + ":" + NumSamples();
-            if (waveForm.Equals("WavFile"))
-            {
-                info += " - " + Path.GetFileName(waveFile); 
-            }
-            else if (!waveForm.Equals("Noise"))
+            if (!waveForm.Equals("Noise") && !waveForm.Equals("WavFile"))
             {
                 info += " - " + string.Format("{0:0.00}", minFrequency);
                 info += ":" + string.Format("{0:0.00}", maxFrequency);
             }
+            info += " - " + waveForm;
 
+            if (waveForm.Equals("WavFile"))
+            {
+                info += " - " + Path.GetFileName(waveFile);
+            }
             return info;
         }
 

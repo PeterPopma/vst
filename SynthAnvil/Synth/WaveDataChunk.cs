@@ -10,14 +10,14 @@ namespace SynthAnvil.Synth
     {
         public string sChunkID;     // "data"
         public uint dwChunkSize;    // Length of header in bytes
-        public short[] shortArray;  // 8-bit audio
+        public int[] audioData;  // 16-bit/32-bit audio data
 
         /// <summary>
         /// Initializes a new data chunk with default values.
         /// </summary>
         public WaveDataChunk()
         {
-            shortArray = new short[0];
+            audioData = new int[0];
             dwChunkSize = 0;
             sChunkID = "data";
         }

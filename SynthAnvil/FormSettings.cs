@@ -37,7 +37,8 @@ namespace SynthAnvil
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
-            comboBoxAudioQuality.SelectedIndex = comboBoxAudioQuality.FindStringExact(myParent.SynthGenerator.SamplesPerSecond.ToString());
+            comboBoxSamplesPerSecond.SelectedIndex = comboBoxSamplesPerSecond.FindStringExact(myParent.SynthGenerator.SamplesPerSecond.ToString());
+            comboBoxBitsPerSample.SelectedIndex = comboBoxBitsPerSample.FindStringExact(myParent.SynthGenerator.BitsPerSample.ToString());
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -48,7 +49,8 @@ namespace SynthAnvil
         private void buttonApply_Click(object sender, EventArgs e)
         {
             int oldSamplesPerSecond = myParent.SynthGenerator.SamplesPerSecond;
-            myParent.SynthGenerator.SamplesPerSecond = Convert.ToInt32(comboBoxAudioQuality.Text);
+            myParent.SynthGenerator.SamplesPerSecond = Convert.ToInt32(comboBoxSamplesPerSecond.Text);
+            myParent.SynthGenerator.BitsPerSample = Convert.ToInt32(comboBoxBitsPerSample.Text);
             myParent.SynthGenerator.UpdateAllWaveData(myParent.SynthGenerator.SamplesPerSecond / oldSamplesPerSecond);
             Close();
         }

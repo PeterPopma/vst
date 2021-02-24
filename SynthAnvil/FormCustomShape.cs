@@ -13,7 +13,7 @@ namespace SynthAnvil
     public partial class FormCustomShape : Form
     {
         private FormMain myParent = null;
-        private int[] WaveData = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
+        private int[] WaveData = new int[SynthGenerator.SHAPE_NUMPOINTS];
         bool isMouseButtonDown = false;
         Point previousPoint;
         Random random = new Random();
@@ -48,9 +48,9 @@ namespace SynthAnvil
         private void DrawGraph(PaintEventArgs e)
         {
             Pen pen = new Pen(Color.White);
-            for(int i=0; i<WaveData.Length-1; i++)
+            for (int i = 0; i < WaveData.Length - 1; i++)
             {
-                e.Graphics.DrawLine(pen, new Point(i, WaveData[i]), new Point(i + 1, WaveData[i+1]));
+                e.Graphics.DrawLine(pen, new Point(i, WaveData[i]), new Point(i + 1, WaveData[i + 1]));
             }
         }
 
@@ -95,9 +95,9 @@ namespace SynthAnvil
             begin_x = previousPoint.X;
             x_position = begin_x + 1;
             end_x = begin_x + AdjustDataWidth;
-            if (end_x > SynthGenerator.SHAPE_WAVE_NUMPOINTS-1)
+            if (end_x > SynthGenerator.SHAPE_NUMPOINTS - 1)
             {
-                end_x = SynthGenerator.SHAPE_WAVE_NUMPOINTS - 1;
+                end_x = SynthGenerator.SHAPE_NUMPOINTS - 1;
             }
             begin_y = previousPoint.Y;
             end_y = WaveData[end_x];
@@ -115,18 +115,18 @@ namespace SynthAnvil
 
         private void FormCustomWave_Load(object sender, EventArgs e)
         {
-            if (myParent.SynthGenerator.CurrentWave.ShapeWave.Length < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
+            if (myParent.SynthGenerator.CurrentWave.ShapeWave.Length < SynthGenerator.SHAPE_NUMPOINTS)
             {
                 for (int i = 0; i < WaveData.Length; i++)
                 {
-                    WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE / 2;
                 }
             }
             else
             {
                 for (int i = 0; i < WaveData.Length; i++)
                 {
-                    WaveData[i] = myParent.SynthGenerator.CurrentWave.ShapeWave[i] + SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE - myParent.SynthGenerator.CurrentWave.ShapeWave[i];
                 }
             }
 
@@ -141,10 +141,11 @@ namespace SynthAnvil
 
         private void buttonApply_Click(object sender, EventArgs e)
         {
-            myParent.SynthGenerator.CurrentWave.ShapeWave = new int[SynthGenerator.SHAPE_WAVE_NUMPOINTS];
+            myParent.SynthGenerator.CurrentWave.ShapeWave = new int[SynthGenerator.SHAPE_NUMPOINTS];
             for (int i = 0; i < WaveData.Length; i++)
             {
-               myParent.SynthGenerator.CurrentWave.ShapeWave[i] = WaveData[i] - SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                // Note that graph is upside-down
+                myParent.SynthGenerator.CurrentWave.ShapeWave[i] = SynthGenerator.SHAPE_MAX_VALUE - WaveData[i];
             }
             myParent.pictureBoxCustomWave.Refresh();
             myParent.SynthGenerator.UpdateCurrentWaveData();
@@ -154,7 +155,7 @@ namespace SynthAnvil
 
         private void pictureBoxCustomWave_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!isMouseButtonDown && e.X >= 0 && e.X < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
+            if (!isMouseButtonDown && e.X >= 0 && e.X < SynthGenerator.SHAPE_NUMPOINTS)
             {
                 WaveData[e.X] = e.Y;
                 Refresh();
@@ -168,7 +169,7 @@ namespace SynthAnvil
 
         private void pictureBoxCustomWave_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isMouseButtonDown && e.X!=previousPoint.X && e.X >= 0 && e.X < SynthGenerator.SHAPE_WAVE_NUMPOINTS)
+            if (isMouseButtonDown && e.X != previousPoint.X && e.X >= 0 && e.X < SynthGenerator.SHAPE_NUMPOINTS)
             {
                 EditData(e.X, e.Y);
                 previousPoint.X = e.X;
@@ -186,14 +187,14 @@ namespace SynthAnvil
         // Fill all data from previous point to current point with interpolated values
         private void EditData(int X, int Y)
         {
-            double increment = (previousPoint.Y-Y) / Math.Abs(X-previousPoint.X);
+            double increment = (previousPoint.Y - Y) / Math.Abs(X - previousPoint.X);
             int position = X;
             double value = Y;
             while (position != previousPoint.X)
             {
                 WaveData[position] = (int)value;
                 value += increment;
-                if ( X>previousPoint.X)
+                if (X > previousPoint.X)
                 {
                     position--;
                 }
@@ -208,7 +209,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -217,7 +218,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE;
             }
             Refresh();
         }
@@ -226,7 +227,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)((SynthGenerator.SHAPE_WAVE_NUMPOINTS-i) / (double)SynthGenerator.SHAPE_WAVE_NUMPOINTS * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)((SynthGenerator.SHAPE_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_NUMPOINTS * 2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -241,7 +242,7 @@ namespace SynthAnvil
                 }
                 else
                 {
-                    WaveData[i] = 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE;
                 }
             }
             Refresh();
@@ -252,9 +253,9 @@ namespace SynthAnvil
             int x_position = 0;
             while (x_position < WaveData.Length)
             {
-                if (x_position < SynthGenerator.SHAPE_WAVE_NUMPOINTS - 5 && random.Next(20) == 11)
+                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(20) == 11)
                 {
-                    int amplitude = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    int amplitude = SynthGenerator.SHAPE_MAX_VALUE;
                     int up_down_spike = 1;
                     if (random.Next(100) < 50)
                     {
@@ -263,13 +264,13 @@ namespace SynthAnvil
                     }
                     for (int j = 0; j < 5; j++)
                     {
-                        WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
+                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
                         x_position++;
                     }
                 }
                 else
                 {
-                    WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
                     x_position++;
                 }
             }
@@ -281,9 +282,9 @@ namespace SynthAnvil
             int x_position = 0;
             while (x_position < WaveData.Length)
             {
-                if (x_position < SynthGenerator.SHAPE_WAVE_NUMPOINTS - 5 && random.Next(15) == 11)
+                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(15) == 11)
                 {
-                    int amplitude = random.Next(SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                    int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE);
                     int up_down_spike = 1;
                     if (random.Next(100) < 50)
                     {
@@ -292,13 +293,13 @@ namespace SynthAnvil
                     }
                     for (int j = 0; j < 5; j++)
                     {
-                        WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
+                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
                         x_position++;
                     }
                 }
                 else
                 {
-                    WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
                     x_position++;
                 }
             }
@@ -318,7 +319,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE - 1;
+                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - 1;
             }
             Refresh();
         }
@@ -327,7 +328,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 4 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 4 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -336,7 +337,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 6 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 6 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -345,7 +346,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 8 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 8 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -354,7 +355,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 10 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 10 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -363,7 +364,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 12 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 12 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -373,7 +374,7 @@ namespace SynthAnvil
             for (int i = 0; i < WaveData.Length; i++)
             {
                 double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -382,7 +383,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[WaveData.Length - 1 - i] = random.Next(2*SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[WaveData.Length - 1 - i] = random.Next(2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -391,11 +392,11 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length / 2; i++)
             {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_WAVE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_WAVE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE) / (WaveData.Length / 2));
+                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
             }
             Refresh();
         }
@@ -404,21 +405,21 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length / 2; i++)
             {
-                WaveData[i] = (int)(((i) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE) / (WaveData.Length / 2));
+                WaveData[i] = (int)(((i) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
             }
             for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_WAVE_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_WAVE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
 
         private void gradientButton1_Click(object sender, EventArgs e)
         {
-            double factor = Math.Pow(2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_WAVE_NUMPOINTS);
+            double factor = Math.Pow(2 * SynthGenerator.SHAPE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_NUMPOINTS);
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE - (int)Math.Pow(factor, i);
+                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - (int)Math.Pow(factor, i);
             }
             Refresh();
         }
@@ -427,7 +428,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -436,7 +437,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)((SynthGenerator.SHAPE_WAVE_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_WAVE_NUMPOINTS * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)((SynthGenerator.SHAPE_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_NUMPOINTS * 2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -451,7 +452,7 @@ namespace SynthAnvil
                 }
                 else
                 {
-                    WaveData[i] = 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE;
                 }
             }
             Refresh();
@@ -461,11 +462,11 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length / 2; i++)
             {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_WAVE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_WAVE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
             {
-                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE) / (WaveData.Length / 2));
+                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
             }
             Refresh();
         }
@@ -474,7 +475,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE;
             }
             Refresh();
         }
@@ -484,17 +485,17 @@ namespace SynthAnvil
             for (int i = 0; i < WaveData.Length; i++)
             {
                 double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_WAVE_MAX_VALUE + SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            double factor = Math.Pow(2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_WAVE_NUMPOINTS);
+            double factor = Math.Pow(2 * SynthGenerator.SHAPE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_NUMPOINTS);
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE - (int)Math.Pow(factor, i);
+                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - (int)Math.Pow(factor, i);
             }
             Refresh();
         }
@@ -503,7 +504,7 @@ namespace SynthAnvil
         {
             for (int i = 0; i < WaveData.Length; i++)
             {
-                WaveData[WaveData.Length - 1 - i] = random.Next(2 * SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                WaveData[WaveData.Length - 1 - i] = random.Next(2 * SynthGenerator.SHAPE_MAX_VALUE);
             }
             Refresh();
         }
@@ -513,9 +514,9 @@ namespace SynthAnvil
             int x_position = 0;
             while (x_position < WaveData.Length)
             {
-                if (x_position < SynthGenerator.SHAPE_WAVE_NUMPOINTS - 5 && random.Next(15) == 11)
+                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(15) == 11)
                 {
-                    int amplitude = random.Next(SynthGenerator.SHAPE_WAVE_MAX_VALUE);
+                    int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE);
                     int up_down_spike = 1;
                     if (random.Next(100) < 50)
                     {
@@ -524,16 +525,37 @@ namespace SynthAnvil
                     }
                     for (int j = 0; j < 5; j++)
                     {
-                        WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
+                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
                         x_position++;
                     }
                 }
                 else
                 {
-                    WaveData[x_position] = SynthGenerator.SHAPE_WAVE_MAX_VALUE;
+                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
                     x_position++;
                 }
             }
+            Refresh();
+        }
+
+        private void pictureBoxSine_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxTriangle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxSawtooth_Click(object sender, EventArgs e)
+        {
+            Shapes.IncreasingLineair(WaveData);
             Refresh();
         }
     }
