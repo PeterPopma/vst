@@ -913,7 +913,7 @@ namespace SynthAnvil
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(3, 635);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1398, 279);
+            this.groupBox5.Size = new System.Drawing.Size(1393, 279);
             this.groupBox5.TabIndex = 65;
             this.groupBox5.TabStop = false;
             // 
@@ -921,7 +921,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayD4Sharp.BackColor = System.Drawing.Color.Black;
             this.buttonPlayD4Sharp.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayD4Sharp.Location = new System.Drawing.Point(1129, 45);
+            this.buttonPlayD4Sharp.Location = new System.Drawing.Point(1127, 45);
             this.buttonPlayD4Sharp.Name = "buttonPlayD4Sharp";
             this.buttonPlayD4Sharp.Size = new System.Drawing.Size(29, 58);
             this.buttonPlayD4Sharp.TabIndex = 123;
@@ -932,7 +932,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayD4.BackColor = System.Drawing.Color.White;
             this.buttonPlayD4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayD4.Location = new System.Drawing.Point(1113, 45);
+            this.buttonPlayD4.Location = new System.Drawing.Point(1111, 45);
             this.buttonPlayD4.Name = "buttonPlayD4";
             this.buttonPlayD4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayD4.TabIndex = 122;
@@ -943,7 +943,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayD5Sharp.BackColor = System.Drawing.Color.Black;
             this.buttonPlayD5Sharp.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayD5Sharp.Location = new System.Drawing.Point(1340, 45);
+            this.buttonPlayD5Sharp.Location = new System.Drawing.Point(1338, 45);
             this.buttonPlayD5Sharp.Name = "buttonPlayD5Sharp";
             this.buttonPlayD5Sharp.Size = new System.Drawing.Size(29, 57);
             this.buttonPlayD5Sharp.TabIndex = 121;
@@ -954,7 +954,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayE5.BackColor = System.Drawing.Color.White;
             this.buttonPlayE5.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayE5.Location = new System.Drawing.Point(1353, 45);
+            this.buttonPlayE5.Location = new System.Drawing.Point(1351, 45);
             this.buttonPlayE5.Name = "buttonPlayE5";
             this.buttonPlayE5.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayE5.TabIndex = 120;
@@ -968,7 +968,7 @@ namespace SynthAnvil
             this.buttonSave.ForeColor = System.Drawing.Color.Transparent;
             this.buttonSave.Image = global::SynthAnvil.Properties.Resources.buttonsave;
             this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonSave.Location = new System.Drawing.Point(1289, 181);
+            this.buttonSave.Location = new System.Drawing.Point(1287, 181);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(65, 65);
             this.buttonSave.TabIndex = 119;
@@ -981,7 +981,7 @@ namespace SynthAnvil
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.ForeColor = System.Drawing.Color.Transparent;
             this.buttonPlay.Image = global::SynthAnvil.Properties.Resources.playbutton;
-            this.buttonPlay.Location = new System.Drawing.Point(1188, 187);
+            this.buttonPlay.Location = new System.Drawing.Point(1186, 187);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(56, 56);
             this.buttonPlay.TabIndex = 118;
@@ -992,7 +992,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayC5Sharp.BackColor = System.Drawing.Color.Black;
             this.buttonPlayC5Sharp.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayC5Sharp.Location = new System.Drawing.Point(1309, 45);
+            this.buttonPlayC5Sharp.Location = new System.Drawing.Point(1307, 45);
             this.buttonPlayC5Sharp.Name = "buttonPlayC5Sharp";
             this.buttonPlayC5Sharp.Size = new System.Drawing.Size(29, 57);
             this.buttonPlayC5Sharp.TabIndex = 117;
@@ -1002,7 +1002,7 @@ namespace SynthAnvil
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1240, 139);
+            this.label9.Location = new System.Drawing.Point(1238, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 13);
             this.label9.TabIndex = 116;
@@ -1012,7 +1012,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayE4.BackColor = System.Drawing.Color.White;
             this.buttonPlayE4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayE4.Location = new System.Drawing.Point(1143, 45);
+            this.buttonPlayE4.Location = new System.Drawing.Point(1141, 45);
             this.buttonPlayE4.Name = "buttonPlayE4";
             this.buttonPlayE4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayE4.TabIndex = 115;
@@ -1023,7 +1023,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayF4Sharp.BackColor = System.Drawing.Color.Black;
             this.buttonPlayF4Sharp.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayF4Sharp.Location = new System.Drawing.Point(1188, 45);
+            this.buttonPlayF4Sharp.Location = new System.Drawing.Point(1186, 45);
             this.buttonPlayF4Sharp.Name = "buttonPlayF4Sharp";
             this.buttonPlayF4Sharp.Size = new System.Drawing.Size(29, 58);
             this.buttonPlayF4Sharp.TabIndex = 114;
@@ -1034,7 +1034,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayB4Flat.BackColor = System.Drawing.Color.Black;
             this.buttonPlayB4Flat.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayB4Flat.Location = new System.Drawing.Point(1250, 45);
+            this.buttonPlayB4Flat.Location = new System.Drawing.Point(1248, 45);
             this.buttonPlayB4Flat.Name = "buttonPlayB4Flat";
             this.buttonPlayB4Flat.Size = new System.Drawing.Size(29, 58);
             this.buttonPlayB4Flat.TabIndex = 113;
@@ -1045,7 +1045,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayG4Sharp.BackColor = System.Drawing.Color.Black;
             this.buttonPlayG4Sharp.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayG4Sharp.Location = new System.Drawing.Point(1219, 45);
+            this.buttonPlayG4Sharp.Location = new System.Drawing.Point(1217, 45);
             this.buttonPlayG4Sharp.Name = "buttonPlayG4Sharp";
             this.buttonPlayG4Sharp.Size = new System.Drawing.Size(29, 58);
             this.buttonPlayG4Sharp.TabIndex = 112;
@@ -1056,7 +1056,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayD5.BackColor = System.Drawing.Color.White;
             this.buttonPlayD5.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayD5.Location = new System.Drawing.Point(1323, 45);
+            this.buttonPlayD5.Location = new System.Drawing.Point(1321, 45);
             this.buttonPlayD5.Name = "buttonPlayD5";
             this.buttonPlayD5.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayD5.TabIndex = 111;
@@ -1067,7 +1067,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayF4.BackColor = System.Drawing.Color.White;
             this.buttonPlayF4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayF4.Location = new System.Drawing.Point(1173, 45);
+            this.buttonPlayF4.Location = new System.Drawing.Point(1171, 45);
             this.buttonPlayF4.Name = "buttonPlayF4";
             this.buttonPlayF4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayF4.TabIndex = 110;
@@ -1078,7 +1078,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayC5.BackColor = System.Drawing.Color.White;
             this.buttonPlayC5.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayC5.Location = new System.Drawing.Point(1293, 45);
+            this.buttonPlayC5.Location = new System.Drawing.Point(1291, 45);
             this.buttonPlayC5.Name = "buttonPlayC5";
             this.buttonPlayC5.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayC5.TabIndex = 109;
@@ -1089,7 +1089,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayB4.BackColor = System.Drawing.Color.White;
             this.buttonPlayB4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayB4.Location = new System.Drawing.Point(1263, 45);
+            this.buttonPlayB4.Location = new System.Drawing.Point(1261, 45);
             this.buttonPlayB4.Name = "buttonPlayB4";
             this.buttonPlayB4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayB4.TabIndex = 108;
@@ -1100,7 +1100,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayG4.BackColor = System.Drawing.Color.White;
             this.buttonPlayG4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayG4.Location = new System.Drawing.Point(1203, 45);
+            this.buttonPlayG4.Location = new System.Drawing.Point(1201, 45);
             this.buttonPlayG4.Name = "buttonPlayG4";
             this.buttonPlayG4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayG4.TabIndex = 107;
@@ -1111,7 +1111,7 @@ namespace SynthAnvil
             // 
             this.buttonPlayA4.BackColor = System.Drawing.Color.White;
             this.buttonPlayA4.ForeColor = System.Drawing.Color.Black;
-            this.buttonPlayA4.Location = new System.Drawing.Point(1233, 45);
+            this.buttonPlayA4.Location = new System.Drawing.Point(1231, 45);
             this.buttonPlayA4.Name = "buttonPlayA4";
             this.buttonPlayA4.Size = new System.Drawing.Size(29, 87);
             this.buttonPlayA4.TabIndex = 106;
@@ -1134,7 +1134,7 @@ namespace SynthAnvil
             chartArea2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             chartArea2.Name = "ChartArea1";
             this.chartFFTRight.ChartAreas.Add(chartArea2);
-            this.chartFFTRight.Location = new System.Drawing.Point(355, 141);
+            this.chartFFTRight.Location = new System.Drawing.Point(353, 141);
             this.chartFFTRight.Name = "chartFFTRight";
             series2.ChartArea = "ChartArea1";
             series2.Color = System.Drawing.Color.Blue;
@@ -1164,7 +1164,7 @@ namespace SynthAnvil
             chartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             chartArea3.Name = "ChartArea1";
             this.chartFFTLeft.ChartAreas.Add(chartArea3);
-            this.chartFFTLeft.Location = new System.Drawing.Point(355, 19);
+            this.chartFFTLeft.Location = new System.Drawing.Point(353, 19);
             this.chartFFTLeft.Name = "chartFFTLeft";
             series3.ChartArea = "ChartArea1";
             series3.Color = System.Drawing.Color.Blue;
@@ -1179,7 +1179,7 @@ namespace SynthAnvil
             // labelDuration
             // 
             this.labelDuration.AutoSize = true;
-            this.labelDuration.Location = new System.Drawing.Point(1098, 242);
+            this.labelDuration.Location = new System.Drawing.Point(1096, 242);
             this.labelDuration.Name = "labelDuration";
             this.labelDuration.Size = new System.Drawing.Size(13, 13);
             this.labelDuration.TabIndex = 74;
@@ -1201,7 +1201,7 @@ namespace SynthAnvil
             chartArea4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             chartArea4.Name = "ChartArea1";
             this.chartResultRight.ChartAreas.Add(chartArea4);
-            this.chartResultRight.Location = new System.Drawing.Point(716, 141);
+            this.chartResultRight.Location = new System.Drawing.Point(714, 141);
             this.chartResultRight.Name = "chartResultRight";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -1233,7 +1233,7 @@ namespace SynthAnvil
             chartArea5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             chartArea5.Name = "ChartArea1";
             this.chartResultLeft.ChartAreas.Add(chartArea5);
-            this.chartResultLeft.Location = new System.Drawing.Point(716, 19);
+            this.chartResultLeft.Location = new System.Drawing.Point(714, 19);
             this.chartResultLeft.Name = "chartResultLeft";
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -1955,7 +1955,7 @@ namespace SynthAnvil
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(70, 22);
             this.buttonAdd.TabIndex = 146;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "Clone";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAddNewWave_Click);
             // 
@@ -2043,7 +2043,7 @@ namespace SynthAnvil
             this.buttonCreatePartials.HorizontalGradient = false;
             this.buttonCreatePartials.Location = new System.Drawing.Point(288, 453);
             this.buttonCreatePartials.Name = "buttonCreatePartials";
-            this.buttonCreatePartials.Size = new System.Drawing.Size(93, 29);
+            this.buttonCreatePartials.Size = new System.Drawing.Size(93, 24);
             this.buttonCreatePartials.TabIndex = 145;
             this.buttonCreatePartials.Text = "Create";
             this.buttonCreatePartials.UseVisualStyleBackColor = true;
@@ -2312,7 +2312,7 @@ namespace SynthAnvil
             this.buttonSetAllDurations.HorizontalGradient = false;
             this.buttonSetAllDurations.Location = new System.Drawing.Point(136, 58);
             this.buttonSetAllDurations.Name = "buttonSetAllDurations";
-            this.buttonSetAllDurations.Size = new System.Drawing.Size(130, 29);
+            this.buttonSetAllDurations.Size = new System.Drawing.Size(130, 24);
             this.buttonSetAllDurations.TabIndex = 147;
             this.buttonSetAllDurations.Text = "set all durations to this";
             this.buttonSetAllDurations.UseVisualStyleBackColor = true;
@@ -2339,7 +2339,7 @@ namespace SynthAnvil
             this.buttonAdjustFrequencies.HorizontalGradient = false;
             this.buttonAdjustFrequencies.Location = new System.Drawing.Point(26, 58);
             this.buttonAdjustFrequencies.Name = "buttonAdjustFrequencies";
-            this.buttonAdjustFrequencies.Size = new System.Drawing.Size(95, 29);
+            this.buttonAdjustFrequencies.Size = new System.Drawing.Size(95, 24);
             this.buttonAdjustFrequencies.TabIndex = 145;
             this.buttonAdjustFrequencies.Text = "frequencies";
             this.buttonAdjustFrequencies.UseVisualStyleBackColor = true;
@@ -2350,7 +2350,7 @@ namespace SynthAnvil
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(77)))), ((int)(((byte)(95)))));
-            this.ClientSize = new System.Drawing.Size(1422, 920);
+            this.ClientSize = new System.Drawing.Size(1406, 920);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);

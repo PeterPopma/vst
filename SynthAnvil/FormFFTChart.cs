@@ -19,7 +19,9 @@ namespace SynthAnvil
         int fftWindow = 4096;
         int numSamples;
         Complex[] frequencySpectrumLeft;
+        Complex[] frequencySpectrumRight;
         double[] frequenciesLeft;
+        double[] frequenciesRight;
         uint graphScale = 1;     // 1..1024 in steps of *2
         int graphPosition = 0;
 
@@ -42,6 +44,7 @@ namespace SynthAnvil
         private void UpdateFFTGraph()
         {
             chartFFT.Series["Series1"].Points.Clear();
+            chartFFT.Series["Series2"].Points.Clear();
             int numPoints = (int)(frequenciesLeft.Length / graphScale);
             int lastPoint = numPoints + graphPosition;
 
@@ -49,7 +52,14 @@ namespace SynthAnvil
             {
                 int frequency = PointToFrequency(pointNumber);
                 frequency = frequency * myParent.SynthGenerator.SamplesPerSecond / 44100;
-                chartFFT.Series["Series1"].Points.AddXY(frequency, frequenciesLeft[pointNumber]);
+                if (!radioButtonChannelRight.Checked)
+                {
+                    chartFFT.Series["Series1"].Points.AddXY(frequency, frequenciesLeft[pointNumber]);
+                }
+                if (!radioButtonChannelLeft.Checked)
+                {
+                    chartFFT.Series["Series2"].Points.AddXY(frequency, frequenciesRight[pointNumber]);
+                }
             }
             chartFFT.ChartAreas[0].AxisX.Minimum = PointToFrequency(graphPosition);
             chartFFT.ChartAreas[0].AxisX.Maximum = PointToFrequency(lastPoint);
@@ -60,20 +70,23 @@ namespace SynthAnvil
         {
             numSamples = myParent.SynthGenerator.TempData.Length / 2;
             frequencySpectrumLeft = new Complex[fftWindow];
+            frequencySpectrumRight = new Complex[fftWindow];
             for (int i = 0; i < fftWindow; i++)
             {
                 if (2 * (startSample + i) > numSamples)
                 {
                     frequencySpectrumLeft[i] = new Complex(0, 0);
+                    frequencySpectrumRight[i] = new Complex(0, 0);
                 }
                 else
                 {
-                    // TODO : use also second channel here when asked
-                    frequencySpectrumLeft[i] = new Complex(myParent.SynthGenerator.TempData[2*(startSample + i)], 0);
+                    frequencySpectrumLeft[i] = new Complex(myParent.SynthGenerator.TempData[2 * (startSample + i)], 0);
+                    frequencySpectrumRight[i] = new Complex(myParent.SynthGenerator.TempData[2 * (startSample + i) + 1], 0);
                 }
             }
 
             MathUtils.FFT.Transform(frequencySpectrumLeft);
+            MathUtils.FFT.Transform(frequencySpectrumRight);
             ToNormalizedFrequenciesArray();
         }
 
@@ -102,6 +115,32 @@ namespace SynthAnvil
                 if (frequenciesLeft[i] >= 100)     // rounding errors
                 {
                     frequenciesLeft[i] = 99.999;
+                }
+            }
+
+            max_value = 0;
+            frequenciesRight = new double[fftWindow / 2];
+            for (int i = 0; i < frequenciesRight.Length; i++)
+            {
+                frequenciesRight[i] = Math.Abs(frequencySpectrumRight[i].Real);
+                if (frequenciesRight[i] > max_value)
+                {
+                    max_value = frequenciesRight[i];
+                }
+            }
+
+            if (max_value == 0)
+            {
+                return;
+            }
+
+            scale_factor = 100 / max_value;
+            for (int i = 0; i < frequenciesRight.Length; i++)
+            {
+                frequenciesRight[i] *= scale_factor;
+                if (frequenciesRight[i] >= 100)     // rounding errors
+                {
+                    frequenciesRight[i] = 99.999;
                 }
             }
         }
@@ -257,6 +296,21 @@ namespace SynthAnvil
             {
                 graphPosition = LastPossiblePosition();
             }
+            UpdateFFTGraph();
+        }
+
+        private void radioButtonChannelBoth_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateFFTGraph();
+        }
+
+        private void radioButtonChannelLeft_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateFFTGraph();
+        }
+
+        private void radioButtonChannelRight_CheckedChanged(object sender, EventArgs e)
+        {
             UpdateFFTGraph();
         }
     }

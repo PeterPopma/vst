@@ -60,6 +60,8 @@ namespace SynthAnvil
             this.buttonVolumeMinus1 = new SynthAnvil.CustomControls.GradientButton();
             this.colorSliderVolume2 = new ColorSlider.ColorSlider();
             this.colorSliderVolume1 = new ColorSlider.ColorSlider();
+            this.textBoxNumIncSines = new System.Windows.Forms.TextBox();
+            this.textBoxNumDecSines = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -599,10 +601,34 @@ namespace SynthAnvil
             this.colorSliderVolume1.ValueChanged += new System.EventHandler(this.colorSliderBeginVolume_ValueChanged);
             this.colorSliderVolume1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorSliderVolume1_MouseUp);
             // 
+            // textBoxNumIncSines
+            // 
+            this.textBoxNumIncSines.BackColor = System.Drawing.Color.Black;
+            this.textBoxNumIncSines.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumIncSines.ForeColor = System.Drawing.Color.White;
+            this.textBoxNumIncSines.Location = new System.Drawing.Point(134, 283);
+            this.textBoxNumIncSines.Name = "textBoxNumIncSines";
+            this.textBoxNumIncSines.Size = new System.Drawing.Size(24, 23);
+            this.textBoxNumIncSines.TabIndex = 231;
+            this.textBoxNumIncSines.Text = "1";
+            // 
+            // textBoxNumDecSines
+            // 
+            this.textBoxNumDecSines.BackColor = System.Drawing.Color.Black;
+            this.textBoxNumDecSines.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumDecSines.ForeColor = System.Drawing.Color.White;
+            this.textBoxNumDecSines.Location = new System.Drawing.Point(134, 359);
+            this.textBoxNumDecSines.Name = "textBoxNumDecSines";
+            this.textBoxNumDecSines.Size = new System.Drawing.Size(24, 23);
+            this.textBoxNumDecSines.TabIndex = 232;
+            this.textBoxNumDecSines.Text = "1";
+            // 
             // FormVolume
             // 
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1254, 686);
+            this.Controls.Add(this.textBoxNumDecSines);
+            this.Controls.Add(this.textBoxNumIncSines);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
@@ -692,5 +718,7 @@ namespace SynthAnvil
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox textBoxNumSines;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.TextBox textBoxNumIncSines;
+        private System.Windows.Forms.TextBox textBoxNumDecSines;
     }
 }

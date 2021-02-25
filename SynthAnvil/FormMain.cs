@@ -589,8 +589,8 @@ namespace SynthAnvil
             {
                 return;     // skip if no samples or only right channel
             }
-            double widthPercentage = synthGenerator.CurrentWave.NumSamples() / synthGenerator.NumSamples();
-            double startPercentage = synthGenerator.CurrentWave.StartPosition / synthGenerator.NumSamples();
+            double widthPercentage = synthGenerator.CurrentWave.NumSamples() / (double)synthGenerator.NumSamples();
+            double startPercentage = synthGenerator.CurrentWave.StartPosition / (double)synthGenerator.NumSamples();
             Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * widthPercentage), 110);
             Pen myBrush = new Pen(Color.White);
             e.Graphics.DrawRectangle(myBrush, rect);
@@ -602,8 +602,8 @@ namespace SynthAnvil
             {
                 return;     // skip if no samples or only left channel
             }
-            double withPercentage = synthGenerator.CurrentWave.NumSamples() / synthGenerator.NumSamples();
-            double startPercentage = synthGenerator.CurrentWave.StartPosition / synthGenerator.NumSamples();
+            double withPercentage = synthGenerator.CurrentWave.NumSamples() / (double)synthGenerator.NumSamples();
+            double startPercentage = synthGenerator.CurrentWave.StartPosition / (double)synthGenerator.NumSamples();
             Rectangle rect = new Rectangle(29 + (int)(346 * startPercentage), 4, (int)(346 * withPercentage), 110);
             System.Drawing.Pen myBrush = new System.Drawing.Pen(System.Drawing.Color.White);
             e.Graphics.DrawRectangle(myBrush, rect);
@@ -1390,10 +1390,10 @@ namespace SynthAnvil
 
         private void buttonSetAllDurations_Click(object sender, EventArgs e)
         {
-            int numSamples = synthGenerator.CurrentWave.WaveData.Length;
+            int numSamples = synthGenerator.CurrentWave.NumSamples() + synthGenerator.CurrentWave.StartPosition;
             foreach (WaveInfo wave in synthGenerator.Waves)
             {
-                wave.WaveData = new double[numSamples];
+                wave.WaveData = new double[(numSamples - wave.StartPosition)*2];
             }
             synthGenerator.UpdateAllWaveData();
         }

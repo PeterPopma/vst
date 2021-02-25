@@ -205,357 +205,53 @@ namespace SynthAnvil
             }
         }
 
-        private void buttonSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void buttonFlat_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE;
-            }
-            Refresh();
-        }
-
-        private void buttonSawtooth_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)((SynthGenerator.SHAPE_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_NUMPOINTS * 2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void buttonSquare_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                if (i < WaveData.Length / 2)
-                {
-                    WaveData[i] = 0;
-                }
-                else
-                {
-                    WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE;
-                }
-            }
-            Refresh();
-        }
-
-        private void buttonRipples_Click(object sender, EventArgs e)
-        {
-            int x_position = 0;
-            while (x_position < WaveData.Length)
-            {
-                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(20) == 11)
-                {
-                    int amplitude = SynthGenerator.SHAPE_MAX_VALUE;
-                    int up_down_spike = 1;
-                    if (random.Next(100) < 50)
-                    {
-                        // up spike
-                        up_down_spike = -1;
-                    }
-                    for (int j = 0; j < 5; j++)
-                    {
-                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
-                        x_position++;
-                    }
-                }
-                else
-                {
-                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
-                    x_position++;
-                }
-            }
-            Refresh();
-        }
-
-        private void buttonRandomRipples_Click(object sender, EventArgs e)
-        {
-            int x_position = 0;
-            while (x_position < WaveData.Length)
-            {
-                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(15) == 11)
-                {
-                    int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE);
-                    int up_down_spike = 1;
-                    if (random.Next(100) < 50)
-                    {
-                        // up spike
-                        up_down_spike = -1;
-                    }
-                    for (int j = 0; j < 5; j++)
-                    {
-                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
-                        x_position++;
-                    }
-                }
-                else
-                {
-                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
-                    x_position++;
-                }
-            }
-            Refresh();
-        }
-
-        private void buttonFlatHigh_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = 0;
-            }
-            Refresh();
-        }
-
-        private void buttonFlatLow_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - 1;
-            }
-            Refresh();
-        }
-
-        private void Button2XSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 4 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void button3XSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 6 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void button4XSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 8 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void button5XSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 10 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void gradientButton3_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 12 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void buttonIncSine_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void buttonNoise_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[WaveData.Length - 1 - i] = random.Next(2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void buttonTriangle_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length / 2; i++)
-            {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
-            }
-            Refresh();
-        }
-
-        private void buttonDecInc_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length / 2; i++)
-            {
-                WaveData[i] = (int)(((i) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
-            }
-            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void gradientButton1_Click(object sender, EventArgs e)
-        {
-            double factor = Math.Pow(2 * SynthGenerator.SHAPE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_NUMPOINTS);
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - (int)Math.Pow(factor, i);
-            }
-            Refresh();
-        }
-
-        private void pictureBoxWaveForm_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * 2 * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)((SynthGenerator.SHAPE_NUMPOINTS - i) / (double)SynthGenerator.SHAPE_NUMPOINTS * 2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                if (i < WaveData.Length / 2)
-                {
-                    WaveData[i] = 0;
-                }
-                else
-                {
-                    WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE;
-                }
-            }
-            Refresh();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length / 2; i++)
-            {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * 2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(((i - WaveData.Length / 2) * 2 * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
-            }
-            Refresh();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE;
-            }
-            Refresh();
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[i] = (int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            double factor = Math.Pow(2 * SynthGenerator.SHAPE_MAX_VALUE, 1.0 / SynthGenerator.SHAPE_NUMPOINTS);
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE - (int)Math.Pow(factor, i);
-            }
-            Refresh();
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                WaveData[WaveData.Length - 1 - i] = random.Next(2 * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            Refresh();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            int x_position = 0;
-            while (x_position < WaveData.Length)
-            {
-                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(15) == 11)
-                {
-                    int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE);
-                    int up_down_spike = 1;
-                    if (random.Next(100) < 50)
-                    {
-                        // up spike
-                        up_down_spike = -1;
-                    }
-                    for (int j = 0; j < 5; j++)
-                    {
-                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
-                        x_position++;
-                    }
-                }
-                else
-                {
-                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE;
-                    x_position++;
-                }
-            }
-            Refresh();
-        }
-
         private void pictureBoxSine_Click(object sender, EventArgs e)
         {
-
+            Shapes.Sines(WaveData);
+            Refresh();
         }
 
         private void pictureBoxTriangle_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < WaveData.Length / 2; i++)
+            {
+                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * SynthGenerator.SHAPE_MAX_VALUE);
+            }
+            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
+            {
+                WaveData[i] = (int)(((i - WaveData.Length / 2) * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
+            }
+            Refresh();
         }
 
         private void pictureBoxSquare_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                if (i < WaveData.Length / 2)
+                {
+                    WaveData[i] = 0;
+                }
+                else
+                {
+                    WaveData[i] = 2 * SynthGenerator.SHAPE_MAX_VALUE;
+                }
+            }
+            Refresh();
         }
 
         private void pictureBoxSawtooth_Click(object sender, EventArgs e)
         {
             Shapes.IncreasingLineair(WaveData);
+            Refresh();
+        }
+
+        private void pictureBoxFlat_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < WaveData.Length; i++)
+            {
+                WaveData[i] = SynthGenerator.SHAPE_MAX_VALUE / 2;
+            }
             Refresh();
         }
     }

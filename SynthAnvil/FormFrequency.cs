@@ -18,7 +18,6 @@ namespace SynthAnvil
         Point previousPoint;
         Timer aTimer = new Timer();
         int AdjustDataWidth = 0;
-        Random random = new Random();
 
         public FormFrequency()
         {
@@ -390,56 +389,19 @@ namespace SynthAnvil
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < WaveData.Length / 2; i++)
-            {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - i * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * SynthGenerator.SHAPE_MAX_VALUE);
-            }
-            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(((i - WaveData.Length / 2) * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
-            }
+            Shapes.IncDec(WaveData);
             Refresh();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < WaveData.Length / 2; i++)
-            {
-                WaveData[i] = (int)(((i) * SynthGenerator.SHAPE_MAX_VALUE) / (WaveData.Length / 2));
-            }
-            for (int i = WaveData.Length / 2; i < WaveData.Length; i++)
-            {
-                WaveData[i] = (int)(((SynthGenerator.SHAPE_NUMPOINTS - (i - WaveData.Length / 2) * 2) / (double)SynthGenerator.SHAPE_NUMPOINTS) * SynthGenerator.SHAPE_MAX_VALUE);
-            }
+            Shapes.DecInc(WaveData);
             Refresh();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            int x_position = 0;
-            while (x_position < WaveData.Length)
-            {
-                if (x_position < SynthGenerator.SHAPE_NUMPOINTS - 5 && random.Next(15) == 11)
-                {
-                    int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE / 2);
-                    int up_down_spike = 1;
-                    if (random.Next(100) < 50)
-                    {
-                        // up spike
-                        up_down_spike = -1;
-                    }
-                    for (int j = 0; j < 5; j++)
-                    {
-                        WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE / 2 - ((int)(amplitude * Math.Sin(((j + 1) / 6.0) * Math.PI)) * up_down_spike);
-                        x_position++;
-                    }
-                }
-                else
-                {
-                    WaveData[x_position] = SynthGenerator.SHAPE_MAX_VALUE / 2;
-                    x_position++;
-                }
-            }
+            Shapes.Spikes(WaveData);
             Refresh();
         }
 
@@ -447,10 +409,7 @@ namespace SynthAnvil
         {
             try
             {
-                for (int i = 0; i < WaveData.Length; i++)
-                {
-                    WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * 2 * Convert.ToInt32(textBoxNumSines.Text) * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE)) / 2.0);
-                }
+                Shapes.Sines(WaveData, Convert.ToInt32(textBoxNumSines.Text));
             }
             catch (Exception)
             {
@@ -461,59 +420,43 @@ namespace SynthAnvil
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < WaveData.Length; i++)
+            try
             {
-                double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE)) / 2.0);
+                int numSines = Convert.ToInt32(textBoxNumIncSines.Text);
+                if(numSines>9)
+                {
+                    numSines = 9;
+                }
+                Shapes.IncSines(WaveData, numSines);
+            }
+            catch (Exception)
+            {
+                // probably bad input from textbox; ignore
             }
             Refresh();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < WaveData.Length; i++)
+            try
             {
-                double factor = Math.Pow(1.003, i);   // between 1 and 20
-                WaveData[WaveData.Length - 1 - i] = (int)(((int)(Math.Sin(i / (double)WaveData.Length * factor * Math.PI) * SynthGenerator.SHAPE_MAX_VALUE + SynthGenerator.SHAPE_MAX_VALUE)) / 2.0);
+                int numSines = Convert.ToInt32(textBoxNumDecSines.Text);
+                if (numSines > 9)
+                {
+                    numSines = 9;
+                }
+                Shapes.DecSines(WaveData, numSines);
+            }
+            catch (Exception)
+            {
+                // probably bad input from textbox; ignore
             }
             Refresh();
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            int amplitude = random.Next(SynthGenerator.SHAPE_MAX_VALUE / 2);
-            int period = random.Next(50) + 5;
-            bool amplitude_increasing = false;
-            for (int i = 0; i < WaveData.Length; i++)
-            {
-                if (random.Next(20) == 3)
-                {
-                    amplitude_increasing = !amplitude_increasing;
-                }
-                if (amplitude_increasing)
-                {
-                    if (amplitude < SynthGenerator.SHAPE_MAX_VALUE / 2)
-                    {
-                        amplitude++;
-                    }
-                    else
-                    {
-                        amplitude_increasing = false;
-                    }
-                }
-                else
-                {
-                    if (amplitude > 0)
-                    {
-                        amplitude--;
-                    }
-                    else
-                    {
-                        amplitude_increasing = true;
-                    }
-                }
-                WaveData[i] = (int)((Math.Sin(i / (double)WaveData.Length * period * Math.PI) * amplitude) + (SynthGenerator.SHAPE_MAX_VALUE / 2.0));
-            }
+            Shapes.RandomWaves(WaveData);
             Refresh();
         }
     }

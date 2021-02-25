@@ -36,11 +36,13 @@ namespace SynthAnvil
             this.pictureBoxSawtooth = new System.Windows.Forms.PictureBox();
             this.buttonCancel = new SynthAnvil.CustomControls.GradientButton();
             this.buttonApply = new SynthAnvil.CustomControls.GradientButton();
+            this.pictureBoxFlat = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomWave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSquare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTriangle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSawtooth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlat)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxCustomWave
@@ -140,9 +142,23 @@ namespace SynthAnvil
             this.buttonApply.UseVisualStyleBackColor = true;
             this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
+            // pictureBoxFlat
+            // 
+            this.pictureBoxFlat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxFlat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxFlat.Image = global::SynthAnvil.Properties.Resources.flat;
+            this.pictureBoxFlat.InitialImage = null;
+            this.pictureBoxFlat.Location = new System.Drawing.Point(12, 369);
+            this.pictureBoxFlat.Name = "pictureBoxFlat";
+            this.pictureBoxFlat.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxFlat.TabIndex = 205;
+            this.pictureBoxFlat.TabStop = false;
+            this.pictureBoxFlat.Click += new System.EventHandler(this.pictureBoxFlat_Click);
+            // 
             // FormCustomShape
             // 
             this.ClientSize = new System.Drawing.Size(1111, 583);
+            this.Controls.Add(this.pictureBoxFlat);
             this.Controls.Add(this.pictureBoxSawtooth);
             this.Controls.Add(this.pictureBoxTriangle);
             this.Controls.Add(this.pictureBoxSquare);
@@ -162,6 +178,7 @@ namespace SynthAnvil
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSquare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTriangle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSawtooth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,5 +192,6 @@ namespace SynthAnvil
         private System.Windows.Forms.PictureBox pictureBoxSquare;
         private System.Windows.Forms.PictureBox pictureBoxTriangle;
         private System.Windows.Forms.PictureBox pictureBoxSawtooth;
+        private System.Windows.Forms.PictureBox pictureBoxFlat;
     }
 }
